@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-31T14:08:19.888Z",
+  "generatedAt": "2026-03-31T14:10:39.648Z",
   "sourceRoot": "node_modules/ol",
   "moduleCount": 367,
   "modules": [
     {
       "moduleId": "Collection",
       "dtsPath": "Collection.d.ts",
-      "nimModule": "openlayers/api/collection",
+      "nimModule": "openlayers/collection",
       "defaultExport": "Collection",
       "functions": [],
       "constants": [],
@@ -23,7 +23,7 @@
     {
       "moduleId": "CollectionEventType",
       "dtsPath": "CollectionEventType.d.ts",
-      "nimModule": "openlayers/api/collectionEventType",
+      "nimModule": "openlayers/collectionEventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -33,7 +33,7 @@
     {
       "moduleId": "DataTile",
       "dtsPath": "DataTile.d.ts",
-      "nimModule": "openlayers/api/dataTile",
+      "nimModule": "openlayers/dataTile",
       "defaultExport": "DataTile",
       "functions": [
         {
@@ -115,7 +115,7 @@
     {
       "moduleId": "Disposable",
       "dtsPath": "Disposable.d.ts",
-      "nimModule": "openlayers/api/disposable",
+      "nimModule": "openlayers/disposable",
       "defaultExport": "Disposable",
       "functions": [],
       "constants": [],
@@ -145,7 +145,7 @@
     {
       "moduleId": "Feature",
       "dtsPath": "Feature.d.ts",
-      "nimModule": "openlayers/api/feature",
+      "nimModule": "openlayers/feature",
       "defaultExport": "Feature",
       "functions": [
         {
@@ -175,7 +175,7 @@
     {
       "moduleId": "Geolocation",
       "dtsPath": "Geolocation.d.ts",
-      "nimModule": "openlayers/api/geolocation",
+      "nimModule": "openlayers/geolocation",
       "defaultExport": "Geolocation",
       "functions": [],
       "constants": [],
@@ -192,7 +192,7 @@
     {
       "moduleId": "Image",
       "dtsPath": "Image.d.ts",
-      "nimModule": "openlayers/api/image",
+      "nimModule": "openlayers/image",
       "defaultExport": "ImageWrapper",
       "functions": [
         {
@@ -347,7 +347,7 @@
     {
       "moduleId": "ImageCanvas",
       "dtsPath": "ImageCanvas.d.ts",
-      "nimModule": "openlayers/api/imageCanvas",
+      "nimModule": "openlayers/imageCanvas",
       "defaultExport": "ImageCanvas",
       "functions": [],
       "constants": [],
@@ -375,7 +375,7 @@
     {
       "moduleId": "ImageState",
       "dtsPath": "ImageState.d.ts",
-      "nimModule": "openlayers/api/imageState",
+      "nimModule": "openlayers/imageState",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -385,7 +385,7 @@
     {
       "moduleId": "ImageTile",
       "dtsPath": "ImageTile.d.ts",
-      "nimModule": "openlayers/api/imageTile",
+      "nimModule": "openlayers/imageTile",
       "defaultExport": "ImageTile",
       "functions": [],
       "constants": [],
@@ -431,7 +431,7 @@
     {
       "moduleId": "Kinetic",
       "dtsPath": "Kinetic.d.ts",
-      "nimModule": "openlayers/api/kinetic",
+      "nimModule": "openlayers/kinetic",
       "defaultExport": "Kinetic",
       "functions": [],
       "constants": [],
@@ -483,7 +483,7 @@
     {
       "moduleId": "Map",
       "dtsPath": "Map.d.ts",
-      "nimModule": "openlayers/api/map",
+      "nimModule": "openlayers/map",
       "defaultExport": "Map",
       "functions": [],
       "constants": [],
@@ -500,7 +500,7 @@
     {
       "moduleId": "MapBrowserEvent",
       "dtsPath": "MapBrowserEvent.d.ts",
-      "nimModule": "openlayers/api/mapBrowserEvent",
+      "nimModule": "openlayers/mapBrowserEvent",
       "defaultExport": "MapBrowserEvent",
       "functions": [],
       "constants": [],
@@ -521,7 +521,7 @@
     {
       "moduleId": "MapBrowserEventHandler",
       "dtsPath": "MapBrowserEventHandler.d.ts",
-      "nimModule": "openlayers/api/mapBrowserEventHandler",
+      "nimModule": "openlayers/mapBrowserEventHandler",
       "defaultExport": "MapBrowserEventHandler",
       "functions": [],
       "constants": [],
@@ -542,7 +542,7 @@
     {
       "moduleId": "MapBrowserEventType",
       "dtsPath": "MapBrowserEventType.d.ts",
-      "nimModule": "openlayers/api/mapBrowserEventType",
+      "nimModule": "openlayers/mapBrowserEventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -552,7 +552,7 @@
     {
       "moduleId": "MapEvent",
       "dtsPath": "MapEvent.d.ts",
-      "nimModule": "openlayers/api/mapEvent",
+      "nimModule": "openlayers/mapEvent",
       "defaultExport": "MapEvent",
       "functions": [],
       "constants": [],
@@ -573,7 +573,7 @@
     {
       "moduleId": "MapEventType",
       "dtsPath": "MapEventType.d.ts",
-      "nimModule": "openlayers/api/mapEventType",
+      "nimModule": "openlayers/mapEventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -583,7 +583,7 @@
     {
       "moduleId": "MapProperty",
       "dtsPath": "MapProperty.d.ts",
-      "nimModule": "openlayers/api/mapProperty",
+      "nimModule": "openlayers/mapProperty",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -593,7 +593,7 @@
     {
       "moduleId": "Object",
       "dtsPath": "Object.d.ts",
-      "nimModule": "openlayers/api/object",
+      "nimModule": "openlayers/object",
       "defaultExport": "BaseObject",
       "functions": [],
       "constants": [],
@@ -610,7 +610,7 @@
     {
       "moduleId": "ObjectEventType",
       "dtsPath": "ObjectEventType.d.ts",
-      "nimModule": "openlayers/api/objectEventType",
+      "nimModule": "openlayers/objectEventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -620,7 +620,7 @@
     {
       "moduleId": "Observable",
       "dtsPath": "Observable.d.ts",
-      "nimModule": "openlayers/api/observable",
+      "nimModule": "openlayers/observable",
       "defaultExport": "Observable",
       "functions": [
         {
@@ -685,7 +685,7 @@
     {
       "moduleId": "Overlay",
       "dtsPath": "Overlay.d.ts",
-      "nimModule": "openlayers/api/overlay",
+      "nimModule": "openlayers/overlay",
       "defaultExport": "Overlay",
       "functions": [],
       "constants": [],
@@ -702,7 +702,7 @@
     {
       "moduleId": "Tile",
       "dtsPath": "Tile.d.ts",
-      "nimModule": "openlayers/api/tile",
+      "nimModule": "openlayers/tile",
       "defaultExport": "Tile",
       "functions": [],
       "constants": [],
@@ -784,7 +784,7 @@
     {
       "moduleId": "TileQueue",
       "dtsPath": "TileQueue.d.ts",
-      "nimModule": "openlayers/api/tileQueue",
+      "nimModule": "openlayers/tileQueue",
       "defaultExport": "TileQueue",
       "functions": [
         {
@@ -861,7 +861,7 @@
     {
       "moduleId": "TileRange",
       "dtsPath": "TileRange.d.ts",
-      "nimModule": "openlayers/api/tileRange",
+      "nimModule": "openlayers/tileRange",
       "defaultExport": "TileRange",
       "functions": [
         {
@@ -974,7 +974,7 @@
     {
       "moduleId": "TileState",
       "dtsPath": "TileState.d.ts",
-      "nimModule": "openlayers/api/tileState",
+      "nimModule": "openlayers/tileState",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -984,7 +984,7 @@
     {
       "moduleId": "VectorRenderTile",
       "dtsPath": "VectorRenderTile.d.ts",
-      "nimModule": "openlayers/api/vectorRenderTile",
+      "nimModule": "openlayers/vectorRenderTile",
       "defaultExport": "VectorRenderTile",
       "functions": [],
       "constants": [],
@@ -1030,7 +1030,7 @@
     {
       "moduleId": "VectorTile",
       "dtsPath": "VectorTile.d.ts",
-      "nimModule": "openlayers/api/vectorTile",
+      "nimModule": "openlayers/vectorTile",
       "defaultExport": "VectorTile",
       "functions": [],
       "constants": [],
@@ -1094,7 +1094,7 @@
     {
       "moduleId": "View",
       "dtsPath": "View.d.ts",
-      "nimModule": "openlayers/api/view",
+      "nimModule": "openlayers/view",
       "defaultExport": "View",
       "functions": [
         {
@@ -1614,7 +1614,7 @@
     {
       "moduleId": "ViewHint",
       "dtsPath": "ViewHint.d.ts",
-      "nimModule": "openlayers/api/viewHint",
+      "nimModule": "openlayers/viewHint",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -1624,7 +1624,7 @@
     {
       "moduleId": "ViewProperty",
       "dtsPath": "ViewProperty.d.ts",
-      "nimModule": "openlayers/api/viewProperty",
+      "nimModule": "openlayers/viewProperty",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -1634,7 +1634,7 @@
     {
       "moduleId": "array",
       "dtsPath": "array.d.ts",
-      "nimModule": "openlayers/api/array",
+      "nimModule": "openlayers/array",
       "defaultExport": null,
       "functions": [
         {
@@ -1849,7 +1849,7 @@
     {
       "moduleId": "asserts",
       "dtsPath": "asserts.d.ts",
-      "nimModule": "openlayers/api/asserts",
+      "nimModule": "openlayers/asserts",
       "defaultExport": null,
       "functions": [
         {
@@ -1878,7 +1878,7 @@
     {
       "moduleId": "centerconstraint",
       "dtsPath": "centerconstraint.d.ts",
-      "nimModule": "openlayers/api/centerconstraint",
+      "nimModule": "openlayers/centerconstraint",
       "defaultExport": null,
       "functions": [
         {
@@ -1925,7 +1925,7 @@
     {
       "moduleId": "color",
       "dtsPath": "color.d.ts",
-      "nimModule": "openlayers/api/color",
+      "nimModule": "openlayers/color",
       "defaultExport": null,
       "functions": [
         {
@@ -2037,7 +2037,7 @@
     {
       "moduleId": "colorlike",
       "dtsPath": "colorlike.d.ts",
-      "nimModule": "openlayers/api/colorlike",
+      "nimModule": "openlayers/colorlike",
       "defaultExport": null,
       "functions": [
         {
@@ -2060,7 +2060,7 @@
     {
       "moduleId": "console",
       "dtsPath": "console.d.ts",
-      "nimModule": "openlayers/api/console",
+      "nimModule": "openlayers/console",
       "defaultExport": null,
       "functions": [
         {
@@ -2119,7 +2119,7 @@
     {
       "moduleId": "control",
       "dtsPath": "control.d.ts",
-      "nimModule": "openlayers/api/control",
+      "nimModule": "openlayers/control",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -2174,7 +2174,7 @@
     {
       "moduleId": "control/Attribution",
       "dtsPath": "control/Attribution.d.ts",
-      "nimModule": "openlayers/api/control/attribution",
+      "nimModule": "openlayers/control/attribution",
       "defaultExport": "Attribution",
       "functions": [],
       "constants": [],
@@ -2220,7 +2220,7 @@
     {
       "moduleId": "control/Control",
       "dtsPath": "control/Control.d.ts",
-      "nimModule": "openlayers/api/control/control",
+      "nimModule": "openlayers/control/control",
       "defaultExport": "Control",
       "functions": [],
       "constants": [],
@@ -2237,7 +2237,7 @@
     {
       "moduleId": "control/FullScreen",
       "dtsPath": "control/FullScreen.d.ts",
-      "nimModule": "openlayers/api/control/fullScreen",
+      "nimModule": "openlayers/control/fullScreen",
       "defaultExport": "FullScreen",
       "functions": [],
       "constants": [],
@@ -2258,7 +2258,7 @@
     {
       "moduleId": "control/MousePosition",
       "dtsPath": "control/MousePosition.d.ts",
-      "nimModule": "openlayers/api/control/mousePosition",
+      "nimModule": "openlayers/control/mousePosition",
       "defaultExport": "MousePosition",
       "functions": [],
       "constants": [],
@@ -2316,7 +2316,7 @@
     {
       "moduleId": "control/OverviewMap",
       "dtsPath": "control/OverviewMap.d.ts",
-      "nimModule": "openlayers/api/control/overviewMap",
+      "nimModule": "openlayers/control/overviewMap",
       "defaultExport": "OverviewMap",
       "functions": [],
       "constants": [],
@@ -2380,7 +2380,7 @@
     {
       "moduleId": "control/Rotate",
       "dtsPath": "control/Rotate.d.ts",
-      "nimModule": "openlayers/api/control/rotate",
+      "nimModule": "openlayers/control/rotate",
       "defaultExport": "Rotate",
       "functions": [],
       "constants": [],
@@ -2401,7 +2401,7 @@
     {
       "moduleId": "control/ScaleLine",
       "dtsPath": "control/ScaleLine.d.ts",
-      "nimModule": "openlayers/api/control/scaleLine",
+      "nimModule": "openlayers/control/scaleLine",
       "defaultExport": "ScaleLine",
       "functions": [],
       "constants": [],
@@ -2459,7 +2459,7 @@
     {
       "moduleId": "control/Zoom",
       "dtsPath": "control/Zoom.d.ts",
-      "nimModule": "openlayers/api/control/zoom",
+      "nimModule": "openlayers/control/zoom",
       "defaultExport": "Zoom",
       "functions": [],
       "constants": [],
@@ -2480,7 +2480,7 @@
     {
       "moduleId": "control/ZoomSlider",
       "dtsPath": "control/ZoomSlider.d.ts",
-      "nimModule": "openlayers/api/control/zoomSlider",
+      "nimModule": "openlayers/control/zoomSlider",
       "defaultExport": "ZoomSlider",
       "functions": [],
       "constants": [],
@@ -2501,7 +2501,7 @@
     {
       "moduleId": "control/ZoomToExtent",
       "dtsPath": "control/ZoomToExtent.d.ts",
-      "nimModule": "openlayers/api/control/zoomToExtent",
+      "nimModule": "openlayers/control/zoomToExtent",
       "defaultExport": "ZoomToExtent",
       "functions": [],
       "constants": [],
@@ -2529,7 +2529,7 @@
     {
       "moduleId": "control/defaults",
       "dtsPath": "control/defaults.d.ts",
-      "nimModule": "openlayers/api/control/defaults",
+      "nimModule": "openlayers/control/defaults",
       "defaultExport": null,
       "functions": [
         {
@@ -2552,7 +2552,7 @@
     {
       "moduleId": "coordinate",
       "dtsPath": "coordinate.d.ts",
-      "nimModule": "openlayers/api/coordinate",
+      "nimModule": "openlayers/coordinate",
       "defaultExport": null,
       "functions": [
         {
@@ -2887,7 +2887,7 @@
     {
       "moduleId": "css",
       "dtsPath": "css.d.ts",
-      "nimModule": "openlayers/api/css",
+      "nimModule": "openlayers/css",
       "defaultExport": null,
       "functions": [
         {
@@ -2939,7 +2939,7 @@
     {
       "moduleId": "dist/ol",
       "dtsPath": "dist/ol.d.ts",
-      "nimModule": "openlayers/api/dist/ol",
+      "nimModule": "openlayers/dist/ol",
       "defaultExport": "ol",
       "functions": [],
       "constants": [],
@@ -2949,7 +2949,7 @@
     {
       "moduleId": "dom",
       "dtsPath": "dom.d.ts",
-      "nimModule": "openlayers/api/dom",
+      "nimModule": "openlayers/dom",
       "defaultExport": null,
       "functions": [
         {
@@ -3096,7 +3096,7 @@
     {
       "moduleId": "easing",
       "dtsPath": "easing.d.ts",
-      "nimModule": "openlayers/api/easing",
+      "nimModule": "openlayers/easing",
       "defaultExport": null,
       "functions": [
         {
@@ -3167,7 +3167,7 @@
     {
       "moduleId": "events",
       "dtsPath": "events.d.ts",
-      "nimModule": "openlayers/api/events",
+      "nimModule": "openlayers/events",
       "defaultExport": null,
       "functions": [
         {
@@ -3256,7 +3256,7 @@
     {
       "moduleId": "events/Event",
       "dtsPath": "events/Event.d.ts",
-      "nimModule": "openlayers/api/events/event",
+      "nimModule": "openlayers/events/event",
       "defaultExport": "BaseEvent",
       "functions": [
         {
@@ -3315,7 +3315,7 @@
     {
       "moduleId": "events/EventType",
       "dtsPath": "events/EventType.d.ts",
-      "nimModule": "openlayers/api/events/eventType",
+      "nimModule": "openlayers/events/eventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -3325,7 +3325,7 @@
     {
       "moduleId": "events/Key",
       "dtsPath": "events/Key.d.ts",
-      "nimModule": "openlayers/api/events/key",
+      "nimModule": "openlayers/events/key",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -3335,7 +3335,7 @@
     {
       "moduleId": "events/SnapEvent",
       "dtsPath": "events/SnapEvent.d.ts",
-      "nimModule": "openlayers/api/events/snapEvent",
+      "nimModule": "openlayers/events/snapEvent",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -3345,7 +3345,7 @@
     {
       "moduleId": "events/Target",
       "dtsPath": "events/Target.d.ts",
-      "nimModule": "openlayers/api/events/target",
+      "nimModule": "openlayers/events/target",
       "defaultExport": "Target",
       "functions": [],
       "constants": [],
@@ -3397,7 +3397,7 @@
     {
       "moduleId": "events/condition",
       "dtsPath": "events/condition.d.ts",
-      "nimModule": "openlayers/api/events/condition",
+      "nimModule": "openlayers/events/condition",
       "defaultExport": null,
       "functions": [
         {
@@ -3645,7 +3645,7 @@
     {
       "moduleId": "expr/cpu",
       "dtsPath": "expr/cpu.d.ts",
-      "nimModule": "openlayers/api/expr/cpu",
+      "nimModule": "openlayers/expr/cpu",
       "defaultExport": null,
       "functions": [
         {
@@ -3685,7 +3685,7 @@
     {
       "moduleId": "expr/expression",
       "dtsPath": "expr/expression.d.ts",
-      "nimModule": "openlayers/api/expr/expression",
+      "nimModule": "openlayers/expr/expression",
       "defaultExport": null,
       "functions": [
         {
@@ -3840,7 +3840,7 @@
     {
       "moduleId": "expr/gpu",
       "dtsPath": "expr/gpu.d.ts",
-      "nimModule": "openlayers/api/expr/gpu",
+      "nimModule": "openlayers/expr/gpu",
       "defaultExport": null,
       "functions": [
         {
@@ -3987,7 +3987,7 @@
     {
       "moduleId": "extent",
       "dtsPath": "extent.d.ts",
-      "nimModule": "openlayers/api/extent",
+      "nimModule": "openlayers/extent",
       "defaultExport": null,
       "functions": [
         {
@@ -4915,7 +4915,7 @@
     {
       "moduleId": "extent/Relationship",
       "dtsPath": "extent/Relationship.d.ts",
-      "nimModule": "openlayers/api/extent/relationship",
+      "nimModule": "openlayers/extent/relationship",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -4925,7 +4925,7 @@
     {
       "moduleId": "featureloader",
       "dtsPath": "featureloader.d.ts",
-      "nimModule": "openlayers/api/featureloader",
+      "nimModule": "openlayers/featureloader",
       "defaultExport": null,
       "functions": [
         {
@@ -5014,7 +5014,7 @@
     {
       "moduleId": "format",
       "dtsPath": "format.d.ts",
-      "nimModule": "openlayers/api/format",
+      "nimModule": "openlayers/format",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -5093,7 +5093,7 @@
     {
       "moduleId": "format/EsriJSON",
       "dtsPath": "format/EsriJSON.d.ts",
-      "nimModule": "openlayers/api/format/esriJSON",
+      "nimModule": "openlayers/format/esriJSON",
       "defaultExport": "EsriJSON",
       "functions": [],
       "constants": [],
@@ -5110,7 +5110,7 @@
     {
       "moduleId": "format/Feature",
       "dtsPath": "format/Feature.d.ts",
-      "nimModule": "openlayers/api/format/feature",
+      "nimModule": "openlayers/format/feature",
       "defaultExport": "FeatureFormat",
       "functions": [
         {
@@ -5206,7 +5206,7 @@
     {
       "moduleId": "format/GML",
       "dtsPath": "format/GML.d.ts",
-      "nimModule": "openlayers/api/format/gml",
+      "nimModule": "openlayers/format/gml",
       "defaultExport": "GML",
       "functions": [],
       "constants": [],
@@ -5216,7 +5216,7 @@
     {
       "moduleId": "format/GML2",
       "dtsPath": "format/GML2.d.ts",
-      "nimModule": "openlayers/api/format/gml2",
+      "nimModule": "openlayers/format/gml2",
       "defaultExport": "GML2",
       "functions": [],
       "constants": [],
@@ -5342,7 +5342,7 @@
     {
       "moduleId": "format/GML3",
       "dtsPath": "format/GML3.d.ts",
-      "nimModule": "openlayers/api/format/gml3",
+      "nimModule": "openlayers/format/gml3",
       "defaultExport": "GML3",
       "functions": [],
       "constants": [],
@@ -5540,7 +5540,7 @@
     {
       "moduleId": "format/GML32",
       "dtsPath": "format/GML32.d.ts",
-      "nimModule": "openlayers/api/format/gml32",
+      "nimModule": "openlayers/format/gml32",
       "defaultExport": "GML32",
       "functions": [],
       "constants": [],
@@ -5557,7 +5557,7 @@
     {
       "moduleId": "format/GMLBase",
       "dtsPath": "format/GMLBase.d.ts",
-      "nimModule": "openlayers/api/format/gmlBase",
+      "nimModule": "openlayers/format/gmlBase",
       "defaultExport": "GMLBase",
       "functions": [],
       "constants": [
@@ -5692,7 +5692,7 @@
     {
       "moduleId": "format/GPX",
       "dtsPath": "format/GPX.d.ts",
-      "nimModule": "openlayers/api/format/gpx",
+      "nimModule": "openlayers/format/gpx",
       "defaultExport": "GPX",
       "functions": [],
       "constants": [],
@@ -5732,7 +5732,7 @@
     {
       "moduleId": "format/GeoJSON",
       "dtsPath": "format/GeoJSON.d.ts",
-      "nimModule": "openlayers/api/format/geoJSON",
+      "nimModule": "openlayers/format/geoJSON",
       "defaultExport": "GeoJSON",
       "functions": [],
       "constants": [],
@@ -5749,7 +5749,7 @@
     {
       "moduleId": "format/IGC",
       "dtsPath": "format/IGC.d.ts",
-      "nimModule": "openlayers/api/format/igc",
+      "nimModule": "openlayers/format/igc",
       "defaultExport": "IGC",
       "functions": [],
       "constants": [],
@@ -5770,7 +5770,7 @@
     {
       "moduleId": "format/IIIFInfo",
       "dtsPath": "format/IIIFInfo.d.ts",
-      "nimModule": "openlayers/api/format/iiifInfo",
+      "nimModule": "openlayers/format/iiifInfo",
       "defaultExport": "IIIFInfo",
       "functions": [],
       "constants": [],
@@ -5828,7 +5828,7 @@
     {
       "moduleId": "format/JSONFeature",
       "dtsPath": "format/JSONFeature.d.ts",
-      "nimModule": "openlayers/api/format/jsonFeature",
+      "nimModule": "openlayers/format/jsonFeature",
       "defaultExport": "JSONFeature",
       "functions": [],
       "constants": [],
@@ -5845,7 +5845,7 @@
     {
       "moduleId": "format/KML",
       "dtsPath": "format/KML.d.ts",
-      "nimModule": "openlayers/api/format/kml",
+      "nimModule": "openlayers/format/kml",
       "defaultExport": "KML",
       "functions": [
         {
@@ -5982,7 +5982,7 @@
     {
       "moduleId": "format/MVT",
       "dtsPath": "format/MVT.d.ts",
-      "nimModule": "openlayers/api/format/mvt",
+      "nimModule": "openlayers/format/mvt",
       "defaultExport": "MVT",
       "functions": [],
       "constants": [],
@@ -6010,7 +6010,7 @@
     {
       "moduleId": "format/OSMXML",
       "dtsPath": "format/OSMXML.d.ts",
-      "nimModule": "openlayers/api/format/osmxml",
+      "nimModule": "openlayers/format/osmxml",
       "defaultExport": "OSMXML",
       "functions": [],
       "constants": [],
@@ -6027,7 +6027,7 @@
     {
       "moduleId": "format/OWS",
       "dtsPath": "format/OWS.d.ts",
-      "nimModule": "openlayers/api/format/ows",
+      "nimModule": "openlayers/format/ows",
       "defaultExport": "OWS",
       "functions": [],
       "constants": [],
@@ -6044,7 +6044,7 @@
     {
       "moduleId": "format/Polyline",
       "dtsPath": "format/Polyline.d.ts",
-      "nimModule": "openlayers/api/format/polyline",
+      "nimModule": "openlayers/format/polyline",
       "defaultExport": "Polyline",
       "functions": [
         {
@@ -6210,7 +6210,7 @@
     {
       "moduleId": "format/TextFeature",
       "dtsPath": "format/TextFeature.d.ts",
-      "nimModule": "openlayers/api/format/textFeature",
+      "nimModule": "openlayers/format/textFeature",
       "defaultExport": "TextFeature",
       "functions": [],
       "constants": [],
@@ -6227,7 +6227,7 @@
     {
       "moduleId": "format/TopoJSON",
       "dtsPath": "format/TopoJSON.d.ts",
-      "nimModule": "openlayers/api/format/topoJSON",
+      "nimModule": "openlayers/format/topoJSON",
       "defaultExport": "TopoJSON",
       "functions": [],
       "constants": [],
@@ -6244,7 +6244,7 @@
     {
       "moduleId": "format/WFS",
       "dtsPath": "format/WFS.d.ts",
-      "nimModule": "openlayers/api/format/wfs",
+      "nimModule": "openlayers/format/wfs",
       "defaultExport": "WFS",
       "functions": [
         {
@@ -6351,7 +6351,7 @@
     {
       "moduleId": "format/WKB",
       "dtsPath": "format/WKB.d.ts",
-      "nimModule": "openlayers/api/format/wkb",
+      "nimModule": "openlayers/format/wkb",
       "defaultExport": "WKB",
       "functions": [],
       "constants": [],
@@ -6368,7 +6368,7 @@
     {
       "moduleId": "format/WKT",
       "dtsPath": "format/WKT.d.ts",
-      "nimModule": "openlayers/api/format/wkt",
+      "nimModule": "openlayers/format/wkt",
       "defaultExport": "WKT",
       "functions": [],
       "constants": [],
@@ -6389,7 +6389,7 @@
     {
       "moduleId": "format/WMSCapabilities",
       "dtsPath": "format/WMSCapabilities.d.ts",
-      "nimModule": "openlayers/api/format/wmsCapabilities",
+      "nimModule": "openlayers/format/wmsCapabilities",
       "defaultExport": "WMSCapabilities",
       "functions": [],
       "constants": [],
@@ -6406,7 +6406,7 @@
     {
       "moduleId": "format/WMSGetFeatureInfo",
       "dtsPath": "format/WMSGetFeatureInfo.d.ts",
-      "nimModule": "openlayers/api/format/wmsGetFeatureInfo",
+      "nimModule": "openlayers/format/wmsGetFeatureInfo",
       "defaultExport": "WMSGetFeatureInfo",
       "functions": [],
       "constants": [],
@@ -6440,7 +6440,7 @@
     {
       "moduleId": "format/WMTSCapabilities",
       "dtsPath": "format/WMTSCapabilities.d.ts",
-      "nimModule": "openlayers/api/format/wmtsCapabilities",
+      "nimModule": "openlayers/format/wmtsCapabilities",
       "defaultExport": "WMTSCapabilities",
       "functions": [],
       "constants": [],
@@ -6457,7 +6457,7 @@
     {
       "moduleId": "format/XML",
       "dtsPath": "format/XML.d.ts",
-      "nimModule": "openlayers/api/format/xml",
+      "nimModule": "openlayers/format/xml",
       "defaultExport": "XML",
       "functions": [],
       "constants": [],
@@ -6493,7 +6493,7 @@
     {
       "moduleId": "format/XMLFeature",
       "dtsPath": "format/XMLFeature.d.ts",
-      "nimModule": "openlayers/api/format/xmlFeature",
+      "nimModule": "openlayers/format/xmlFeature",
       "defaultExport": "XMLFeature",
       "functions": [],
       "constants": [],
@@ -6510,7 +6510,7 @@
     {
       "moduleId": "format/filter",
       "dtsPath": "format/filter.d.ts",
-      "nimModule": "openlayers/api/format/filter",
+      "nimModule": "openlayers/format/filter",
       "defaultExport": null,
       "functions": [
         {
@@ -6947,7 +6947,7 @@
     {
       "moduleId": "format/filter/And",
       "dtsPath": "format/filter/And.d.ts",
-      "nimModule": "openlayers/api/format/filter/and",
+      "nimModule": "openlayers/format/filter/and",
       "defaultExport": "And",
       "functions": [],
       "constants": [],
@@ -6968,7 +6968,7 @@
     {
       "moduleId": "format/filter/Bbox",
       "dtsPath": "format/filter/Bbox.d.ts",
-      "nimModule": "openlayers/api/format/filter/bbox",
+      "nimModule": "openlayers/format/filter/bbox",
       "defaultExport": "Bbox",
       "functions": [],
       "constants": [],
@@ -6989,7 +6989,7 @@
     {
       "moduleId": "format/filter/Comparison",
       "dtsPath": "format/filter/Comparison.d.ts",
-      "nimModule": "openlayers/api/format/filter/comparison",
+      "nimModule": "openlayers/format/filter/comparison",
       "defaultExport": "Comparison",
       "functions": [],
       "constants": [],
@@ -7010,7 +7010,7 @@
     {
       "moduleId": "format/filter/ComparisonBinary",
       "dtsPath": "format/filter/ComparisonBinary.d.ts",
-      "nimModule": "openlayers/api/format/filter/comparisonBinary",
+      "nimModule": "openlayers/format/filter/comparisonBinary",
       "defaultExport": "ComparisonBinary",
       "functions": [],
       "constants": [],
@@ -7031,7 +7031,7 @@
     {
       "moduleId": "format/filter/Contains",
       "dtsPath": "format/filter/Contains.d.ts",
-      "nimModule": "openlayers/api/format/filter/contains",
+      "nimModule": "openlayers/format/filter/contains",
       "defaultExport": "Contains",
       "functions": [],
       "constants": [],
@@ -7052,7 +7052,7 @@
     {
       "moduleId": "format/filter/DWithin",
       "dtsPath": "format/filter/DWithin.d.ts",
-      "nimModule": "openlayers/api/format/filter/dWithin",
+      "nimModule": "openlayers/format/filter/dWithin",
       "defaultExport": "DWithin",
       "functions": [],
       "constants": [],
@@ -7073,7 +7073,7 @@
     {
       "moduleId": "format/filter/Disjoint",
       "dtsPath": "format/filter/Disjoint.d.ts",
-      "nimModule": "openlayers/api/format/filter/disjoint",
+      "nimModule": "openlayers/format/filter/disjoint",
       "defaultExport": "Disjoint",
       "functions": [],
       "constants": [],
@@ -7094,7 +7094,7 @@
     {
       "moduleId": "format/filter/During",
       "dtsPath": "format/filter/During.d.ts",
-      "nimModule": "openlayers/api/format/filter/during",
+      "nimModule": "openlayers/format/filter/during",
       "defaultExport": "During",
       "functions": [],
       "constants": [],
@@ -7115,7 +7115,7 @@
     {
       "moduleId": "format/filter/EqualTo",
       "dtsPath": "format/filter/EqualTo.d.ts",
-      "nimModule": "openlayers/api/format/filter/equalTo",
+      "nimModule": "openlayers/format/filter/equalTo",
       "defaultExport": "EqualTo",
       "functions": [],
       "constants": [],
@@ -7136,7 +7136,7 @@
     {
       "moduleId": "format/filter/Filter",
       "dtsPath": "format/filter/Filter.d.ts",
-      "nimModule": "openlayers/api/format/filter/filter",
+      "nimModule": "openlayers/format/filter/filter",
       "defaultExport": "Filter",
       "functions": [],
       "constants": [],
@@ -7164,7 +7164,7 @@
     {
       "moduleId": "format/filter/GreaterThan",
       "dtsPath": "format/filter/GreaterThan.d.ts",
-      "nimModule": "openlayers/api/format/filter/greaterThan",
+      "nimModule": "openlayers/format/filter/greaterThan",
       "defaultExport": "GreaterThan",
       "functions": [],
       "constants": [],
@@ -7185,7 +7185,7 @@
     {
       "moduleId": "format/filter/GreaterThanOrEqualTo",
       "dtsPath": "format/filter/GreaterThanOrEqualTo.d.ts",
-      "nimModule": "openlayers/api/format/filter/greaterThanOrEqualTo",
+      "nimModule": "openlayers/format/filter/greaterThanOrEqualTo",
       "defaultExport": "GreaterThanOrEqualTo",
       "functions": [],
       "constants": [],
@@ -7206,7 +7206,7 @@
     {
       "moduleId": "format/filter/Intersects",
       "dtsPath": "format/filter/Intersects.d.ts",
-      "nimModule": "openlayers/api/format/filter/intersects",
+      "nimModule": "openlayers/format/filter/intersects",
       "defaultExport": "Intersects",
       "functions": [],
       "constants": [],
@@ -7227,7 +7227,7 @@
     {
       "moduleId": "format/filter/IsBetween",
       "dtsPath": "format/filter/IsBetween.d.ts",
-      "nimModule": "openlayers/api/format/filter/isBetween",
+      "nimModule": "openlayers/format/filter/isBetween",
       "defaultExport": "IsBetween",
       "functions": [],
       "constants": [],
@@ -7248,7 +7248,7 @@
     {
       "moduleId": "format/filter/IsLike",
       "dtsPath": "format/filter/IsLike.d.ts",
-      "nimModule": "openlayers/api/format/filter/isLike",
+      "nimModule": "openlayers/format/filter/isLike",
       "defaultExport": "IsLike",
       "functions": [],
       "constants": [],
@@ -7269,7 +7269,7 @@
     {
       "moduleId": "format/filter/IsNull",
       "dtsPath": "format/filter/IsNull.d.ts",
-      "nimModule": "openlayers/api/format/filter/isNull",
+      "nimModule": "openlayers/format/filter/isNull",
       "defaultExport": "IsNull",
       "functions": [],
       "constants": [],
@@ -7290,7 +7290,7 @@
     {
       "moduleId": "format/filter/LessThan",
       "dtsPath": "format/filter/LessThan.d.ts",
-      "nimModule": "openlayers/api/format/filter/lessThan",
+      "nimModule": "openlayers/format/filter/lessThan",
       "defaultExport": "LessThan",
       "functions": [],
       "constants": [],
@@ -7311,7 +7311,7 @@
     {
       "moduleId": "format/filter/LessThanOrEqualTo",
       "dtsPath": "format/filter/LessThanOrEqualTo.d.ts",
-      "nimModule": "openlayers/api/format/filter/lessThanOrEqualTo",
+      "nimModule": "openlayers/format/filter/lessThanOrEqualTo",
       "defaultExport": "LessThanOrEqualTo",
       "functions": [],
       "constants": [],
@@ -7332,7 +7332,7 @@
     {
       "moduleId": "format/filter/LogicalNary",
       "dtsPath": "format/filter/LogicalNary.d.ts",
-      "nimModule": "openlayers/api/format/filter/logicalNary",
+      "nimModule": "openlayers/format/filter/logicalNary",
       "defaultExport": "LogicalNary",
       "functions": [],
       "constants": [],
@@ -7353,7 +7353,7 @@
     {
       "moduleId": "format/filter/Not",
       "dtsPath": "format/filter/Not.d.ts",
-      "nimModule": "openlayers/api/format/filter/not",
+      "nimModule": "openlayers/format/filter/not",
       "defaultExport": "Not",
       "functions": [],
       "constants": [],
@@ -7374,7 +7374,7 @@
     {
       "moduleId": "format/filter/NotEqualTo",
       "dtsPath": "format/filter/NotEqualTo.d.ts",
-      "nimModule": "openlayers/api/format/filter/notEqualTo",
+      "nimModule": "openlayers/format/filter/notEqualTo",
       "defaultExport": "NotEqualTo",
       "functions": [],
       "constants": [],
@@ -7395,7 +7395,7 @@
     {
       "moduleId": "format/filter/Or",
       "dtsPath": "format/filter/Or.d.ts",
-      "nimModule": "openlayers/api/format/filter/or",
+      "nimModule": "openlayers/format/filter/or",
       "defaultExport": "Or",
       "functions": [],
       "constants": [],
@@ -7416,7 +7416,7 @@
     {
       "moduleId": "format/filter/ResourceId",
       "dtsPath": "format/filter/ResourceId.d.ts",
-      "nimModule": "openlayers/api/format/filter/resourceId",
+      "nimModule": "openlayers/format/filter/resourceId",
       "defaultExport": "ResourceId",
       "functions": [],
       "constants": [],
@@ -7433,7 +7433,7 @@
     {
       "moduleId": "format/filter/Spatial",
       "dtsPath": "format/filter/Spatial.d.ts",
-      "nimModule": "openlayers/api/format/filter/spatial",
+      "nimModule": "openlayers/format/filter/spatial",
       "defaultExport": "Spatial",
       "functions": [],
       "constants": [],
@@ -7454,7 +7454,7 @@
     {
       "moduleId": "format/filter/Within",
       "dtsPath": "format/filter/Within.d.ts",
-      "nimModule": "openlayers/api/format/filter/within",
+      "nimModule": "openlayers/format/filter/within",
       "defaultExport": "Within",
       "functions": [],
       "constants": [],
@@ -7475,7 +7475,7 @@
     {
       "moduleId": "format/xlink",
       "dtsPath": "format/xlink.d.ts",
-      "nimModule": "openlayers/api/format/xlink",
+      "nimModule": "openlayers/format/xlink",
       "defaultExport": null,
       "functions": [
         {
@@ -7498,7 +7498,7 @@
     {
       "moduleId": "format/xsd",
       "dtsPath": "format/xsd.d.ts",
-      "nimModule": "openlayers/api/format/xsd",
+      "nimModule": "openlayers/format/xsd",
       "defaultExport": null,
       "functions": [
         {
@@ -7713,7 +7713,7 @@
     {
       "moduleId": "functions",
       "dtsPath": "functions.d.ts",
-      "nimModule": "openlayers/api/functions",
+      "nimModule": "openlayers/functions",
       "defaultExport": null,
       "functions": [
         {
@@ -7763,7 +7763,7 @@
     {
       "moduleId": "geom",
       "dtsPath": "geom.d.ts",
-      "nimModule": "openlayers/api/geom",
+      "nimModule": "openlayers/geom",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -7818,7 +7818,7 @@
     {
       "moduleId": "geom/Circle",
       "dtsPath": "geom/Circle.d.ts",
-      "nimModule": "openlayers/api/geom/circle",
+      "nimModule": "openlayers/geom/circle",
       "defaultExport": "Circle",
       "functions": [],
       "constants": [],
@@ -7870,7 +7870,7 @@
     {
       "moduleId": "geom/Geometry",
       "dtsPath": "geom/Geometry.d.ts",
-      "nimModule": "openlayers/api/geom/geometry",
+      "nimModule": "openlayers/geom/geometry",
       "defaultExport": "Geometry",
       "functions": [],
       "constants": [],
@@ -7887,7 +7887,7 @@
     {
       "moduleId": "geom/GeometryCollection",
       "dtsPath": "geom/GeometryCollection.d.ts",
-      "nimModule": "openlayers/api/geom/geometryCollection",
+      "nimModule": "openlayers/geom/geometryCollection",
       "defaultExport": "GeometryCollection",
       "functions": [],
       "constants": [],
@@ -7945,7 +7945,7 @@
     {
       "moduleId": "geom/LineString",
       "dtsPath": "geom/LineString.d.ts",
-      "nimModule": "openlayers/api/geom/lineString",
+      "nimModule": "openlayers/geom/lineString",
       "defaultExport": "LineString",
       "functions": [],
       "constants": [],
@@ -8003,7 +8003,7 @@
     {
       "moduleId": "geom/LinearRing",
       "dtsPath": "geom/LinearRing.d.ts",
-      "nimModule": "openlayers/api/geom/linearRing",
+      "nimModule": "openlayers/geom/linearRing",
       "defaultExport": "LinearRing",
       "functions": [],
       "constants": [],
@@ -8031,7 +8031,7 @@
     {
       "moduleId": "geom/MultiLineString",
       "dtsPath": "geom/MultiLineString.d.ts",
-      "nimModule": "openlayers/api/geom/multiLineString",
+      "nimModule": "openlayers/geom/multiLineString",
       "defaultExport": "MultiLineString",
       "functions": [],
       "constants": [],
@@ -8095,7 +8095,7 @@
     {
       "moduleId": "geom/MultiPoint",
       "dtsPath": "geom/MultiPoint.d.ts",
-      "nimModule": "openlayers/api/geom/multiPoint",
+      "nimModule": "openlayers/geom/multiPoint",
       "defaultExport": "MultiPoint",
       "functions": [],
       "constants": [],
@@ -8135,7 +8135,7 @@
     {
       "moduleId": "geom/MultiPolygon",
       "dtsPath": "geom/MultiPolygon.d.ts",
-      "nimModule": "openlayers/api/geom/multiPolygon",
+      "nimModule": "openlayers/geom/multiPolygon",
       "defaultExport": "MultiPolygon",
       "functions": [],
       "constants": [],
@@ -8205,7 +8205,7 @@
     {
       "moduleId": "geom/Point",
       "dtsPath": "geom/Point.d.ts",
-      "nimModule": "openlayers/api/geom/point",
+      "nimModule": "openlayers/geom/point",
       "defaultExport": "Point",
       "functions": [],
       "constants": [],
@@ -8226,7 +8226,7 @@
     {
       "moduleId": "geom/Polygon",
       "dtsPath": "geom/Polygon.d.ts",
-      "nimModule": "openlayers/api/geom/polygon",
+      "nimModule": "openlayers/geom/polygon",
       "defaultExport": "Polygon",
       "functions": [
         {
@@ -8399,7 +8399,7 @@
     {
       "moduleId": "geom/SimpleGeometry",
       "dtsPath": "geom/SimpleGeometry.d.ts",
-      "nimModule": "openlayers/api/geom/simpleGeometry",
+      "nimModule": "openlayers/geom/simpleGeometry",
       "defaultExport": "SimpleGeometry",
       "functions": [
         {
@@ -8526,7 +8526,7 @@
     {
       "moduleId": "geom/flat/area",
       "dtsPath": "geom/flat/area.d.ts",
-      "nimModule": "openlayers/api/geom/flat/area",
+      "nimModule": "openlayers/geom/flat/area",
       "defaultExport": null,
       "functions": [
         {
@@ -8627,7 +8627,7 @@
     {
       "moduleId": "geom/flat/center",
       "dtsPath": "geom/flat/center.d.ts",
-      "nimModule": "openlayers/api/geom/flat/center",
+      "nimModule": "openlayers/geom/flat/center",
       "defaultExport": null,
       "functions": [
         {
@@ -8668,7 +8668,7 @@
     {
       "moduleId": "geom/flat/closest",
       "dtsPath": "geom/flat/closest.d.ts",
-      "nimModule": "openlayers/api/geom/flat/closest",
+      "nimModule": "openlayers/geom/flat/closest",
       "defaultExport": null,
       "functions": [
         {
@@ -9003,7 +9003,7 @@
     {
       "moduleId": "geom/flat/contains",
       "dtsPath": "geom/flat/contains.d.ts",
-      "nimModule": "openlayers/api/geom/flat/contains",
+      "nimModule": "openlayers/geom/flat/contains",
       "defaultExport": null,
       "functions": [
         {
@@ -9176,7 +9176,7 @@
     {
       "moduleId": "geom/flat/deflate",
       "dtsPath": "geom/flat/deflate.d.ts",
-      "nimModule": "openlayers/api/geom/flat/deflate",
+      "nimModule": "openlayers/geom/flat/deflate",
       "defaultExport": null,
       "functions": [
         {
@@ -9319,7 +9319,7 @@
     {
       "moduleId": "geom/flat/flip",
       "dtsPath": "geom/flat/flip.d.ts",
-      "nimModule": "openlayers/api/geom/flat/flip",
+      "nimModule": "openlayers/geom/flat/flip",
       "defaultExport": null,
       "functions": [
         {
@@ -9372,7 +9372,7 @@
     {
       "moduleId": "geom/flat/geodesic",
       "dtsPath": "geom/flat/geodesic.d.ts",
-      "nimModule": "openlayers/api/geom/flat/geodesic",
+      "nimModule": "openlayers/geom/flat/geodesic",
       "defaultExport": null,
       "functions": [
         {
@@ -9497,7 +9497,7 @@
     {
       "moduleId": "geom/flat/inflate",
       "dtsPath": "geom/flat/inflate.d.ts",
-      "nimModule": "openlayers/api/geom/flat/inflate",
+      "nimModule": "openlayers/geom/flat/inflate",
       "defaultExport": null,
       "functions": [
         {
@@ -9616,7 +9616,7 @@
     {
       "moduleId": "geom/flat/interiorpoint",
       "dtsPath": "geom/flat/interiorpoint.d.ts",
-      "nimModule": "openlayers/api/geom/flat/interiorpoint",
+      "nimModule": "openlayers/geom/flat/interiorpoint",
       "defaultExport": null,
       "functions": [
         {
@@ -9711,7 +9711,7 @@
     {
       "moduleId": "geom/flat/interpolate",
       "dtsPath": "geom/flat/interpolate.d.ts",
-      "nimModule": "openlayers/api/geom/flat/interpolate",
+      "nimModule": "openlayers/geom/flat/interpolate",
       "defaultExport": null,
       "functions": [
         {
@@ -9860,7 +9860,7 @@
     {
       "moduleId": "geom/flat/intersectsextent",
       "dtsPath": "geom/flat/intersectsextent.d.ts",
-      "nimModule": "openlayers/api/geom/flat/intersectsextent",
+      "nimModule": "openlayers/geom/flat/intersectsextent",
       "defaultExport": null,
       "functions": [
         {
@@ -10057,7 +10057,7 @@
     {
       "moduleId": "geom/flat/length",
       "dtsPath": "geom/flat/length.d.ts",
-      "nimModule": "openlayers/api/geom/flat/length",
+      "nimModule": "openlayers/geom/flat/length",
       "defaultExport": null,
       "functions": [
         {
@@ -10128,7 +10128,7 @@
     {
       "moduleId": "geom/flat/linechunk",
       "dtsPath": "geom/flat/linechunk.d.ts",
-      "nimModule": "openlayers/api/geom/flat/linechunk",
+      "nimModule": "openlayers/geom/flat/linechunk",
       "defaultExport": null,
       "functions": [
         {
@@ -10175,7 +10175,7 @@
     {
       "moduleId": "geom/flat/lineoffset",
       "dtsPath": "geom/flat/lineoffset.d.ts",
-      "nimModule": "openlayers/api/geom/flat/lineoffset",
+      "nimModule": "openlayers/geom/flat/lineoffset",
       "defaultExport": null,
       "functions": [
         {
@@ -10276,7 +10276,7 @@
     {
       "moduleId": "geom/flat/orient",
       "dtsPath": "geom/flat/orient.d.ts",
-      "nimModule": "openlayers/api/geom/flat/orient",
+      "nimModule": "openlayers/geom/flat/orient",
       "defaultExport": null,
       "functions": [
         {
@@ -10479,7 +10479,7 @@
     {
       "moduleId": "geom/flat/reverse",
       "dtsPath": "geom/flat/reverse.d.ts",
-      "nimModule": "openlayers/api/geom/flat/reverse",
+      "nimModule": "openlayers/geom/flat/reverse",
       "defaultExport": null,
       "functions": [
         {
@@ -10520,7 +10520,7 @@
     {
       "moduleId": "geom/flat/segments",
       "dtsPath": "geom/flat/segments.d.ts",
-      "nimModule": "openlayers/api/geom/flat/segments",
+      "nimModule": "openlayers/geom/flat/segments",
       "defaultExport": null,
       "functions": [
         {
@@ -10585,7 +10585,7 @@
     {
       "moduleId": "geom/flat/simplify",
       "dtsPath": "geom/flat/simplify.d.ts",
-      "nimModule": "openlayers/api/geom/flat/simplify",
+      "nimModule": "openlayers/geom/flat/simplify",
       "defaultExport": null,
       "functions": [
         {
@@ -11022,7 +11022,7 @@
     {
       "moduleId": "geom/flat/straightchunk",
       "dtsPath": "geom/flat/straightchunk.d.ts",
-      "nimModule": "openlayers/api/geom/flat/straightchunk",
+      "nimModule": "openlayers/geom/flat/straightchunk",
       "defaultExport": null,
       "functions": [
         {
@@ -11069,7 +11069,7 @@
     {
       "moduleId": "geom/flat/textpath",
       "dtsPath": "geom/flat/textpath.d.ts",
-      "nimModule": "openlayers/api/geom/flat/textpath",
+      "nimModule": "openlayers/geom/flat/textpath",
       "defaultExport": null,
       "functions": [
         {
@@ -11164,7 +11164,7 @@
     {
       "moduleId": "geom/flat/topology",
       "dtsPath": "geom/flat/topology.d.ts",
-      "nimModule": "openlayers/api/geom/flat/topology",
+      "nimModule": "openlayers/geom/flat/topology",
       "defaultExport": null,
       "functions": [
         {
@@ -11205,7 +11205,7 @@
     {
       "moduleId": "geom/flat/transform",
       "dtsPath": "geom/flat/transform.d.ts",
-      "nimModule": "openlayers/api/geom/flat/transform",
+      "nimModule": "openlayers/geom/flat/transform",
       "defaultExport": null,
       "functions": [
         {
@@ -11414,7 +11414,7 @@
     {
       "moduleId": "has",
       "dtsPath": "has.d.ts",
-      "nimModule": "openlayers/api/has",
+      "nimModule": "openlayers/has",
       "defaultExport": null,
       "functions": [],
       "constants": [
@@ -11461,7 +11461,7 @@
     {
       "moduleId": "index",
       "dtsPath": "index.d.ts",
-      "nimModule": "openlayers/api/index",
+      "nimModule": "openlayers/index",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -11572,7 +11572,7 @@
     {
       "moduleId": "interaction",
       "dtsPath": "interaction.d.ts",
-      "nimModule": "openlayers/api/interaction",
+      "nimModule": "openlayers/interaction",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -11675,7 +11675,7 @@
     {
       "moduleId": "interaction/DblClickDragZoom",
       "dtsPath": "interaction/DblClickDragZoom.d.ts",
-      "nimModule": "openlayers/api/interaction/dblClickDragZoom",
+      "nimModule": "openlayers/interaction/dblClickDragZoom",
       "defaultExport": "DblClickDragZoom",
       "functions": [],
       "constants": [],
@@ -11721,7 +11721,7 @@
     {
       "moduleId": "interaction/DoubleClickZoom",
       "dtsPath": "interaction/DoubleClickZoom.d.ts",
-      "nimModule": "openlayers/api/interaction/doubleClickZoom",
+      "nimModule": "openlayers/interaction/doubleClickZoom",
       "defaultExport": "DoubleClickZoom",
       "functions": [],
       "constants": [],
@@ -11742,7 +11742,7 @@
     {
       "moduleId": "interaction/DragAndDrop",
       "dtsPath": "interaction/DragAndDrop.d.ts",
-      "nimModule": "openlayers/api/interaction/dragAndDrop",
+      "nimModule": "openlayers/interaction/dragAndDrop",
       "defaultExport": "DragAndDrop",
       "functions": [],
       "constants": [],
@@ -11776,7 +11776,7 @@
     {
       "moduleId": "interaction/DragBox",
       "dtsPath": "interaction/DragBox.d.ts",
-      "nimModule": "openlayers/api/interaction/dragBox",
+      "nimModule": "openlayers/interaction/dragBox",
       "defaultExport": "DragBox",
       "functions": [],
       "constants": [],
@@ -11816,7 +11816,7 @@
     {
       "moduleId": "interaction/DragPan",
       "dtsPath": "interaction/DragPan.d.ts",
-      "nimModule": "openlayers/api/interaction/dragPan",
+      "nimModule": "openlayers/interaction/dragPan",
       "defaultExport": "DragPan",
       "functions": [],
       "constants": [],
@@ -11837,7 +11837,7 @@
     {
       "moduleId": "interaction/DragRotate",
       "dtsPath": "interaction/DragRotate.d.ts",
-      "nimModule": "openlayers/api/interaction/dragRotate",
+      "nimModule": "openlayers/interaction/dragRotate",
       "defaultExport": "DragRotate",
       "functions": [],
       "constants": [],
@@ -11858,7 +11858,7 @@
     {
       "moduleId": "interaction/DragRotateAndZoom",
       "dtsPath": "interaction/DragRotateAndZoom.d.ts",
-      "nimModule": "openlayers/api/interaction/dragRotateAndZoom",
+      "nimModule": "openlayers/interaction/dragRotateAndZoom",
       "defaultExport": "DragRotateAndZoom",
       "functions": [],
       "constants": [],
@@ -11879,7 +11879,7 @@
     {
       "moduleId": "interaction/DragZoom",
       "dtsPath": "interaction/DragZoom.d.ts",
-      "nimModule": "openlayers/api/interaction/dragZoom",
+      "nimModule": "openlayers/interaction/dragZoom",
       "defaultExport": "DragZoom",
       "functions": [],
       "constants": [],
@@ -11900,7 +11900,7 @@
     {
       "moduleId": "interaction/Draw",
       "dtsPath": "interaction/Draw.d.ts",
-      "nimModule": "openlayers/api/interaction/draw",
+      "nimModule": "openlayers/interaction/draw",
       "defaultExport": "Draw",
       "functions": [
         {
@@ -12006,7 +12006,7 @@
     {
       "moduleId": "interaction/Extent",
       "dtsPath": "interaction/Extent.d.ts",
-      "nimModule": "openlayers/api/interaction/extent",
+      "nimModule": "openlayers/interaction/extent",
       "defaultExport": "Extent",
       "functions": [],
       "constants": [],
@@ -12046,7 +12046,7 @@
     {
       "moduleId": "interaction/Interaction",
       "dtsPath": "interaction/Interaction.d.ts",
-      "nimModule": "openlayers/api/interaction/interaction",
+      "nimModule": "openlayers/interaction/interaction",
       "defaultExport": "Interaction",
       "functions": [
         {
@@ -12118,7 +12118,7 @@
     {
       "moduleId": "interaction/KeyboardPan",
       "dtsPath": "interaction/KeyboardPan.d.ts",
-      "nimModule": "openlayers/api/interaction/keyboardPan",
+      "nimModule": "openlayers/interaction/keyboardPan",
       "defaultExport": "KeyboardPan",
       "functions": [],
       "constants": [],
@@ -12139,7 +12139,7 @@
     {
       "moduleId": "interaction/KeyboardZoom",
       "dtsPath": "interaction/KeyboardZoom.d.ts",
-      "nimModule": "openlayers/api/interaction/keyboardZoom",
+      "nimModule": "openlayers/interaction/keyboardZoom",
       "defaultExport": "KeyboardZoom",
       "functions": [],
       "constants": [],
@@ -12160,7 +12160,7 @@
     {
       "moduleId": "interaction/Link",
       "dtsPath": "interaction/Link.d.ts",
-      "nimModule": "openlayers/api/interaction/link",
+      "nimModule": "openlayers/interaction/link",
       "defaultExport": "Link",
       "functions": [],
       "constants": [],
@@ -12194,7 +12194,7 @@
     {
       "moduleId": "interaction/Modify",
       "dtsPath": "interaction/Modify.d.ts",
-      "nimModule": "openlayers/api/interaction/modify",
+      "nimModule": "openlayers/interaction/modify",
       "defaultExport": "Modify",
       "functions": [],
       "constants": [],
@@ -12282,7 +12282,7 @@
     {
       "moduleId": "interaction/MouseWheelZoom",
       "dtsPath": "interaction/MouseWheelZoom.d.ts",
-      "nimModule": "openlayers/api/interaction/mouseWheelZoom",
+      "nimModule": "openlayers/interaction/mouseWheelZoom",
       "defaultExport": "MouseWheelZoom",
       "functions": [],
       "constants": [],
@@ -12310,7 +12310,7 @@
     {
       "moduleId": "interaction/PinchRotate",
       "dtsPath": "interaction/PinchRotate.d.ts",
-      "nimModule": "openlayers/api/interaction/pinchRotate",
+      "nimModule": "openlayers/interaction/pinchRotate",
       "defaultExport": "PinchRotate",
       "functions": [],
       "constants": [],
@@ -12331,7 +12331,7 @@
     {
       "moduleId": "interaction/PinchZoom",
       "dtsPath": "interaction/PinchZoom.d.ts",
-      "nimModule": "openlayers/api/interaction/pinchZoom",
+      "nimModule": "openlayers/interaction/pinchZoom",
       "defaultExport": "PinchZoom",
       "functions": [],
       "constants": [],
@@ -12352,7 +12352,7 @@
     {
       "moduleId": "interaction/Pointer",
       "dtsPath": "interaction/Pointer.d.ts",
-      "nimModule": "openlayers/api/interaction/pointer",
+      "nimModule": "openlayers/interaction/pointer",
       "defaultExport": "PointerInteraction",
       "functions": [
         {
@@ -12423,7 +12423,7 @@
     {
       "moduleId": "interaction/Property",
       "dtsPath": "interaction/Property.d.ts",
-      "nimModule": "openlayers/api/interaction/property",
+      "nimModule": "openlayers/interaction/property",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -12433,7 +12433,7 @@
     {
       "moduleId": "interaction/Select",
       "dtsPath": "interaction/Select.d.ts",
-      "nimModule": "openlayers/api/interaction/select",
+      "nimModule": "openlayers/interaction/select",
       "defaultExport": "Select",
       "functions": [],
       "constants": [],
@@ -12509,7 +12509,7 @@
     {
       "moduleId": "interaction/Snap",
       "dtsPath": "interaction/Snap.d.ts",
-      "nimModule": "openlayers/api/interaction/snap",
+      "nimModule": "openlayers/interaction/snap",
       "defaultExport": "Snap",
       "functions": [],
       "constants": [],
@@ -12549,7 +12549,7 @@
     {
       "moduleId": "interaction/Translate",
       "dtsPath": "interaction/Translate.d.ts",
-      "nimModule": "openlayers/api/interaction/translate",
+      "nimModule": "openlayers/interaction/translate",
       "defaultExport": "Translate",
       "functions": [],
       "constants": [],
@@ -12583,7 +12583,7 @@
     {
       "moduleId": "interaction/defaults",
       "dtsPath": "interaction/defaults.d.ts",
-      "nimModule": "openlayers/api/interaction/defaults",
+      "nimModule": "openlayers/interaction/defaults",
       "defaultExport": null,
       "functions": [
         {
@@ -12606,7 +12606,7 @@
     {
       "moduleId": "interaction/tracing",
       "dtsPath": "interaction/tracing.d.ts",
-      "nimModule": "openlayers/api/interaction/tracing",
+      "nimModule": "openlayers/interaction/tracing",
       "defaultExport": null,
       "functions": [
         {
@@ -12731,7 +12731,7 @@
     {
       "moduleId": "layer",
       "dtsPath": "layer.d.ts",
-      "nimModule": "openlayers/api/layer",
+      "nimModule": "openlayers/layer",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -12790,7 +12790,7 @@
     {
       "moduleId": "layer/Base",
       "dtsPath": "layer/Base.d.ts",
-      "nimModule": "openlayers/api/layer/base",
+      "nimModule": "openlayers/layer/base",
       "defaultExport": "BaseLayer",
       "functions": [],
       "constants": [],
@@ -12807,7 +12807,7 @@
     {
       "moduleId": "layer/BaseImage",
       "dtsPath": "layer/BaseImage.d.ts",
-      "nimModule": "openlayers/api/layer/baseImage",
+      "nimModule": "openlayers/layer/baseImage",
       "defaultExport": "BaseImageLayer",
       "functions": [],
       "constants": [],
@@ -12824,7 +12824,7 @@
     {
       "moduleId": "layer/BaseTile",
       "dtsPath": "layer/BaseTile.d.ts",
-      "nimModule": "openlayers/api/layer/baseTile",
+      "nimModule": "openlayers/layer/baseTile",
       "defaultExport": "BaseTileLayer",
       "functions": [],
       "constants": [],
@@ -12841,7 +12841,7 @@
     {
       "moduleId": "layer/BaseVector",
       "dtsPath": "layer/BaseVector.d.ts",
-      "nimModule": "openlayers/api/layer/baseVector",
+      "nimModule": "openlayers/layer/baseVector",
       "defaultExport": "BaseVectorLayer",
       "functions": [],
       "constants": [],
@@ -12858,7 +12858,7 @@
     {
       "moduleId": "layer/Flow",
       "dtsPath": "layer/Flow.d.ts",
-      "nimModule": "openlayers/api/layer/flow",
+      "nimModule": "openlayers/layer/flow",
       "defaultExport": "FlowLayer",
       "functions": [],
       "constants": [],
@@ -12892,7 +12892,7 @@
     {
       "moduleId": "layer/Graticule",
       "dtsPath": "layer/Graticule.d.ts",
-      "nimModule": "openlayers/api/layer/graticule",
+      "nimModule": "openlayers/layer/graticule",
       "defaultExport": "Graticule",
       "functions": [],
       "constants": [],
@@ -12909,7 +12909,7 @@
     {
       "moduleId": "layer/Group",
       "dtsPath": "layer/Group.d.ts",
-      "nimModule": "openlayers/api/layer/group",
+      "nimModule": "openlayers/layer/group",
       "defaultExport": "LayerGroup",
       "functions": [],
       "constants": [],
@@ -12926,7 +12926,7 @@
     {
       "moduleId": "layer/Heatmap",
       "dtsPath": "layer/Heatmap.d.ts",
-      "nimModule": "openlayers/api/layer/heatmap",
+      "nimModule": "openlayers/layer/heatmap",
       "defaultExport": "Heatmap",
       "functions": [],
       "constants": [],
@@ -12943,7 +12943,7 @@
     {
       "moduleId": "layer/Image",
       "dtsPath": "layer/Image.d.ts",
-      "nimModule": "openlayers/api/layer/image",
+      "nimModule": "openlayers/layer/image",
       "defaultExport": "ImageLayer",
       "functions": [],
       "constants": [],
@@ -12964,7 +12964,7 @@
     {
       "moduleId": "layer/Layer",
       "dtsPath": "layer/Layer.d.ts",
-      "nimModule": "openlayers/api/layer/layer",
+      "nimModule": "openlayers/layer/layer",
       "defaultExport": "Layer",
       "functions": [
         {
@@ -13000,7 +13000,7 @@
     {
       "moduleId": "layer/Property",
       "dtsPath": "layer/Property.d.ts",
-      "nimModule": "openlayers/api/layer/property",
+      "nimModule": "openlayers/layer/property",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -13010,7 +13010,7 @@
     {
       "moduleId": "layer/Tile",
       "dtsPath": "layer/Tile.d.ts",
-      "nimModule": "openlayers/api/layer/tile",
+      "nimModule": "openlayers/layer/tile",
       "defaultExport": "TileLayer",
       "functions": [],
       "constants": [],
@@ -13031,7 +13031,7 @@
     {
       "moduleId": "layer/TileProperty",
       "dtsPath": "layer/TileProperty.d.ts",
-      "nimModule": "openlayers/api/layer/tileProperty",
+      "nimModule": "openlayers/layer/tileProperty",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -13041,7 +13041,7 @@
     {
       "moduleId": "layer/Vector",
       "dtsPath": "layer/Vector.d.ts",
-      "nimModule": "openlayers/api/layer/vector",
+      "nimModule": "openlayers/layer/vector",
       "defaultExport": "VectorLayer",
       "functions": [],
       "constants": [],
@@ -13062,7 +13062,7 @@
     {
       "moduleId": "layer/VectorImage",
       "dtsPath": "layer/VectorImage.d.ts",
-      "nimModule": "openlayers/api/layer/vectorImage",
+      "nimModule": "openlayers/layer/vectorImage",
       "defaultExport": "VectorImageLayer",
       "functions": [],
       "constants": [],
@@ -13090,7 +13090,7 @@
     {
       "moduleId": "layer/VectorTile",
       "dtsPath": "layer/VectorTile.d.ts",
-      "nimModule": "openlayers/api/layer/vectorTile",
+      "nimModule": "openlayers/layer/vectorTile",
       "defaultExport": "VectorTileLayer",
       "functions": [],
       "constants": [],
@@ -13148,7 +13148,7 @@
     {
       "moduleId": "layer/WebGLPoints",
       "dtsPath": "layer/WebGLPoints.d.ts",
-      "nimModule": "openlayers/api/layer/webGLPoints",
+      "nimModule": "openlayers/layer/webGLPoints",
       "defaultExport": "WebGLPointsLayer",
       "functions": [],
       "constants": [],
@@ -13165,7 +13165,7 @@
     {
       "moduleId": "layer/WebGLTile",
       "dtsPath": "layer/WebGLTile.d.ts",
-      "nimModule": "openlayers/api/layer/webGLTile",
+      "nimModule": "openlayers/layer/webGLTile",
       "defaultExport": "WebGLTileLayer",
       "functions": [],
       "constants": [],
@@ -13211,7 +13211,7 @@
     {
       "moduleId": "layer/WebGLVector",
       "dtsPath": "layer/WebGLVector.d.ts",
-      "nimModule": "openlayers/api/layer/webGLVector",
+      "nimModule": "openlayers/layer/webGLVector",
       "defaultExport": "WebGLVectorLayer",
       "functions": [],
       "constants": [],
@@ -13228,7 +13228,7 @@
     {
       "moduleId": "layer/WebGLVectorTile",
       "dtsPath": "layer/WebGLVectorTile.d.ts",
-      "nimModule": "openlayers/api/layer/webGLVectorTile",
+      "nimModule": "openlayers/layer/webGLVectorTile",
       "defaultExport": "WebGLVectorTileLayer",
       "functions": [],
       "constants": [],
@@ -13262,7 +13262,7 @@
     {
       "moduleId": "loadingstrategy",
       "dtsPath": "loadingstrategy.d.ts",
-      "nimModule": "openlayers/api/loadingstrategy",
+      "nimModule": "openlayers/loadingstrategy",
       "defaultExport": null,
       "functions": [
         {
@@ -13321,7 +13321,7 @@
     {
       "moduleId": "math",
       "dtsPath": "math.d.ts",
-      "nimModule": "openlayers/api/math",
+      "nimModule": "openlayers/math",
       "defaultExport": null,
       "functions": [
         {
@@ -13602,7 +13602,7 @@
     {
       "moduleId": "net",
       "dtsPath": "net.d.ts",
-      "nimModule": "openlayers/api/net",
+      "nimModule": "openlayers/net",
       "defaultExport": null,
       "functions": [
         {
@@ -13690,7 +13690,7 @@
     {
       "moduleId": "obj",
       "dtsPath": "obj.d.ts",
-      "nimModule": "openlayers/api/obj",
+      "nimModule": "openlayers/obj",
       "defaultExport": null,
       "functions": [
         {
@@ -13725,7 +13725,7 @@
     {
       "moduleId": "pixel",
       "dtsPath": "pixel.d.ts",
-      "nimModule": "openlayers/api/pixel",
+      "nimModule": "openlayers/pixel",
       "defaultExport": null,
       "functions": [],
       "constants": [
@@ -13740,7 +13740,7 @@
     {
       "moduleId": "pointer/EventType",
       "dtsPath": "pointer/EventType.d.ts",
-      "nimModule": "openlayers/api/pointer/eventType",
+      "nimModule": "openlayers/pointer/eventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -13750,7 +13750,7 @@
     {
       "moduleId": "proj",
       "dtsPath": "proj.d.ts",
-      "nimModule": "openlayers/api/proj",
+      "nimModule": "openlayers/proj",
       "defaultExport": null,
       "functions": [
         {
@@ -14323,7 +14323,7 @@
     {
       "moduleId": "proj/Projection",
       "dtsPath": "proj/Projection.d.ts",
-      "nimModule": "openlayers/api/proj/projection",
+      "nimModule": "openlayers/proj/projection",
       "defaultExport": "Projection",
       "functions": [],
       "constants": [],
@@ -14435,7 +14435,7 @@
     {
       "moduleId": "proj/Units",
       "dtsPath": "proj/Units.d.ts",
-      "nimModule": "openlayers/api/proj/units",
+      "nimModule": "openlayers/proj/units",
       "defaultExport": null,
       "functions": [
         {
@@ -14463,7 +14463,7 @@
     {
       "moduleId": "proj/epsg3857",
       "dtsPath": "proj/epsg3857.d.ts",
-      "nimModule": "openlayers/api/proj/epsg3857",
+      "nimModule": "openlayers/proj/epsg3857",
       "defaultExport": null,
       "functions": [
         {
@@ -14559,7 +14559,7 @@
     {
       "moduleId": "proj/epsg4326",
       "dtsPath": "proj/epsg4326.d.ts",
-      "nimModule": "openlayers/api/proj/epsg4326",
+      "nimModule": "openlayers/proj/epsg4326",
       "defaultExport": null,
       "functions": [],
       "constants": [
@@ -14586,7 +14586,7 @@
     {
       "moduleId": "proj/proj4",
       "dtsPath": "proj/proj4.d.ts",
-      "nimModule": "openlayers/api/proj/proj4",
+      "nimModule": "openlayers/proj/proj4",
       "defaultExport": null,
       "functions": [
         {
@@ -14689,7 +14689,7 @@
     {
       "moduleId": "proj/projections",
       "dtsPath": "proj/projections.d.ts",
-      "nimModule": "openlayers/api/proj/projections",
+      "nimModule": "openlayers/proj/projections",
       "defaultExport": null,
       "functions": [
         {
@@ -14735,7 +14735,7 @@
     {
       "moduleId": "proj/transforms",
       "dtsPath": "proj/transforms.d.ts",
-      "nimModule": "openlayers/api/proj/transforms",
+      "nimModule": "openlayers/proj/transforms",
       "defaultExport": null,
       "functions": [
         {
@@ -14811,7 +14811,7 @@
     {
       "moduleId": "proj/utm",
       "dtsPath": "proj/utm.d.ts",
-      "nimModule": "openlayers/api/proj/utm",
+      "nimModule": "openlayers/proj/utm",
       "defaultExport": null,
       "functions": [
         {
@@ -14858,7 +14858,7 @@
     {
       "moduleId": "render",
       "dtsPath": "render.d.ts",
-      "nimModule": "openlayers/api/render",
+      "nimModule": "openlayers/render",
       "defaultExport": null,
       "functions": [
         {
@@ -14917,7 +14917,7 @@
     {
       "moduleId": "render/Box",
       "dtsPath": "render/Box.d.ts",
-      "nimModule": "openlayers/api/render/box",
+      "nimModule": "openlayers/render/box",
       "defaultExport": "RenderBox",
       "functions": [],
       "constants": [],
@@ -14963,7 +14963,7 @@
     {
       "moduleId": "render/Event",
       "dtsPath": "render/Event.d.ts",
-      "nimModule": "openlayers/api/render/event",
+      "nimModule": "openlayers/render/event",
       "defaultExport": "RenderEvent",
       "functions": [],
       "constants": [],
@@ -14984,7 +14984,7 @@
     {
       "moduleId": "render/EventType",
       "dtsPath": "render/EventType.d.ts",
-      "nimModule": "openlayers/api/render/eventType",
+      "nimModule": "openlayers/render/eventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -14994,7 +14994,7 @@
     {
       "moduleId": "render/Feature",
       "dtsPath": "render/Feature.d.ts",
-      "nimModule": "openlayers/api/render/feature",
+      "nimModule": "openlayers/render/feature",
       "defaultExport": "RenderFeature",
       "functions": [
         {
@@ -15173,7 +15173,7 @@
     {
       "moduleId": "render/VectorContext",
       "dtsPath": "render/VectorContext.d.ts",
-      "nimModule": "openlayers/api/render/vectorContext",
+      "nimModule": "openlayers/render/vectorContext",
       "defaultExport": "VectorContext",
       "functions": [],
       "constants": [],
@@ -15287,7 +15287,7 @@
     {
       "moduleId": "render/canvas",
       "dtsPath": "render/canvas.d.ts",
-      "nimModule": "openlayers/api/render/canvas",
+      "nimModule": "openlayers/render/canvas",
       "defaultExport": null,
       "functions": [
         {
@@ -15545,7 +15545,7 @@
     {
       "moduleId": "render/canvas/Builder",
       "dtsPath": "render/canvas/Builder.d.ts",
-      "nimModule": "openlayers/api/render/canvas/builder",
+      "nimModule": "openlayers/render/canvas/builder",
       "defaultExport": "CanvasBuilder",
       "functions": [],
       "constants": [],
@@ -15663,7 +15663,7 @@
     {
       "moduleId": "render/canvas/BuilderGroup",
       "dtsPath": "render/canvas/BuilderGroup.d.ts",
-      "nimModule": "openlayers/api/render/canvas/builderGroup",
+      "nimModule": "openlayers/render/canvas/builderGroup",
       "defaultExport": "BuilderGroup",
       "functions": [],
       "constants": [],
@@ -15697,7 +15697,7 @@
     {
       "moduleId": "render/canvas/Executor",
       "dtsPath": "render/canvas/Executor.d.ts",
-      "nimModule": "openlayers/api/render/canvas/executor",
+      "nimModule": "openlayers/render/canvas/executor",
       "defaultExport": "Executor",
       "functions": [],
       "constants": [],
@@ -15749,7 +15749,7 @@
     {
       "moduleId": "render/canvas/ExecutorGroup",
       "dtsPath": "render/canvas/ExecutorGroup.d.ts",
-      "nimModule": "openlayers/api/render/canvas/executorGroup",
+      "nimModule": "openlayers/render/canvas/executorGroup",
       "defaultExport": "ExecutorGroup",
       "functions": [
         {
@@ -15851,7 +15851,7 @@
     {
       "moduleId": "render/canvas/ImageBuilder",
       "dtsPath": "render/canvas/ImageBuilder.d.ts",
-      "nimModule": "openlayers/api/render/canvas/imageBuilder",
+      "nimModule": "openlayers/render/canvas/imageBuilder",
       "defaultExport": "CanvasImageBuilder",
       "functions": [],
       "constants": [],
@@ -15868,7 +15868,7 @@
     {
       "moduleId": "render/canvas/Immediate",
       "dtsPath": "render/canvas/Immediate.d.ts",
-      "nimModule": "openlayers/api/render/canvas/immediate",
+      "nimModule": "openlayers/render/canvas/immediate",
       "defaultExport": "CanvasImmediateRenderer",
       "functions": [],
       "constants": [],
@@ -15896,7 +15896,7 @@
     {
       "moduleId": "render/canvas/Instruction",
       "dtsPath": "render/canvas/Instruction.d.ts",
-      "nimModule": "openlayers/api/render/canvas/instruction",
+      "nimModule": "openlayers/render/canvas/instruction",
       "defaultExport": "Instruction",
       "functions": [],
       "constants": [
@@ -15923,7 +15923,7 @@
     {
       "moduleId": "render/canvas/LineStringBuilder",
       "dtsPath": "render/canvas/LineStringBuilder.d.ts",
-      "nimModule": "openlayers/api/render/canvas/lineStringBuilder",
+      "nimModule": "openlayers/render/canvas/lineStringBuilder",
       "defaultExport": "CanvasLineStringBuilder",
       "functions": [],
       "constants": [],
@@ -15940,7 +15940,7 @@
     {
       "moduleId": "render/canvas/PolygonBuilder",
       "dtsPath": "render/canvas/PolygonBuilder.d.ts",
-      "nimModule": "openlayers/api/render/canvas/polygonBuilder",
+      "nimModule": "openlayers/render/canvas/polygonBuilder",
       "defaultExport": "CanvasPolygonBuilder",
       "functions": [],
       "constants": [],
@@ -15964,7 +15964,7 @@
     {
       "moduleId": "render/canvas/TextBuilder",
       "dtsPath": "render/canvas/TextBuilder.d.ts",
-      "nimModule": "openlayers/api/render/canvas/textBuilder",
+      "nimModule": "openlayers/render/canvas/textBuilder",
       "defaultExport": "CanvasTextBuilder",
       "functions": [],
       "constants": [
@@ -15986,7 +15986,7 @@
     {
       "moduleId": "render/canvas/ZIndexContext",
       "dtsPath": "render/canvas/ZIndexContext.d.ts",
-      "nimModule": "openlayers/api/render/canvas/zIndexContext",
+      "nimModule": "openlayers/render/canvas/zIndexContext",
       "defaultExport": "ZIndexContext",
       "functions": [],
       "constants": [],
@@ -16034,7 +16034,7 @@
     {
       "moduleId": "render/canvas/hitdetect",
       "dtsPath": "render/canvas/hitdetect.d.ts",
-      "nimModule": "openlayers/api/render/canvas/hitdetect",
+      "nimModule": "openlayers/render/canvas/hitdetect",
       "defaultExport": null,
       "functions": [
         {
@@ -16134,7 +16134,7 @@
     {
       "moduleId": "render/canvas/style",
       "dtsPath": "render/canvas/style.d.ts",
-      "nimModule": "openlayers/api/render/canvas/style",
+      "nimModule": "openlayers/render/canvas/style",
       "defaultExport": null,
       "functions": [
         {
@@ -16205,7 +16205,7 @@
     {
       "moduleId": "render/webgl/MixedGeometryBatch",
       "dtsPath": "render/webgl/MixedGeometryBatch.d.ts",
-      "nimModule": "openlayers/api/render/webgl/mixedGeometryBatch",
+      "nimModule": "openlayers/render/webgl/mixedGeometryBatch",
       "defaultExport": "MixedGeometryBatch",
       "functions": [],
       "constants": [],
@@ -16271,7 +16271,7 @@
     {
       "moduleId": "render/webgl/ShaderBuilder",
       "dtsPath": "render/webgl/ShaderBuilder.d.ts",
-      "nimModule": "openlayers/api/render/webgl/shaderBuilder",
+      "nimModule": "openlayers/render/webgl/shaderBuilder",
       "defaultExport": null,
       "functions": [],
       "constants": [
@@ -16286,7 +16286,7 @@
     {
       "moduleId": "render/webgl/VectorStyleRenderer",
       "dtsPath": "render/webgl/VectorStyleRenderer.d.ts",
-      "nimModule": "openlayers/api/render/webgl/vectorStyleRenderer",
+      "nimModule": "openlayers/render/webgl/vectorStyleRenderer",
       "defaultExport": "VectorStyleRenderer",
       "functions": [
         {
@@ -16345,7 +16345,7 @@
     {
       "moduleId": "render/webgl/bufferUtil",
       "dtsPath": "render/webgl/bufferUtil.d.ts",
-      "nimModule": "openlayers/api/render/webgl/bufferUtil",
+      "nimModule": "openlayers/render/webgl/bufferUtil",
       "defaultExport": null,
       "functions": [
         {
@@ -16499,7 +16499,7 @@
     {
       "moduleId": "render/webgl/compileUtil",
       "dtsPath": "render/webgl/compileUtil.d.ts",
-      "nimModule": "openlayers/api/render/webgl/compileUtil",
+      "nimModule": "openlayers/render/webgl/compileUtil",
       "defaultExport": null,
       "functions": [
         {
@@ -16635,7 +16635,7 @@
     {
       "moduleId": "render/webgl/constants",
       "dtsPath": "render/webgl/constants.d.ts",
-      "nimModule": "openlayers/api/render/webgl/constants",
+      "nimModule": "openlayers/render/webgl/constants",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -16645,7 +16645,7 @@
     {
       "moduleId": "render/webgl/encodeUtil",
       "dtsPath": "render/webgl/encodeUtil.d.ts",
-      "nimModule": "openlayers/api/render/webgl/encodeUtil",
+      "nimModule": "openlayers/render/webgl/encodeUtil",
       "defaultExport": null,
       "functions": [
         {
@@ -16686,7 +16686,7 @@
     {
       "moduleId": "render/webgl/renderinstructions",
       "dtsPath": "render/webgl/renderinstructions.d.ts",
-      "nimModule": "openlayers/api/render/webgl/renderinstructions",
+      "nimModule": "openlayers/render/webgl/renderinstructions",
       "defaultExport": null,
       "functions": [
         {
@@ -16799,7 +16799,7 @@
     {
       "moduleId": "render/webgl/style",
       "dtsPath": "render/webgl/style.d.ts",
-      "nimModule": "openlayers/api/render/webgl/style",
+      "nimModule": "openlayers/render/webgl/style",
       "defaultExport": null,
       "functions": [
         {
@@ -16846,7 +16846,7 @@
     {
       "moduleId": "renderer/Composite",
       "dtsPath": "renderer/Composite.d.ts",
-      "nimModule": "openlayers/api/renderer/composite",
+      "nimModule": "openlayers/renderer/composite",
       "defaultExport": "CompositeMapRenderer",
       "functions": [],
       "constants": [],
@@ -16870,7 +16870,7 @@
     {
       "moduleId": "renderer/Layer",
       "dtsPath": "renderer/Layer.d.ts",
-      "nimModule": "openlayers/api/renderer/layer",
+      "nimModule": "openlayers/renderer/layer",
       "defaultExport": "LayerRenderer",
       "functions": [],
       "constants": [],
@@ -16964,7 +16964,7 @@
     {
       "moduleId": "renderer/Map",
       "dtsPath": "renderer/Map.d.ts",
-      "nimModule": "openlayers/api/renderer/map",
+      "nimModule": "openlayers/renderer/map",
       "defaultExport": "MapRenderer",
       "functions": [],
       "constants": [],
@@ -17028,7 +17028,7 @@
     {
       "moduleId": "renderer/canvas/ImageLayer",
       "dtsPath": "renderer/canvas/ImageLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/canvas/imageLayer",
+      "nimModule": "openlayers/renderer/canvas/imageLayer",
       "defaultExport": "CanvasImageLayerRenderer",
       "functions": [],
       "constants": [],
@@ -17056,7 +17056,7 @@
     {
       "moduleId": "renderer/canvas/Layer",
       "dtsPath": "renderer/canvas/Layer.d.ts",
-      "nimModule": "openlayers/api/renderer/canvas/layer",
+      "nimModule": "openlayers/renderer/canvas/layer",
       "defaultExport": "CanvasLayerRenderer",
       "functions": [],
       "constants": [
@@ -17139,7 +17139,7 @@
     {
       "moduleId": "renderer/canvas/TileLayer",
       "dtsPath": "renderer/canvas/TileLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/canvas/tileLayer",
+      "nimModule": "openlayers/renderer/canvas/tileLayer",
       "defaultExport": "CanvasTileLayerRenderer",
       "functions": [],
       "constants": [],
@@ -17227,7 +17227,7 @@
     {
       "moduleId": "renderer/canvas/VectorImageLayer",
       "dtsPath": "renderer/canvas/VectorImageLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/canvas/vectorImageLayer",
+      "nimModule": "openlayers/renderer/canvas/vectorImageLayer",
       "defaultExport": "CanvasVectorImageLayerRenderer",
       "functions": [],
       "constants": [],
@@ -17255,7 +17255,7 @@
     {
       "moduleId": "renderer/canvas/VectorLayer",
       "dtsPath": "renderer/canvas/VectorLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/canvas/vectorLayer",
+      "nimModule": "openlayers/renderer/canvas/vectorLayer",
       "defaultExport": "CanvasVectorLayerRenderer",
       "functions": [],
       "constants": [],
@@ -17295,7 +17295,7 @@
     {
       "moduleId": "renderer/canvas/VectorTileLayer",
       "dtsPath": "renderer/canvas/VectorTileLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/canvas/vectorTileLayer",
+      "nimModule": "openlayers/renderer/canvas/vectorTileLayer",
       "defaultExport": "CanvasVectorTileLayerRenderer",
       "functions": [],
       "constants": [],
@@ -17341,7 +17341,7 @@
     {
       "moduleId": "renderer/vector",
       "dtsPath": "renderer/vector.d.ts",
-      "nimModule": "openlayers/api/renderer/vector",
+      "nimModule": "openlayers/renderer/vector",
       "defaultExport": null,
       "functions": [
         {
@@ -17460,7 +17460,7 @@
     {
       "moduleId": "renderer/webgl/FlowLayer",
       "dtsPath": "renderer/webgl/FlowLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/webgl/flowLayer",
+      "nimModule": "openlayers/renderer/webgl/flowLayer",
       "defaultExport": "FlowLayerRenderer",
       "functions": [],
       "constants": [],
@@ -17512,7 +17512,7 @@
     {
       "moduleId": "renderer/webgl/Layer",
       "dtsPath": "renderer/webgl/Layer.d.ts",
-      "nimModule": "openlayers/api/renderer/webgl/layer",
+      "nimModule": "openlayers/renderer/webgl/layer",
       "defaultExport": "WebGLLayerRenderer",
       "functions": [],
       "constants": [],
@@ -17588,7 +17588,7 @@
     {
       "moduleId": "renderer/webgl/PointsLayer",
       "dtsPath": "renderer/webgl/PointsLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/webgl/pointsLayer",
+      "nimModule": "openlayers/renderer/webgl/pointsLayer",
       "defaultExport": "WebGLPointsLayerRenderer",
       "functions": [],
       "constants": [],
@@ -17622,7 +17622,7 @@
     {
       "moduleId": "renderer/webgl/TileLayer",
       "dtsPath": "renderer/webgl/TileLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/webgl/tileLayer",
+      "nimModule": "openlayers/renderer/webgl/tileLayer",
       "defaultExport": "WebGLTileLayerRenderer",
       "functions": [],
       "constants": [
@@ -17648,7 +17648,7 @@
     {
       "moduleId": "renderer/webgl/TileLayerBase",
       "dtsPath": "renderer/webgl/TileLayerBase.d.ts",
-      "nimModule": "openlayers/api/renderer/webgl/tileLayerBase",
+      "nimModule": "openlayers/renderer/webgl/tileLayerBase",
       "defaultExport": "WebGLBaseTileLayerRenderer",
       "functions": [
         {
@@ -17742,7 +17742,7 @@
     {
       "moduleId": "renderer/webgl/VectorLayer",
       "dtsPath": "renderer/webgl/VectorLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/webgl/vectorLayer",
+      "nimModule": "openlayers/renderer/webgl/vectorLayer",
       "defaultExport": "WebGLVectorLayerRenderer",
       "functions": [],
       "constants": [
@@ -17787,7 +17787,7 @@
     {
       "moduleId": "renderer/webgl/VectorTileLayer",
       "dtsPath": "renderer/webgl/VectorTileLayer.d.ts",
-      "nimModule": "openlayers/api/renderer/webgl/vectorTileLayer",
+      "nimModule": "openlayers/renderer/webgl/vectorTileLayer",
       "defaultExport": "WebGLVectorTileLayerRenderer",
       "functions": [],
       "constants": [
@@ -17820,7 +17820,7 @@
     {
       "moduleId": "renderer/webgl/worldUtil",
       "dtsPath": "renderer/webgl/worldUtil.d.ts",
-      "nimModule": "openlayers/api/renderer/webgl/worldUtil",
+      "nimModule": "openlayers/renderer/webgl/worldUtil",
       "defaultExport": null,
       "functions": [
         {
@@ -17849,7 +17849,7 @@
     {
       "moduleId": "reproj",
       "dtsPath": "reproj.d.ts",
-      "nimModule": "openlayers/api/reproj",
+      "nimModule": "openlayers/reproj",
       "defaultExport": null,
       "functions": [
         {
@@ -18015,7 +18015,7 @@
     {
       "moduleId": "reproj/DataTile",
       "dtsPath": "reproj/DataTile.d.ts",
-      "nimModule": "openlayers/api/reproj/dataTile",
+      "nimModule": "openlayers/reproj/dataTile",
       "defaultExport": "ReprojDataTile",
       "functions": [],
       "constants": [],
@@ -18036,7 +18036,7 @@
     {
       "moduleId": "reproj/Image",
       "dtsPath": "reproj/Image.d.ts",
-      "nimModule": "openlayers/api/reproj/image",
+      "nimModule": "openlayers/reproj/image",
       "defaultExport": "ReprojImage",
       "functions": [],
       "constants": [],
@@ -18064,7 +18064,7 @@
     {
       "moduleId": "reproj/Tile",
       "dtsPath": "reproj/Tile.d.ts",
-      "nimModule": "openlayers/api/reproj/tile",
+      "nimModule": "openlayers/reproj/tile",
       "defaultExport": "ReprojTile",
       "functions": [],
       "constants": [],
@@ -18092,7 +18092,7 @@
     {
       "moduleId": "reproj/Triangulation",
       "dtsPath": "reproj/Triangulation.d.ts",
-      "nimModule": "openlayers/api/reproj/triangulation",
+      "nimModule": "openlayers/reproj/triangulation",
       "defaultExport": "Triangulation",
       "functions": [],
       "constants": [],
@@ -18126,7 +18126,7 @@
     {
       "moduleId": "reproj/common",
       "dtsPath": "reproj/common.d.ts",
-      "nimModule": "openlayers/api/reproj/common",
+      "nimModule": "openlayers/reproj/common",
       "defaultExport": null,
       "functions": [],
       "constants": [
@@ -18141,7 +18141,7 @@
     {
       "moduleId": "reproj/glreproj",
       "dtsPath": "reproj/glreproj.d.ts",
-      "nimModule": "openlayers/api/reproj/glreproj",
+      "nimModule": "openlayers/reproj/glreproj",
       "defaultExport": null,
       "functions": [
         {
@@ -18289,7 +18289,7 @@
     {
       "moduleId": "resolution",
       "dtsPath": "resolution.d.ts",
-      "nimModule": "openlayers/api/resolution",
+      "nimModule": "openlayers/resolution",
       "defaultExport": null,
       "functions": [
         {
@@ -18312,7 +18312,7 @@
     {
       "moduleId": "resolutionconstraint",
       "dtsPath": "resolutionconstraint.d.ts",
-      "nimModule": "openlayers/api/resolutionconstraint",
+      "nimModule": "openlayers/resolutionconstraint",
       "defaultExport": null,
       "functions": [
         {
@@ -18431,7 +18431,7 @@
     {
       "moduleId": "rotationconstraint",
       "dtsPath": "rotationconstraint.d.ts",
-      "nimModule": "openlayers/api/rotationconstraint",
+      "nimModule": "openlayers/rotationconstraint",
       "defaultExport": null,
       "functions": [
         {
@@ -18490,7 +18490,7 @@
     {
       "moduleId": "size",
       "dtsPath": "size.d.ts",
-      "nimModule": "openlayers/api/size",
+      "nimModule": "openlayers/size",
       "defaultExport": null,
       "functions": [
         {
@@ -18579,7 +18579,7 @@
     {
       "moduleId": "source",
       "dtsPath": "source.d.ts",
-      "nimModule": "openlayers/api/source",
+      "nimModule": "openlayers/source",
       "defaultExport": null,
       "functions": [
         {
@@ -18757,7 +18757,7 @@
     {
       "moduleId": "source/BingMaps",
       "dtsPath": "source/BingMaps.d.ts",
-      "nimModule": "openlayers/api/source/bingMaps",
+      "nimModule": "openlayers/source/bingMaps",
       "defaultExport": "BingMaps",
       "functions": [
         {
@@ -18810,7 +18810,7 @@
     {
       "moduleId": "source/CartoDB",
       "dtsPath": "source/CartoDB.d.ts",
-      "nimModule": "openlayers/api/source/cartoDB",
+      "nimModule": "openlayers/source/cartoDB",
       "defaultExport": "CartoDB",
       "functions": [],
       "constants": [],
@@ -18850,7 +18850,7 @@
     {
       "moduleId": "source/Cluster",
       "dtsPath": "source/Cluster.d.ts",
-      "nimModule": "openlayers/api/source/cluster",
+      "nimModule": "openlayers/source/cluster",
       "defaultExport": "Cluster",
       "functions": [],
       "constants": [],
@@ -18867,7 +18867,7 @@
     {
       "moduleId": "source/DataTile",
       "dtsPath": "source/DataTile.d.ts",
-      "nimModule": "openlayers/api/source/dataTile",
+      "nimModule": "openlayers/source/dataTile",
       "defaultExport": "DataTileSource",
       "functions": [],
       "constants": [],
@@ -18925,7 +18925,7 @@
     {
       "moduleId": "source/GeoTIFF",
       "dtsPath": "source/GeoTIFF.d.ts",
-      "nimModule": "openlayers/api/source/geoTIFF",
+      "nimModule": "openlayers/source/geoTIFF",
       "defaultExport": "GeoTIFFSource",
       "functions": [],
       "constants": [],
@@ -18965,7 +18965,7 @@
     {
       "moduleId": "source/GeoZarr",
       "dtsPath": "source/GeoZarr.d.ts",
-      "nimModule": "openlayers/api/source/geoZarr",
+      "nimModule": "openlayers/source/geoZarr",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -18975,7 +18975,7 @@
     {
       "moduleId": "source/Google",
       "dtsPath": "source/Google.d.ts",
-      "nimModule": "openlayers/api/source/google",
+      "nimModule": "openlayers/source/google",
       "defaultExport": "Google",
       "functions": [],
       "constants": [],
@@ -19009,7 +19009,7 @@
     {
       "moduleId": "source/IIIF",
       "dtsPath": "source/IIIF.d.ts",
-      "nimModule": "openlayers/api/source/iiif",
+      "nimModule": "openlayers/source/iiif",
       "defaultExport": "IIIF",
       "functions": [],
       "constants": [],
@@ -19030,7 +19030,7 @@
     {
       "moduleId": "source/Image",
       "dtsPath": "source/Image.d.ts",
-      "nimModule": "openlayers/api/source/image",
+      "nimModule": "openlayers/source/image",
       "defaultExport": "ImageSource",
       "functions": [
         {
@@ -19131,7 +19131,7 @@
     {
       "moduleId": "source/ImageArcGISRest",
       "dtsPath": "source/ImageArcGISRest.d.ts",
-      "nimModule": "openlayers/api/source/imageArcGISRest",
+      "nimModule": "openlayers/source/imageArcGISRest",
       "defaultExport": "ImageArcGISRest",
       "functions": [],
       "constants": [],
@@ -19195,7 +19195,7 @@
     {
       "moduleId": "source/ImageCanvas",
       "dtsPath": "source/ImageCanvas.d.ts",
-      "nimModule": "openlayers/api/source/imageCanvas",
+      "nimModule": "openlayers/source/imageCanvas",
       "defaultExport": "ImageCanvasSource",
       "functions": [],
       "constants": [],
@@ -19216,7 +19216,7 @@
     {
       "moduleId": "source/ImageMapGuide",
       "dtsPath": "source/ImageMapGuide.d.ts",
-      "nimModule": "openlayers/api/source/imageMapGuide",
+      "nimModule": "openlayers/source/imageMapGuide",
       "defaultExport": "ImageMapGuide",
       "functions": [],
       "constants": [],
@@ -19268,7 +19268,7 @@
     {
       "moduleId": "source/ImageStatic",
       "dtsPath": "source/ImageStatic.d.ts",
-      "nimModule": "openlayers/api/source/imageStatic",
+      "nimModule": "openlayers/source/imageStatic",
       "defaultExport": "Static",
       "functions": [],
       "constants": [],
@@ -19302,7 +19302,7 @@
     {
       "moduleId": "source/ImageTile",
       "dtsPath": "source/ImageTile.d.ts",
-      "nimModule": "openlayers/api/source/imageTile",
+      "nimModule": "openlayers/source/imageTile",
       "defaultExport": "ImageTileSource",
       "functions": [],
       "constants": [],
@@ -19330,7 +19330,7 @@
     {
       "moduleId": "source/ImageWMS",
       "dtsPath": "source/ImageWMS.d.ts",
-      "nimModule": "openlayers/api/source/imageWMS",
+      "nimModule": "openlayers/source/imageWMS",
       "defaultExport": "ImageWMS",
       "functions": [],
       "constants": [],
@@ -19406,7 +19406,7 @@
     {
       "moduleId": "source/OGCMap",
       "dtsPath": "source/OGCMap.d.ts",
-      "nimModule": "openlayers/api/source/ogcMap",
+      "nimModule": "openlayers/source/ogcMap",
       "defaultExport": "OGCMap",
       "functions": [],
       "constants": [],
@@ -19470,7 +19470,7 @@
     {
       "moduleId": "source/OGCMapTile",
       "dtsPath": "source/OGCMapTile.d.ts",
-      "nimModule": "openlayers/api/source/ogcMapTile",
+      "nimModule": "openlayers/source/ogcMapTile",
       "defaultExport": "OGCMapTile",
       "functions": [],
       "constants": [],
@@ -19491,7 +19491,7 @@
     {
       "moduleId": "source/OGCVectorTile",
       "dtsPath": "source/OGCVectorTile.d.ts",
-      "nimModule": "openlayers/api/source/ogcVectorTile",
+      "nimModule": "openlayers/source/ogcVectorTile",
       "defaultExport": "OGCVectorTile",
       "functions": [],
       "constants": [],
@@ -19512,7 +19512,7 @@
     {
       "moduleId": "source/OSM",
       "dtsPath": "source/OSM.d.ts",
-      "nimModule": "openlayers/api/source/osm",
+      "nimModule": "openlayers/source/osm",
       "defaultExport": "OSM",
       "functions": [],
       "constants": [
@@ -19538,7 +19538,7 @@
     {
       "moduleId": "source/Raster",
       "dtsPath": "source/Raster.d.ts",
-      "nimModule": "openlayers/api/source/raster",
+      "nimModule": "openlayers/source/raster",
       "defaultExport": "RasterSource",
       "functions": [],
       "constants": [],
@@ -19566,7 +19566,7 @@
     {
       "moduleId": "source/SentinelHub",
       "dtsPath": "source/SentinelHub.d.ts",
-      "nimModule": "openlayers/api/source/sentinelHub",
+      "nimModule": "openlayers/source/sentinelHub",
       "defaultExport": "SentinelHub",
       "functions": [
         {
@@ -19667,7 +19667,7 @@
     {
       "moduleId": "source/Source",
       "dtsPath": "source/Source.d.ts",
-      "nimModule": "openlayers/api/source/source",
+      "nimModule": "openlayers/source/source",
       "defaultExport": "Source",
       "functions": [],
       "constants": [],
@@ -19684,7 +19684,7 @@
     {
       "moduleId": "source/StadiaMaps",
       "dtsPath": "source/StadiaMaps.d.ts",
-      "nimModule": "openlayers/api/source/stadiaMaps",
+      "nimModule": "openlayers/source/stadiaMaps",
       "defaultExport": "StadiaMaps",
       "functions": [],
       "constants": [],
@@ -19705,7 +19705,7 @@
     {
       "moduleId": "source/Tile",
       "dtsPath": "source/Tile.d.ts",
-      "nimModule": "openlayers/api/source/tile",
+      "nimModule": "openlayers/source/tile",
       "defaultExport": "TileSource",
       "functions": [],
       "constants": [],
@@ -19787,7 +19787,7 @@
     {
       "moduleId": "source/TileArcGISRest",
       "dtsPath": "source/TileArcGISRest.d.ts",
-      "nimModule": "openlayers/api/source/tileArcGISRest",
+      "nimModule": "openlayers/source/tileArcGISRest",
       "defaultExport": "TileArcGISRest",
       "functions": [],
       "constants": [],
@@ -19827,7 +19827,7 @@
     {
       "moduleId": "source/TileDebug",
       "dtsPath": "source/TileDebug.d.ts",
-      "nimModule": "openlayers/api/source/tileDebug",
+      "nimModule": "openlayers/source/tileDebug",
       "defaultExport": "TileDebug",
       "functions": [],
       "constants": [],
@@ -19848,7 +19848,7 @@
     {
       "moduleId": "source/TileEventType",
       "dtsPath": "source/TileEventType.d.ts",
-      "nimModule": "openlayers/api/source/tileEventType",
+      "nimModule": "openlayers/source/tileEventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -19858,7 +19858,7 @@
     {
       "moduleId": "source/TileImage",
       "dtsPath": "source/TileImage.d.ts",
-      "nimModule": "openlayers/api/source/tileImage",
+      "nimModule": "openlayers/source/tileImage",
       "defaultExport": "TileImage",
       "functions": [
         {
@@ -19923,7 +19923,7 @@
     {
       "moduleId": "source/TileJSON",
       "dtsPath": "source/TileJSON.d.ts",
-      "nimModule": "openlayers/api/source/tileJSON",
+      "nimModule": "openlayers/source/tileJSON",
       "defaultExport": "TileJSON",
       "functions": [],
       "constants": [],
@@ -19963,7 +19963,7 @@
     {
       "moduleId": "source/TileWMS",
       "dtsPath": "source/TileWMS.d.ts",
-      "nimModule": "openlayers/api/source/tileWMS",
+      "nimModule": "openlayers/source/tileWMS",
       "defaultExport": "TileWMS",
       "functions": [],
       "constants": [],
@@ -20015,7 +20015,7 @@
     {
       "moduleId": "source/UTFGrid",
       "dtsPath": "source/UTFGrid.d.ts",
-      "nimModule": "openlayers/api/source/utfGrid",
+      "nimModule": "openlayers/source/utfGrid",
       "defaultExport": "UTFGrid",
       "functions": [],
       "constants": [],
@@ -20061,7 +20061,7 @@
     {
       "moduleId": "source/UrlTile",
       "dtsPath": "source/UrlTile.d.ts",
-      "nimModule": "openlayers/api/source/urlTile",
+      "nimModule": "openlayers/source/urlTile",
       "defaultExport": "UrlTile",
       "functions": [],
       "constants": [],
@@ -20137,7 +20137,7 @@
     {
       "moduleId": "source/Vector",
       "dtsPath": "source/Vector.d.ts",
-      "nimModule": "openlayers/api/source/vector",
+      "nimModule": "openlayers/source/vector",
       "defaultExport": "VectorSource",
       "functions": [],
       "constants": [],
@@ -20154,7 +20154,7 @@
     {
       "moduleId": "source/VectorEventType",
       "dtsPath": "source/VectorEventType.d.ts",
-      "nimModule": "openlayers/api/source/vectorEventType",
+      "nimModule": "openlayers/source/vectorEventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -20164,7 +20164,7 @@
     {
       "moduleId": "source/VectorTile",
       "dtsPath": "source/VectorTile.d.ts",
-      "nimModule": "openlayers/api/source/vectorTile",
+      "nimModule": "openlayers/source/vectorTile",
       "defaultExport": "VectorTile",
       "functions": [
         {
@@ -20229,7 +20229,7 @@
     {
       "moduleId": "source/WMTS",
       "dtsPath": "source/WMTS.d.ts",
-      "nimModule": "openlayers/api/source/wmts",
+      "nimModule": "openlayers/source/wmts",
       "defaultExport": "WMTS",
       "functions": [
         {
@@ -20324,7 +20324,7 @@
     {
       "moduleId": "source/XYZ",
       "dtsPath": "source/XYZ.d.ts",
-      "nimModule": "openlayers/api/source/xyz",
+      "nimModule": "openlayers/source/xyz",
       "defaultExport": "XYZ",
       "functions": [],
       "constants": [],
@@ -20345,7 +20345,7 @@
     {
       "moduleId": "source/Zoomify",
       "dtsPath": "source/Zoomify.d.ts",
-      "nimModule": "openlayers/api/source/zoomify",
+      "nimModule": "openlayers/source/zoomify",
       "defaultExport": "Zoomify",
       "functions": [],
       "constants": [],
@@ -20366,7 +20366,7 @@
     {
       "moduleId": "source/arcgisRest",
       "dtsPath": "source/arcgisRest.d.ts",
-      "nimModule": "openlayers/api/source/arcgisRest",
+      "nimModule": "openlayers/source/arcgisRest",
       "defaultExport": null,
       "functions": [
         {
@@ -20431,7 +20431,7 @@
     {
       "moduleId": "source/common",
       "dtsPath": "source/common.d.ts",
-      "nimModule": "openlayers/api/source/common",
+      "nimModule": "openlayers/source/common",
       "defaultExport": null,
       "functions": [],
       "constants": [
@@ -20450,7 +20450,7 @@
     {
       "moduleId": "source/mapguide",
       "dtsPath": "source/mapguide.d.ts",
-      "nimModule": "openlayers/api/source/mapguide",
+      "nimModule": "openlayers/source/mapguide",
       "defaultExport": null,
       "functions": [
         {
@@ -20473,7 +20473,7 @@
     {
       "moduleId": "source/mapserver",
       "dtsPath": "source/mapserver.d.ts",
-      "nimModule": "openlayers/api/source/mapserver",
+      "nimModule": "openlayers/source/mapserver",
       "defaultExport": null,
       "functions": [
         {
@@ -20496,7 +20496,7 @@
     {
       "moduleId": "source/ogcMapUtil",
       "dtsPath": "source/ogcMapUtil.d.ts",
-      "nimModule": "openlayers/api/source/ogcMapUtil",
+      "nimModule": "openlayers/source/ogcMapUtil",
       "defaultExport": null,
       "functions": [
         {
@@ -20597,7 +20597,7 @@
     {
       "moduleId": "source/ogcTileUtil",
       "dtsPath": "source/ogcTileUtil.d.ts",
-      "nimModule": "openlayers/api/source/ogcTileUtil",
+      "nimModule": "openlayers/source/ogcTileUtil",
       "defaultExport": null,
       "functions": [
         {
@@ -20722,7 +20722,7 @@
     {
       "moduleId": "source/static",
       "dtsPath": "source/static.d.ts",
-      "nimModule": "openlayers/api/source/static",
+      "nimModule": "openlayers/source/static",
       "defaultExport": null,
       "functions": [
         {
@@ -20745,7 +20745,7 @@
     {
       "moduleId": "source/wms",
       "dtsPath": "source/wms.d.ts",
-      "nimModule": "openlayers/api/source/wms",
+      "nimModule": "openlayers/source/wms",
       "defaultExport": null,
       "functions": [
         {
@@ -20917,7 +20917,7 @@
     {
       "moduleId": "sphere",
       "dtsPath": "sphere.d.ts",
-      "nimModule": "openlayers/api/sphere",
+      "nimModule": "openlayers/sphere",
       "defaultExport": null,
       "functions": [
         {
@@ -21023,7 +21023,7 @@
     {
       "moduleId": "string",
       "dtsPath": "string.d.ts",
-      "nimModule": "openlayers/api/string",
+      "nimModule": "openlayers/string",
       "defaultExport": null,
       "functions": [
         {
@@ -21076,7 +21076,7 @@
     {
       "moduleId": "structs/LRUCache",
       "dtsPath": "structs/LRUCache.d.ts",
-      "nimModule": "openlayers/api/structs/lruCache",
+      "nimModule": "openlayers/structs/lruCache",
       "defaultExport": "LRUCache",
       "functions": [],
       "constants": [],
@@ -21212,7 +21212,7 @@
     {
       "moduleId": "structs/PriorityQueue",
       "dtsPath": "structs/PriorityQueue.d.ts",
-      "nimModule": "openlayers/api/structs/priorityQueue",
+      "nimModule": "openlayers/structs/priorityQueue",
       "defaultExport": "PriorityQueue",
       "functions": [],
       "constants": [
@@ -21287,7 +21287,7 @@
     {
       "moduleId": "structs/RBush",
       "dtsPath": "structs/RBush.d.ts",
-      "nimModule": "openlayers/api/structs/rBush",
+      "nimModule": "openlayers/structs/rBush",
       "defaultExport": "RBush",
       "functions": [],
       "constants": [],
@@ -21381,7 +21381,7 @@
     {
       "moduleId": "style",
       "dtsPath": "style.d.ts",
-      "nimModule": "openlayers/api/style",
+      "nimModule": "openlayers/style",
       "defaultExport": null,
       "functions": [],
       "constants": [],
@@ -21428,7 +21428,7 @@
     {
       "moduleId": "style/Circle",
       "dtsPath": "style/Circle.d.ts",
-      "nimModule": "openlayers/api/style/circle",
+      "nimModule": "openlayers/style/circle",
       "defaultExport": "CircleStyle",
       "functions": [],
       "constants": [],
@@ -21449,7 +21449,7 @@
     {
       "moduleId": "style/Fill",
       "dtsPath": "style/Fill.d.ts",
-      "nimModule": "openlayers/api/style/fill",
+      "nimModule": "openlayers/style/fill",
       "defaultExport": "Fill",
       "functions": [],
       "constants": [],
@@ -21507,7 +21507,7 @@
     {
       "moduleId": "style/Icon",
       "dtsPath": "style/Icon.d.ts",
-      "nimModule": "openlayers/api/style/icon",
+      "nimModule": "openlayers/style/icon",
       "defaultExport": "Icon",
       "functions": [],
       "constants": [],
@@ -21571,7 +21571,7 @@
     {
       "moduleId": "style/IconImage",
       "dtsPath": "style/IconImage.d.ts",
-      "nimModule": "openlayers/api/style/iconImage",
+      "nimModule": "openlayers/style/iconImage",
       "defaultExport": "IconImage",
       "functions": [
         {
@@ -21690,7 +21690,7 @@
     {
       "moduleId": "style/IconImageCache",
       "dtsPath": "style/IconImageCache.d.ts",
-      "nimModule": "openlayers/api/style/iconImageCache",
+      "nimModule": "openlayers/style/iconImageCache",
       "defaultExport": "IconImageCache",
       "functions": [
         {
@@ -21774,7 +21774,7 @@
     {
       "moduleId": "style/Image",
       "dtsPath": "style/Image.d.ts",
-      "nimModule": "openlayers/api/style/image",
+      "nimModule": "openlayers/style/image",
       "defaultExport": "ImageStyle",
       "functions": [],
       "constants": [],
@@ -21946,7 +21946,7 @@
     {
       "moduleId": "style/RegularShape",
       "dtsPath": "style/RegularShape.d.ts",
-      "nimModule": "openlayers/api/style/regularShape",
+      "nimModule": "openlayers/style/regularShape",
       "defaultExport": "RegularShape",
       "functions": [],
       "constants": [],
@@ -22040,7 +22040,7 @@
     {
       "moduleId": "style/Stroke",
       "dtsPath": "style/Stroke.d.ts",
-      "nimModule": "openlayers/api/style/stroke",
+      "nimModule": "openlayers/style/stroke",
       "defaultExport": "Stroke",
       "functions": [],
       "constants": [],
@@ -22164,7 +22164,7 @@
     {
       "moduleId": "style/Style",
       "dtsPath": "style/Style.d.ts",
-      "nimModule": "openlayers/api/style/style",
+      "nimModule": "openlayers/style/style",
       "defaultExport": "Style",
       "functions": [
         {
@@ -22330,7 +22330,7 @@
     {
       "moduleId": "style/Text",
       "dtsPath": "style/Text.d.ts",
-      "nimModule": "openlayers/api/style/text",
+      "nimModule": "openlayers/style/text",
       "defaultExport": "Text",
       "functions": [],
       "constants": [],
@@ -22610,7 +22610,7 @@
     {
       "moduleId": "style/flat",
       "dtsPath": "style/flat.d.ts",
-      "nimModule": "openlayers/api/style/flat",
+      "nimModule": "openlayers/style/flat",
       "defaultExport": null,
       "functions": [
         {
@@ -22626,7 +22626,7 @@
     {
       "moduleId": "tilecoord",
       "dtsPath": "tilecoord.d.ts",
-      "nimModule": "openlayers/api/tilecoord",
+      "nimModule": "openlayers/tilecoord",
       "defaultExport": null,
       "functions": [
         {
@@ -22817,7 +22817,7 @@
     {
       "moduleId": "tilegrid",
       "dtsPath": "tilegrid.d.ts",
-      "nimModule": "openlayers/api/tilegrid",
+      "nimModule": "openlayers/tilegrid",
       "defaultExport": null,
       "functions": [
         {
@@ -22957,7 +22957,7 @@
     {
       "moduleId": "tilegrid/TileGrid",
       "dtsPath": "tilegrid/TileGrid.d.ts",
-      "nimModule": "openlayers/api/tilegrid/tileGrid",
+      "nimModule": "openlayers/tilegrid/tileGrid",
       "defaultExport": "TileGrid",
       "functions": [],
       "constants": [],
@@ -23105,7 +23105,7 @@
     {
       "moduleId": "tilegrid/WMTS",
       "dtsPath": "tilegrid/WMTS.d.ts",
-      "nimModule": "openlayers/api/tilegrid/wmts",
+      "nimModule": "openlayers/tilegrid/wmts",
       "defaultExport": "WMTSTileGrid",
       "functions": [
         {
@@ -23164,7 +23164,7 @@
     {
       "moduleId": "tilegrid/common",
       "dtsPath": "tilegrid/common.d.ts",
-      "nimModule": "openlayers/api/tilegrid/common",
+      "nimModule": "openlayers/tilegrid/common",
       "defaultExport": null,
       "functions": [],
       "constants": [
@@ -23183,7 +23183,7 @@
     {
       "moduleId": "tileurlfunction",
       "dtsPath": "tileurlfunction.d.ts",
-      "nimModule": "openlayers/api/tileurlfunction",
+      "nimModule": "openlayers/tileurlfunction",
       "defaultExport": null,
       "functions": [
         {
@@ -23266,7 +23266,7 @@
     {
       "moduleId": "transform",
       "dtsPath": "transform.d.ts",
-      "nimModule": "openlayers/api/transform",
+      "nimModule": "openlayers/transform",
       "defaultExport": null,
       "functions": [
         {
@@ -23672,7 +23672,7 @@
     {
       "moduleId": "uri",
       "dtsPath": "uri.d.ts",
-      "nimModule": "openlayers/api/uri",
+      "nimModule": "openlayers/uri",
       "defaultExport": null,
       "functions": [
         {
@@ -23779,7 +23779,7 @@
     {
       "moduleId": "util",
       "dtsPath": "util.d.ts",
-      "nimModule": "openlayers/api/util",
+      "nimModule": "openlayers/util",
       "defaultExport": null,
       "functions": [
         {
@@ -23812,7 +23812,7 @@
     {
       "moduleId": "vec/mat4",
       "dtsPath": "vec/mat4.d.ts",
-      "nimModule": "openlayers/api/vec/mat4",
+      "nimModule": "openlayers/vec/mat4",
       "defaultExport": null,
       "functions": [
         {
@@ -23996,7 +23996,7 @@
     {
       "moduleId": "webgl",
       "dtsPath": "webgl.d.ts",
-      "nimModule": "openlayers/api/webgl",
+      "nimModule": "openlayers/webgl",
       "defaultExport": null,
       "functions": [
         {
@@ -24067,7 +24067,7 @@
     {
       "moduleId": "webgl/BaseTileRepresentation",
       "dtsPath": "webgl/BaseTileRepresentation.d.ts",
-      "nimModule": "openlayers/api/webgl/baseTileRepresentation",
+      "nimModule": "openlayers/webgl/baseTileRepresentation",
       "defaultExport": "BaseTileRepresentation",
       "functions": [],
       "constants": [],
@@ -24119,7 +24119,7 @@
     {
       "moduleId": "webgl/Buffer",
       "dtsPath": "webgl/Buffer.d.ts",
-      "nimModule": "openlayers/api/webgl/buffer",
+      "nimModule": "openlayers/webgl/buffer",
       "defaultExport": "WebGLArrayBuffer",
       "functions": [
         {
@@ -24202,7 +24202,7 @@
     {
       "moduleId": "webgl/Canvas",
       "dtsPath": "webgl/Canvas.d.ts",
-      "nimModule": "openlayers/api/webgl/canvas",
+      "nimModule": "openlayers/webgl/canvas",
       "defaultExport": null,
       "functions": [
         {
@@ -24237,7 +24237,7 @@
     {
       "moduleId": "webgl/ContextEventType",
       "dtsPath": "webgl/ContextEventType.d.ts",
-      "nimModule": "openlayers/api/webgl/contextEventType",
+      "nimModule": "openlayers/webgl/contextEventType",
       "defaultExport": "_default",
       "functions": [],
       "constants": [],
@@ -24247,7 +24247,7 @@
     {
       "moduleId": "webgl/Helper",
       "dtsPath": "webgl/Helper.d.ts",
-      "nimModule": "openlayers/api/webgl/helper",
+      "nimModule": "openlayers/webgl/helper",
       "defaultExport": "WebGLHelper",
       "functions": [
         {
@@ -24498,7 +24498,7 @@
     {
       "moduleId": "webgl/PaletteTexture",
       "dtsPath": "webgl/PaletteTexture.d.ts",
-      "nimModule": "openlayers/api/webgl/paletteTexture",
+      "nimModule": "openlayers/webgl/paletteTexture",
       "defaultExport": "PaletteTexture",
       "functions": [],
       "constants": [],
@@ -24532,7 +24532,7 @@
     {
       "moduleId": "webgl/PostProcessingPass",
       "dtsPath": "webgl/PostProcessingPass.d.ts",
-      "nimModule": "openlayers/api/webgl/postProcessingPass",
+      "nimModule": "openlayers/webgl/postProcessingPass",
       "defaultExport": "WebGLPostProcessingPass",
       "functions": [],
       "constants": [],
@@ -24590,7 +24590,7 @@
     {
       "moduleId": "webgl/RenderTarget",
       "dtsPath": "webgl/RenderTarget.d.ts",
-      "nimModule": "openlayers/api/webgl/renderTarget",
+      "nimModule": "openlayers/webgl/renderTarget",
       "defaultExport": "WebGLRenderTarget",
       "functions": [],
       "constants": [],
@@ -24660,7 +24660,7 @@
     {
       "moduleId": "webgl/TileGeometry",
       "dtsPath": "webgl/TileGeometry.d.ts",
-      "nimModule": "openlayers/api/webgl/tileGeometry",
+      "nimModule": "openlayers/webgl/tileGeometry",
       "defaultExport": "TileGeometry",
       "functions": [],
       "constants": [],
@@ -24681,7 +24681,7 @@
     {
       "moduleId": "webgl/TileTexture",
       "dtsPath": "webgl/TileTexture.d.ts",
-      "nimModule": "openlayers/api/webgl/tileTexture",
+      "nimModule": "openlayers/webgl/tileTexture",
       "defaultExport": "TileTexture",
       "functions": [],
       "constants": [],
@@ -24709,7 +24709,7 @@
     {
       "moduleId": "worker/webgl",
       "dtsPath": "worker/webgl.d.ts",
-      "nimModule": "openlayers/api/worker/webgl",
+      "nimModule": "openlayers/worker/webgl",
       "defaultExport": null,
       "functions": [
         {
@@ -24725,7 +24725,7 @@
     {
       "moduleId": "xml",
       "dtsPath": "xml.d.ts",
-      "nimModule": "openlayers/api/xml",
+      "nimModule": "openlayers/xml",
       "defaultExport": null,
       "functions": [
         {

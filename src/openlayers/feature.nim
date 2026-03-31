@@ -4,14 +4,12 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(esmModules):
-  {.emit: "import * as olFeatureModule from 'ol/Feature.js';".}
-when defined(esmModules):
-  {.emit: "import Feature from 'ol/Feature.js';".}
+  {.emit: "import * as olNs_Feature from 'ol/Feature.js';".}
 
-type OlFeature* = ref object of JsRoot
+proc getNamespace*(): JsObject {.importjs: "(olNs_Feature)".}
 
-proc newOlFeature*(): OlFeature {.importjs: "(new Feature())".}
+type
+  OlFeature* = ref object of JsRoot
+proc newOlFeature*(): OlFeature {.importjs: "(new olNs_Feature.default())".}
 
-proc createStyleFunction*(
-  obj: JsObject
-): JsObject {.importjs: "olFeatureModule.createStyleFunction(#)".}
+proc createStyleFunction*(obj: JsObject): JsObject {.importjs: "olNs_Feature.createStyleFunction(#)".}

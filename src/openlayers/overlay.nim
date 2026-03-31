@@ -4,10 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(esmModules):
-  {.emit: "import * as olOverlayModule from 'ol/Overlay.js';".}
-when defined(esmModules):
-  {.emit: "import Overlay from 'ol/Overlay.js';".}
+  {.emit: "import * as olNs_Overlay from 'ol/Overlay.js';".}
 
-type OlOverlay* = ref object of JsRoot
+proc getNamespace*(): JsObject {.importjs: "(olNs_Overlay)".}
 
-proc newOlOverlay*(): OlOverlay {.importjs: "(new Overlay())".}
+type
+  OlOverlay* = ref object of JsRoot
+proc newOlOverlay*(): OlOverlay {.importjs: "(new olNs_Overlay.default())".}

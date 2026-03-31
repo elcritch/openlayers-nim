@@ -5,7 +5,8 @@ import path from 'node:path';
 
 const repoRoot = process.cwd();
 const olRoot = path.join(repoRoot, 'node_modules', 'ol');
-const outWrapRoot = path.join(repoRoot, 'src', 'openlayers', 'api');
+const outWrapRoot = path.join(repoRoot, 'src', 'openlayers');
+const legacyApiRoot = path.join(repoRoot, 'src', 'openlayers', 'api');
 const outApiFile = path.join(repoRoot, 'generated', 'openlayers-api.json');
 
 if (!fs.existsSync(olRoot)) {
@@ -653,7 +654,7 @@ function buildWrapper(moduleId, moduleInfo, nimRelModulePath) {
 function main() {
   const dtsFiles = collectDtsFiles(olRoot);
 
-  fs.rmSync(outWrapRoot, { recursive: true, force: true });
+  fs.rmSync(legacyApiRoot, { recursive: true, force: true });
   fs.mkdirSync(outWrapRoot, { recursive: true });
   fs.mkdirSync(path.dirname(outApiFile), { recursive: true });
 
@@ -682,7 +683,7 @@ function main() {
     manifest.modules.push({
       moduleId,
       dtsPath: rel.replace(/\\/g, '/'),
-      nimModule: `openlayers/api/${nimRel}`,
+      nimModule: `openlayers/${nimRel}`,
       defaultExport: info.defaultExport,
       functions: info.functions.map((f) => ({
         name: f.name,

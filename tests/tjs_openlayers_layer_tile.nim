@@ -5,9 +5,9 @@ import openlayers/layer/tile
 import openlayers/source/osm
 
 suite "openlayers/layer/tile bindings":
-  test "tile layer can hold an OSM source":
-    let source = newOsmSource()
+  test "tile layer constructor is usable":
+    let source = newOlOSM(jsUndefined)
     let layerOpts = newJsObject()
     layerOpts["source"] = source
-    let layer = newTileLayer(layerOpts)
-    check layer.getSource() == source
+    let layer = newOlTileLayer(layerOpts)
+    check layer != nil

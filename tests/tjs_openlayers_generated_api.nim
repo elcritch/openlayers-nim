@@ -1,26 +1,26 @@
 import std/unittest
 
 import jsffi
-import openlayers/api/map as apiMap
-import openlayers/api/view as apiView
-import openlayers/api/proj as apiProj
-import openlayers/api/layer/tile as apiLayerTile
-import openlayers/api/layer/vector as apiLayerVector
-import openlayers/api/source/osm as apiSourceOsm
-import openlayers/api/source/vector as apiSourceVector
-import openlayers/api/events/condition as apiEventsCondition
-import openlayers/api/control as apiControl
-import openlayers/api/interaction/defaults as apiInteractionDefaults
-import openlayers/api/interaction/draw as apiInteractionDraw
-import openlayers/api/format/geoJSON as apiFormatGeoJson
-import openlayers/api/format/wkt as apiFormatWkt
-import openlayers/api/geom/point as apiGeomPoint
-import openlayers/api/geom/polygon as apiGeomPolygon
-import openlayers/api/style/style as apiStyleStyle
-import openlayers/api/style/fill as apiStyleFill
-import openlayers/api/style/stroke as apiStyleStroke
+import openlayers/map as apiMap
+import openlayers/view as apiView
+import openlayers/proj as apiProj
+import openlayers/layer/tile as apiLayerTile
+import openlayers/layer/vector as apiLayerVector
+import openlayers/source/osm as apiSourceOsm
+import openlayers/source/vector as apiSourceVector
+import openlayers/events/condition as apiEventsCondition
+import openlayers/control as apiControl
+import openlayers/interaction/defaults as apiInteractionDefaults
+import openlayers/interaction/draw as apiInteractionDraw
+import openlayers/format/geoJSON as apiFormatGeoJson
+import openlayers/format/wkt as apiFormatWkt
+import openlayers/geom/point as apiGeomPoint
+import openlayers/geom/polygon as apiGeomPolygon
+import openlayers/style/style as apiStyleStyle
+import openlayers/style/fill as apiStyleFill
+import openlayers/style/stroke as apiStyleStroke
 
-suite "generated openlayers/api wrappers":
+suite "generated openlayers wrappers":
   test "common generated modules expose namespace objects":
     discard apiMap.getNamespace()
     discard apiView.getNamespace()

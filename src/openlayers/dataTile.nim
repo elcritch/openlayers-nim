@@ -4,19 +4,19 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(esmModules):
-  {.emit: "import * as olDataTileModule from 'ol/DataTile.js';".}
-when defined(esmModules):
-  {.emit: "import DataTile from 'ol/DataTile.js';".}
-type OlDataTile* = ref object of JsRoot
+  {.emit: "import * as olNs_DataTile from 'ol/DataTile.js';".}
 
-proc newOlDataTile*(options: JsObject): OlDataTile {.importjs: "(new DataTile(#))".}
+proc getNamespace*(): JsObject {.importjs: "(olNs_DataTile)".}
 
-proc asImageLike*(
-  data: JsObject
-): JsObject {.importjs: "olDataTileModule.asImageLike(#)".}
+type
+  OlDataTile* = ref object of JsRoot
+proc newOlDataTile*(options: JsObject): OlDataTile {.importjs: "(new olNs_DataTile.default(#))".}
+proc getSize*(self: OlDataTile): JsObject {.importjs: "#.getSize()".}
+proc getData*(self: OlDataTile): JsObject {.importjs: "#.getData()".}
+proc getError*(self: OlDataTile): JsObject {.importjs: "#.getError()".}
 
-proc asArrayLike*(
-  data: JsObject
-): JsObject {.importjs: "olDataTileModule.asArrayLike(#)".}
+proc asImageLike*(data: JsObject): JsObject {.importjs: "olNs_DataTile.asImageLike(#)".}
+proc asArrayLike*(data: JsObject): JsObject {.importjs: "olNs_DataTile.asArrayLike(#)".}
+proc toArray*(image: JsObject): JsObject {.importjs: "olNs_DataTile.toArray(#)".}
 
-proc toArray*(image: JsObject): JsObject {.importjs: "olDataTileModule.toArray(#)".}
+proc getDisposedError*(): JsObject {.importjs: "(olNs_DataTile.disposedError)".}

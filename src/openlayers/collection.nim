@@ -4,9 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(esmModules):
-  {.emit: "import * as olCollectionModule from 'ol/Collection.js';".}
-when defined(esmModules):
-  {.emit: "import Collection from 'ol/Collection.js';".}
-type OlCollection* = ref object of JsRoot
+  {.emit: "import * as olNs_Collection from 'ol/Collection.js';".}
 
-proc newOlCollection*(): OlCollection {.importjs: "(new Collection())".}
+proc getNamespace*(): JsObject {.importjs: "(olNs_Collection)".}
+
+type
+  OlCollection* = ref object of JsRoot
+proc newOlCollection*(): OlCollection {.importjs: "(new olNs_Collection.default())".}

@@ -1,18 +1,13 @@
 import jsffi
 
-import ./view
-import ./layer/tile
-
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(esmModules):
-  {.emit: "import Map from 'ol/Map.js';".}
+  {.emit: "import * as olNs_Map from 'ol/Map.js';".}
 
-type OlMap* = ref object of JsRoot
+proc getNamespace*(): JsObject {.importjs: "(olNs_Map)".}
 
-proc newOlMap*(options: JsObject = jsUndefined): OlMap {.importjs: "(new Map(#))".}
-
-proc getView*(map: OlMap): OlView {.importjs: "#.getView()".}
-proc setView*(map: OlMap, view: OlView) {.importjs: "#.setView(#)".}
-proc addLayer*(map: OlMap, layer: OlTileLayer) {.importjs: "#.addLayer(#)".}
+type
+  OlMap* = ref object of JsRoot
+proc newOlMap*(): OlMap {.importjs: "(new olNs_Map.default())".}
