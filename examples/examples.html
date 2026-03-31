@@ -24,57 +24,59 @@
       background: #fff;
       border: 1px solid #d1d5db;
       border-radius: 10px;
-      overflow: hidden;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+      padding: 12px;
     }
     .example-title {
-      margin: 0;
-      padding: 10px 12px;
+      margin: 0 0 10px 0;
       font-size: 16px;
       font-weight: 600;
-      border-bottom: 1px solid #e5e7eb;
-      background: #f9fafb;
     }
-    iframe {
-      display: block;
-      width: 100%;
-      border: 0;
-      background: #fff;
+    .example-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #1d4ed8;
+      font-weight: 600;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: #eff6ff;
     }
+    .example-link:hover { background: #dbeafe; }
   </style>
 </head>
 <body>
   <h1>OpenLayers Nim Examples</h1>
-  <p>Karax-based examples served from one page.</p>
+  <p>Karax-based examples. Click an item to open it.</p>
 
   <div class="example-grid">
     <section class="example-card">
       <h2 class="example-title">Simple Map</h2>
-      <iframe src="./simple.html" height="460" title="Simple Map"></iframe>
+      <a class="example-link" href="./simple.html">Open example</a>
     </section>
     <section class="example-card">
       <h2 class="example-title">Semi-Transparent Layer</h2>
-      <iframe src="./semiTransparentLayer.html" height="460" title="Semi-Transparent Layer"></iframe>
+      <a class="example-link" href="./semiTransparentLayer.html">Open example</a>
     </section>
     <section class="example-card">
       <h2 class="example-title">Select Features</h2>
-      <iframe src="./selectFeatures.html" height="520" title="Select Features"></iframe>
+      <a class="example-link" href="./selectFeatures.html">Open example</a>
     </section>
     <section class="example-card">
       <h2 class="example-title">Select Features by Hover</h2>
-      <iframe src="./selectHoverFeatures.html" height="490" title="Select Features by Hover"></iframe>
+      <a class="example-link" href="./selectHoverFeatures.html">Open example</a>
     </section>
     <section class="example-card">
       <h2 class="example-title">Layer Opacity</h2>
-      <iframe src="./layerOpacity.html" height="500" title="Layer Opacity"></iframe>
+      <a class="example-link" href="./layerOpacity.html">Open example</a>
     </section>
     <section class="example-card">
       <h2 class="example-title">Attributions</h2>
-      <iframe src="./attributions.html" height="460" title="Attributions"></iframe>
+      <a class="example-link" href="./attributions.html">Open example</a>
     </section>
     <section class="example-card">
       <h2 class="example-title">Advanced View Positioning</h2>
-      <iframe src="./center.html" height="760" title="Advanced View Positioning"></iframe>
+      <a class="example-link" href="./center.html">Open example</a>
     </section>
   </div>
 </body>
