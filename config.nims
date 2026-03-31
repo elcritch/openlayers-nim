@@ -3,6 +3,7 @@ import strutils
 
 --nimcache:".nimcache"
 --path:"src"
+--define:esmModules
 
 task test, "Run tests":
   for testFile in listFiles("tests"):

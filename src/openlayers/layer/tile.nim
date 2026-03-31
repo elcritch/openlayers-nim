@@ -5,7 +5,8 @@ import ../source/osm
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import TileLayer from 'ol/layer/Tile.js';".}
+when defined(esmModules):
+  {.emit: "import TileLayer from 'ol/layer/Tile.js';".}
 
 type OlTileLayer* = ref object of JsRoot
 
