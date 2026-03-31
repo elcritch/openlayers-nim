@@ -16,6 +16,7 @@ proc buildKaraxExamples() =
     discard buildNimAndBundleJs(
       nimEntry = nimEntry,
       bundleOut = bundleOut,
+      cssEntries = @["node_modules/ol/ol.css", "examples/app.css"],
       run = true
     )
 

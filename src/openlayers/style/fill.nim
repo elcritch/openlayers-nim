@@ -9,8 +9,21 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_Fill)".}
 
 type
+  OlFillOptions* = ref object of JsRoot
   OlFill* = ref object of JsRoot
-proc newOlFill*(options: JsObject = jsUndefined): OlFill {.importjs: "(new olNs_style_Fill.default(#))".}
+
+proc newOlFillOptions*(): OlFillOptions {.importjs: "({})".}
+proc `color=`*(options: OlFillOptions, value: JsObject) {.importjs: "#.color = #".}
+proc `color=`*(options: OlFillOptions, value: cstring) {.importjs: "#.color = #".}
+
+proc newOlFill*(
+  options: JsObject = jsUndefined
+): OlFill {.importjs: "(new olNs_style_Fill.default(#))".}
+
+proc newOlFill*(
+  options: OlFillOptions
+): OlFill {.importjs: "(new olNs_style_Fill.default(#))".}
+
 proc clone*(self: OlFill): JsObject {.importjs: "#.clone()".}
 proc getColor*(self: OlFill): JsObject {.importjs: "#.getColor()".}
 proc setColor*(self: OlFill, color: JsObject) {.importjs: "#.setColor(#)".}
