@@ -17,6 +17,7 @@ proc newLoaderOptions*(): LoaderOptions {.importjs: "({})".}
 proc `crossOrigin=`*(options: LoaderOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: LoaderOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `imageExtent=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.imageExtent = #".}
 proc `imageExtent=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.imageExtent = #".}
 proc `url=`*(options: LoaderOptions, value: cstring) {.importjs: "#.url = #".}

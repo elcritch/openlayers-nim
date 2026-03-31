@@ -36,6 +36,7 @@ proc `color=`*(options: IconOptions, value: RootRef) {.importjs: "#.color = #".}
 proc `crossOrigin=`*(options: IconOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: IconOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: IconOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: IconOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `img=`*(options: IconOptions, value: JsObject) {.importjs: "#.img = #".}
 proc `img=`*(options: IconOptions, value: RootRef) {.importjs: "#.img = #".}
 proc `displacement=`*(options: IconOptions, value: seq[float]) {.importjs: "#.displacement = #".}

@@ -45,6 +45,7 @@ proc `writeStyles=`*(options: KMLOptions, value: bool) {.importjs: "#.writeStyle
 proc `crossOrigin=`*(options: KMLOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: KMLOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: KMLOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: KMLOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `iconUrlFunction=`*(options: KMLOptions, value: JsObject) {.importjs: "#.iconUrlFunction = #".}
 proc `iconUrlFunction=`*(options: KMLOptions, value: RootRef) {.importjs: "#.iconUrlFunction = #".}
 

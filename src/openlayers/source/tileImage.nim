@@ -31,6 +31,7 @@ proc `cacheSize=`*(options: TileImageOptions, value: float) {.importjs: "#.cache
 proc `crossOrigin=`*(options: TileImageOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: TileImageOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: TileImageOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: TileImageOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `interpolate=`*(options: TileImageOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `projection=`*(options: TileImageOptions, value: JsObject) {.importjs: "#.projection = #".}
 proc `projection=`*(options: TileImageOptions, value: RootRef) {.importjs: "#.projection = #".}
@@ -46,6 +47,8 @@ proc `tileLoadFunction=`*(options: TileImageOptions, value: RootRef) {.importjs:
 proc `tilePixelRatio=`*(options: TileImageOptions, value: float) {.importjs: "#.tilePixelRatio = #".}
 proc `tileUrlFunction=`*(options: TileImageOptions, value: JsObject) {.importjs: "#.tileUrlFunction = #".}
 proc `tileUrlFunction=`*(options: TileImageOptions, value: RootRef) {.importjs: "#.tileUrlFunction = #".}
+proc `tileUrlFunction=`*(options: TileImageOptions, value: cstring) {.importjs: "#.tileUrlFunction = #".}
+proc `tileUrlFunction=`*(options: TileImageOptions, value: seq[cstring]) {.importjs: "#.tileUrlFunction = #".}
 proc `url=`*(options: TileImageOptions, value: cstring) {.importjs: "#.url = #".}
 proc `urls=`*(options: TileImageOptions, value: seq[cstring]) {.importjs: "#.urls = #".}
 proc `wrapX=`*(options: TileImageOptions, value: bool) {.importjs: "#.wrapX = #".}

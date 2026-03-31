@@ -32,6 +32,7 @@ proc `attributions=`*(options: ImageWMSOptions, value: seq[cstring]) {.importjs:
 proc `crossOrigin=`*(options: ImageWMSOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: ImageWMSOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: ImageWMSOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: ImageWMSOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `hidpi=`*(options: ImageWMSOptions, value: bool) {.importjs: "#.hidpi = #".}
 proc `serverType=`*(options: ImageWMSOptions, value: JsObject) {.importjs: "#.serverType = #".}
 proc `serverType=`*(options: ImageWMSOptions, value: RootRef) {.importjs: "#.serverType = #".}

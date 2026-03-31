@@ -19,6 +19,8 @@ type
 proc newImageTileSourceOptions*(): ImageTileSourceOptions {.importjs: "({})".}
 proc `url=`*(options: ImageTileSourceOptions, value: JsObject) {.importjs: "#.url = #".}
 proc `url=`*(options: ImageTileSourceOptions, value: RootRef) {.importjs: "#.url = #".}
+proc `url=`*(options: ImageTileSourceOptions, value: cstring) {.importjs: "#.url = #".}
+proc `url=`*(options: ImageTileSourceOptions, value: seq[cstring]) {.importjs: "#.url = #".}
 proc `loader=`*(options: ImageTileSourceOptions, value: JsObject) {.importjs: "#.loader = #".}
 proc `loader=`*(options: ImageTileSourceOptions, value: RootRef) {.importjs: "#.loader = #".}
 proc `attributions=`*(options: ImageTileSourceOptions, value: JsObject) {.importjs: "#.attributions = #".}
@@ -44,8 +46,10 @@ proc `transition=`*(options: ImageTileSourceOptions, value: float) {.importjs: "
 proc `interpolate=`*(options: ImageTileSourceOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `crossOrigin=`*(options: ImageTileSourceOptions, value: JsObject) {.importjs: "#.crossOrigin = #".}
 proc `crossOrigin=`*(options: ImageTileSourceOptions, value: RootRef) {.importjs: "#.crossOrigin = #".}
+proc `crossOrigin=`*(options: ImageTileSourceOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: ImageTileSourceOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: ImageTileSourceOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: ImageTileSourceOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `zDirection=`*(options: ImageTileSourceOptions, value: float) {.importjs: "#.zDirection = #".}
 proc `zDirection=`*(options: ImageTileSourceOptions, value: JsObject) {.importjs: "#.zDirection = #".}
 proc `zDirection=`*(options: ImageTileSourceOptions, value: RootRef) {.importjs: "#.zDirection = #".}

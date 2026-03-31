@@ -30,6 +30,7 @@ proc `attributions=`*(options: OGCMapOptions, value: seq[cstring]) {.importjs: "
 proc `crossOrigin=`*(options: OGCMapOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: OGCMapOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: OGCMapOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: OGCMapOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `hidpi=`*(options: OGCMapOptions, value: bool) {.importjs: "#.hidpi = #".}
 proc `imageLoadFunction=`*(options: OGCMapOptions, value: JsObject) {.importjs: "#.imageLoadFunction = #".}
 proc `imageLoadFunction=`*(options: OGCMapOptions, value: RootRef) {.importjs: "#.imageLoadFunction = #".}

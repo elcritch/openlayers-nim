@@ -18,6 +18,7 @@ proc `url=`*(options: LoaderOptions, value: cstring) {.importjs: "#.url = #".}
 proc `crossOrigin=`*(options: LoaderOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: LoaderOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `displayDpi=`*(options: LoaderOptions, value: float) {.importjs: "#.displayDpi = #".}
 proc `metersPerUnit=`*(options: LoaderOptions, value: float) {.importjs: "#.metersPerUnit = #".}
 proc `hidpi=`*(options: LoaderOptions, value: bool) {.importjs: "#.hidpi = #".}

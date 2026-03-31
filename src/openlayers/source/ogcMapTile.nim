@@ -30,6 +30,7 @@ proc `cacheSize=`*(options: OGCMapTileOptions, value: float) {.importjs: "#.cach
 proc `crossOrigin=`*(options: OGCMapTileOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: OGCMapTileOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: OGCMapTileOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: OGCMapTileOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `interpolate=`*(options: OGCMapTileOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `reprojectionErrorThreshold=`*(options: OGCMapTileOptions, value: float) {.importjs: "#.reprojectionErrorThreshold = #".}
 proc `tileLoadFunction=`*(options: OGCMapTileOptions, value: JsObject) {.importjs: "#.tileLoadFunction = #".}

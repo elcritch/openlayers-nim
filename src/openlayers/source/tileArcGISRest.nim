@@ -27,6 +27,7 @@ proc `cacheSize=`*(options: TileArcGISRestOptions, value: float) {.importjs: "#.
 proc `crossOrigin=`*(options: TileArcGISRestOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: TileArcGISRestOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: TileArcGISRestOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: TileArcGISRestOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `interpolate=`*(options: TileArcGISRestOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `params=`*(options: TileArcGISRestOptions, value: JsObject) {.importjs: "#.params = #".}
 proc `params=`*(options: TileArcGISRestOptions, value: RootRef) {.importjs: "#.params = #".}

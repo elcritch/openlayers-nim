@@ -26,6 +26,7 @@ proc `cacheSize=`*(options: OSMOptions, value: float) {.importjs: "#.cacheSize =
 proc `crossOrigin=`*(options: OSMOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: OSMOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: OSMOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: OSMOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `interpolate=`*(options: OSMOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `maxZoom=`*(options: OSMOptions, value: float) {.importjs: "#.maxZoom = #".}
 proc `reprojectionErrorThreshold=`*(options: OSMOptions, value: float) {.importjs: "#.reprojectionErrorThreshold = #".}

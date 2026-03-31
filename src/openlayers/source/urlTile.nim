@@ -42,6 +42,8 @@ proc `tileLoadFunction=`*(options: UrlTileOptions, value: RootRef) {.importjs: "
 proc `tilePixelRatio=`*(options: UrlTileOptions, value: float) {.importjs: "#.tilePixelRatio = #".}
 proc `tileUrlFunction=`*(options: UrlTileOptions, value: JsObject) {.importjs: "#.tileUrlFunction = #".}
 proc `tileUrlFunction=`*(options: UrlTileOptions, value: RootRef) {.importjs: "#.tileUrlFunction = #".}
+proc `tileUrlFunction=`*(options: UrlTileOptions, value: cstring) {.importjs: "#.tileUrlFunction = #".}
+proc `tileUrlFunction=`*(options: UrlTileOptions, value: seq[cstring]) {.importjs: "#.tileUrlFunction = #".}
 proc `url=`*(options: UrlTileOptions, value: cstring) {.importjs: "#.url = #".}
 proc `urls=`*(options: UrlTileOptions, value: seq[cstring]) {.importjs: "#.urls = #".}
 proc `wrapX=`*(options: UrlTileOptions, value: bool) {.importjs: "#.wrapX = #".}

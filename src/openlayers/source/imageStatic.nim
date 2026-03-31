@@ -25,6 +25,7 @@ proc `attributions=`*(options: StaticOptions, value: seq[cstring]) {.importjs: "
 proc `crossOrigin=`*(options: StaticOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: StaticOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: StaticOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: StaticOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `imageExtent=`*(options: StaticOptions, value: JsObject) {.importjs: "#.imageExtent = #".}
 proc `imageExtent=`*(options: StaticOptions, value: RootRef) {.importjs: "#.imageExtent = #".}
 proc `imageLoadFunction=`*(options: StaticOptions, value: JsObject) {.importjs: "#.imageLoadFunction = #".}

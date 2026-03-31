@@ -51,6 +51,8 @@ proc `tileLoadFunction=`*(options: VectorTileOptions, value: JsObject) {.importj
 proc `tileLoadFunction=`*(options: VectorTileOptions, value: RootRef) {.importjs: "#.tileLoadFunction = #".}
 proc `tileUrlFunction=`*(options: VectorTileOptions, value: JsObject) {.importjs: "#.tileUrlFunction = #".}
 proc `tileUrlFunction=`*(options: VectorTileOptions, value: RootRef) {.importjs: "#.tileUrlFunction = #".}
+proc `tileUrlFunction=`*(options: VectorTileOptions, value: cstring) {.importjs: "#.tileUrlFunction = #".}
+proc `tileUrlFunction=`*(options: VectorTileOptions, value: seq[cstring]) {.importjs: "#.tileUrlFunction = #".}
 proc `url=`*(options: VectorTileOptions, value: cstring) {.importjs: "#.url = #".}
 proc `transition=`*(options: VectorTileOptions, value: float) {.importjs: "#.transition = #".}
 proc `urls=`*(options: VectorTileOptions, value: seq[cstring]) {.importjs: "#.urls = #".}

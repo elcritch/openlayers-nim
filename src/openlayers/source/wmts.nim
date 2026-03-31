@@ -36,6 +36,7 @@ proc `cacheSize=`*(options: WMTSOptions, value: float) {.importjs: "#.cacheSize 
 proc `crossOrigin=`*(options: WMTSOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: WMTSOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: WMTSOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: WMTSOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `interpolate=`*(options: WMTSOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `tileGrid=`*(options: WMTSOptions, value: JsObject) {.importjs: "#.tileGrid = #".}
 proc `tileGrid=`*(options: WMTSOptions, value: RootRef) {.importjs: "#.tileGrid = #".}

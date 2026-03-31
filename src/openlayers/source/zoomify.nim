@@ -24,6 +24,7 @@ proc `cacheSize=`*(options: ZoomifyOptions, value: float) {.importjs: "#.cacheSi
 proc `crossOrigin=`*(options: ZoomifyOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: ZoomifyOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: ZoomifyOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: ZoomifyOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `interpolate=`*(options: ZoomifyOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `projection=`*(options: ZoomifyOptions, value: JsObject) {.importjs: "#.projection = #".}
 proc `projection=`*(options: ZoomifyOptions, value: RootRef) {.importjs: "#.projection = #".}

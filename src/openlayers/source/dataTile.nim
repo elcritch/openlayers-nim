@@ -26,8 +26,10 @@ proc `signal=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.signal =
 proc `signal=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.signal = #".}
 proc `crossOrigin=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.crossOrigin = #".}
 proc `crossOrigin=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.crossOrigin = #".}
+proc `crossOrigin=`*(options: LoaderOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: LoaderOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `maxY=`*(options: LoaderOptions, value: float) {.importjs: "#.maxY = #".}
 
 type
@@ -60,8 +62,10 @@ proc `bandCount=`*(options: DataTileSourceOptions, value: float) {.importjs: "#.
 proc `interpolate=`*(options: DataTileSourceOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `crossOrigin=`*(options: DataTileSourceOptions, value: JsObject) {.importjs: "#.crossOrigin = #".}
 proc `crossOrigin=`*(options: DataTileSourceOptions, value: RootRef) {.importjs: "#.crossOrigin = #".}
+proc `crossOrigin=`*(options: DataTileSourceOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: DataTileSourceOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: DataTileSourceOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: DataTileSourceOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `key=`*(options: DataTileSourceOptions, value: cstring) {.importjs: "#.key = #".}
 proc `zDirection=`*(options: DataTileSourceOptions, value: float) {.importjs: "#.zDirection = #".}
 proc `zDirection=`*(options: DataTileSourceOptions, value: JsObject) {.importjs: "#.zDirection = #".}

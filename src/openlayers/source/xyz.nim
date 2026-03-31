@@ -25,6 +25,7 @@ proc `cacheSize=`*(options: XYZOptions, value: float) {.importjs: "#.cacheSize =
 proc `crossOrigin=`*(options: XYZOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: XYZOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: XYZOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: XYZOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `interpolate=`*(options: XYZOptions, value: bool) {.importjs: "#.interpolate = #".}
 proc `projection=`*(options: XYZOptions, value: JsObject) {.importjs: "#.projection = #".}
 proc `projection=`*(options: XYZOptions, value: RootRef) {.importjs: "#.projection = #".}
@@ -43,6 +44,8 @@ proc `tileSize=`*(options: XYZOptions, value: RootRef) {.importjs: "#.tileSize =
 proc `gutter=`*(options: XYZOptions, value: float) {.importjs: "#.gutter = #".}
 proc `tileUrlFunction=`*(options: XYZOptions, value: JsObject) {.importjs: "#.tileUrlFunction = #".}
 proc `tileUrlFunction=`*(options: XYZOptions, value: RootRef) {.importjs: "#.tileUrlFunction = #".}
+proc `tileUrlFunction=`*(options: XYZOptions, value: cstring) {.importjs: "#.tileUrlFunction = #".}
+proc `tileUrlFunction=`*(options: XYZOptions, value: seq[cstring]) {.importjs: "#.tileUrlFunction = #".}
 proc `url=`*(options: XYZOptions, value: cstring) {.importjs: "#.url = #".}
 proc `urls=`*(options: XYZOptions, value: seq[cstring]) {.importjs: "#.urls = #".}
 proc `wrapX=`*(options: XYZOptions, value: bool) {.importjs: "#.wrapX = #".}

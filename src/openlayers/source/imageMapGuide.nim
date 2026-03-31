@@ -25,6 +25,7 @@ proc `url=`*(options: ImageMapGuideOptions, value: cstring) {.importjs: "#.url =
 proc `crossOrigin=`*(options: ImageMapGuideOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: ImageMapGuideOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: ImageMapGuideOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: ImageMapGuideOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `displayDpi=`*(options: ImageMapGuideOptions, value: float) {.importjs: "#.displayDpi = #".}
 proc `metersPerUnit=`*(options: ImageMapGuideOptions, value: float) {.importjs: "#.metersPerUnit = #".}
 proc `hidpi=`*(options: ImageMapGuideOptions, value: bool) {.importjs: "#.hidpi = #".}

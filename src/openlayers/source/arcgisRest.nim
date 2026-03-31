@@ -18,6 +18,7 @@ proc newLoaderOptions*(): LoaderOptions {.importjs: "({})".}
 proc `crossOrigin=`*(options: LoaderOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: LoaderOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `hidpi=`*(options: LoaderOptions, value: bool) {.importjs: "#.hidpi = #".}
 proc `params=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.params = #".}
 proc `params=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.params = #".}

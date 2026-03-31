@@ -30,6 +30,7 @@ proc `attributions=`*(options: ImageArcGISRestOptions, value: seq[cstring]) {.im
 proc `crossOrigin=`*(options: ImageArcGISRestOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
 proc `referrerPolicy=`*(options: ImageArcGISRestOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
 proc `referrerPolicy=`*(options: ImageArcGISRestOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: ImageArcGISRestOptions, value: cstring) {.importjs: "#.referrerPolicy = #".}
 proc `hidpi=`*(options: ImageArcGISRestOptions, value: bool) {.importjs: "#.hidpi = #".}
 proc `imageLoadFunction=`*(options: ImageArcGISRestOptions, value: JsObject) {.importjs: "#.imageLoadFunction = #".}
 proc `imageLoadFunction=`*(options: ImageArcGISRestOptions, value: RootRef) {.importjs: "#.imageLoadFunction = #".}
