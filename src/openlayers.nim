@@ -1,21 +1,16 @@
-import std/os
 import jsffi
 
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-const
-  openLayersBundleDir* = block:
-    let srcDir = currentSourcePath().parentDir
-    srcDir.parentDir / "deps" / "openlayers_bundle"
-  openLayersBundleJsPath* = openLayersBundleDir / "ol.js"
-  defaultOpenLayersBundleUrl* = "https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"
-  defaultOpenLayersCssUrl* = "https://cdn.jsdelivr.net/npm/ol@latest/ol.css"
+{.emit: "import Map from 'ol/Map.js';".}
+{.emit: "import View from 'ol/View.js';".}
+{.emit: "import TileLayer from 'ol/layer/Tile.js';".}
+{.emit: "import OSM from 'ol/source/OSM.js';".}
+{.emit: "import * as proj from 'ol/proj.js';".}
 
-proc openLayersLoaded*(): bool {.importjs: "(typeof ol !== 'undefined')".}
-proc hasMapConstructor*(): bool {.
-  importjs: "(typeof ol !== 'undefined' && typeof ol.Map === 'function')"
-.}
+proc openLayersLoaded*(): bool {.importjs: "(typeof View === 'function')".}
+proc hasMapConstructor*(): bool {.importjs: "(typeof Map === 'function')".}
 
 type
   OlView* = ref object of JsRoot
@@ -23,9 +18,7 @@ type
   OlOsmSource* = ref object of JsRoot
   OlMap* = ref object of JsRoot
 
-proc newOlView*(
-  options: JsObject = jsUndefined
-): OlView {.importjs: "(new ol.View(#))".}
+proc newOlView*(options: JsObject = jsUndefined): OlView {.importjs: "(new View(#))".}
 
 proc getCenter*(view: OlView): seq[float] {.importjs: "#.getCenter()".}
 proc setCenter*(view: OlView, center: seq[float]) {.importjs: "#.setCenter(#)".}
@@ -34,28 +27,28 @@ proc setZoom*(view: OlView, zoom: float) {.importjs: "#.setZoom(#)".}
 
 proc newOsmSource*(
   options: JsObject = jsUndefined
-): OlOsmSource {.importjs: "(new ol.source.OSM(#))".}
+): OlOsmSource {.importjs: "(new OSM(#))".}
 
 proc newTileLayer*(
   options: JsObject = jsUndefined
-): OlTileLayer {.importjs: "(new ol.layer.Tile(#))".}
+): OlTileLayer {.importjs: "(new TileLayer(#))".}
 
 proc getSource*(layer: OlTileLayer): OlOsmSource {.importjs: "#.getSource()".}
 
-proc newOlMap*(options: JsObject = jsUndefined): OlMap {.importjs: "(new ol.Map(#))".}
+proc newOlMap*(options: JsObject = jsUndefined): OlMap {.importjs: "(new Map(#))".}
+
 proc getView*(map: OlMap): OlView {.importjs: "#.getView()".}
 proc setView*(map: OlMap, view: OlView) {.importjs: "#.setView(#)".}
 proc addLayer*(map: OlMap, layer: OlTileLayer) {.importjs: "#.addLayer(#)".}
 
-proc fromLonLat*(
-  coordinate: seq[float]
-): seq[float] {.importjs: "ol.proj.fromLonLat(#)".}
+proc fromLonLat*(coordinate: seq[float]): seq[float] {.importjs: "proj.fromLonLat(#)".}
 
 proc fromLonLat*(
   coordinate: seq[float], projection: cstring
-): seq[float] {.importjs: "ol.proj.fromLonLat(#, #)".}
+): seq[float] {.importjs: "proj.fromLonLat(#, #)".}
 
-proc toLonLat*(coordinate: seq[float]): seq[float] {.importjs: "ol.proj.toLonLat(#)".}
+proc toLonLat*(coordinate: seq[float]): seq[float] {.importjs: "proj.toLonLat(#)".}
+
 proc toLonLat*(
   coordinate: seq[float], projection: cstring
-): seq[float] {.importjs: "ol.proj.toLonLat(#, #)".}
+): seq[float] {.importjs: "proj.toLonLat(#, #)".}

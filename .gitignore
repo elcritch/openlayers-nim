@@ -15,3 +15,5 @@ nimble.paths
 .nimcache
 deps/
 .nimcache/
+/node_modules/
+*.js
