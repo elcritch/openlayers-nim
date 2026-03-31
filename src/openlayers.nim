@@ -7,23 +7,16 @@ import openlayers/source/osm
 
 import openlayers/collection
 import openlayers/dataTile
-import openlayers/disposable
 import openlayers/feature
 import openlayers/geolocation
 import openlayers/image
-import openlayers/imageCanvas
 import openlayers/imageTile
 import openlayers/kinetic
 import openlayers/mapBrowserEvent
-import openlayers/mapBrowserEventHandler
 import openlayers/mapEvent
-import openlayers/baseObject
 import openlayers/observable
 import openlayers/overlay
 import openlayers/tile as rootTile
-import openlayers/tileQueue
-import openlayers/tileRange
-import openlayers/vectorRenderTile
 import openlayers/vectorTile
 
 import openlayers/control
@@ -46,23 +39,16 @@ export osm
 
 export collection
 export dataTile
-export disposable
 export feature
 export geolocation
 export image
-export imageCanvas
 export imageTile
 export kinetic
 export mapBrowserEvent
-export mapBrowserEventHandler
 export mapEvent
-export baseObject
 export observable
 export overlay
 export rootTile
-export tileQueue
-export tileRange
-export vectorRenderTile
 export vectorTile
 
 export control

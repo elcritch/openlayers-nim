@@ -1,13 +1,22 @@
 #!/usr/bin/env node
 
 import fs from 'node:fs';
+import https from 'node:https';
 import path from 'node:path';
 
 const repoRoot = process.cwd();
 const olRoot = path.join(repoRoot, 'node_modules', 'ol');
 const outWrapRoot = path.join(repoRoot, 'src', 'openlayers');
-const legacyApiRoot = path.join(repoRoot, 'src', 'openlayers', 'api');
 const outApiFile = path.join(repoRoot, 'generated', 'openlayers-api.json');
+const apidocNavUrl = 'https://openlayers.org/en/latest/apidoc/navigation.tmpl.html';
+const manualPublicModules = new Set([
+  'control',
+  'interaction',
+  'layer',
+  'format',
+  'geom',
+  'style'
+]);
 
 if (!fs.existsSync(olRoot)) {
   console.error(`Missing OpenLayers typings root: ${olRoot}`);
@@ -514,6 +523,41 @@ function ensureDir(filePath) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
 }
 
+function fetchUrlText(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      if (res.statusCode && res.statusCode >= 400) {
+        reject(new Error(`HTTP ${res.statusCode} for ${url}`));
+        return;
+      }
+
+      let data = '';
+      res.setEncoding('utf8');
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+      res.on('end', () => resolve(data));
+    }).on('error', reject);
+  });
+}
+
+function parsePublicModulesFromApidocNav(navHtml) {
+  const modules = new Set();
+  const re = /data-longname="([^"]+)"/g;
+  let m;
+
+  while ((m = re.exec(navHtml)) !== null) {
+    const longName = m[1];
+    if (!longName.startsWith('module:ol/')) continue;
+    let moduleId = longName.slice('module:ol/'.length);
+    moduleId = moduleId.split('~')[0].split('.')[0];
+    if (moduleId) modules.add(moduleId);
+  }
+
+  for (const moduleId of manualPublicModules) modules.add(moduleId);
+  return modules;
+}
+
 function buildWrapper(moduleId, moduleInfo, nimRelModulePath) {
   const nsAlias = sanitizeIdent(`olNs_${moduleId.replace(/[^A-Za-z0-9_]/g, '_')}`, 'olNs');
   const lines = [];
@@ -651,23 +695,33 @@ function buildWrapper(moduleId, moduleInfo, nimRelModulePath) {
   return lines.join('\n');
 }
 
-function main() {
+async function main() {
+  const navHtml = await fetchUrlText(apidocNavUrl);
+  const publicModules = parsePublicModulesFromApidocNav(navHtml);
   const dtsFiles = collectDtsFiles(olRoot);
+  const publicDtsFiles = dtsFiles.filter((file) => {
+    const rel = path.relative(olRoot, file);
+    const moduleId = rel.replace(/\\/g, '/').replace(/\.d\.ts$/, '');
+    return publicModules.has(moduleId);
+  });
 
-  fs.rmSync(legacyApiRoot, { recursive: true, force: true });
+  fs.rmSync(outWrapRoot, { recursive: true, force: true });
   fs.mkdirSync(outWrapRoot, { recursive: true });
   fs.mkdirSync(path.dirname(outApiFile), { recursive: true });
 
   const manifest = {
     generatedAt: new Date().toISOString(),
     sourceRoot: 'node_modules/ol',
-    moduleCount: dtsFiles.length,
+    apidocNavUrl,
+    apidocModuleCount: publicModules.size,
+    scannedModuleCount: dtsFiles.length,
+    moduleCount: publicDtsFiles.length,
     modules: []
   };
 
   let wrapperCount = 0;
 
-  for (const file of dtsFiles) {
+  for (const file of publicDtsFiles) {
     const rel = path.relative(olRoot, file);
     const moduleId = rel.replace(/\\/g, '/').replace(/\.d\.ts$/, '');
     const nimRel = nimModulePathFromDtsRel(rel.replace(/\\/g, '/'));
@@ -711,7 +765,11 @@ function main() {
   fs.writeFileSync(outApiFile, JSON.stringify(manifest, null, 2) + '\n');
 
   console.log(`Generated API manifest: ${path.relative(repoRoot, outApiFile)}`);
+  console.log(`Public modules from API docs: ${publicModules.size}`);
   console.log(`Generated wrappers: ${wrapperCount} modules under ${path.relative(repoRoot, outWrapRoot)}`);
 }
 
-main();
+main().catch((err) => {
+  console.error(String(err && err.stack ? err.stack : err));
+  process.exit(1);
+});
