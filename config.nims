@@ -11,7 +11,7 @@ task test, "Run tests":
   for testFile in listFiles("tests"):
     if testFile.endsWith(".nim"):
       if testFile.extractFilename().startsWith("tjs_"):
-        exec "nim js -d:nodejs -d:openlayersEmbedBundle -r " & testFile
+        exec "nim js -d:nodejs -r " & testFile
       else:
         exec "nim c -r " & testFile
   for testFile in listFiles("examples"):

@@ -12,12 +12,6 @@ const
   defaultOpenLayersBundleUrl* = "https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"
   defaultOpenLayersCssUrl* = "https://cdn.jsdelivr.net/npm/ol@latest/ol.css"
 
-when defined(openlayersEmbedBundle):
-  const openLayersEmbeddedSource =
-    staticRead(openLayersBundleJsPath) & "\n;globalThis.ol = ol;"
-  proc evalEmbeddedOpenLayers(source: cstring) {.importjs: "globalThis.eval(#)".}
-  evalEmbeddedOpenLayers(cstring(openLayersEmbeddedSource))
-
 proc openLayersLoaded*(): bool {.importjs: "(typeof ol !== 'undefined')".}
 proc hasMapConstructor*(): bool {.
   importjs: "(typeof ol !== 'undefined' && typeof ol.Map === 'function')"

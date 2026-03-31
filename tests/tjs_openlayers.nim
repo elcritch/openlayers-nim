@@ -4,6 +4,21 @@ when defined(js):
   import jsffi
   import openlayers
 
+  proc ensureOpenLayersLoaded(
+    bundlePath: cstring = "deps/openlayers_bundle/ol.js"
+  ) {.
+    importjs:
+      """if (typeof globalThis.ol === 'undefined') {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const resolved = path.resolve(process.cwd(), #);
+  const source = fs.readFileSync(resolved, 'utf8');
+  globalThis.eval(source + '\n;globalThis.ol = ol;');
+}"""
+  .}
+
+  ensureOpenLayersLoaded()
+
   suite "openlayers bindings":
     test "bundle is loaded":
       check openLayersLoaded()
