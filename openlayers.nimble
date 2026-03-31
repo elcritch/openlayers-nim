@@ -4,6 +4,9 @@ description   = "metal bindings"
 license       = "BSD-2-Clause"
 srcDir        = "src"
 
+feature "dev":
+  requires "karax"
+
 feature "reference":
   requires "p5nim"
   requires "ajax"
