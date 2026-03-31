@@ -16,6 +16,10 @@ proc newVectorSourceWithOptions*(
 ): JsObject {.importjs: "(new olNs_source_Vector.default(#))".}
 
 proc getElementById*(id: cstring): JsObject {.importjs: "document.getElementById(#)".}
+proc isTruthy*(value: JsObject): bool {.importjs: "Boolean(#)".}
+proc detachMap*(
+  mapObj: JsObject
+) {.importjs: "(function(m){ if (m && m.setTarget) { m.setTarget(null); } })(#)".}
 
 proc jsArray1*(a: JsObject): JsObject {.importjs: "[#]".}
 proc jsArray2*(a: float, b: float): JsObject {.importjs: "[#, #]".}

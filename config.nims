@@ -7,13 +7,7 @@ import bunnery/build
 --define:esmModules
 
 let karaxExampleEntries = @[
-  "examples/simple.nim",
-  "examples/semiTransparentLayer.nim",
-  "examples/selectFeatures.nim",
-  "examples/selectHoverFeatures.nim",
-  "examples/layerOpacity.nim",
-  "examples/attributions.nim",
-  "examples/center.nim",
+  "examples/app.nim",
 ]
 
 proc buildKaraxExamples() =
@@ -32,9 +26,8 @@ task test, "Run tests":
         exec "nim js -d:nodejs -r " & testFile
       else:
         exec "nim c -r " & testFile
-  for testFile in listFiles("examples"):
-    if testFile.endsWith(".nim") and testFile.extractFilename() != "server.nim":
-      exec "nim js -d:nodejs " & testFile
+  for nimEntry in karaxExampleEntries:
+    exec "nim js -d:nodejs " & nimEntry
 
 task serveExamples, "Compile example JS and run the async example server":
   buildKaraxExamples()
