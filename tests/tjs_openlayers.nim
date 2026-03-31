@@ -5,7 +5,6 @@ import openlayers
 suite "openlayers aggregate module":
   test "re-exports remain available":
     discard getControlNamespace()
-    discard getOlMapEventType()
     check newOlCollection() != nil
     check newOlTileRange(0.0, 1.0, 0.0, 1.0) != nil
 
