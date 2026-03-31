@@ -14,4 +14,4 @@ task test, "Run tests":
         exec "nim c -r " & testFile
   for testFile in listFiles("examples"):
     if testFile.endsWith(".nim"):
-      exec "nim c " & testFile
+      exec "nim js -d:nodejs " & testFile
