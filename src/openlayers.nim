@@ -1,37 +1,37 @@
-import std/[os, strutils]
+import std/os
 import jsffi
 
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-const olModuleDir = block:
-  let srcDir = currentSourcePath().parentDir
-  srcDir.parentDir / "deps" / "openlayers" / "src" / "ol"
-
-const olModuleBase = block:
-  let normalized = olModuleDir.replace("\\", "/")
-  when defined(windows):
-    "file:///" & normalized
-  else:
-    "file://" & normalized
-
 const
-  viewImportPath = olModuleBase & "/View.js"
-  tileLayerImportPath = olModuleBase & "/layer/Tile.js"
-  osmImportPath = olModuleBase & "/source/OSM.js"
-  projImportPath = olModuleBase & "/proj.js"
+  openLayersBundleDir* = block:
+    let srcDir = currentSourcePath().parentDir
+    srcDir.parentDir / "deps" / "openlayers_bundle"
+  openLayersBundleJsPath* = openLayersBundleDir / "ol.js"
+  defaultOpenLayersBundleUrl* = "https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"
+  defaultOpenLayersCssUrl* = "https://cdn.jsdelivr.net/npm/ol@latest/ol.css"
 
-{.emit: "import View from '" & viewImportPath & "';".}
-{.emit: "import TileLayer from '" & tileLayerImportPath & "';".}
-{.emit: "import OSM from '" & osmImportPath & "';".}
-{.emit: "import {fromLonLat, toLonLat} from '" & projImportPath & "';".}
+when defined(openlayersEmbedBundle):
+  const openLayersEmbeddedSource =
+    staticRead(openLayersBundleJsPath) & "\n;globalThis.ol = ol;"
+  proc evalEmbeddedOpenLayers(source: cstring) {.importjs: "globalThis.eval(#)".}
+  evalEmbeddedOpenLayers(cstring(openLayersEmbeddedSource))
+
+proc openLayersLoaded*(): bool {.importjs: "(typeof ol !== 'undefined')".}
+proc hasMapConstructor*(): bool {.
+  importjs: "(typeof ol !== 'undefined' && typeof ol.Map === 'function')"
+.}
 
 type
-  OlView* {.importc: "View".} = ref object of JsRoot
-  OlTileLayer* {.importc: "TileLayer".} = ref object of JsRoot
-  OlOsmSource* {.importc: "OSM".} = ref object of JsRoot
+  OlView* = ref object of JsRoot
+  OlTileLayer* = ref object of JsRoot
+  OlOsmSource* = ref object of JsRoot
+  OlMap* = ref object of JsRoot
 
-proc newOlView*(options: JsObject = jsUndefined): OlView {.importjs: "(new View(#))".}
+proc newOlView*(
+  options: JsObject = jsUndefined
+): OlView {.importjs: "(new ol.View(#))".}
 
 proc getCenter*(view: OlView): seq[float] {.importjs: "#.getCenter()".}
 proc setCenter*(view: OlView, center: seq[float]) {.importjs: "#.setCenter(#)".}
@@ -40,26 +40,28 @@ proc setZoom*(view: OlView, zoom: float) {.importjs: "#.setZoom(#)".}
 
 proc newOsmSource*(
   options: JsObject = jsUndefined
-): OlOsmSource {.importjs: "(new OSM(#))".}
+): OlOsmSource {.importjs: "(new ol.source.OSM(#))".}
 
 proc newTileLayer*(
   options: JsObject = jsUndefined
-): OlTileLayer {.importjs: "(new TileLayer(#))".}
+): OlTileLayer {.importjs: "(new ol.layer.Tile(#))".}
 
 proc getSource*(layer: OlTileLayer): OlOsmSource {.importjs: "#.getSource()".}
 
-proc fromLonLat*(coordinate: seq[float]): seq[float] {.importc.}
-proc fromLonLat*(coordinate: seq[float], projection: cstring): seq[float] {.importc.}
-proc toLonLat*(coordinate: seq[float]): seq[float] {.importc.}
-proc toLonLat*(coordinate: seq[float], projection: cstring): seq[float] {.importc.}
+proc newOlMap*(options: JsObject = jsUndefined): OlMap {.importjs: "(new ol.Map(#))".}
+proc getView*(map: OlMap): OlView {.importjs: "#.getView()".}
+proc setView*(map: OlMap, view: OlView) {.importjs: "#.setView(#)".}
+proc addLayer*(map: OlMap, layer: OlTileLayer) {.importjs: "#.addLayer(#)".}
 
-when defined(openlayersWithMap):
-  const mapImportPath = olModuleBase & "/Map.js"
-  {.emit: "import Map from '" & mapImportPath & "';".}
+proc fromLonLat*(
+  coordinate: seq[float]
+): seq[float] {.importjs: "ol.proj.fromLonLat(#)".}
 
-  type OlMap* {.importc: "Map".} = ref object of JsRoot
+proc fromLonLat*(
+  coordinate: seq[float], projection: cstring
+): seq[float] {.importjs: "ol.proj.fromLonLat(#, #)".}
 
-  proc newOlMap*(options: JsObject = jsUndefined): OlMap {.importjs: "(new Map(#))".}
-  proc getView*(map: OlMap): OlView {.importjs: "#.getView()".}
-  proc setView*(map: OlMap, view: OlView) {.importjs: "#.setView(#)".}
-  proc addLayer*(map: OlMap, layer: OlTileLayer) {.importjs: "#.addLayer(#)".}
+proc toLonLat*(coordinate: seq[float]): seq[float] {.importjs: "ol.proj.toLonLat(#)".}
+proc toLonLat*(
+  coordinate: seq[float], projection: cstring
+): seq[float] {.importjs: "ol.proj.toLonLat(#, #)".}

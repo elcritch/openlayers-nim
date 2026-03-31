@@ -5,6 +5,10 @@ when defined(js):
   import openlayers
 
   suite "openlayers bindings":
+    test "bundle is loaded":
+      check openLayersLoaded()
+      check hasMapConstructor()
+
     test "coordinate transforms round trip":
       let mercator = fromLonLat(@[10.0, 20.0])
       check mercator.len == 2
