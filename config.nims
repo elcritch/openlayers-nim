@@ -1,9 +1,29 @@
 import os
 import strutils
+import bunnery/build
 
 --nimcache:".nimcache"
 --path:"src"
 --define:esmModules
+
+let karaxExampleEntries = @[
+  "examples/simple.nim",
+  "examples/semiTransparentLayer.nim",
+  "examples/selectFeatures.nim",
+  "examples/selectHoverFeatures.nim",
+  "examples/layerOpacity.nim",
+  "examples/attributions.nim",
+  "examples/center.nim",
+]
+
+proc buildKaraxExamples() =
+  for nimEntry in karaxExampleEntries:
+    let bundleOut = nimEntry.changeFileExt("bundle.js")
+    discard buildNimAndBundleJs(
+      nimEntry = nimEntry,
+      bundleOut = bundleOut,
+      run = true
+    )
 
 task test, "Run tests":
   for testFile in listFiles("tests"):
@@ -17,16 +37,8 @@ task test, "Run tests":
       exec "nim js -d:nodejs " & testFile
 
 task serveExamples, "Compile example JS and run the async example server":
-  for exampleFile in listFiles("examples"):
-    if exampleFile.endsWith(".nim") and exampleFile.extractFilename() != "server.nim":
-      exec "nim js " & exampleFile
+  buildKaraxExamples()
   exec "nim c -r examples/server.nim"
 
-task buildWeb, "Compile Nim to JS, then bundle with Bun":
-  discard buildNimAndBundleJs(
-    nimEntry = "src/main.nim",
-    nimFlags = "-d:release",
-    cssEntries = @["src/styles.css"],
-    run = true
-  )
-
+task buildWeb, "Build Karax example bundles with bunnery":
+  buildKaraxExamples()
