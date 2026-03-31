@@ -5,3 +5,5 @@ license       = "BSD-2-Clause"
 srcDir        = "src"
 
 
+feature "reference":
+  requires "https://github.com/openlayers/openlayers"
