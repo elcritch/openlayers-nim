@@ -299,3 +299,44 @@ proc withZoom*(z: float): JsObject {.importjs: "olNs_View.withZoom(#)".}
 proc getView*(
   source: JsObject, transforms: JsObject = jsUndefined
 ): JsObject {.importjs: "olNs_View.getView(#, #)".}
+
+type AnimationOptions* = ref object of JsRoot
+
+proc newAnimationOptions*(): AnimationOptions {.importjs: "({})".}
+proc `center=`*(options: AnimationOptions, value: JsObject) {.importjs: "#.center = #".}
+proc `center=`*(options: AnimationOptions, value: RootRef) {.importjs: "#.center = #".}
+proc `zoom=`*(options: AnimationOptions, value: float) {.importjs: "#.zoom = #".}
+proc `resolution=`*(
+  options: AnimationOptions, value: float
+) {.importjs: "#.resolution = #".}
+
+proc `rotation=`*(
+  options: AnimationOptions, value: float
+) {.importjs: "#.rotation = #".}
+
+proc `anchor=`*(options: AnimationOptions, value: JsObject) {.importjs: "#.anchor = #".}
+proc `anchor=`*(options: AnimationOptions, value: RootRef) {.importjs: "#.anchor = #".}
+proc `duration=`*(
+  options: AnimationOptions, value: float
+) {.importjs: "#.duration = #".}
+
+proc `easing=`*(options: AnimationOptions, value: JsObject) {.importjs: "#.easing = #".}
+proc `easing=`*(options: AnimationOptions, value: RootRef) {.importjs: "#.easing = #".}
+
+type FitOptions* = ref object of JsRoot
+
+proc newFitOptions*(): FitOptions {.importjs: "({})".}
+proc `size=`*(options: FitOptions, value: JsObject) {.importjs: "#.size = #".}
+proc `size=`*(options: FitOptions, value: RootRef) {.importjs: "#.size = #".}
+proc `padding=`*(options: FitOptions, value: seq[float]) {.importjs: "#.padding = #".}
+proc `nearest=`*(options: FitOptions, value: bool) {.importjs: "#.nearest = #".}
+proc `minResolution=`*(
+  options: FitOptions, value: float
+) {.importjs: "#.minResolution = #".}
+
+proc `maxZoom=`*(options: FitOptions, value: float) {.importjs: "#.maxZoom = #".}
+proc `duration=`*(options: FitOptions, value: float) {.importjs: "#.duration = #".}
+proc `easing=`*(options: FitOptions, value: JsObject) {.importjs: "#.easing = #".}
+proc `easing=`*(options: FitOptions, value: RootRef) {.importjs: "#.easing = #".}
+proc `callback=`*(options: FitOptions, value: JsObject) {.importjs: "#.callback = #".}
+proc `callback=`*(options: FitOptions, value: RootRef) {.importjs: "#.callback = #".}

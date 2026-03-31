@@ -24,29 +24,19 @@ proc `attribution=`*(
   config: TileJSONConfig, value: cstring
 ) {.importjs: "#.attribution = #".}
 
-proc `template=`*(
-  config: TileJSONConfig, value: cstring
-) {.importjs: "#.template = #".}
+proc `template=`*(config: TileJSONConfig, value: cstring) {.importjs: "#.template = #".}
 
 proc `legend=`*(config: TileJSONConfig, value: cstring) {.importjs: "#.legend = #".}
 proc `scheme=`*(config: TileJSONConfig, value: cstring) {.importjs: "#.scheme = #".}
-proc `tiles=`*(
-  config: TileJSONConfig, value: seq[cstring]
-) {.importjs: "#.tiles = #".}
+proc `tiles=`*(config: TileJSONConfig, value: seq[cstring]) {.importjs: "#.tiles = #".}
 
-proc `grids=`*(
-  config: TileJSONConfig, value: seq[cstring]
-) {.importjs: "#.grids = #".}
+proc `grids=`*(config: TileJSONConfig, value: seq[cstring]) {.importjs: "#.grids = #".}
 
 proc `minzoom=`*(config: TileJSONConfig, value: float) {.importjs: "#.minzoom = #".}
 proc `maxzoom=`*(config: TileJSONConfig, value: float) {.importjs: "#.maxzoom = #".}
-proc `bounds=`*(
-  config: TileJSONConfig, value: seq[float]
-) {.importjs: "#.bounds = #".}
+proc `bounds=`*(config: TileJSONConfig, value: seq[float]) {.importjs: "#.bounds = #".}
 
-proc `center=`*(
-  config: TileJSONConfig, value: seq[float]
-) {.importjs: "#.center = #".}
+proc `center=`*(config: TileJSONConfig, value: seq[float]) {.importjs: "#.center = #".}
 
 proc newTileJSONOptions*(): TileJSONOptions {.importjs: "({})".}
 proc `attributions=`*(
@@ -86,9 +76,7 @@ proc `tileLoadFunction=`*(
   options: TileJSONOptions, value: JsObject
 ) {.importjs: "#.tileLoadFunction = #".}
 
-proc `tileSize=`*(
-  options: TileJSONOptions, value: float
-) {.importjs: "#.tileSize = #".}
+proc `tileSize=`*(options: TileJSONOptions, value: float) {.importjs: "#.tileSize = #".}
 
 proc `tileSize=`*(
   options: TileJSONOptions, value: JsObject

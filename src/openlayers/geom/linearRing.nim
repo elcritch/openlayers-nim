@@ -8,7 +8,9 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_geom_LinearRing)".}
 
-type
-  LinearRing* = ref object of JsRoot
-proc newLinearRing*(coordinates: JsObject, layout: JsObject = jsUndefined): LinearRing {.importjs: "(new olNs_geom_LinearRing.default(#, #))".}
+type LinearRing* = ref object of JsRoot
+proc newLinearRing*(
+  coordinates: JsObject, layout: JsObject = jsUndefined
+): LinearRing {.importjs: "(new olNs_geom_LinearRing.default(#, #))".}
+
 proc getArea*(self: LinearRing): float {.importjs: "#.getArea()".}

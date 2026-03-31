@@ -13,20 +13,14 @@ type
   Style* = ref object of JsRoot
 
 proc newStyleOptions*(): StyleOptions {.importjs: "({})".}
-proc `geometry=`*(
-  options: StyleOptions, value: cstring
-) {.importjs: "#.geometry = #".}
+proc `geometry=`*(options: StyleOptions, value: cstring) {.importjs: "#.geometry = #".}
 
-proc `geometry=`*(
-  options: StyleOptions, value: JsObject
-) {.importjs: "#.geometry = #".}
+proc `geometry=`*(options: StyleOptions, value: JsObject) {.importjs: "#.geometry = #".}
 
 proc `fill=`*(options: StyleOptions, value: JsObject) {.importjs: "#.fill = #".}
 proc `fill=`*(options: StyleOptions, value: RootRef) {.importjs: "#.fill = #".}
 proc `image=`*(options: StyleOptions, value: JsObject) {.importjs: "#.image = #".}
-proc `renderer=`*(
-  options: StyleOptions, value: JsObject
-) {.importjs: "#.renderer = #".}
+proc `renderer=`*(options: StyleOptions, value: JsObject) {.importjs: "#.renderer = #".}
 
 proc `hitDetectionRenderer=`*(
   options: StyleOptions, value: JsObject
@@ -57,9 +51,7 @@ proc getHitDetectionRenderer*(
 ): JsObject {.importjs: "#.getHitDetectionRenderer()".}
 
 proc getGeometry*(self: Style): JsObject {.importjs: "#.getGeometry()".}
-proc getGeometryFunction*(
-  self: Style
-): JsObject {.importjs: "#.getGeometryFunction()".}
+proc getGeometryFunction*(self: Style): JsObject {.importjs: "#.getGeometryFunction()".}
 
 proc getFill*(self: Style): JsObject {.importjs: "#.getFill()".}
 proc setFill*(self: Style, fill: JsObject) {.importjs: "#.setFill(#)".}

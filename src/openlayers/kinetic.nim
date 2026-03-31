@@ -8,9 +8,11 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_Kinetic)".}
 
-type
-  Kinetic* = ref object of JsRoot
-proc newKinetic*(decay: float, minVelocity: float, delay: float): Kinetic {.importjs: "(new olNs_Kinetic.default(#, #, #))".}
+type Kinetic* = ref object of JsRoot
+proc newKinetic*(
+  decay: float, minVelocity: float, delay: float
+): Kinetic {.importjs: "(new olNs_Kinetic.default(#, #, #))".}
+
 proc begin*(self: Kinetic) {.importjs: "#.begin()".}
 proc update*(self: Kinetic, x: float, y: float) {.importjs: "#.update(#, #)".}
 proc endVal*(self: Kinetic): bool {.importjs: "#.end()".}

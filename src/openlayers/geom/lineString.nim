@@ -8,12 +8,26 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_geom_LineString)".}
 
-type
-  LineString* = ref object of JsRoot
-proc newLineString*(coordinates: JsObject, layout: JsObject = jsUndefined): LineString {.importjs: "(new olNs_geom_LineString.default(#, #))".}
-proc appendCoordinate*(self: LineString, coordinate: JsObject) {.importjs: "#.appendCoordinate(#)".}
-proc forEachSegment*(self: LineString, callback: JsObject): JsObject {.importjs: "#.forEachSegment(#)".}
-proc getCoordinateAtM*(self: LineString, m: float, extrapolate: JsObject = jsUndefined): JsObject {.importjs: "#.getCoordinateAtM(#, #)".}
-proc getCoordinateAt*(self: LineString, fraction: float, dest: JsObject = jsUndefined): JsObject {.importjs: "#.getCoordinateAt(#, #)".}
+type LineString* = ref object of JsRoot
+proc newLineString*(
+  coordinates: JsObject, layout: JsObject = jsUndefined
+): LineString {.importjs: "(new olNs_geom_LineString.default(#, #))".}
+
+proc appendCoordinate*(
+  self: LineString, coordinate: JsObject
+) {.importjs: "#.appendCoordinate(#)".}
+
+proc forEachSegment*(
+  self: LineString, callback: JsObject
+): JsObject {.importjs: "#.forEachSegment(#)".}
+
+proc getCoordinateAtM*(
+  self: LineString, m: float, extrapolate: JsObject = jsUndefined
+): JsObject {.importjs: "#.getCoordinateAtM(#, #)".}
+
+proc getCoordinateAt*(
+  self: LineString, fraction: float, dest: JsObject = jsUndefined
+): JsObject {.importjs: "#.getCoordinateAt(#, #)".}
+
 proc getLength*(self: LineString): float {.importjs: "#.getLength()".}
 proc getFlatMidpoint*(self: LineString): seq[float] {.importjs: "#.getFlatMidpoint()".}

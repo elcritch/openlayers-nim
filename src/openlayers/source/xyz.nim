@@ -34,9 +34,7 @@ proc `referrerPolicy=`*(
   options: XYZOptions, value: cstring
 ) {.importjs: "#.referrerPolicy = #".}
 
-proc `interpolate=`*(
-  options: XYZOptions, value: bool
-) {.importjs: "#.interpolate = #".}
+proc `interpolate=`*(options: XYZOptions, value: bool) {.importjs: "#.interpolate = #".}
 
 proc `projection=`*(
   options: XYZOptions, value: JsObject
@@ -72,13 +70,9 @@ proc `url=`*(options: XYZOptions, value: cstring) {.importjs: "#.url = #".}
 proc `urls=`*(options: XYZOptions, value: seq[cstring]) {.importjs: "#.urls = #".}
 proc `urls=`*(options: XYZOptions, value: JsObject) {.importjs: "#.urls = #".}
 proc `wrapX=`*(options: XYZOptions, value: bool) {.importjs: "#.wrapX = #".}
-proc `transition=`*(
-  options: XYZOptions, value: float
-) {.importjs: "#.transition = #".}
+proc `transition=`*(options: XYZOptions, value: float) {.importjs: "#.transition = #".}
 
-proc `zDirection=`*(
-  options: XYZOptions, value: float
-) {.importjs: "#.zDirection = #".}
+proc `zDirection=`*(options: XYZOptions, value: float) {.importjs: "#.zDirection = #".}
 
 proc `zDirection=`*(
   options: XYZOptions, value: JsObject
@@ -88,6 +82,4 @@ proc newXYZ*(
   options: JsObject = jsUndefined
 ): XYZ {.importjs: "(new olNs_source_XYZ.default(#))".}
 
-proc newXYZ*(
-  options: XYZOptions
-): XYZ {.importjs: "(new olNs_source_XYZ.default(#))".}
+proc newXYZ*(options: XYZOptions): XYZ {.importjs: "(new olNs_source_XYZ.default(#))".}

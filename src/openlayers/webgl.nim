@@ -8,8 +8,13 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_webgl)".}
 
-proc getContext*(canvas: JsObject, attributes: JsObject = jsUndefined): JsObject {.importjs: "olNs_webgl.getContext(#, #)".}
-proc getSupportedExtensions*(): JsObject {.importjs: "olNs_webgl.getSupportedExtensions()".}
+proc getContext*(
+  canvas: JsObject, attributes: JsObject = jsUndefined
+): JsObject {.importjs: "olNs_webgl.getContext(#, #)".}
+
+proc getSupportedExtensions*(): JsObject {.
+  importjs: "olNs_webgl.getSupportedExtensions()"
+.}
 
 proc getARRAY_BUFFER*(): float {.importjs: "(olNs_webgl.ARRAY_BUFFER)".}
 proc getELEMENT_ARRAY_BUFFER*(): float {.importjs: "(olNs_webgl.ELEMENT_ARRAY_BUFFER)".}

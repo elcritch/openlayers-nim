@@ -9,12 +9,29 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_expr_expression)".}
 
 proc typeName*(typeVal: float): cstring {.importjs: "olNs_expr_expression.typeName(#)".}
-proc includesType*(broad: float, specific: float): bool {.importjs: "olNs_expr_expression.includesType(#, #)".}
-proc overlapsType*(oneType: float, otherType: float): bool {.importjs: "olNs_expr_expression.overlapsType(#, #)".}
-proc isType*(typeVal: float, expected: float): bool {.importjs: "olNs_expr_expression.isType(#, #)".}
-proc newParsingContext*(): JsObject {.importjs: "olNs_expr_expression.newParsingContext()".}
-proc parse*(encoded: JsObject, expectedType: float, context: JsObject): JsObject {.importjs: "olNs_expr_expression.parse(#, #, #)".}
-proc computeGeometryType*(geometry: JsObject): JsObject {.importjs: "olNs_expr_expression.computeGeometryType(#)".}
+proc includesType*(
+  broad: float, specific: float
+): bool {.importjs: "olNs_expr_expression.includesType(#, #)".}
+
+proc overlapsType*(
+  oneType: float, otherType: float
+): bool {.importjs: "olNs_expr_expression.overlapsType(#, #)".}
+
+proc isType*(
+  typeVal: float, expected: float
+): bool {.importjs: "olNs_expr_expression.isType(#, #)".}
+
+proc newParsingContext*(): JsObject {.
+  importjs: "olNs_expr_expression.newParsingContext()"
+.}
+
+proc parse*(
+  encoded: JsObject, expectedType: float, context: JsObject
+): JsObject {.importjs: "olNs_expr_expression.parse(#, #, #)".}
+
+proc computeGeometryType*(
+  geometry: JsObject
+): JsObject {.importjs: "olNs_expr_expression.computeGeometryType(#)".}
 
 proc getNoneType*(): JsObject {.importjs: "(olNs_expr_expression.NoneType)".}
 proc getBooleanType*(): float {.importjs: "(olNs_expr_expression.BooleanType)".}

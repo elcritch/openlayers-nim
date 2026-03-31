@@ -8,16 +8,24 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_structs_LRUCache)".}
 
-type
-  LRUCache* = ref object of JsRoot
-proc newLRUCache*(highWaterMark: JsObject = jsUndefined): LRUCache {.importjs: "(new olNs_structs_LRUCache.default(#))".}
+type LRUCache* = ref object of JsRoot
+proc newLRUCache*(
+  highWaterMark: JsObject = jsUndefined
+): LRUCache {.importjs: "(new olNs_structs_LRUCache.default(#))".}
+
 proc deleteOldest*(self: LRUCache) {.importjs: "#.deleteOldest()".}
 proc canExpireCache*(self: LRUCache): bool {.importjs: "#.canExpireCache()".}
-proc expireCache*(self: LRUCache, keep: JsObject = jsUndefined) {.importjs: "#.expireCache(#)".}
+proc expireCache*(
+  self: LRUCache, keep: JsObject = jsUndefined
+) {.importjs: "#.expireCache(#)".}
+
 proc clear*(self: LRUCache) {.importjs: "#.clear()".}
 proc containsKey*(self: LRUCache, key: cstring): bool {.importjs: "#.containsKey(#)".}
 proc forEach*(self: LRUCache, f: JsObject) {.importjs: "#.forEach(#)".}
-proc get*(self: LRUCache, key: cstring, options: JsObject = jsUndefined): JsObject {.importjs: "#.get(#, #)".}
+proc get*(
+  self: LRUCache, key: cstring, options: JsObject = jsUndefined
+): JsObject {.importjs: "#.get(#, #)".}
+
 proc remove*(self: LRUCache, key: cstring): JsObject {.importjs: "#.remove(#)".}
 proc getCount*(self: LRUCache): float {.importjs: "#.getCount()".}
 proc getKeys*(self: LRUCache): seq[cstring] {.importjs: "#.getKeys()".}
@@ -27,6 +35,9 @@ proc peekLastKey*(self: LRUCache): cstring {.importjs: "#.peekLastKey()".}
 proc peekFirstKey*(self: LRUCache): cstring {.importjs: "#.peekFirstKey()".}
 proc peek*(self: LRUCache, key: cstring): JsObject {.importjs: "#.peek(#)".}
 proc pop*(self: LRUCache): JsObject {.importjs: "#.pop()".}
-proc replace*(self: LRUCache, key: cstring, value: JsObject) {.importjs: "#.replace(#, #)".}
+proc replace*(
+  self: LRUCache, key: cstring, value: JsObject
+) {.importjs: "#.replace(#, #)".}
+
 proc set*(self: LRUCache, key: cstring, value: JsObject) {.importjs: "#.set(#, #)".}
 proc setSize*(self: LRUCache, size: float) {.importjs: "#.setSize(#)".}

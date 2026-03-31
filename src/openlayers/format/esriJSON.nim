@@ -8,6 +8,16 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_EsriJSON)".}
 
-type
-  EsriJSON* = ref object of JsRoot
+type EsriJSON* = ref object of JsRoot
 proc newEsriJSON*(): EsriJSON {.importjs: "(new olNs_format_EsriJSON.default())".}
+
+type EsriJSONOptions* = ref object of JsRoot
+
+proc newEsriJSONOptions*(): EsriJSONOptions {.importjs: "({})".}
+proc `geometryName=`*(
+  options: EsriJSONOptions, value: cstring
+) {.importjs: "#.geometryName = #".}
+
+proc newEsriJSON*(
+  options: EsriJSONOptions
+): EsriJSON {.importjs: "(new olNs_format_EsriJSON.default(#))".}

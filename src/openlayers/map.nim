@@ -47,3 +47,22 @@ proc `view=`*(options: MapOptions, value: RootRef) {.importjs: "#.view = #".}
 proc newMap*(): Map {.importjs: "(new olNs_Map.default())".}
 proc newMap*(options: JsObject): Map {.importjs: "(new olNs_Map.default(#))".}
 proc newMap*(options: MapOptions): Map {.importjs: "(new olNs_Map.default(#))".}
+
+type AtPixelOptions* = ref object of JsRoot
+
+proc newAtPixelOptions*(): AtPixelOptions {.importjs: "({})".}
+proc `layerFilter=`*(
+  options: AtPixelOptions, value: JsObject
+) {.importjs: "#.layerFilter = #".}
+
+proc `layerFilter=`*(
+  options: AtPixelOptions, value: RootRef
+) {.importjs: "#.layerFilter = #".}
+
+proc `hitTolerance=`*(
+  options: AtPixelOptions, value: float
+) {.importjs: "#.hitTolerance = #".}
+
+proc `checkWrapped=`*(
+  options: AtPixelOptions, value: bool
+) {.importjs: "#.checkWrapped = #".}

@@ -8,6 +8,5 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_XMLFeature)".}
 
-type
-  XMLFeature* = ref object of JsRoot
+type XMLFeature* = ref object of JsRoot
 proc newXMLFeature*(): XMLFeature {.importjs: "(new olNs_format_XMLFeature.default())".}

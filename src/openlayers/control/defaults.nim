@@ -8,9 +8,12 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_defaults)".}
 
-type ControlDefaultsOptions* = ref object of JsRoot
+type
+  DefaultsOptions* = ref object of JsRoot
+  ControlDefaultsOptions* = DefaultsOptions
 
 proc newControlDefaultsOptions*(): ControlDefaultsOptions {.importjs: "({})".}
+proc newDefaultsOptions*(): DefaultsOptions {.importjs: "({})".}
 proc `attribution=`*(
   options: ControlDefaultsOptions, value: bool
 ) {.importjs: "#.attribution = #".}

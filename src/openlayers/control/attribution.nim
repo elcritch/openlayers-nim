@@ -37,13 +37,9 @@ proc `tipLabel=`*(
   options: AttributionOptions, value: cstring
 ) {.importjs: "#.tipLabel = #".}
 
-proc `label=`*(
-  options: AttributionOptions, value: cstring
-) {.importjs: "#.label = #".}
+proc `label=`*(options: AttributionOptions, value: cstring) {.importjs: "#.label = #".}
 
-proc `label=`*(
-  options: AttributionOptions, value: JsObject
-) {.importjs: "#.label = #".}
+proc `label=`*(options: AttributionOptions, value: JsObject) {.importjs: "#.label = #".}
 
 proc `expandClassName=`*(
   options: AttributionOptions, value: cstring
@@ -90,8 +86,6 @@ proc setCollapsible*(
   self: Attribution, collapsible: bool
 ) {.importjs: "#.setCollapsible(#)".}
 
-proc setCollapsed*(
-  self: Attribution, collapsed: bool
-) {.importjs: "#.setCollapsed(#)".}
+proc setCollapsed*(self: Attribution, collapsed: bool) {.importjs: "#.setCollapsed(#)".}
 
 proc getCollapsed*(self: Attribution): bool {.importjs: "#.getCollapsed()".}

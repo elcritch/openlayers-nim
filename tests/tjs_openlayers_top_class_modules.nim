@@ -29,9 +29,7 @@ suite "openlayers top class modules":
 
     check compiles(newDataTile(jsUndefined))
     check compiles(newImageWrapper(jsUndefined, jsUndefined, 1.0, jsUndefined))
-    check compiles(
-      newImageTile(jsUndefined, jsUndefined, "", jsUndefined, jsUndefined)
-    )
+    check compiles(newImageTile(jsUndefined, jsUndefined, "", jsUndefined, jsUndefined))
     check compiles(newMapBrowserEvent("click", jsUndefined, jsUndefined))
     check compiles(newMapEvent("moveend", jsUndefined))
     check compiles(newOverlay())

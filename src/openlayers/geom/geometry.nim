@@ -8,6 +8,5 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_geom_Geometry)".}
 
-type
-  Geometry* = ref object of JsRoot
+type Geometry* = ref object of JsRoot
 proc newGeometry*(): Geometry {.importjs: "(new olNs_geom_Geometry.default())".}

@@ -17,14 +17,10 @@ proc `className=`*(
   options: TileLayerOptions, value: cstring
 ) {.importjs: "#.className = #".}
 
-proc `opacity=`*(
-  options: TileLayerOptions, value: float
-) {.importjs: "#.opacity = #".}
+proc `opacity=`*(options: TileLayerOptions, value: float) {.importjs: "#.opacity = #".}
 
 proc `visible=`*(options: TileLayerOptions, value: bool) {.importjs: "#.visible = #".}
-proc `extent=`*(
-  options: TileLayerOptions, value: JsObject
-) {.importjs: "#.extent = #".}
+proc `extent=`*(options: TileLayerOptions, value: JsObject) {.importjs: "#.extent = #".}
 
 proc `zIndex=`*(options: TileLayerOptions, value: float) {.importjs: "#.zIndex = #".}
 proc `minResolution=`*(
@@ -35,25 +31,15 @@ proc `maxResolution=`*(
   options: TileLayerOptions, value: float
 ) {.importjs: "#.maxResolution = #".}
 
-proc `minZoom=`*(
-  options: TileLayerOptions, value: float
-) {.importjs: "#.minZoom = #".}
+proc `minZoom=`*(options: TileLayerOptions, value: float) {.importjs: "#.minZoom = #".}
 
-proc `maxZoom=`*(
-  options: TileLayerOptions, value: float
-) {.importjs: "#.maxZoom = #".}
+proc `maxZoom=`*(options: TileLayerOptions, value: float) {.importjs: "#.maxZoom = #".}
 
-proc `preload=`*(
-  options: TileLayerOptions, value: float
-) {.importjs: "#.preload = #".}
+proc `preload=`*(options: TileLayerOptions, value: float) {.importjs: "#.preload = #".}
 
-proc `source=`*(
-  options: TileLayerOptions, value: JsObject
-) {.importjs: "#.source = #".}
+proc `source=`*(options: TileLayerOptions, value: JsObject) {.importjs: "#.source = #".}
 
-proc `source=`*(
-  options: TileLayerOptions, value: RootRef
-) {.importjs: "#.source = #".}
+proc `source=`*(options: TileLayerOptions, value: RootRef) {.importjs: "#.source = #".}
 
 proc `map=`*(options: TileLayerOptions, value: JsObject) {.importjs: "#.map = #".}
 proc `background=`*(

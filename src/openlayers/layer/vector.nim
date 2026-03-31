@@ -21,17 +21,13 @@ proc `opacity=`*(
   options: VectorLayerOptions, value: float
 ) {.importjs: "#.opacity = #".}
 
-proc `visible=`*(
-  options: VectorLayerOptions, value: bool
-) {.importjs: "#.visible = #".}
+proc `visible=`*(options: VectorLayerOptions, value: bool) {.importjs: "#.visible = #".}
 
 proc `extent=`*(
   options: VectorLayerOptions, value: JsObject
 ) {.importjs: "#.extent = #".}
 
-proc `zIndex=`*(
-  options: VectorLayerOptions, value: float
-) {.importjs: "#.zIndex = #".}
+proc `zIndex=`*(options: VectorLayerOptions, value: float) {.importjs: "#.zIndex = #".}
 
 proc `minResolution=`*(
   options: VectorLayerOptions, value: float
@@ -78,9 +74,7 @@ proc `declutter=`*(
   options: VectorLayerOptions, value: cstring
 ) {.importjs: "#.declutter = #".}
 
-proc `style=`*(
-  options: VectorLayerOptions, value: JsObject
-) {.importjs: "#.style = #".}
+proc `style=`*(options: VectorLayerOptions, value: JsObject) {.importjs: "#.style = #".}
 
 proc `background=`*(
   options: VectorLayerOptions, value: JsObject

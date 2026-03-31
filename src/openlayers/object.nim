@@ -8,6 +8,5 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_Object)".}
 
-type
-  BaseObject* = ref object of JsRoot
+type BaseObject* = ref object of JsRoot
 proc newBaseObject*(): BaseObject {.importjs: "(new olNs_Object.default())".}

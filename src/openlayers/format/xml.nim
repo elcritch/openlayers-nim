@@ -8,9 +8,13 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_XML)".}
 
-type
-  XML* = ref object of JsRoot
+type XML* = ref object of JsRoot
 proc newXML*(): XML {.importjs: "(new olNs_format_XML.default())".}
 proc read*(self: XML, source: JsObject): JsObject {.importjs: "#.read(#)".}
-proc readFromDocument*(self: XML, doc: JsObject): JsObject {.importjs: "#.readFromDocument(#)".}
-proc readFromNode*(self: XML, node: JsObject): JsObject {.importjs: "#.readFromNode(#)".}
+proc readFromDocument*(
+  self: XML, doc: JsObject
+): JsObject {.importjs: "#.readFromDocument(#)".}
+
+proc readFromNode*(
+  self: XML, node: JsObject
+): JsObject {.importjs: "#.readFromNode(#)".}

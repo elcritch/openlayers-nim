@@ -8,6 +8,7 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_Or)".}
 
-type
-  Or* = ref object of JsRoot
-proc newOr*(args: JsObject = jsUndefined): Or {.importjs: "(new olNs_format_filter_Or.default(#))".}
+type Or* = ref object of JsRoot
+proc newOr*(
+  args: JsObject = jsUndefined
+): Or {.importjs: "(new olNs_format_filter_Or.default(#))".}

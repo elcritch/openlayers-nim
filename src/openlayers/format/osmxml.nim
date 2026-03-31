@@ -8,6 +8,5 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_OSMXML)".}
 
-type
-  OSMXML* = ref object of JsRoot
+type OSMXML* = ref object of JsRoot
 proc newOSMXML*(): OSMXML {.importjs: "(new olNs_format_OSMXML.default())".}

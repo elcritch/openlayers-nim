@@ -52,9 +52,7 @@ proc newSelect*(
 
 proc getFeatures*(self: Select): JsObject {.importjs: "#.getFeatures()".}
 proc getHitTolerance*(self: Select): float {.importjs: "#.getHitTolerance()".}
-proc getLayer*(
-  self: Select, feature: JsObject
-): JsObject {.importjs: "#.getLayer(#)".}
+proc getLayer*(self: Select, feature: JsObject): JsObject {.importjs: "#.getLayer(#)".}
 
 proc setHitTolerance*(
   self: Select, hitTolerance: float
@@ -69,8 +67,6 @@ proc deselectFeature*(
   self: Select, feature: JsObject
 ): bool {.importjs: "#.deselectFeature(#)".}
 
-proc toggleFeature*(
-  self: Select, feature: JsObject
-) {.importjs: "#.toggleFeature(#)".}
+proc toggleFeature*(self: Select, feature: JsObject) {.importjs: "#.toggleFeature(#)".}
 
 proc clearSelection*(self: Select) {.importjs: "#.clearSelection()".}

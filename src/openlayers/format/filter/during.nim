@@ -8,6 +8,7 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_During)".}
 
-type
-  During* = ref object of JsRoot
-proc newDuring*(propertyName: cstring, begin: cstring, endVal: cstring): During {.importjs: "(new olNs_format_filter_During.default(#, #, #))".}
+type During* = ref object of JsRoot
+proc newDuring*(
+  propertyName: cstring, begin: cstring, endVal: cstring
+): During {.importjs: "(new olNs_format_filter_During.default(#, #, #))".}

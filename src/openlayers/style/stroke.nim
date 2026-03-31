@@ -16,9 +16,7 @@ proc newStrokeOptions*(): StrokeOptions {.importjs: "({})".}
 proc `color=`*(options: StrokeOptions, value: JsObject) {.importjs: "#.color = #".}
 proc `color=`*(options: StrokeOptions, value: cstring) {.importjs: "#.color = #".}
 proc `lineCap=`*(options: StrokeOptions, value: cstring) {.importjs: "#.lineCap = #".}
-proc `lineJoin=`*(
-  options: StrokeOptions, value: cstring
-) {.importjs: "#.lineJoin = #".}
+proc `lineJoin=`*(options: StrokeOptions, value: cstring) {.importjs: "#.lineJoin = #".}
 
 proc `lineDash=`*(
   options: StrokeOptions, value: seq[float]
@@ -64,9 +62,7 @@ proc setLineDashOffset*(
 ) {.importjs: "#.setLineDashOffset(#)".}
 
 proc setLineJoin*(self: Stroke, lineJoin: JsObject) {.importjs: "#.setLineJoin(#)".}
-proc setMiterLimit*(
-  self: Stroke, miterLimit: float
-) {.importjs: "#.setMiterLimit(#)".}
+proc setMiterLimit*(self: Stroke, miterLimit: float) {.importjs: "#.setMiterLimit(#)".}
 
 proc setOffset*(self: Stroke, offset: float) {.importjs: "#.setOffset(#)".}
 proc setWidth*(self: Stroke, width: float) {.importjs: "#.setWidth(#)".}
