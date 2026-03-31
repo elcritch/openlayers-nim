@@ -3,13 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olImageModule from 'ol/Image.js';".}
-{.emit: "import ImageWrapper from 'ol/Image.js';".}
-
-proc hasImageModule*(): bool {.importjs: "(typeof olImageModule !== 'undefined')".}
-proc hasImageWrapperConstructor*(): bool {.
-  importjs: "(typeof ImageWrapper === 'function')"
-.}
+when defined(esmModules):
+  {.emit: "import * as olImageModule from 'ol/Image.js';".}
+when defined(esmModules):
+  {.emit: "import ImageWrapper from 'ol/Image.js';".}
 
 type OlImageWrapper* = ref object of JsRoot
 

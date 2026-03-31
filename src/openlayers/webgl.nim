@@ -3,10 +3,7 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olWebglNamespace from 'ol/webgl.js';".}
-
-proc hasWebglNamespace*(): bool {.
-  importjs: "(typeof olWebglNamespace !== 'undefined')"
-.}
+when defined(esmModules):
+  {.emit: "import * as olWebglNamespace from 'ol/webgl.js';".}
 
 proc getWebglNamespace*(): JsObject {.importjs: "(olWebglNamespace)".}

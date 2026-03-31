@@ -3,15 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olDataTileModule from 'ol/DataTile.js';".}
-{.emit: "import DataTile from 'ol/DataTile.js';".}
-
-proc hasDataTileModule*(): bool {.
-  importjs: "(typeof olDataTileModule !== 'undefined')"
-.}
-
-proc hasDataTileConstructor*(): bool {.importjs: "(typeof DataTile === 'function')".}
-
+when defined(esmModules):
+  {.emit: "import * as olDataTileModule from 'ol/DataTile.js';".}
+when defined(esmModules):
+  {.emit: "import DataTile from 'ol/DataTile.js';".}
 type OlDataTile* = ref object of JsRoot
 
 proc newOlDataTile*(options: JsObject): OlDataTile {.importjs: "(new DataTile(#))".}

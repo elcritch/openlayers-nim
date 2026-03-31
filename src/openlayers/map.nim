@@ -6,9 +6,8 @@ import ./layer/tile
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import Map from 'ol/Map.js';".}
-
-proc hasMapConstructor*(): bool {.importjs: "(typeof Map === 'function')".}
+when defined(esmModules):
+  {.emit: "import Map from 'ol/Map.js';".}
 
 type OlMap* = ref object of JsRoot
 

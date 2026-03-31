@@ -3,15 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olTileQueueModule from 'ol/TileQueue.js';".}
-{.emit: "import TileQueue from 'ol/TileQueue.js';".}
-
-proc hasTileQueueModule*(): bool {.
-  importjs: "(typeof olTileQueueModule !== 'undefined')"
-.}
-
-proc hasTileQueueConstructor*(): bool {.importjs: "(typeof TileQueue === 'function')".}
-
+when defined(esmModules):
+  {.emit: "import * as olTileQueueModule from 'ol/TileQueue.js';".}
+when defined(esmModules):
+  {.emit: "import TileQueue from 'ol/TileQueue.js';".}
 type OlTileQueue* = ref object of JsRoot
 
 proc newOlTileQueue*(

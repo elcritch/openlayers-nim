@@ -3,10 +3,7 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olFormatNamespace from 'ol/format.js';".}
-
-proc hasFormatNamespace*(): bool {.
-  importjs: "(typeof olFormatNamespace !== 'undefined')"
-.}
+when defined(esmModules):
+  {.emit: "import * as olFormatNamespace from 'ol/format.js';".}
 
 proc getFormatNamespace*(): JsObject {.importjs: "(olFormatNamespace)".}

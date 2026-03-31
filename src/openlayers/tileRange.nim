@@ -3,15 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olTileRangeModule from 'ol/TileRange.js';".}
-{.emit: "import TileRange from 'ol/TileRange.js';".}
-
-proc hasTileRangeModule*(): bool {.
-  importjs: "(typeof olTileRangeModule !== 'undefined')"
-.}
-
-proc hasTileRangeConstructor*(): bool {.importjs: "(typeof TileRange === 'function')".}
-
+when defined(esmModules):
+  {.emit: "import * as olTileRangeModule from 'ol/TileRange.js';".}
+when defined(esmModules):
+  {.emit: "import TileRange from 'ol/TileRange.js';".}
 type OlTileRange* = ref object of JsRoot
 
 proc newOlTileRange*(

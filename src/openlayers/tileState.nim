@@ -3,15 +3,8 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olTileStateModule from 'ol/TileState.js';".}
-{.emit: "import tileStateDefault from 'ol/TileState.js';".}
-
-proc hasTileStateModule*(): bool {.
-  importjs: "(typeof olTileStateModule !== 'undefined')"
-.}
-
-proc hasTileStateDefaultExport*(): bool {.
-  importjs: "(typeof tileStateDefault !== 'undefined')"
-.}
-
+when defined(esmModules):
+  {.emit: "import * as olTileStateModule from 'ol/TileState.js';".}
+when defined(esmModules):
+  {.emit: "import tileStateDefault from 'ol/TileState.js';".}
 proc getOlTileState*(): JsObject {.importjs: "(tileStateDefault)".}

@@ -3,11 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olFeatureModule from 'ol/Feature.js';".}
-{.emit: "import Feature from 'ol/Feature.js';".}
-
-proc hasFeatureModule*(): bool {.importjs: "(typeof olFeatureModule !== 'undefined')".}
-proc hasFeatureConstructor*(): bool {.importjs: "(typeof Feature === 'function')".}
+when defined(esmModules):
+  {.emit: "import * as olFeatureModule from 'ol/Feature.js';".}
+when defined(esmModules):
+  {.emit: "import Feature from 'ol/Feature.js';".}
 
 type OlFeature* = ref object of JsRoot
 

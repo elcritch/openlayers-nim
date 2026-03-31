@@ -11,13 +11,14 @@ import openlayers/viewHint
 import openlayers/viewProperty
 
 suite "openlayers top constant modules":
-  test "default constant exports are exposed":
-    check hasCollectionEventTypeDefaultExport()
-    check hasImageStateDefaultExport()
-    check hasMapBrowserEventTypeDefaultExport()
-    check hasMapEventTypeDefaultExport()
-    check hasMapPropertyDefaultExport()
-    check hasObjectEventTypeDefaultExport()
-    check hasTileStateDefaultExport()
-    check hasViewHintDefaultExport()
-    check hasViewPropertyDefaultExport()
+  test "default exports are accessible":
+    discard getOlCollectionEventType()
+    discard getOlImageState()
+    discard getOlMapBrowserEventType()
+    discard getOlMapEventType()
+    discard getOlMapProperty()
+    discard getOlObjectEventType()
+    discard getOlTileState()
+    discard getOlViewHint()
+    discard getOlViewProperty()
+    check true

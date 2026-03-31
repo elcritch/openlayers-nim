@@ -3,17 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olMapBrowserEventModule from 'ol/MapBrowserEvent.js';".}
-{.emit: "import MapBrowserEvent from 'ol/MapBrowserEvent.js';".}
-
-proc hasMapBrowserEventModule*(): bool {.
-  importjs: "(typeof olMapBrowserEventModule !== 'undefined')"
-.}
-
-proc hasMapBrowserEventConstructor*(): bool {.
-  importjs: "(typeof MapBrowserEvent === 'function')"
-.}
-
+when defined(esmModules):
+  {.emit: "import * as olMapBrowserEventModule from 'ol/MapBrowserEvent.js';".}
+when defined(esmModules):
+  {.emit: "import MapBrowserEvent from 'ol/MapBrowserEvent.js';".}
 type OlMapBrowserEvent* = ref object of JsRoot
 
 proc newOlMapBrowserEvent*(

@@ -3,17 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olVectorTileModule from 'ol/VectorTile.js';".}
-{.emit: "import VectorTile from 'ol/VectorTile.js';".}
-
-proc hasVectorTileModule*(): bool {.
-  importjs: "(typeof olVectorTileModule !== 'undefined')"
-.}
-
-proc hasVectorTileConstructor*(): bool {.
-  importjs: "(typeof VectorTile === 'function')"
-.}
-
+when defined(esmModules):
+  {.emit: "import * as olVectorTileModule from 'ol/VectorTile.js';".}
+when defined(esmModules):
+  {.emit: "import VectorTile from 'ol/VectorTile.js';".}
 type OlVectorTile* = ref object of JsRoot
 
 proc newOlVectorTile*(

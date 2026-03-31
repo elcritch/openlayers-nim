@@ -3,15 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olImageTileModule from 'ol/ImageTile.js';".}
-{.emit: "import ImageTile from 'ol/ImageTile.js';".}
-
-proc hasImageTileModule*(): bool {.
-  importjs: "(typeof olImageTileModule !== 'undefined')"
-.}
-
-proc hasImageTileConstructor*(): bool {.importjs: "(typeof ImageTile === 'function')".}
-
+when defined(esmModules):
+  {.emit: "import * as olImageTileModule from 'ol/ImageTile.js';".}
+when defined(esmModules):
+  {.emit: "import ImageTile from 'ol/ImageTile.js';".}
 type OlImageTile* = ref object of JsRoot
 
 proc newOlImageTile*(

@@ -3,11 +3,10 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-{.emit: "import * as olKineticModule from 'ol/Kinetic.js';".}
-{.emit: "import Kinetic from 'ol/Kinetic.js';".}
-
-proc hasKineticModule*(): bool {.importjs: "(typeof olKineticModule !== 'undefined')".}
-proc hasKineticConstructor*(): bool {.importjs: "(typeof Kinetic === 'function')".}
+when defined(esmModules):
+  {.emit: "import * as olKineticModule from 'ol/Kinetic.js';".}
+when defined(esmModules):
+  {.emit: "import Kinetic from 'ol/Kinetic.js';".}
 
 type OlKinetic* = ref object of JsRoot
 
