@@ -8,28 +8,17 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_TopoJSON)".}
 
-type TopoJSON* = ref object of JsRoot
+type
+  TopoJSON* = ref object of JsRoot
 proc newTopoJSON*(): TopoJSON {.importjs: "(new olNs_format_TopoJSON.default())".}
 
-type TopoJSONOptions* = ref object of JsRoot
+type
+  TopoJSONOptions* = ref object of JsRoot
 
 proc newTopoJSONOptions*(): TopoJSONOptions {.importjs: "({})".}
-proc `dataProjection=`*(
-  options: TopoJSONOptions, value: JsObject
-) {.importjs: "#.dataProjection = #".}
+proc `dataProjection=`*(options: TopoJSONOptions, value: JsObject) {.importjs: "#.dataProjection = #".}
+proc `dataProjection=`*(options: TopoJSONOptions, value: RootRef) {.importjs: "#.dataProjection = #".}
+proc `layerName=`*(options: TopoJSONOptions, value: cstring) {.importjs: "#.layerName = #".}
+proc `layers=`*(options: TopoJSONOptions, value: seq[cstring]) {.importjs: "#.layers = #".}
 
-proc `dataProjection=`*(
-  options: TopoJSONOptions, value: RootRef
-) {.importjs: "#.dataProjection = #".}
-
-proc `layerName=`*(
-  options: TopoJSONOptions, value: cstring
-) {.importjs: "#.layerName = #".}
-
-proc `layers=`*(
-  options: TopoJSONOptions, value: seq[cstring]
-) {.importjs: "#.layers = #".}
-
-proc newTopoJSON*(
-  options: TopoJSONOptions
-): TopoJSON {.importjs: "(new olNs_format_TopoJSON.default(#))".}
+proc newTopoJSON*(options: TopoJSONOptions): TopoJSON {.importjs: "(new olNs_format_TopoJSON.default(#))".}

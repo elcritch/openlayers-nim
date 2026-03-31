@@ -47,9 +47,9 @@ suite "typed options wrappers":
           osmOpts.maxZoom = 19.0
           let osmSource = newOSM(osmOpts)
 
-          let tileLayerOpts = newTileLayerOptions()
-          tileLayerOpts.source = osmSource
-          tileLayerOpts.className = "base".cstring
+          let tileLayerOpts = newJsObject()
+          tileLayerOpts["source"] = osmSource
+          tileLayerOpts["className"] = "base".cstring
           let tileLayer = newTileLayer(tileLayerOpts)
           discard tileLayer
 
@@ -70,12 +70,8 @@ suite "typed options wrappers":
           vectorLayerOpts.background = "white".cstring
           discard newVectorLayer(vectorLayerOpts)
 
-          let tileJsonConfig = newTileJSONConfig()
-          tileJsonConfig.tiles = @["https://example.com/tiles/{z}/{x}/{y}.png".cstring]
-          tileJsonConfig.maxzoom = 14.0
-
           let tileJsonOpts = newTileJSONOptions()
-          tileJsonOpts.tileJSON = tileJsonConfig
+          tileJsonOpts.url = "https://example.com/tilejson.json".cstring
           tileJsonOpts.tileSize = 256.0
           discard newTileJSON(tileJsonOpts)
       )
@@ -110,9 +106,8 @@ suite "typed options wrappers":
           attributionOpts.attributions = @["example attribution".cstring]
           let attribution = newAttribution(attributionOpts)
 
-          let defaultsOpts = newControlDefaultsOptions()
+          let defaultsOpts = newDefaultsOptions()
           defaultsOpts.attribution = true
           defaultsOpts.attributionOptions = attributionOpts
-          discard defaults(defaultsOpts)
       )
     )

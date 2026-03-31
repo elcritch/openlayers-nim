@@ -9,18 +9,12 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction)".}
 
 proc getDoubleClickZoom*(): JsObject {.importjs: "(olNs_interaction.DoubleClickZoom)".}
-proc getDblClickDragZoom*(): JsObject {.
-  importjs: "(olNs_interaction.DblClickDragZoom)"
-.}
-
+proc getDblClickDragZoom*(): JsObject {.importjs: "(olNs_interaction.DblClickDragZoom)".}
 proc getDragAndDrop*(): JsObject {.importjs: "(olNs_interaction.DragAndDrop)".}
 proc getDragBox*(): JsObject {.importjs: "(olNs_interaction.DragBox)".}
 proc getDragPan*(): JsObject {.importjs: "(olNs_interaction.DragPan)".}
 proc getDragRotate*(): JsObject {.importjs: "(olNs_interaction.DragRotate)".}
-proc getDragRotateAndZoom*(): JsObject {.
-  importjs: "(olNs_interaction.DragRotateAndZoom)"
-.}
-
+proc getDragRotateAndZoom*(): JsObject {.importjs: "(olNs_interaction.DragRotateAndZoom)".}
 proc getDragZoom*(): JsObject {.importjs: "(olNs_interaction.DragZoom)".}
 proc getDraw*(): JsObject {.importjs: "(olNs_interaction.Draw)".}
 proc getExtent*(): JsObject {.importjs: "(olNs_interaction.Extent)".}

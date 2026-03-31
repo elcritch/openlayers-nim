@@ -8,9 +8,7 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_source)".}
 
-proc sourcesFromTileGrid*(
-  tileGrid: JsObject, factory: JsObject
-): JsObject {.importjs: "olNs_source.sourcesFromTileGrid(#, #)".}
+proc sourcesFromTileGrid*(tileGrid: JsObject, factory: JsObject): JsObject {.importjs: "olNs_source.sourcesFromTileGrid(#, #)".}
 
 proc getBingMaps*(): JsObject {.importjs: "(olNs_source.BingMaps)".}
 proc getCartoDB*(): JsObject {.importjs: "(olNs_source.CartoDB)".}
@@ -46,11 +44,6 @@ proc getWMTS*(): JsObject {.importjs: "(olNs_source.WMTS)".}
 proc getXYZ*(): JsObject {.importjs: "(olNs_source.XYZ)".}
 proc getZoomify*(): JsObject {.importjs: "(olNs_source.Zoomify)".}
 proc getCreateWMSLoader*(): JsObject {.importjs: "(olNs_source.createWMSLoader)".}
-proc getCreateArcGISRestLoader*(): JsObject {.
-  importjs: "(olNs_source.createArcGISRestLoader)"
-.}
-
+proc getCreateArcGISRestLoader*(): JsObject {.importjs: "(olNs_source.createArcGISRestLoader)".}
 proc getCreateStaticLoader*(): JsObject {.importjs: "(olNs_source.createStaticLoader)".}
-proc getCreateMapGuideLoader*(): JsObject {.
-  importjs: "(olNs_source.createMapGuideLoader)"
-.}
+proc getCreateMapGuideLoader*(): JsObject {.importjs: "(olNs_source.createMapGuideLoader)".}

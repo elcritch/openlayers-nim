@@ -8,47 +8,27 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_Group)".}
 
-type LayerGroup* = ref object of JsRoot
+type
+  LayerGroup* = ref object of JsRoot
 proc newLayerGroup*(): LayerGroup {.importjs: "(new olNs_layer_Group.default())".}
 
-type LayerGroupOptions* = ref object of JsRoot
+type
+  LayerGroupOptions* = ref object of JsRoot
 
 proc newLayerGroupOptions*(): LayerGroupOptions {.importjs: "({})".}
 proc `opacity=`*(options: LayerGroupOptions, value: float) {.importjs: "#.opacity = #".}
 proc `visible=`*(options: LayerGroupOptions, value: bool) {.importjs: "#.visible = #".}
-proc `extent=`*(
-  options: LayerGroupOptions, value: JsObject
-) {.importjs: "#.extent = #".}
-
+proc `extent=`*(options: LayerGroupOptions, value: JsObject) {.importjs: "#.extent = #".}
 proc `extent=`*(options: LayerGroupOptions, value: RootRef) {.importjs: "#.extent = #".}
 proc `zIndex=`*(options: LayerGroupOptions, value: float) {.importjs: "#.zIndex = #".}
-proc `minResolution=`*(
-  options: LayerGroupOptions, value: float
-) {.importjs: "#.minResolution = #".}
-
-proc `maxResolution=`*(
-  options: LayerGroupOptions, value: float
-) {.importjs: "#.maxResolution = #".}
-
+proc `minResolution=`*(options: LayerGroupOptions, value: float) {.importjs: "#.minResolution = #".}
+proc `maxResolution=`*(options: LayerGroupOptions, value: float) {.importjs: "#.maxResolution = #".}
 proc `minZoom=`*(options: LayerGroupOptions, value: float) {.importjs: "#.minZoom = #".}
 proc `maxZoom=`*(options: LayerGroupOptions, value: float) {.importjs: "#.maxZoom = #".}
-proc `layers=`*(
-  options: LayerGroupOptions, value: JsObject
-) {.importjs: "#.layers = #".}
-
+proc `layers=`*(options: LayerGroupOptions, value: JsObject) {.importjs: "#.layers = #".}
 proc `layers=`*(options: LayerGroupOptions, value: RootRef) {.importjs: "#.layers = #".}
-proc `layers=`*[T](
-  options: LayerGroupOptions, value: seq[T]
-) {.importjs: "#.layers = #".}
+proc `layers=`*[T](options: LayerGroupOptions, value: seq[T]) {.importjs: "#.layers = #".}
+proc `properties=`*(options: LayerGroupOptions, value: JsObject) {.importjs: "#.properties = #".}
+proc `properties=`*(options: LayerGroupOptions, value: RootRef) {.importjs: "#.properties = #".}
 
-proc `properties=`*(
-  options: LayerGroupOptions, value: JsObject
-) {.importjs: "#.properties = #".}
-
-proc `properties=`*(
-  options: LayerGroupOptions, value: RootRef
-) {.importjs: "#.properties = #".}
-
-proc newLayerGroup*(
-  options: LayerGroupOptions
-): LayerGroup {.importjs: "(new olNs_layer_Group.default(#))".}
+proc newLayerGroup*(options: LayerGroupOptions): LayerGroup {.importjs: "(new olNs_layer_Group.default(#))".}

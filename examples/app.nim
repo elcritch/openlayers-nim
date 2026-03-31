@@ -65,12 +65,12 @@ proc linkClass(route: ExampleRoute, active: ExampleRoute): cstring =
   if route == active: "route-link route-link-active" else: "route-link"
 
 proc initSimple(): JsObject =
-  let layerOptions = newTileLayerOptions()
-  layerOptions.source = newOSM()
+  let layerOptions = newJsObject()
+  layerOptions["source"] = newOSM()
   let baseLayer = newTileLayer(layerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 
@@ -82,9 +82,9 @@ proc initSimple(): JsObject =
   result = cast[JsObject](newMap(mapOptions))
 
 proc initSemiTransparentLayer(): JsObject =
-  let bwLayerOptions = newTileLayerOptions()
-  bwLayerOptions.className = "bw".cstring
-  bwLayerOptions.source = newOSM()
+  let bwLayerOptions = newJsObject()
+  bwLayerOptions["className"] = "bw".cstring
+  bwLayerOptions["source"] = newOSM()
   let bwLayer = newTileLayer(bwLayerOptions)
 
   let tileJsonOptions = newTileJSONOptions()
@@ -96,8 +96,8 @@ proc initSemiTransparentLayer(): JsObject =
   tileJsonOptions.transition = 0.0
   let quakeSource = newTileJSON(tileJsonOptions)
 
-  let quakeLayerOptions = newTileLayerOptions()
-  quakeLayerOptions.source = quakeSource
+  let quakeLayerOptions = newJsObject()
+  quakeLayerOptions["source"] = quakeSource
   let quakeLayer = newTileLayer(quakeLayerOptions)
 
   let viewOptions = newViewOptions()
@@ -134,7 +134,7 @@ proc initSelectFeatures(): JsObject =
   let vectorLayer = newVectorLayer(vectorLayerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 
@@ -213,7 +213,7 @@ proc initSelectHoverFeatures(): JsObject =
   let vectorLayer = newVectorLayer(vectorLayerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 
@@ -269,7 +269,7 @@ proc initLayerOpacity(): JsObject =
   let osmLayer = newWebGLTileLayer(osmLayerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 
@@ -287,18 +287,18 @@ proc initAttributions(): JsObject =
   attributionOptions.collapsible = false
   let attributionControl = newAttribution(attributionOptions)
 
-  let controlsOptions = newControlDefaultsOptions()
-  controlsOptions.attribution = false
+  let controlsOptions = newJsObject()
+  controlsOptions["attribution"] = false
   let controlsWithAttribution = extendCollection(
     defaults(controlsOptions), jsArray1(cast[JsObject](attributionControl))
   )
 
-  let layerOptions = newTileLayerOptions()
-  layerOptions.source = newOSM()
+  let layerOptions = newJsObject()
+  layerOptions["source"] = newOSM()
   let baseLayer = newTileLayer(layerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 
@@ -339,12 +339,12 @@ proc initCenter(): JsObject =
   vectorLayerOptions.style = styleOptions
   let vectorLayer = newVectorLayer(vectorLayerOptions)
 
-  let baseLayerOptions = newTileLayerOptions()
-  baseLayerOptions.source = newOSM()
+  let baseLayerOptions = newJsObject()
+  baseLayerOptions["source"] = newOSM()
   let baseLayer = newTileLayer(baseLayerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 1.0
   let mapView = newView(viewOptions)
 

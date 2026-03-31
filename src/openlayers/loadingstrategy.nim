@@ -8,12 +8,6 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_loadingstrategy)".}
 
-proc all*(
-  extent: JsObject, resolution: float
-): JsObject {.importjs: "olNs_loadingstrategy.all(#, #)".}
-
-proc bbox*(
-  extent: JsObject, resolution: float
-): JsObject {.importjs: "olNs_loadingstrategy.bbox(#, #)".}
-
+proc all*(extent: JsObject, resolution: float): JsObject {.importjs: "olNs_loadingstrategy.all(#, #)".}
+proc bbox*(extent: JsObject, resolution: float): JsObject {.importjs: "olNs_loadingstrategy.bbox(#, #)".}
 proc tile*(tileGrid: JsObject): JsObject {.importjs: "olNs_loadingstrategy.tile(#)".}

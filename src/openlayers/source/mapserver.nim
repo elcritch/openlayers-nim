@@ -8,26 +8,16 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_mapserver)".}
 
-proc createLoader*(
-  options: JsObject
-): JsObject {.importjs: "olNs_source_mapserver.createLoader(#)".}
+proc createLoader*(options: JsObject): JsObject {.importjs: "olNs_source_mapserver.createLoader(#)".}
 
-type LoaderOptions* = ref object of JsRoot
+type
+  LoaderOptions* = ref object of JsRoot
 
 proc newLoaderOptions*(): LoaderOptions {.importjs: "({})".}
 proc `url=`*(options: LoaderOptions, value: cstring) {.importjs: "#.url = #".}
-proc `crossOrigin=`*(
-  options: LoaderOptions, value: cstring
-) {.importjs: "#.crossOrigin = #".}
-
-proc `referrerPolicy=`*(
-  options: LoaderOptions, value: JsObject
-) {.importjs: "#.referrerPolicy = #".}
-
-proc `referrerPolicy=`*(
-  options: LoaderOptions, value: RootRef
-) {.importjs: "#.referrerPolicy = #".}
-
+proc `crossOrigin=`*(options: LoaderOptions, value: cstring) {.importjs: "#.crossOrigin = #".}
+proc `referrerPolicy=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.referrerPolicy = #".}
+proc `referrerPolicy=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.referrerPolicy = #".}
 proc `ratio=`*(options: LoaderOptions, value: float) {.importjs: "#.ratio = #".}
 proc `params=`*(options: LoaderOptions, value: JsObject) {.importjs: "#.params = #".}
 proc `params=`*(options: LoaderOptions, value: RootRef) {.importjs: "#.params = #".}

@@ -8,33 +8,17 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_sphere)".}
 
-proc getDistance*(
-  c1: JsObject, c2: JsObject, radius: JsObject = jsUndefined
-): float {.importjs: "olNs_sphere.getDistance(#, #, #)".}
-
-proc getLength*(
-  geometry: JsObject, options: JsObject = jsUndefined
-): float {.importjs: "olNs_sphere.getLength(#, #)".}
-
-proc getArea*(
-  geometry: JsObject, options: JsObject = jsUndefined
-): float {.importjs: "olNs_sphere.getArea(#, #)".}
-
-proc offset*(
-  c1: JsObject, distance: float, bearing: float, radius: JsObject = jsUndefined
-): JsObject {.importjs: "olNs_sphere.offset(#, #, #, #)".}
+proc getDistance*(c1: JsObject, c2: JsObject, radius: JsObject = jsUndefined): float {.importjs: "olNs_sphere.getDistance(#, #, #)".}
+proc getLength*(geometry: JsObject, options: JsObject = jsUndefined): float {.importjs: "olNs_sphere.getLength(#, #)".}
+proc getArea*(geometry: JsObject, options: JsObject = jsUndefined): float {.importjs: "olNs_sphere.getArea(#, #)".}
+proc offset*(c1: JsObject, distance: float, bearing: float, radius: JsObject = jsUndefined): JsObject {.importjs: "olNs_sphere.offset(#, #, #, #)".}
 
 proc getDEFAULT_RADIUS*(): float {.importjs: "(olNs_sphere.DEFAULT_RADIUS)".}
 
-type SphereMetricOptions* = ref object of JsRoot
+type
+  SphereMetricOptions* = ref object of JsRoot
 
 proc newSphereMetricOptions*(): SphereMetricOptions {.importjs: "({})".}
-proc `projection=`*(
-  options: SphereMetricOptions, value: JsObject
-) {.importjs: "#.projection = #".}
-
-proc `projection=`*(
-  options: SphereMetricOptions, value: RootRef
-) {.importjs: "#.projection = #".}
-
+proc `projection=`*(options: SphereMetricOptions, value: JsObject) {.importjs: "#.projection = #".}
+proc `projection=`*(options: SphereMetricOptions, value: RootRef) {.importjs: "#.projection = #".}
 proc `radius=`*(options: SphereMetricOptions, value: float) {.importjs: "#.radius = #".}

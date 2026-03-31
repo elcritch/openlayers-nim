@@ -9,50 +9,15 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_Style)".}
 
 type
-  StyleOptions* = ref object of JsRoot
   Style* = ref object of JsRoot
-
-proc newStyleOptions*(): StyleOptions {.importjs: "({})".}
-proc `geometry=`*(options: StyleOptions, value: cstring) {.importjs: "#.geometry = #".}
-
-proc `geometry=`*(options: StyleOptions, value: JsObject) {.importjs: "#.geometry = #".}
-
-proc `fill=`*(options: StyleOptions, value: JsObject) {.importjs: "#.fill = #".}
-proc `fill=`*(options: StyleOptions, value: RootRef) {.importjs: "#.fill = #".}
-proc `image=`*(options: StyleOptions, value: JsObject) {.importjs: "#.image = #".}
-proc `renderer=`*(options: StyleOptions, value: JsObject) {.importjs: "#.renderer = #".}
-
-proc `hitDetectionRenderer=`*(
-  options: StyleOptions, value: JsObject
-) {.importjs: "#.hitDetectionRenderer = #".}
-
-proc `stroke=`*(options: StyleOptions, value: JsObject) {.importjs: "#.stroke = #".}
-proc `stroke=`*(options: StyleOptions, value: RootRef) {.importjs: "#.stroke = #".}
-proc `text=`*(options: StyleOptions, value: JsObject) {.importjs: "#.text = #".}
-proc `zIndex=`*(options: StyleOptions, value: float) {.importjs: "#.zIndex = #".}
-
-proc newStyle*(
-  options: JsObject = jsUndefined
-): Style {.importjs: "(new olNs_style_Style.default(#))".}
-
-proc newStyle*(
-  options: StyleOptions
-): Style {.importjs: "(new olNs_style_Style.default(#))".}
-
+proc newStyle*(options: JsObject = jsUndefined): Style {.importjs: "(new olNs_style_Style.default(#))".}
 proc clone*(self: Style): JsObject {.importjs: "#.clone()".}
 proc getRenderer*(self: Style): JsObject {.importjs: "#.getRenderer()".}
 proc setRenderer*(self: Style, renderer: JsObject) {.importjs: "#.setRenderer(#)".}
-proc setHitDetectionRenderer*(
-  self: Style, renderer: JsObject
-) {.importjs: "#.setHitDetectionRenderer(#)".}
-
-proc getHitDetectionRenderer*(
-  self: Style
-): JsObject {.importjs: "#.getHitDetectionRenderer()".}
-
+proc setHitDetectionRenderer*(self: Style, renderer: JsObject) {.importjs: "#.setHitDetectionRenderer(#)".}
+proc getHitDetectionRenderer*(self: Style): JsObject {.importjs: "#.getHitDetectionRenderer()".}
 proc getGeometry*(self: Style): JsObject {.importjs: "#.getGeometry()".}
 proc getGeometryFunction*(self: Style): JsObject {.importjs: "#.getGeometryFunction()".}
-
 proc getFill*(self: Style): JsObject {.importjs: "#.getFill()".}
 proc setFill*(self: Style, fill: JsObject) {.importjs: "#.setFill(#)".}
 proc getImage*(self: Style): JsObject {.importjs: "#.getImage()".}
@@ -66,10 +31,28 @@ proc setGeometry*(self: Style, geometry: JsObject) {.importjs: "#.setGeometry(#)
 proc setZIndex*(self: Style, zIndex: float) {.importjs: "#.setZIndex(#)".}
 
 proc toFunction*(obj: JsObject): JsObject {.importjs: "olNs_style_Style.toFunction(#)".}
-proc createDefaultStyle*(
-  feature: JsObject, resolution: float
-): JsObject {.importjs: "olNs_style_Style.createDefaultStyle(#, #)".}
+proc createDefaultStyle*(feature: JsObject, resolution: float): JsObject {.importjs: "olNs_style_Style.createDefaultStyle(#, #)".}
+proc createEditingStyle*(): JsObject {.importjs: "olNs_style_Style.createEditingStyle()".}
 
-proc createEditingStyle*(): JsObject {.
-  importjs: "olNs_style_Style.createEditingStyle()"
-.}
+type
+  StyleOptions* = ref object of JsRoot
+
+proc newStyleOptions*(): StyleOptions {.importjs: "({})".}
+proc `geometry=`*(options: StyleOptions, value: cstring) {.importjs: "#.geometry = #".}
+proc `geometry=`*(options: StyleOptions, value: JsObject) {.importjs: "#.geometry = #".}
+proc `geometry=`*(options: StyleOptions, value: RootRef) {.importjs: "#.geometry = #".}
+proc `fill=`*(options: StyleOptions, value: JsObject) {.importjs: "#.fill = #".}
+proc `fill=`*(options: StyleOptions, value: RootRef) {.importjs: "#.fill = #".}
+proc `image=`*(options: StyleOptions, value: JsObject) {.importjs: "#.image = #".}
+proc `image=`*(options: StyleOptions, value: RootRef) {.importjs: "#.image = #".}
+proc `renderer=`*(options: StyleOptions, value: JsObject) {.importjs: "#.renderer = #".}
+proc `renderer=`*(options: StyleOptions, value: RootRef) {.importjs: "#.renderer = #".}
+proc `hitDetectionRenderer=`*(options: StyleOptions, value: JsObject) {.importjs: "#.hitDetectionRenderer = #".}
+proc `hitDetectionRenderer=`*(options: StyleOptions, value: RootRef) {.importjs: "#.hitDetectionRenderer = #".}
+proc `stroke=`*(options: StyleOptions, value: JsObject) {.importjs: "#.stroke = #".}
+proc `stroke=`*(options: StyleOptions, value: RootRef) {.importjs: "#.stroke = #".}
+proc `text=`*(options: StyleOptions, value: JsObject) {.importjs: "#.text = #".}
+proc `text=`*(options: StyleOptions, value: RootRef) {.importjs: "#.text = #".}
+proc `zIndex=`*(options: StyleOptions, value: float) {.importjs: "#.zIndex = #".}
+
+proc newStyle*(options: StyleOptions): Style {.importjs: "(new olNs_style_Style.default(#))".}

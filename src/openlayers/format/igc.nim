@@ -8,20 +8,15 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_IGC)".}
 
-type IGC* = ref object of JsRoot
-proc newIGC*(
-  options: JsObject = jsUndefined
-): IGC {.importjs: "(new olNs_format_IGC.default(#))".}
+type
+  IGC* = ref object of JsRoot
+proc newIGC*(options: JsObject = jsUndefined): IGC {.importjs: "(new olNs_format_IGC.default(#))".}
 
-type IGCOptions* = ref object of JsRoot
+type
+  IGCOptions* = ref object of JsRoot
 
 proc newIGCOptions*(): IGCOptions {.importjs: "({})".}
-proc `altitudeMode=`*(
-  options: IGCOptions, value: JsObject
-) {.importjs: "#.altitudeMode = #".}
-
-proc `altitudeMode=`*(
-  options: IGCOptions, value: RootRef
-) {.importjs: "#.altitudeMode = #".}
+proc `altitudeMode=`*(options: IGCOptions, value: JsObject) {.importjs: "#.altitudeMode = #".}
+proc `altitudeMode=`*(options: IGCOptions, value: RootRef) {.importjs: "#.altitudeMode = #".}
 
 proc newIGC*(options: IGCOptions): IGC {.importjs: "(new olNs_format_IGC.default(#))".}

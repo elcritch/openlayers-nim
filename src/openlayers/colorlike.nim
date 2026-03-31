@@ -8,6 +8,4 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_colorlike)".}
 
-proc asColorLike*(
-  color: JsObject
-): JsObject {.importjs: "olNs_colorlike.asColorLike(#)".}
+proc asColorLike*(color: JsObject): JsObject {.importjs: "olNs_colorlike.asColorLike(#)".}

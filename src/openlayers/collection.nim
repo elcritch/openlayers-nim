@@ -8,14 +8,14 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_Collection)".}
 
-type Collection* = ref object of JsRoot
+type
+  Collection* = ref object of JsRoot
 proc newCollection*(): Collection {.importjs: "(new olNs_Collection.default())".}
 
-type CollectionOptions* = ref object of JsRoot
+type
+  CollectionOptions* = ref object of JsRoot
 
 proc newCollectionOptions*(): CollectionOptions {.importjs: "({})".}
 proc `unique=`*(options: CollectionOptions, value: bool) {.importjs: "#.unique = #".}
 
-proc newCollection*(
-  options: CollectionOptions
-): Collection {.importjs: "(new olNs_Collection.default(#))".}
+proc newCollection*(options: CollectionOptions): Collection {.importjs: "(new olNs_Collection.default(#))".}

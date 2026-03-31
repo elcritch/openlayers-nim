@@ -8,3 +8,7 @@
 
 Nim bindings for OpenLayers.
 
+Regenerate wrappers and API/options reports:
+
+- `nim regenOl`
+- `npm run gen:ol-all`

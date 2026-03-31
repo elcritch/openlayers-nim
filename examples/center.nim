@@ -59,12 +59,12 @@ proc initExample() =
   vectorLayerOptions.style = styleOptions
   let vectorLayer = newVectorLayer(vectorLayerOptions)
 
-  let baseLayerOptions = newTileLayerOptions()
-  baseLayerOptions.source = newOSM()
+  let baseLayerOptions = newJsObject()
+  baseLayerOptions["source"] = newOSM()
   let baseLayer = newTileLayer(baseLayerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 1.0
   let mapView = newView(viewOptions)
 

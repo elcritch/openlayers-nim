@@ -8,20 +8,6 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_featureloader)".}
 
-proc loadFeaturesXhr*(
-  url: JsObject,
-  format: JsObject,
-  extent: JsObject,
-  resolution: float,
-  projection: JsObject,
-  success: JsObject,
-  failure: JsObject,
-) {.importjs: "olNs_featureloader.loadFeaturesXhr(#, #, #, #, #, #, #)".}
-
-proc xhr*(
-  url: JsObject, format: JsObject
-): JsObject {.importjs: "olNs_featureloader.xhr(#, #)".}
-
-proc setWithCredentials*(
-  xhrWithCredentials: bool
-) {.importjs: "olNs_featureloader.setWithCredentials(#)".}
+proc loadFeaturesXhr*(url: JsObject, format: JsObject, extent: JsObject, resolution: float, projection: JsObject, success: JsObject, failure: JsObject) {.importjs: "olNs_featureloader.loadFeaturesXhr(#, #, #, #, #, #, #)".}
+proc xhr*(url: JsObject, format: JsObject): JsObject {.importjs: "olNs_featureloader.xhr(#, #)".}
+proc setWithCredentials*(xhrWithCredentials: bool) {.importjs: "olNs_featureloader.setWithCredentials(#)".}

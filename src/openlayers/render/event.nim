@@ -8,10 +8,6 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_render_Event)".}
 
-type RenderEvent* = ref object of JsRoot
-proc newRenderEvent*(
-  typeVal: JsObject,
-  inversePixelTransform: JsObject = jsUndefined,
-  frameState: JsObject = jsUndefined,
-  context: JsObject = jsUndefined,
-): RenderEvent {.importjs: "(new olNs_render_Event.default(#, #, #, #))".}
+type
+  RenderEvent* = ref object of JsRoot
+proc newRenderEvent*(typeVal: JsObject, inversePixelTransform: JsObject = jsUndefined, frameState: JsObject = jsUndefined, context: JsObject = jsUndefined): RenderEvent {.importjs: "(new olNs_render_Event.default(#, #, #, #))".}

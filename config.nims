@@ -36,3 +36,6 @@ task serveExamples, "Compile example JS and run the async example server":
 
 task buildWeb, "Build Karax example bundles with bunnery":
   buildKaraxExamples()
+
+task regenOl, "Regenerate OpenLayers wrappers and API/options reports":
+  exec "node scripts/regenerate_ol_bindings_and_reports.mjs"

@@ -8,7 +8,6 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_geom_Point)".}
 
-type Point* = ref object of JsRoot
-proc newPoint*(
-  coordinates: JsObject, layout: JsObject = jsUndefined
-): Point {.importjs: "(new olNs_geom_Point.default(#, #))".}
+type
+  Point* = ref object of JsRoot
+proc newPoint*(coordinates: JsObject, layout: JsObject = jsUndefined): Point {.importjs: "(new olNs_geom_Point.default(#, #))".}

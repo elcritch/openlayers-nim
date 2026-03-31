@@ -8,44 +8,21 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_GeoJSON)".}
 
-type GeoJSON* = ref object of JsRoot
+type
+  GeoJSON* = ref object of JsRoot
 proc newGeoJSON*(): GeoJSON {.importjs: "(new olNs_format_GeoJSON.default())".}
 
-type GeoJSONOptions* = ref object of JsRoot
+type
+  GeoJSONOptions* = ref object of JsRoot
 
 proc newGeoJSONOptions*(): GeoJSONOptions {.importjs: "({})".}
-proc `dataProjection=`*(
-  options: GeoJSONOptions, value: JsObject
-) {.importjs: "#.dataProjection = #".}
+proc `dataProjection=`*(options: GeoJSONOptions, value: JsObject) {.importjs: "#.dataProjection = #".}
+proc `dataProjection=`*(options: GeoJSONOptions, value: RootRef) {.importjs: "#.dataProjection = #".}
+proc `featureProjection=`*(options: GeoJSONOptions, value: JsObject) {.importjs: "#.featureProjection = #".}
+proc `featureProjection=`*(options: GeoJSONOptions, value: RootRef) {.importjs: "#.featureProjection = #".}
+proc `geometryName=`*(options: GeoJSONOptions, value: cstring) {.importjs: "#.geometryName = #".}
+proc `extractGeometryName=`*(options: GeoJSONOptions, value: bool) {.importjs: "#.extractGeometryName = #".}
+proc `featureClass=`*(options: GeoJSONOptions, value: JsObject) {.importjs: "#.featureClass = #".}
+proc `featureClass=`*(options: GeoJSONOptions, value: RootRef) {.importjs: "#.featureClass = #".}
 
-proc `dataProjection=`*(
-  options: GeoJSONOptions, value: RootRef
-) {.importjs: "#.dataProjection = #".}
-
-proc `featureProjection=`*(
-  options: GeoJSONOptions, value: JsObject
-) {.importjs: "#.featureProjection = #".}
-
-proc `featureProjection=`*(
-  options: GeoJSONOptions, value: RootRef
-) {.importjs: "#.featureProjection = #".}
-
-proc `geometryName=`*(
-  options: GeoJSONOptions, value: cstring
-) {.importjs: "#.geometryName = #".}
-
-proc `extractGeometryName=`*(
-  options: GeoJSONOptions, value: bool
-) {.importjs: "#.extractGeometryName = #".}
-
-proc `featureClass=`*(
-  options: GeoJSONOptions, value: JsObject
-) {.importjs: "#.featureClass = #".}
-
-proc `featureClass=`*(
-  options: GeoJSONOptions, value: RootRef
-) {.importjs: "#.featureClass = #".}
-
-proc newGeoJSON*(
-  options: GeoJSONOptions
-): GeoJSON {.importjs: "(new olNs_format_GeoJSON.default(#))".}
+proc newGeoJSON*(options: GeoJSONOptions): GeoJSON {.importjs: "(new olNs_format_GeoJSON.default(#))".}

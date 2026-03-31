@@ -8,15 +8,7 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_size)".}
 
-proc buffer*(
-  size: JsObject, num: float, dest: JsObject = jsUndefined
-): JsObject {.importjs: "olNs_size.buffer(#, #, #)".}
-
+proc buffer*(size: JsObject, num: float, dest: JsObject = jsUndefined): JsObject {.importjs: "olNs_size.buffer(#, #, #)".}
 proc hasArea*(size: JsObject): bool {.importjs: "olNs_size.hasArea(#)".}
-proc scale*(
-  size: JsObject, ratio: float, dest: JsObject = jsUndefined
-): JsObject {.importjs: "olNs_size.scale(#, #, #)".}
-
-proc toSize*(
-  size: JsObject, dest: JsObject = jsUndefined
-): JsObject {.importjs: "olNs_size.toSize(#, #)".}
+proc scale*(size: JsObject, ratio: float, dest: JsObject = jsUndefined): JsObject {.importjs: "olNs_size.scale(#, #, #)".}
+proc toSize*(size: JsObject, dest: JsObject = jsUndefined): JsObject {.importjs: "olNs_size.toSize(#, #)".}

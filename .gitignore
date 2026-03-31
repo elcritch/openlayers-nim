@@ -17,5 +17,5 @@ deps/
 .nimcache/
 /node_modules/
 *.js
-generated/
-scripts/
+/generated/
+/scripts/

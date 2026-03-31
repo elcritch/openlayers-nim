@@ -8,11 +8,9 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_geom_MultiPoint)".}
 
-type MultiPoint* = ref object of JsRoot
-proc newMultiPoint*(
-  coordinates: JsObject, layout: JsObject = jsUndefined
-): MultiPoint {.importjs: "(new olNs_geom_MultiPoint.default(#, #))".}
-
+type
+  MultiPoint* = ref object of JsRoot
+proc newMultiPoint*(coordinates: JsObject, layout: JsObject = jsUndefined): MultiPoint {.importjs: "(new olNs_geom_MultiPoint.default(#, #))".}
 proc appendPoint*(self: MultiPoint, point: JsObject) {.importjs: "#.appendPoint(#)".}
 proc getPoint*(self: MultiPoint, index: float): JsObject {.importjs: "#.getPoint(#)".}
 proc getPoints*(self: MultiPoint): JsObject {.importjs: "#.getPoints()".}

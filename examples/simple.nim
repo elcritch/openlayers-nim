@@ -20,12 +20,12 @@ proc initExample() =
     return
   initialized = true
 
-  let layerOptions = newTileLayerOptions()
-  layerOptions.source = newOSM()
+  let layerOptions = newJsObject()
+  layerOptions["source"] = newOSM()
   let baseLayer = newTileLayer(layerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 

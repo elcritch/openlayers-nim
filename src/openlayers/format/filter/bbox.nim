@@ -8,7 +8,6 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_Bbox)".}
 
-type Bbox* = ref object of JsRoot
-proc newBbox*(
-  geometryName: cstring, extent: JsObject, srsName: JsObject = jsUndefined
-): Bbox {.importjs: "(new olNs_format_filter_Bbox.default(#, #, #))".}
+type
+  Bbox* = ref object of JsRoot
+proc newBbox*(geometryName: cstring, extent: JsObject, srsName: JsObject = jsUndefined): Bbox {.importjs: "(new olNs_format_filter_Bbox.default(#, #, #))".}

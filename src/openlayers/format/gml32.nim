@@ -8,5 +8,6 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_GML32)".}
 
-type GML32* = ref object of JsRoot
+type
+  GML32* = ref object of JsRoot
 proc newGML32*(): GML32 {.importjs: "(new olNs_format_GML32.default())".}

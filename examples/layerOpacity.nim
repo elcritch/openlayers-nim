@@ -54,7 +54,7 @@ proc initExample() =
   let osmLayer = newWebGLTileLayer(osmLayerOptions)
 
   let viewOptions = newViewOptions()
-  viewOptions.center = @[0.0, 0.0]
+  viewOptions.center = jsArray2(0.0, 0.0)
   viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 

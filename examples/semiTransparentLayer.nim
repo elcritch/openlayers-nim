@@ -25,9 +25,9 @@ proc initExample() =
     return
   initialized = true
 
-  let bwLayerOptions = newTileLayerOptions()
-  bwLayerOptions.className = "bw".cstring
-  bwLayerOptions.source = newOSM()
+  let bwLayerOptions = newJsObject()
+  bwLayerOptions["className"] = "bw".cstring
+  bwLayerOptions["source"] = newOSM()
   let bwLayer = newTileLayer(bwLayerOptions)
 
   let tileJsonOptions = newTileJSONOptions()
@@ -38,8 +38,8 @@ proc initExample() =
   tileJsonOptions.transition = 0.0
   let quakeSource = newTileJSON(tileJsonOptions)
 
-  let quakeLayerOptions = newTileLayerOptions()
-  quakeLayerOptions.source = quakeSource
+  let quakeLayerOptions = newJsObject()
+  quakeLayerOptions["source"] = quakeSource
   let quakeLayer = newTileLayer(quakeLayerOptions)
 
   let viewOptions = newViewOptions()

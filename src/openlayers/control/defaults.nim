@@ -8,41 +8,18 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_defaults)".}
 
+proc defaults*(options: JsObject = jsUndefined): JsObject {.importjs: "olNs_control_defaults.defaults(#)".}
+
 type
   DefaultsOptions* = ref object of JsRoot
-  ControlDefaultsOptions* = DefaultsOptions
 
-proc newControlDefaultsOptions*(): ControlDefaultsOptions {.importjs: "({})".}
 proc newDefaultsOptions*(): DefaultsOptions {.importjs: "({})".}
-proc `attribution=`*(
-  options: ControlDefaultsOptions, value: bool
-) {.importjs: "#.attribution = #".}
-
-proc `attributionOptions=`*(
-  options: ControlDefaultsOptions, value: JsObject
-) {.importjs: "#.attributionOptions = #".}
-
-proc `attributionOptions=`*(
-  options: ControlDefaultsOptions, value: RootRef
-) {.importjs: "#.attributionOptions = #".}
-
-proc `rotate=`*(
-  options: ControlDefaultsOptions, value: bool
-) {.importjs: "#.rotate = #".}
-
-proc `rotateOptions=`*(
-  options: ControlDefaultsOptions, value: JsObject
-) {.importjs: "#.rotateOptions = #".}
-
-proc `zoom=`*(options: ControlDefaultsOptions, value: bool) {.importjs: "#.zoom = #".}
-proc `zoomOptions=`*(
-  options: ControlDefaultsOptions, value: JsObject
-) {.importjs: "#.zoomOptions = #".}
-
-proc defaults*(
-  options: JsObject = jsUndefined
-): JsObject {.importjs: "olNs_control_defaults.defaults(#)".}
-
-proc defaults*(
-  options: ControlDefaultsOptions
-): JsObject {.importjs: "olNs_control_defaults.defaults(#)".}
+proc `attribution=`*(options: DefaultsOptions, value: bool) {.importjs: "#.attribution = #".}
+proc `attributionOptions=`*(options: DefaultsOptions, value: JsObject) {.importjs: "#.attributionOptions = #".}
+proc `attributionOptions=`*(options: DefaultsOptions, value: RootRef) {.importjs: "#.attributionOptions = #".}
+proc `rotate=`*(options: DefaultsOptions, value: bool) {.importjs: "#.rotate = #".}
+proc `rotateOptions=`*(options: DefaultsOptions, value: JsObject) {.importjs: "#.rotateOptions = #".}
+proc `rotateOptions=`*(options: DefaultsOptions, value: RootRef) {.importjs: "#.rotateOptions = #".}
+proc `zoom=`*(options: DefaultsOptions, value: bool) {.importjs: "#.zoom = #".}
+proc `zoomOptions=`*(options: DefaultsOptions, value: JsObject) {.importjs: "#.zoomOptions = #".}
+proc `zoomOptions=`*(options: DefaultsOptions, value: RootRef) {.importjs: "#.zoomOptions = #".}

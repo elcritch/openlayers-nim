@@ -8,6 +8,4 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_flat)".}
 
-proc createDefaultStyle*(): JsObject {.
-  importjs: "olNs_style_flat.createDefaultStyle()"
-.}
+proc createDefaultStyle*(): JsObject {.importjs: "olNs_style_flat.createDefaultStyle()".}

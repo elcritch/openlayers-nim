@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "gen:ol-api": "node scripts/generate_ol_api_wrappers.mjs"
+    "gen:ol-api": "node scripts/generate_ol_api_wrappers.mjs",
+    "gen:ol-public-options": "node scripts/generate_ol_public_options.mjs",
+    "gen:ol-remaining-options": "node scripts/generate_ol_remaining_options.mjs",
+    "gen:ol-all": "node scripts/regenerate_ol_bindings_and_reports.mjs"
   },
   "dependencies": {
     "ol": "^10.8.0"
