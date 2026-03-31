@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_IGC)".}
 
 type
-  OlIGC* = ref object of JsRoot
-proc newOlIGC*(options: JsObject = jsUndefined): OlIGC {.importjs: "(new olNs_format_IGC.default(#))".}
+  IGC* = ref object of JsRoot
+proc newIGC*(options: JsObject = jsUndefined): IGC {.importjs: "(new olNs_format_IGC.default(#))".}

@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_DragBox)".}
 
 type
-  OlDragBox* = ref object of JsRoot
-proc newOlDragBox*(options: JsObject = jsUndefined): OlDragBox {.importjs: "(new olNs_interaction_DragBox.default(#))".}
-proc onBoxEnd*(self: OlDragBox, event: JsObject) {.importjs: "#.onBoxEnd(#)".}
-proc defaultBoxEndCondition*(self: OlDragBox, mapBrowserEvent: JsObject, startPixel: JsObject, endPixel: JsObject): bool {.importjs: "#.defaultBoxEndCondition(#, #, #)".}
-proc getGeometry*(self: OlDragBox): JsObject {.importjs: "#.getGeometry()".}
+  DragBox* = ref object of JsRoot
+proc newDragBox*(options: JsObject = jsUndefined): DragBox {.importjs: "(new olNs_interaction_DragBox.default(#))".}
+proc onBoxEnd*(self: DragBox, event: JsObject) {.importjs: "#.onBoxEnd(#)".}
+proc defaultBoxEndCondition*(self: DragBox, mapBrowserEvent: JsObject, startPixel: JsObject, endPixel: JsObject): bool {.importjs: "#.defaultBoxEndCondition(#, #, #)".}
+proc getGeometry*(self: DragBox): JsObject {.importjs: "#.getGeometry()".}

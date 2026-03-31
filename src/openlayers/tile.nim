@@ -9,15 +9,15 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_Tile)".}
 
 type
-  OlTile* = ref object of JsRoot
-proc newOlTile*(tileCoord: JsObject, state: JsObject, options: JsObject = jsUndefined): OlTile {.importjs: "(new olNs_Tile.default(#, #, #))".}
-proc changed*(self: OlTile) {.importjs: "#.changed()".}
-proc release*(self: OlTile) {.importjs: "#.release()".}
-proc getKey*(self: OlTile): cstring {.importjs: "#.getKey()".}
-proc getTileCoord*(self: OlTile): JsObject {.importjs: "#.getTileCoord()".}
-proc getState*(self: OlTile): JsObject {.importjs: "#.getState()".}
-proc setState*(self: OlTile, state: JsObject) {.importjs: "#.setState(#)".}
-proc load*(self: OlTile) {.importjs: "#.load()".}
-proc getAlpha*(self: OlTile, id: cstring, time: float): float {.importjs: "#.getAlpha(#, #)".}
-proc inTransition*(self: OlTile, id: cstring): bool {.importjs: "#.inTransition(#)".}
-proc endTransition*(self: OlTile, id: cstring) {.importjs: "#.endTransition(#)".}
+  Tile* = ref object of JsRoot
+proc newTile*(tileCoord: JsObject, state: JsObject, options: JsObject = jsUndefined): Tile {.importjs: "(new olNs_Tile.default(#, #, #))".}
+proc changed*(self: Tile) {.importjs: "#.changed()".}
+proc release*(self: Tile) {.importjs: "#.release()".}
+proc getKey*(self: Tile): cstring {.importjs: "#.getKey()".}
+proc getTileCoord*(self: Tile): JsObject {.importjs: "#.getTileCoord()".}
+proc getState*(self: Tile): JsObject {.importjs: "#.getState()".}
+proc setState*(self: Tile, state: JsObject) {.importjs: "#.setState(#)".}
+proc load*(self: Tile) {.importjs: "#.load()".}
+proc getAlpha*(self: Tile, id: cstring, time: float): float {.importjs: "#.getAlpha(#, #)".}
+proc inTransition*(self: Tile, id: cstring): bool {.importjs: "#.inTransition(#)".}
+proc endTransition*(self: Tile, id: cstring) {.importjs: "#.endTransition(#)".}

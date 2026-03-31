@@ -23,7 +23,7 @@ proc initExample() =
 
   let attributionOptions = newJsObject()
   attributionOptions["collapsible"] = false
-  let attributionControl = newOlAttribution(attributionOptions)
+  let attributionControl = newAttribution(attributionOptions)
 
   let controlsOptions = newJsObject()
   controlsOptions["attribution"] = false
@@ -32,13 +32,13 @@ proc initExample() =
   )
 
   let layerOptions = newJsObject()
-  layerOptions["source"] = newOlOSM()
-  let baseLayer = newOlTileLayer(layerOptions)
+  layerOptions["source"] = newOSM()
+  let baseLayer = newTileLayer(layerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 2.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[baseLayer]

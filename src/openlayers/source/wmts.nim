@@ -9,16 +9,16 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_WMTS)".}
 
 type
-  OlWMTS* = ref object of JsRoot
-proc newOlWMTS*(options: JsObject): OlWMTS {.importjs: "(new olNs_source_WMTS.default(#))".}
-proc getDimensions*(self: OlWMTS): JsObject {.importjs: "#.getDimensions()".}
-proc getFormat*(self: OlWMTS): cstring {.importjs: "#.getFormat()".}
-proc getLayer*(self: OlWMTS): cstring {.importjs: "#.getLayer()".}
-proc getMatrixSet*(self: OlWMTS): cstring {.importjs: "#.getMatrixSet()".}
-proc getRequestEncoding*(self: OlWMTS): JsObject {.importjs: "#.getRequestEncoding()".}
-proc getStyle*(self: OlWMTS): cstring {.importjs: "#.getStyle()".}
-proc getVersion*(self: OlWMTS): cstring {.importjs: "#.getVersion()".}
-proc updateDimensions*(self: OlWMTS, dimensions: JsObject) {.importjs: "#.updateDimensions(#)".}
-proc createFromWMTSTemplate*(self: OlWMTS, templateVal: cstring): JsObject {.importjs: "#.createFromWMTSTemplate(#)".}
+  WMTS* = ref object of JsRoot
+proc newWMTS*(options: JsObject): WMTS {.importjs: "(new olNs_source_WMTS.default(#))".}
+proc getDimensions*(self: WMTS): JsObject {.importjs: "#.getDimensions()".}
+proc getFormat*(self: WMTS): cstring {.importjs: "#.getFormat()".}
+proc getLayer*(self: WMTS): cstring {.importjs: "#.getLayer()".}
+proc getMatrixSet*(self: WMTS): cstring {.importjs: "#.getMatrixSet()".}
+proc getRequestEncoding*(self: WMTS): JsObject {.importjs: "#.getRequestEncoding()".}
+proc getStyle*(self: WMTS): cstring {.importjs: "#.getStyle()".}
+proc getVersion*(self: WMTS): cstring {.importjs: "#.getVersion()".}
+proc updateDimensions*(self: WMTS, dimensions: JsObject) {.importjs: "#.updateDimensions(#)".}
+proc createFromWMTSTemplate*(self: WMTS, templateVal: cstring): JsObject {.importjs: "#.createFromWMTSTemplate(#)".}
 
 proc optionsFromCapabilities*(wmtsCap: JsObject, config: JsObject): JsObject {.importjs: "olNs_source_WMTS.optionsFromCapabilities(#, #)".}

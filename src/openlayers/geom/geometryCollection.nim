@@ -9,11 +9,11 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_geom_GeometryCollection)".}
 
 type
-  OlGeometryCollection* = ref object of JsRoot
-proc newOlGeometryCollection*(geometries: JsObject): OlGeometryCollection {.importjs: "(new olNs_geom_GeometryCollection.default(#))".}
-proc getGeometries*(self: OlGeometryCollection): JsObject {.importjs: "#.getGeometries()".}
-proc getGeometriesArray*(self: OlGeometryCollection): JsObject {.importjs: "#.getGeometriesArray()".}
-proc getGeometriesArrayRecursive*(self: OlGeometryCollection): JsObject {.importjs: "#.getGeometriesArrayRecursive()".}
-proc isEmpty*(self: OlGeometryCollection): bool {.importjs: "#.isEmpty()".}
-proc setGeometries*(self: OlGeometryCollection, geometries: JsObject) {.importjs: "#.setGeometries(#)".}
-proc setGeometriesArray*(self: OlGeometryCollection, geometries: JsObject) {.importjs: "#.setGeometriesArray(#)".}
+  GeometryCollection* = ref object of JsRoot
+proc newGeometryCollection*(geometries: JsObject): GeometryCollection {.importjs: "(new olNs_geom_GeometryCollection.default(#))".}
+proc getGeometries*(self: GeometryCollection): JsObject {.importjs: "#.getGeometries()".}
+proc getGeometriesArray*(self: GeometryCollection): JsObject {.importjs: "#.getGeometriesArray()".}
+proc getGeometriesArrayRecursive*(self: GeometryCollection): JsObject {.importjs: "#.getGeometriesArrayRecursive()".}
+proc isEmpty*(self: GeometryCollection): bool {.importjs: "#.isEmpty()".}
+proc setGeometries*(self: GeometryCollection, geometries: JsObject) {.importjs: "#.setGeometries(#)".}
+proc setGeometriesArray*(self: GeometryCollection, geometries: JsObject) {.importjs: "#.setGeometriesArray(#)".}

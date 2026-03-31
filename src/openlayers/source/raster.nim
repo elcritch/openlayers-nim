@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_Raster)".}
 
 type
-  OlRasterSource* = ref object of JsRoot
-proc newOlRasterSource*(options: JsObject): OlRasterSource {.importjs: "(new olNs_source_Raster.default(#))".}
-proc setOperation*(self: OlRasterSource, operation: JsObject, lib: JsObject = jsUndefined) {.importjs: "#.setOperation(#, #)".}
+  RasterSource* = ref object of JsRoot
+proc newRasterSource*(options: JsObject): RasterSource {.importjs: "(new olNs_source_Raster.default(#))".}
+proc setOperation*(self: RasterSource, operation: JsObject, lib: JsObject = jsUndefined) {.importjs: "#.setOperation(#, #)".}

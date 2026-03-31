@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_TileArcGISRest)".}
 
 type
-  OlTileArcGISRest* = ref object of JsRoot
-proc newOlTileArcGISRest*(options: JsObject = jsUndefined): OlTileArcGISRest {.importjs: "(new olNs_source_TileArcGISRest.default(#))".}
-proc getParams*(self: OlTileArcGISRest): JsObject {.importjs: "#.getParams()".}
-proc setParams*(self: OlTileArcGISRest, params: JsObject) {.importjs: "#.setParams(#)".}
-proc updateParams*(self: OlTileArcGISRest, params: JsObject) {.importjs: "#.updateParams(#)".}
+  TileArcGISRest* = ref object of JsRoot
+proc newTileArcGISRest*(options: JsObject = jsUndefined): TileArcGISRest {.importjs: "(new olNs_source_TileArcGISRest.default(#))".}
+proc getParams*(self: TileArcGISRest): JsObject {.importjs: "#.getParams()".}
+proc setParams*(self: TileArcGISRest, params: JsObject) {.importjs: "#.setParams(#)".}
+proc updateParams*(self: TileArcGISRest, params: JsObject) {.importjs: "#.updateParams(#)".}

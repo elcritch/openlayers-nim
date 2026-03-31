@@ -9,9 +9,9 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_renderer_canvas_VectorTileLayer)".}
 
 type
-  OlCanvasVectorTileLayerRenderer* = ref object of JsRoot
-proc newOlCanvasVectorTileLayerRenderer*(layer: JsObject, options: JsObject): OlCanvasVectorTileLayerRenderer {.importjs: "(new olNs_renderer_canvas_VectorTileLayer.default(#, #))".}
-proc getFeaturesInExtent*(self: OlCanvasVectorTileLayerRenderer, extent: JsObject): JsObject {.importjs: "#.getFeaturesInExtent(#)".}
-proc renderDeclutter*(self: OlCanvasVectorTileLayerRenderer, frameState: JsObject, layerState: JsObject) {.importjs: "#.renderDeclutter(#, #)".}
-proc getTileRenderTransform*(self: OlCanvasVectorTileLayerRenderer, tile: JsObject, frameState: JsObject): JsObject {.importjs: "#.getTileRenderTransform(#, #)".}
-proc renderFeature*(self: OlCanvasVectorTileLayerRenderer, feature: JsObject, squaredTolerance: float, styles: JsObject, builderGroup: JsObject, declutter: JsObject = jsUndefined, index: JsObject = jsUndefined): bool {.importjs: "#.renderFeature(#, #, #, #, #, #)".}
+  CanvasVectorTileLayerRenderer* = ref object of JsRoot
+proc newCanvasVectorTileLayerRenderer*(layer: JsObject, options: JsObject): CanvasVectorTileLayerRenderer {.importjs: "(new olNs_renderer_canvas_VectorTileLayer.default(#, #))".}
+proc getFeaturesInExtent*(self: CanvasVectorTileLayerRenderer, extent: JsObject): JsObject {.importjs: "#.getFeaturesInExtent(#)".}
+proc renderDeclutter*(self: CanvasVectorTileLayerRenderer, frameState: JsObject, layerState: JsObject) {.importjs: "#.renderDeclutter(#, #)".}
+proc getTileRenderTransform*(self: CanvasVectorTileLayerRenderer, tile: JsObject, frameState: JsObject): JsObject {.importjs: "#.getTileRenderTransform(#, #)".}
+proc renderFeature*(self: CanvasVectorTileLayerRenderer, feature: JsObject, squaredTolerance: float, styles: JsObject, builderGroup: JsObject, declutter: JsObject = jsUndefined, index: JsObject = jsUndefined): bool {.importjs: "#.renderFeature(#, #, #, #, #, #)".}

@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_renderer_webgl_PointsLayer)".}
 
 type
-  OlWebGLPointsLayerRenderer* = ref object of JsRoot
-proc newOlWebGLPointsLayerRenderer*(layer: JsObject, options: JsObject): OlWebGLPointsLayerRenderer {.importjs: "(new olNs_renderer_webgl_PointsLayer.default(#, #))".}
-proc renderWorlds*(self: OlWebGLPointsLayerRenderer, frameState: JsObject, forHitDetection: bool, startWorld: float, endWorld: float, worldWidth: float) {.importjs: "#.renderWorlds(#, #, #, #, #)".}
-proc renderDeclutter*(self: OlWebGLPointsLayerRenderer) {.importjs: "#.renderDeclutter()".}
+  WebGLPointsLayerRenderer* = ref object of JsRoot
+proc newWebGLPointsLayerRenderer*(layer: JsObject, options: JsObject): WebGLPointsLayerRenderer {.importjs: "(new olNs_renderer_webgl_PointsLayer.default(#, #))".}
+proc renderWorlds*(self: WebGLPointsLayerRenderer, frameState: JsObject, forHitDetection: bool, startWorld: float, endWorld: float, worldWidth: float) {.importjs: "#.renderWorlds(#, #, #, #, #)".}
+proc renderDeclutter*(self: WebGLPointsLayerRenderer) {.importjs: "#.renderDeclutter()".}

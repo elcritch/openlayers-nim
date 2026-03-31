@@ -19,23 +19,23 @@ import openlayers/view
 
 suite "openlayers top class modules":
   test "constructors are available via wrappers":
-    check newOlCollection() != nil
-    check newOlFeature() != nil
-    check newOlGeolocation() != nil
-    check newOlObservable() != nil
-    check newOlKinetic(1.0, 1.0, 1.0) != nil
-    check compiles(newOlMap())
-    check compiles(newOlView(jsUndefined))
+    check newCollection() != nil
+    check newFeature() != nil
+    check newGeolocation() != nil
+    check newObservable() != nil
+    check newKinetic(1.0, 1.0, 1.0) != nil
+    check compiles(newMap())
+    check compiles(newView(jsUndefined))
 
-    check compiles(newOlDataTile(jsUndefined))
-    check compiles(newOlImageWrapper(jsUndefined, jsUndefined, 1.0, jsUndefined))
+    check compiles(newDataTile(jsUndefined))
+    check compiles(newImageWrapper(jsUndefined, jsUndefined, 1.0, jsUndefined))
     check compiles(
-      newOlImageTile(jsUndefined, jsUndefined, "", jsUndefined, jsUndefined)
+      newImageTile(jsUndefined, jsUndefined, "", jsUndefined, jsUndefined)
     )
-    check compiles(newOlMapBrowserEvent("click", jsUndefined, jsUndefined))
-    check compiles(newOlMapEvent("moveend", jsUndefined))
-    check compiles(newOlOverlay())
-    check compiles(newOlTile(jsUndefined, jsUndefined))
+    check compiles(newMapBrowserEvent("click", jsUndefined, jsUndefined))
+    check compiles(newMapEvent("moveend", jsUndefined))
+    check compiles(newOverlay())
+    check compiles(newTile(jsUndefined, jsUndefined))
     check compiles(
-      newOlVectorTile(jsUndefined, jsUndefined, "", jsUndefined, jsUndefined)
+      newVectorTile(jsUndefined, jsUndefined, "", jsUndefined, jsUndefined)
     )

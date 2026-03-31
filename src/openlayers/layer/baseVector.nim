@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_BaseVector)".}
 
 type
-  OlBaseVectorLayer* = ref object of JsRoot
-proc newOlBaseVectorLayer*(): OlBaseVectorLayer {.importjs: "(new olNs_layer_BaseVector.default())".}
+  BaseVectorLayer* = ref object of JsRoot
+proc newBaseVectorLayer*(): BaseVectorLayer {.importjs: "(new olNs_layer_BaseVector.default())".}

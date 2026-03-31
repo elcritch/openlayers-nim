@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_TextFeature)".}
 
 type
-  OlTextFeature* = ref object of JsRoot
-proc newOlTextFeature*(): OlTextFeature {.importjs: "(new olNs_format_TextFeature.default())".}
+  TextFeature* = ref object of JsRoot
+proc newTextFeature*(): TextFeature {.importjs: "(new olNs_format_TextFeature.default())".}

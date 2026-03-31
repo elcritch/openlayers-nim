@@ -9,11 +9,11 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_DataTile)".}
 
 type
-  OlDataTileSource* = ref object of JsRoot
-proc newOlDataTileSource*(options: JsObject): OlDataTileSource {.importjs: "(new olNs_source_DataTile.default(#))".}
-proc handleTileChange*(self: OlDataTileSource, event: JsObject) {.importjs: "#.handleTileChange_(#)".}
-proc setTileSizes*(self: OlDataTileSource, tileSizes: JsObject) {.importjs: "#.setTileSizes(#)".}
-proc getTileSize*(self: OlDataTileSource, z: float): JsObject {.importjs: "#.getTileSize(#)".}
-proc setLoader*(self: OlDataTileSource, loader: JsObject) {.importjs: "#.setLoader(#)".}
-proc getReprojTile*(self: OlDataTileSource, z: float, x: float, y: float, targetProj: JsObject, sourceProj: JsObject, tileCache: JsObject = jsUndefined): JsObject {.importjs: "#.getReprojTile_(#, #, #, #, #, #)".}
-proc setTileGridForProjection*(self: OlDataTileSource, projection: JsObject, tilegrid: JsObject) {.importjs: "#.setTileGridForProjection(#, #)".}
+  DataTileSource* = ref object of JsRoot
+proc newDataTileSource*(options: JsObject): DataTileSource {.importjs: "(new olNs_source_DataTile.default(#))".}
+proc handleTileChange*(self: DataTileSource, event: JsObject) {.importjs: "#.handleTileChange_(#)".}
+proc setTileSizes*(self: DataTileSource, tileSizes: JsObject) {.importjs: "#.setTileSizes(#)".}
+proc getTileSize*(self: DataTileSource, z: float): JsObject {.importjs: "#.getTileSize(#)".}
+proc setLoader*(self: DataTileSource, loader: JsObject) {.importjs: "#.setLoader(#)".}
+proc getReprojTile*(self: DataTileSource, z: float, x: float, y: float, targetProj: JsObject, sourceProj: JsObject, tileCache: JsObject = jsUndefined): JsObject {.importjs: "#.getReprojTile_(#, #, #, #, #, #)".}
+proc setTileGridForProjection*(self: DataTileSource, projection: JsObject, tilegrid: JsObject) {.importjs: "#.setTileGridForProjection(#, #)".}

@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_BaseImage)".}
 
 type
-  OlBaseImageLayer* = ref object of JsRoot
-proc newOlBaseImageLayer*(): OlBaseImageLayer {.importjs: "(new olNs_layer_BaseImage.default())".}
+  BaseImageLayer* = ref object of JsRoot
+proc newBaseImageLayer*(): BaseImageLayer {.importjs: "(new olNs_layer_BaseImage.default())".}

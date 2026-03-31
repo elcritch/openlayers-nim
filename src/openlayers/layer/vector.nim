@@ -9,103 +9,103 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_Vector)".}
 
 type
-  OlVectorLayerOptions* = ref object of JsRoot
-  OlVectorLayer* = ref object of JsRoot
+  VectorLayerOptions* = ref object of JsRoot
+  VectorLayer* = ref object of JsRoot
 
-proc newOlVectorLayerOptions*(): OlVectorLayerOptions {.importjs: "({})".}
+proc newVectorLayerOptions*(): VectorLayerOptions {.importjs: "({})".}
 proc `className=`*(
-  options: OlVectorLayerOptions, value: cstring
+  options: VectorLayerOptions, value: cstring
 ) {.importjs: "#.className = #".}
 
 proc `opacity=`*(
-  options: OlVectorLayerOptions, value: float
+  options: VectorLayerOptions, value: float
 ) {.importjs: "#.opacity = #".}
 
 proc `visible=`*(
-  options: OlVectorLayerOptions, value: bool
+  options: VectorLayerOptions, value: bool
 ) {.importjs: "#.visible = #".}
 
 proc `extent=`*(
-  options: OlVectorLayerOptions, value: JsObject
+  options: VectorLayerOptions, value: JsObject
 ) {.importjs: "#.extent = #".}
 
 proc `zIndex=`*(
-  options: OlVectorLayerOptions, value: float
+  options: VectorLayerOptions, value: float
 ) {.importjs: "#.zIndex = #".}
 
 proc `minResolution=`*(
-  options: OlVectorLayerOptions, value: float
+  options: VectorLayerOptions, value: float
 ) {.importjs: "#.minResolution = #".}
 
 proc `maxResolution=`*(
-  options: OlVectorLayerOptions, value: float
+  options: VectorLayerOptions, value: float
 ) {.importjs: "#.maxResolution = #".}
 
 proc `minZoom=`*(
-  options: OlVectorLayerOptions, value: float
+  options: VectorLayerOptions, value: float
 ) {.importjs: "#.minZoom = #".}
 
 proc `maxZoom=`*(
-  options: OlVectorLayerOptions, value: float
+  options: VectorLayerOptions, value: float
 ) {.importjs: "#.maxZoom = #".}
 
 proc `renderOrder=`*(
-  options: OlVectorLayerOptions, value: JsObject
+  options: VectorLayerOptions, value: JsObject
 ) {.importjs: "#.renderOrder = #".}
 
 proc `renderBuffer=`*(
-  options: OlVectorLayerOptions, value: float
+  options: VectorLayerOptions, value: float
 ) {.importjs: "#.renderBuffer = #".}
 
 proc `source=`*(
-  options: OlVectorLayerOptions, value: JsObject
+  options: VectorLayerOptions, value: JsObject
 ) {.importjs: "#.source = #".}
 
 proc `source=`*(
-  options: OlVectorLayerOptions, value: RootRef
+  options: VectorLayerOptions, value: RootRef
 ) {.importjs: "#.source = #".}
 
-proc `map=`*(options: OlVectorLayerOptions, value: JsObject) {.importjs: "#.map = #".}
+proc `map=`*(options: VectorLayerOptions, value: JsObject) {.importjs: "#.map = #".}
 proc `declutter=`*(
-  options: OlVectorLayerOptions, value: bool
+  options: VectorLayerOptions, value: bool
 ) {.importjs: "#.declutter = #".}
 
 proc `declutter=`*(
-  options: OlVectorLayerOptions, value: float
+  options: VectorLayerOptions, value: float
 ) {.importjs: "#.declutter = #".}
 
 proc `declutter=`*(
-  options: OlVectorLayerOptions, value: cstring
+  options: VectorLayerOptions, value: cstring
 ) {.importjs: "#.declutter = #".}
 
 proc `style=`*(
-  options: OlVectorLayerOptions, value: JsObject
+  options: VectorLayerOptions, value: JsObject
 ) {.importjs: "#.style = #".}
 
 proc `background=`*(
-  options: OlVectorLayerOptions, value: JsObject
+  options: VectorLayerOptions, value: JsObject
 ) {.importjs: "#.background = #".}
 
 proc `background=`*(
-  options: OlVectorLayerOptions, value: cstring
+  options: VectorLayerOptions, value: cstring
 ) {.importjs: "#.background = #".}
 
 proc `updateWhileAnimating=`*(
-  options: OlVectorLayerOptions, value: bool
+  options: VectorLayerOptions, value: bool
 ) {.importjs: "#.updateWhileAnimating = #".}
 
 proc `updateWhileInteracting=`*(
-  options: OlVectorLayerOptions, value: bool
+  options: VectorLayerOptions, value: bool
 ) {.importjs: "#.updateWhileInteracting = #".}
 
 proc `properties=`*(
-  options: OlVectorLayerOptions, value: JsObject
+  options: VectorLayerOptions, value: JsObject
 ) {.importjs: "#.properties = #".}
 
-proc newOlVectorLayer*(
+proc newVectorLayer*(
   options: JsObject = jsUndefined
-): OlVectorLayer {.importjs: "(new olNs_layer_Vector.default(#))".}
+): VectorLayer {.importjs: "(new olNs_layer_Vector.default(#))".}
 
-proc newOlVectorLayer*(
-  options: OlVectorLayerOptions
-): OlVectorLayer {.importjs: "(new olNs_layer_Vector.default(#))".}
+proc newVectorLayer*(
+  options: VectorLayerOptions
+): VectorLayer {.importjs: "(new olNs_layer_Vector.default(#))".}

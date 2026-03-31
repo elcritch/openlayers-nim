@@ -9,11 +9,11 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_VectorTile)".}
 
 type
-  OlVectorTileLayer* = ref object of JsRoot
-proc newOlVectorTileLayer*(options: JsObject = jsUndefined): OlVectorTileLayer {.importjs: "(new olNs_layer_VectorTile.default(#))".}
-proc getFeaturesInExtent*(self: OlVectorTileLayer, extent: JsObject): JsObject {.importjs: "#.getFeaturesInExtent(#)".}
-proc getRenderMode*(self: OlVectorTileLayer): JsObject {.importjs: "#.getRenderMode()".}
-proc getPreload*(self: OlVectorTileLayer): float {.importjs: "#.getPreload()".}
-proc getUseInterimTilesOnError*(self: OlVectorTileLayer): bool {.importjs: "#.getUseInterimTilesOnError()".}
-proc setPreload*(self: OlVectorTileLayer, preload: float) {.importjs: "#.setPreload(#)".}
-proc setUseInterimTilesOnError*(self: OlVectorTileLayer, useInterimTilesOnError: bool) {.importjs: "#.setUseInterimTilesOnError(#)".}
+  VectorTileLayer* = ref object of JsRoot
+proc newVectorTileLayer*(options: JsObject = jsUndefined): VectorTileLayer {.importjs: "(new olNs_layer_VectorTile.default(#))".}
+proc getFeaturesInExtent*(self: VectorTileLayer, extent: JsObject): JsObject {.importjs: "#.getFeaturesInExtent(#)".}
+proc getRenderMode*(self: VectorTileLayer): JsObject {.importjs: "#.getRenderMode()".}
+proc getPreload*(self: VectorTileLayer): float {.importjs: "#.getPreload()".}
+proc getUseInterimTilesOnError*(self: VectorTileLayer): bool {.importjs: "#.getUseInterimTilesOnError()".}
+proc setPreload*(self: VectorTileLayer, preload: float) {.importjs: "#.setPreload(#)".}
+proc setUseInterimTilesOnError*(self: VectorTileLayer, useInterimTilesOnError: bool) {.importjs: "#.setUseInterimTilesOnError(#)".}

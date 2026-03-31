@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_DoubleClickZoom)".}
 
 type
-  OlDoubleClickZoom* = ref object of JsRoot
-proc newOlDoubleClickZoom*(options: JsObject = jsUndefined): OlDoubleClickZoom {.importjs: "(new olNs_interaction_DoubleClickZoom.default(#))".}
+  DoubleClickZoom* = ref object of JsRoot
+proc newDoubleClickZoom*(options: JsObject = jsUndefined): DoubleClickZoom {.importjs: "(new olNs_interaction_DoubleClickZoom.default(#))".}

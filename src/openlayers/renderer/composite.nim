@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_renderer_Composite)".}
 
 type
-  OlCompositeMapRenderer* = ref object of JsRoot
-proc newOlCompositeMapRenderer*(): OlCompositeMapRenderer {.importjs: "(new olNs_renderer_Composite.default())".}
-proc declutter*(self: OlCompositeMapRenderer, frameState: JsObject, layerStates: JsObject) {.importjs: "#.declutter(#, #)".}
+  CompositeMapRenderer* = ref object of JsRoot
+proc newCompositeMapRenderer*(): CompositeMapRenderer {.importjs: "(new olNs_renderer_Composite.default())".}
+proc declutter*(self: CompositeMapRenderer, frameState: JsObject, layerStates: JsObject) {.importjs: "#.declutter(#, #)".}

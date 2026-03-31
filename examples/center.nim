@@ -40,7 +40,7 @@ proc initExample() =
   let sourceOptions = newJsObject()
   sourceOptions["url"] =
     "/deps/openlayers/examples/data/geojson/switzerland.geojson".cstring
-  sourceOptions["format"] = newOlGeoJSON()
+  sourceOptions["format"] = newGeoJSON()
   let vectorSource = newVectorSourceWithOptions(sourceOptions)
 
   let styleOptions = newJsObject()
@@ -55,16 +55,16 @@ proc initExample() =
   let vectorLayerOptions = newJsObject()
   vectorLayerOptions["source"] = vectorSource
   vectorLayerOptions["style"] = styleOptions
-  let vectorLayer = newOlVectorLayer(vectorLayerOptions)
+  let vectorLayer = newVectorLayer(vectorLayerOptions)
 
   let baseLayerOptions = newJsObject()
-  baseLayerOptions["source"] = newOlOSM()
-  let baseLayer = newOlTileLayer(baseLayerOptions)
+  baseLayerOptions["source"] = newOSM()
+  let baseLayer = newTileLayer(baseLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 1.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[baseLayer, vectorLayer]

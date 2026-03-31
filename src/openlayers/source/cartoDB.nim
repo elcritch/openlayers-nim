@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_CartoDB)".}
 
 type
-  OlCartoDB* = ref object of JsRoot
-proc newOlCartoDB*(options: JsObject): OlCartoDB {.importjs: "(new olNs_source_CartoDB.default(#))".}
-proc getConfig*(self: OlCartoDB): JsObject {.importjs: "#.getConfig()".}
-proc updateConfig*(self: OlCartoDB, config: JsObject) {.importjs: "#.updateConfig(#)".}
-proc setConfig*(self: OlCartoDB, config: JsObject) {.importjs: "#.setConfig(#)".}
+  CartoDB* = ref object of JsRoot
+proc newCartoDB*(options: JsObject): CartoDB {.importjs: "(new olNs_source_CartoDB.default(#))".}
+proc getConfig*(self: CartoDB): JsObject {.importjs: "#.getConfig()".}
+proc updateConfig*(self: CartoDB, config: JsObject) {.importjs: "#.updateConfig(#)".}
+proc setConfig*(self: CartoDB, config: JsObject) {.importjs: "#.setConfig(#)".}

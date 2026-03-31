@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_Disjoint)".}
 
 type
-  OlDisjoint* = ref object of JsRoot
-proc newOlDisjoint*(geometryName: cstring, geometry: JsObject, srsName: JsObject = jsUndefined): OlDisjoint {.importjs: "(new olNs_format_filter_Disjoint.default(#, #, #))".}
+  Disjoint* = ref object of JsRoot
+proc newDisjoint*(geometryName: cstring, geometry: JsObject, srsName: JsObject = jsUndefined): Disjoint {.importjs: "(new olNs_format_filter_Disjoint.default(#, #, #))".}

@@ -4,4 +4,4 @@ import openlayers/map
 
 suite "openlayers/map bindings":
   test "map constructor wrapper is usable":
-    check compiles(newOlMap())
+    check compiles(newMap())

@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_renderer_canvas_ImageLayer)".}
 
 type
-  OlCanvasImageLayerRenderer* = ref object of JsRoot
-proc newOlCanvasImageLayerRenderer*(imageLayer: JsObject): OlCanvasImageLayerRenderer {.importjs: "(new olNs_renderer_canvas_ImageLayer.default(#))".}
-proc getImage*(self: OlCanvasImageLayerRenderer): JsObject {.importjs: "#.getImage()".}
+  CanvasImageLayerRenderer* = ref object of JsRoot
+proc newCanvasImageLayerRenderer*(imageLayer: JsObject): CanvasImageLayerRenderer {.importjs: "(new olNs_renderer_canvas_ImageLayer.default(#))".}
+proc getImage*(self: CanvasImageLayerRenderer): JsObject {.importjs: "#.getImage()".}

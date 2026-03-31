@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_ImageCanvas)".}
 
 type
-  OlImageCanvasSource* = ref object of JsRoot
-proc newOlImageCanvasSource*(options: JsObject = jsUndefined): OlImageCanvasSource {.importjs: "(new olNs_source_ImageCanvas.default(#))".}
+  ImageCanvasSource* = ref object of JsRoot
+proc newImageCanvasSource*(options: JsObject = jsUndefined): ImageCanvasSource {.importjs: "(new olNs_source_ImageCanvas.default(#))".}

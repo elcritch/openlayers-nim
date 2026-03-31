@@ -9,116 +9,116 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_TileJSON)".}
 
 type
-  OlTileJSONConfig* = ref object of JsRoot
-  OlTileJSONOptions* = ref object of JsRoot
-  OlTileJSON* = ref object of JsRoot
+  TileJSONConfig* = ref object of JsRoot
+  TileJSONOptions* = ref object of JsRoot
+  TileJSON* = ref object of JsRoot
 
-proc newOlTileJSONConfig*(): OlTileJSONConfig {.importjs: "({})".}
-proc `name=`*(config: OlTileJSONConfig, value: cstring) {.importjs: "#.name = #".}
+proc newTileJSONConfig*(): TileJSONConfig {.importjs: "({})".}
+proc `name=`*(config: TileJSONConfig, value: cstring) {.importjs: "#.name = #".}
 proc `description=`*(
-  config: OlTileJSONConfig, value: cstring
+  config: TileJSONConfig, value: cstring
 ) {.importjs: "#.description = #".}
 
-proc `version=`*(config: OlTileJSONConfig, value: cstring) {.importjs: "#.version = #".}
+proc `version=`*(config: TileJSONConfig, value: cstring) {.importjs: "#.version = #".}
 proc `attribution=`*(
-  config: OlTileJSONConfig, value: cstring
+  config: TileJSONConfig, value: cstring
 ) {.importjs: "#.attribution = #".}
 
 proc `template=`*(
-  config: OlTileJSONConfig, value: cstring
+  config: TileJSONConfig, value: cstring
 ) {.importjs: "#.template = #".}
 
-proc `legend=`*(config: OlTileJSONConfig, value: cstring) {.importjs: "#.legend = #".}
-proc `scheme=`*(config: OlTileJSONConfig, value: cstring) {.importjs: "#.scheme = #".}
+proc `legend=`*(config: TileJSONConfig, value: cstring) {.importjs: "#.legend = #".}
+proc `scheme=`*(config: TileJSONConfig, value: cstring) {.importjs: "#.scheme = #".}
 proc `tiles=`*(
-  config: OlTileJSONConfig, value: seq[cstring]
+  config: TileJSONConfig, value: seq[cstring]
 ) {.importjs: "#.tiles = #".}
 
 proc `grids=`*(
-  config: OlTileJSONConfig, value: seq[cstring]
+  config: TileJSONConfig, value: seq[cstring]
 ) {.importjs: "#.grids = #".}
 
-proc `minzoom=`*(config: OlTileJSONConfig, value: float) {.importjs: "#.minzoom = #".}
-proc `maxzoom=`*(config: OlTileJSONConfig, value: float) {.importjs: "#.maxzoom = #".}
+proc `minzoom=`*(config: TileJSONConfig, value: float) {.importjs: "#.minzoom = #".}
+proc `maxzoom=`*(config: TileJSONConfig, value: float) {.importjs: "#.maxzoom = #".}
 proc `bounds=`*(
-  config: OlTileJSONConfig, value: seq[float]
+  config: TileJSONConfig, value: seq[float]
 ) {.importjs: "#.bounds = #".}
 
 proc `center=`*(
-  config: OlTileJSONConfig, value: seq[float]
+  config: TileJSONConfig, value: seq[float]
 ) {.importjs: "#.center = #".}
 
-proc newOlTileJSONOptions*(): OlTileJSONOptions {.importjs: "({})".}
+proc newTileJSONOptions*(): TileJSONOptions {.importjs: "({})".}
 proc `attributions=`*(
-  options: OlTileJSONOptions, value: JsObject
+  options: TileJSONOptions, value: JsObject
 ) {.importjs: "#.attributions = #".}
 
 proc `cacheSize=`*(
-  options: OlTileJSONOptions, value: float
+  options: TileJSONOptions, value: float
 ) {.importjs: "#.cacheSize = #".}
 
 proc `crossOrigin=`*(
-  options: OlTileJSONOptions, value: cstring
+  options: TileJSONOptions, value: cstring
 ) {.importjs: "#.crossOrigin = #".}
 
 proc `crossOrigin=`*(
-  options: OlTileJSONOptions, value: JsObject
+  options: TileJSONOptions, value: JsObject
 ) {.importjs: "#.crossOrigin = #".}
 
 proc `interpolate=`*(
-  options: OlTileJSONOptions, value: bool
+  options: TileJSONOptions, value: bool
 ) {.importjs: "#.interpolate = #".}
 
-proc `jsonp=`*(options: OlTileJSONOptions, value: bool) {.importjs: "#.jsonp = #".}
+proc `jsonp=`*(options: TileJSONOptions, value: bool) {.importjs: "#.jsonp = #".}
 proc `reprojectionErrorThreshold=`*(
-  options: OlTileJSONOptions, value: float
+  options: TileJSONOptions, value: float
 ) {.importjs: "#.reprojectionErrorThreshold = #".}
 
 proc `tileJSON=`*(
-  options: OlTileJSONOptions, value: OlTileJSONConfig
+  options: TileJSONOptions, value: TileJSONConfig
 ) {.importjs: "#.tileJSON = #".}
 
 proc `tileJSON=`*(
-  options: OlTileJSONOptions, value: JsObject
+  options: TileJSONOptions, value: JsObject
 ) {.importjs: "#.tileJSON = #".}
 
 proc `tileLoadFunction=`*(
-  options: OlTileJSONOptions, value: JsObject
+  options: TileJSONOptions, value: JsObject
 ) {.importjs: "#.tileLoadFunction = #".}
 
 proc `tileSize=`*(
-  options: OlTileJSONOptions, value: float
+  options: TileJSONOptions, value: float
 ) {.importjs: "#.tileSize = #".}
 
 proc `tileSize=`*(
-  options: OlTileJSONOptions, value: JsObject
+  options: TileJSONOptions, value: JsObject
 ) {.importjs: "#.tileSize = #".}
 
-proc `url=`*(options: OlTileJSONOptions, value: cstring) {.importjs: "#.url = #".}
-proc `wrapX=`*(options: OlTileJSONOptions, value: bool) {.importjs: "#.wrapX = #".}
+proc `url=`*(options: TileJSONOptions, value: cstring) {.importjs: "#.url = #".}
+proc `wrapX=`*(options: TileJSONOptions, value: bool) {.importjs: "#.wrapX = #".}
 proc `transition=`*(
-  options: OlTileJSONOptions, value: float
+  options: TileJSONOptions, value: float
 ) {.importjs: "#.transition = #".}
 
 proc `zDirection=`*(
-  options: OlTileJSONOptions, value: float
+  options: TileJSONOptions, value: float
 ) {.importjs: "#.zDirection = #".}
 
 proc `zDirection=`*(
-  options: OlTileJSONOptions, value: JsObject
+  options: TileJSONOptions, value: JsObject
 ) {.importjs: "#.zDirection = #".}
 
-proc newOlTileJSON*(
+proc newTileJSON*(
   options: JsObject
-): OlTileJSON {.importjs: "(new olNs_source_TileJSON.default(#))".}
+): TileJSON {.importjs: "(new olNs_source_TileJSON.default(#))".}
 
-proc newOlTileJSON*(
-  options: OlTileJSONOptions
-): OlTileJSON {.importjs: "(new olNs_source_TileJSON.default(#))".}
+proc newTileJSON*(
+  options: TileJSONOptions
+): TileJSON {.importjs: "(new olNs_source_TileJSON.default(#))".}
 
-proc getTileJSON*(self: OlTileJSON): JsObject {.importjs: "#.getTileJSON()".}
+proc getTileJSON*(self: TileJSON): JsObject {.importjs: "#.getTileJSON()".}
 proc handleTileJSONResponse*(
-  self: OlTileJSON, tileJSON: JsObject
+  self: TileJSON, tileJSON: JsObject
 ) {.importjs: "#.handleTileJSONResponse(#)".}
 
-proc handleTileJSONError*(self: OlTileJSON) {.importjs: "#.handleTileJSONError()".}
+proc handleTileJSONError*(self: TileJSON) {.importjs: "#.handleTileJSONError()".}

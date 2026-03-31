@@ -9,11 +9,11 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_DataTile)".}
 
 type
-  OlDataTile* = ref object of JsRoot
-proc newOlDataTile*(options: JsObject): OlDataTile {.importjs: "(new olNs_DataTile.default(#))".}
-proc getSize*(self: OlDataTile): JsObject {.importjs: "#.getSize()".}
-proc getData*(self: OlDataTile): JsObject {.importjs: "#.getData()".}
-proc getError*(self: OlDataTile): JsObject {.importjs: "#.getError()".}
+  DataTile* = ref object of JsRoot
+proc newDataTile*(options: JsObject): DataTile {.importjs: "(new olNs_DataTile.default(#))".}
+proc getSize*(self: DataTile): JsObject {.importjs: "#.getSize()".}
+proc getData*(self: DataTile): JsObject {.importjs: "#.getData()".}
+proc getError*(self: DataTile): JsObject {.importjs: "#.getError()".}
 
 proc asImageLike*(data: JsObject): JsObject {.importjs: "olNs_DataTile.asImageLike(#)".}
 proc asArrayLike*(data: JsObject): JsObject {.importjs: "olNs_DataTile.asArrayLike(#)".}

@@ -9,10 +9,10 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_ImageMapGuide)".}
 
 type
-  OlImageMapGuide* = ref object of JsRoot
-proc newOlImageMapGuide*(options: JsObject): OlImageMapGuide {.importjs: "(new olNs_source_ImageMapGuide.default(#))".}
-proc getParams*(self: OlImageMapGuide): JsObject {.importjs: "#.getParams()".}
-proc getImageLoadFunction*(self: OlImageMapGuide): JsObject {.importjs: "#.getImageLoadFunction()".}
-proc setParams*(self: OlImageMapGuide, params: JsObject) {.importjs: "#.setParams(#)".}
-proc updateParams*(self: OlImageMapGuide, params: JsObject) {.importjs: "#.updateParams(#)".}
-proc setImageLoadFunction*(self: OlImageMapGuide, imageLoadFunction: JsObject) {.importjs: "#.setImageLoadFunction(#)".}
+  ImageMapGuide* = ref object of JsRoot
+proc newImageMapGuide*(options: JsObject): ImageMapGuide {.importjs: "(new olNs_source_ImageMapGuide.default(#))".}
+proc getParams*(self: ImageMapGuide): JsObject {.importjs: "#.getParams()".}
+proc getImageLoadFunction*(self: ImageMapGuide): JsObject {.importjs: "#.getImageLoadFunction()".}
+proc setParams*(self: ImageMapGuide, params: JsObject) {.importjs: "#.setParams(#)".}
+proc updateParams*(self: ImageMapGuide, params: JsObject) {.importjs: "#.updateParams(#)".}
+proc setImageLoadFunction*(self: ImageMapGuide, imageLoadFunction: JsObject) {.importjs: "#.setImageLoadFunction(#)".}

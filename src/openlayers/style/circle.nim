@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_Circle)".}
 
 type
-  OlCircleStyle* = ref object of JsRoot
-proc newOlCircleStyle*(options: JsObject = jsUndefined): OlCircleStyle {.importjs: "(new olNs_style_Circle.default(#))".}
+  CircleStyle* = ref object of JsRoot
+proc newCircleStyle*(options: JsObject = jsUndefined): CircleStyle {.importjs: "(new olNs_style_Circle.default(#))".}

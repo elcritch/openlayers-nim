@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_Geolocation)".}
 
 type
-  OlGeolocation* = ref object of JsRoot
-proc newOlGeolocation*(): OlGeolocation {.importjs: "(new olNs_Geolocation.default())".}
+  Geolocation* = ref object of JsRoot
+proc newGeolocation*(): Geolocation {.importjs: "(new olNs_Geolocation.default())".}

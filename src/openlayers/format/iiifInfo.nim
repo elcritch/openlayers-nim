@@ -9,11 +9,11 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_IIIFInfo)".}
 
 type
-  OlIIIFInfo* = ref object of JsRoot
-proc newOlIIIFInfo*(imageInfo: JsObject): OlIIIFInfo {.importjs: "(new olNs_format_IIIFInfo.default(#))".}
-proc setImageInfo*(self: OlIIIFInfo, imageInfo: JsObject) {.importjs: "#.setImageInfo(#)".}
-proc getImageApiVersion*(self: OlIIIFInfo): JsObject {.importjs: "#.getImageApiVersion()".}
-proc getComplianceLevelEntryFromProfile*(self: OlIIIFInfo, version: JsObject): cstring {.importjs: "#.getComplianceLevelEntryFromProfile(#)".}
-proc getComplianceLevelFromProfile*(self: OlIIIFInfo, version: JsObject): cstring {.importjs: "#.getComplianceLevelFromProfile(#)".}
-proc getComplianceLevelSupportedFeatures*(self: OlIIIFInfo): JsObject {.importjs: "#.getComplianceLevelSupportedFeatures()".}
-proc getTileSourceOptions*(self: OlIIIFInfo, preferredOptions: JsObject = jsUndefined): JsObject {.importjs: "#.getTileSourceOptions(#)".}
+  IIIFInfo* = ref object of JsRoot
+proc newIIIFInfo*(imageInfo: JsObject): IIIFInfo {.importjs: "(new olNs_format_IIIFInfo.default(#))".}
+proc setImageInfo*(self: IIIFInfo, imageInfo: JsObject) {.importjs: "#.setImageInfo(#)".}
+proc getImageApiVersion*(self: IIIFInfo): JsObject {.importjs: "#.getImageApiVersion()".}
+proc getComplianceLevelEntryFromProfile*(self: IIIFInfo, version: JsObject): cstring {.importjs: "#.getComplianceLevelEntryFromProfile(#)".}
+proc getComplianceLevelFromProfile*(self: IIIFInfo, version: JsObject): cstring {.importjs: "#.getComplianceLevelFromProfile(#)".}
+proc getComplianceLevelSupportedFeatures*(self: IIIFInfo): JsObject {.importjs: "#.getComplianceLevelSupportedFeatures()".}
+proc getTileSourceOptions*(self: IIIFInfo, preferredOptions: JsObject = jsUndefined): JsObject {.importjs: "#.getTileSourceOptions(#)".}

@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_DragPan)".}
 
 type
-  OlDragPan* = ref object of JsRoot
-proc newOlDragPan*(options: JsObject = jsUndefined): OlDragPan {.importjs: "(new olNs_interaction_DragPan.default(#))".}
+  DragPan* = ref object of JsRoot
+proc newDragPan*(options: JsObject = jsUndefined): DragPan {.importjs: "(new olNs_interaction_DragPan.default(#))".}

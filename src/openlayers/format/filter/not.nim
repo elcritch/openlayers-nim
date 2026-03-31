@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_Not)".}
 
 type
-  OlNot* = ref object of JsRoot
-proc newOlNot*(condition: JsObject): OlNot {.importjs: "(new olNs_format_filter_Not.default(#))".}
+  Not* = ref object of JsRoot
+proc newNot*(condition: JsObject): Not {.importjs: "(new olNs_format_filter_Not.default(#))".}

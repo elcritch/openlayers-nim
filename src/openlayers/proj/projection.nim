@@ -9,20 +9,20 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_proj_Projection)".}
 
 type
-  OlProjection* = ref object of JsRoot
-proc newOlProjection*(options: JsObject): OlProjection {.importjs: "(new olNs_proj_Projection.default(#))".}
-proc canWrapX*(self: OlProjection): bool {.importjs: "#.canWrapX()".}
-proc getCode*(self: OlProjection): cstring {.importjs: "#.getCode()".}
-proc getExtent*(self: OlProjection): JsObject {.importjs: "#.getExtent()".}
-proc getUnits*(self: OlProjection): JsObject {.importjs: "#.getUnits()".}
-proc getMetersPerUnit*(self: OlProjection): float {.importjs: "#.getMetersPerUnit()".}
-proc getWorldExtent*(self: OlProjection): JsObject {.importjs: "#.getWorldExtent()".}
-proc getAxisOrientation*(self: OlProjection): cstring {.importjs: "#.getAxisOrientation()".}
-proc isGlobal*(self: OlProjection): bool {.importjs: "#.isGlobal()".}
-proc setGlobal*(self: OlProjection, global: bool) {.importjs: "#.setGlobal(#)".}
-proc getDefaultTileGrid*(self: OlProjection): JsObject {.importjs: "#.getDefaultTileGrid()".}
-proc setDefaultTileGrid*(self: OlProjection, tileGrid: JsObject) {.importjs: "#.setDefaultTileGrid(#)".}
-proc setExtent*(self: OlProjection, extent: JsObject) {.importjs: "#.setExtent(#)".}
-proc setWorldExtent*(self: OlProjection, worldExtent: JsObject) {.importjs: "#.setWorldExtent(#)".}
-proc setGetPointResolution*(self: OlProjection, funcVal: JsObject) {.importjs: "#.setGetPointResolution(#)".}
-proc getPointResolutionFunc*(self: OlProjection): JsObject {.importjs: "#.getPointResolutionFunc()".}
+  Projection* = ref object of JsRoot
+proc newProjection*(options: JsObject): Projection {.importjs: "(new olNs_proj_Projection.default(#))".}
+proc canWrapX*(self: Projection): bool {.importjs: "#.canWrapX()".}
+proc getCode*(self: Projection): cstring {.importjs: "#.getCode()".}
+proc getExtent*(self: Projection): JsObject {.importjs: "#.getExtent()".}
+proc getUnits*(self: Projection): JsObject {.importjs: "#.getUnits()".}
+proc getMetersPerUnit*(self: Projection): float {.importjs: "#.getMetersPerUnit()".}
+proc getWorldExtent*(self: Projection): JsObject {.importjs: "#.getWorldExtent()".}
+proc getAxisOrientation*(self: Projection): cstring {.importjs: "#.getAxisOrientation()".}
+proc isGlobal*(self: Projection): bool {.importjs: "#.isGlobal()".}
+proc setGlobal*(self: Projection, global: bool) {.importjs: "#.setGlobal(#)".}
+proc getDefaultTileGrid*(self: Projection): JsObject {.importjs: "#.getDefaultTileGrid()".}
+proc setDefaultTileGrid*(self: Projection, tileGrid: JsObject) {.importjs: "#.setDefaultTileGrid(#)".}
+proc setExtent*(self: Projection, extent: JsObject) {.importjs: "#.setExtent(#)".}
+proc setWorldExtent*(self: Projection, worldExtent: JsObject) {.importjs: "#.setWorldExtent(#)".}
+proc setGetPointResolution*(self: Projection, funcVal: JsObject) {.importjs: "#.setGetPointResolution(#)".}
+proc getPointResolutionFunc*(self: Projection): JsObject {.importjs: "#.getPointResolutionFunc()".}

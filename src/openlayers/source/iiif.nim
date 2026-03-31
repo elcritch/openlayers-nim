@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_IIIF)".}
 
 type
-  OlIIIF* = ref object of JsRoot
-proc newOlIIIF*(options: JsObject = jsUndefined): OlIIIF {.importjs: "(new olNs_source_IIIF.default(#))".}
+  IIIF* = ref object of JsRoot
+proc newIIIF*(options: JsObject = jsUndefined): IIIF {.importjs: "(new olNs_source_IIIF.default(#))".}

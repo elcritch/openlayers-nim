@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_MapEvent)".}
 
 type
-  OlMapEvent* = ref object of JsRoot
-proc newOlMapEvent*(typeVal: cstring, map: JsObject, frameState: JsObject = jsUndefined): OlMapEvent {.importjs: "(new olNs_MapEvent.default(#, #, #))".}
+  MapEvent* = ref object of JsRoot
+proc newMapEvent*(typeVal: cstring, map: JsObject, frameState: JsObject = jsUndefined): MapEvent {.importjs: "(new olNs_MapEvent.default(#, #, #))".}

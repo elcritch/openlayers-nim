@@ -9,10 +9,10 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_events_Target)".}
 
 type
-  OlTarget* = ref object of JsRoot
-proc newOlTarget*(target: JsObject = jsUndefined): OlTarget {.importjs: "(new olNs_events_Target.default(#))".}
-proc addEventListener*(self: OlTarget, typeVal: cstring, listener: JsObject) {.importjs: "#.addEventListener(#, #)".}
-proc dispatchEvent*(self: OlTarget, event: JsObject): bool {.importjs: "#.dispatchEvent(#)".}
-proc getListeners*(self: OlTarget, typeVal: cstring): JsObject {.importjs: "#.getListeners(#)".}
-proc hasListener*(self: OlTarget, typeVal: JsObject = jsUndefined): bool {.importjs: "#.hasListener(#)".}
-proc removeEventListener*(self: OlTarget, typeVal: cstring, listener: JsObject) {.importjs: "#.removeEventListener(#, #)".}
+  Target* = ref object of JsRoot
+proc newTarget*(target: JsObject = jsUndefined): Target {.importjs: "(new olNs_events_Target.default(#))".}
+proc addEventListener*(self: Target, typeVal: cstring, listener: JsObject) {.importjs: "#.addEventListener(#, #)".}
+proc dispatchEvent*(self: Target, event: JsObject): bool {.importjs: "#.dispatchEvent(#)".}
+proc getListeners*(self: Target, typeVal: cstring): JsObject {.importjs: "#.getListeners(#)".}
+proc hasListener*(self: Target, typeVal: JsObject = jsUndefined): bool {.importjs: "#.hasListener(#)".}
+proc removeEventListener*(self: Target, typeVal: cstring, listener: JsObject) {.importjs: "#.removeEventListener(#, #)".}

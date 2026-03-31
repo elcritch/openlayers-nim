@@ -9,12 +9,12 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_OGCMap)".}
 
 type
-  OlOGCMap* = ref object of JsRoot
-proc newOlOGCMap*(options: JsObject = jsUndefined): OlOGCMap {.importjs: "(new olNs_source_OGCMap.default(#))".}
-proc getParams*(self: OlOGCMap): JsObject {.importjs: "#.getParams()".}
-proc getImageLoadFunction*(self: OlOGCMap): JsObject {.importjs: "#.getImageLoadFunction()".}
-proc getUrl*(self: OlOGCMap): cstring {.importjs: "#.getUrl()".}
-proc setImageLoadFunction*(self: OlOGCMap, imageLoadFunction: JsObject) {.importjs: "#.setImageLoadFunction(#)".}
-proc setUrl*(self: OlOGCMap, url: cstring) {.importjs: "#.setUrl(#)".}
-proc setParams*(self: OlOGCMap, params: JsObject) {.importjs: "#.setParams(#)".}
-proc updateParams*(self: OlOGCMap, params: JsObject) {.importjs: "#.updateParams(#)".}
+  OGCMap* = ref object of JsRoot
+proc newOGCMap*(options: JsObject = jsUndefined): OGCMap {.importjs: "(new olNs_source_OGCMap.default(#))".}
+proc getParams*(self: OGCMap): JsObject {.importjs: "#.getParams()".}
+proc getImageLoadFunction*(self: OGCMap): JsObject {.importjs: "#.getImageLoadFunction()".}
+proc getUrl*(self: OGCMap): cstring {.importjs: "#.getUrl()".}
+proc setImageLoadFunction*(self: OGCMap, imageLoadFunction: JsObject) {.importjs: "#.setImageLoadFunction(#)".}
+proc setUrl*(self: OGCMap, url: cstring) {.importjs: "#.setUrl(#)".}
+proc setParams*(self: OGCMap, params: JsObject) {.importjs: "#.setParams(#)".}
+proc updateParams*(self: OGCMap, params: JsObject) {.importjs: "#.updateParams(#)".}

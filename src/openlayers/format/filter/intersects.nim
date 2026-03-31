@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_Intersects)".}
 
 type
-  OlIntersects* = ref object of JsRoot
-proc newOlIntersects*(geometryName: cstring, geometry: JsObject, srsName: JsObject = jsUndefined): OlIntersects {.importjs: "(new olNs_format_filter_Intersects.default(#, #, #))".}
+  Intersects* = ref object of JsRoot
+proc newIntersects*(geometryName: cstring, geometry: JsObject, srsName: JsObject = jsUndefined): Intersects {.importjs: "(new olNs_format_filter_Intersects.default(#, #, #))".}

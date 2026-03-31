@@ -9,9 +9,9 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_DblClickDragZoom)".}
 
 type
-  OlDblClickDragZoom* = ref object of JsRoot
-proc newOlDblClickDragZoom*(opt_options: JsObject = jsUndefined): OlDblClickDragZoom {.importjs: "(new olNs_interaction_DblClickDragZoom.default(#))".}
-proc stopDown*(self: OlDblClickDragZoom, handled: bool): bool {.importjs: "#.stopDown(#)".}
-proc handleDragEvent*(self: OlDblClickDragZoom, mapBrowserEvent: JsObject) {.importjs: "#.handleDragEvent(#)".}
-proc handleDownEvent*(self: OlDblClickDragZoom, mapBrowserEvent: JsObject): bool {.importjs: "#.handleDownEvent(#)".}
-proc handleUpEvent*(self: OlDblClickDragZoom, mapBrowserEvent: JsObject): bool {.importjs: "#.handleUpEvent(#)".}
+  DblClickDragZoom* = ref object of JsRoot
+proc newDblClickDragZoom*(opt_options: JsObject = jsUndefined): DblClickDragZoom {.importjs: "(new olNs_interaction_DblClickDragZoom.default(#))".}
+proc stopDown*(self: DblClickDragZoom, handled: bool): bool {.importjs: "#.stopDown(#)".}
+proc handleDragEvent*(self: DblClickDragZoom, mapBrowserEvent: JsObject) {.importjs: "#.handleDragEvent(#)".}
+proc handleDownEvent*(self: DblClickDragZoom, mapBrowserEvent: JsObject): bool {.importjs: "#.handleDownEvent(#)".}
+proc handleUpEvent*(self: DblClickDragZoom, mapBrowserEvent: JsObject): bool {.importjs: "#.handleUpEvent(#)".}

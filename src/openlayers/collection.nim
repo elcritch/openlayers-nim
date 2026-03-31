@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_Collection)".}
 
 type
-  OlCollection* = ref object of JsRoot
-proc newOlCollection*(): OlCollection {.importjs: "(new olNs_Collection.default())".}
+  Collection* = ref object of JsRoot
+proc newCollection*(): Collection {.importjs: "(new olNs_Collection.default())".}

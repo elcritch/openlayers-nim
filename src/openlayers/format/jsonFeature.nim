@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_JSONFeature)".}
 
 type
-  OlJSONFeature* = ref object of JsRoot
-proc newOlJSONFeature*(): OlJSONFeature {.importjs: "(new olNs_format_JSONFeature.default())".}
+  JSONFeature* = ref object of JsRoot
+proc newJSONFeature*(): JSONFeature {.importjs: "(new olNs_format_JSONFeature.default())".}

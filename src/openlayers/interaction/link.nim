@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_Link)".}
 
 type
-  OlLink* = ref object of JsRoot
-proc newOlLink*(options: JsObject = jsUndefined): OlLink {.importjs: "(new olNs_interaction_Link.default(#))".}
-proc track*(self: OlLink, key: cstring, callback: JsObject): cstring {.importjs: "#.track(#, #)".}
-proc update*(self: OlLink, key: cstring, value: cstring) {.importjs: "#.update(#, #)".}
+  Link* = ref object of JsRoot
+proc newLink*(options: JsObject = jsUndefined): Link {.importjs: "(new olNs_interaction_Link.default(#))".}
+proc track*(self: Link, key: cstring, callback: JsObject): cstring {.importjs: "#.track(#, #)".}
+proc update*(self: Link, key: cstring, value: cstring) {.importjs: "#.update(#, #)".}

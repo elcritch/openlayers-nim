@@ -9,12 +9,12 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_ImageArcGISRest)".}
 
 type
-  OlImageArcGISRest* = ref object of JsRoot
-proc newOlImageArcGISRest*(options: JsObject = jsUndefined): OlImageArcGISRest {.importjs: "(new olNs_source_ImageArcGISRest.default(#))".}
-proc getParams*(self: OlImageArcGISRest): JsObject {.importjs: "#.getParams()".}
-proc getImageLoadFunction*(self: OlImageArcGISRest): JsObject {.importjs: "#.getImageLoadFunction()".}
-proc getUrl*(self: OlImageArcGISRest): cstring {.importjs: "#.getUrl()".}
-proc setImageLoadFunction*(self: OlImageArcGISRest, imageLoadFunction: JsObject) {.importjs: "#.setImageLoadFunction(#)".}
-proc setUrl*(self: OlImageArcGISRest, url: cstring) {.importjs: "#.setUrl(#)".}
-proc setParams*(self: OlImageArcGISRest, params: JsObject) {.importjs: "#.setParams(#)".}
-proc updateParams*(self: OlImageArcGISRest, params: JsObject) {.importjs: "#.updateParams(#)".}
+  ImageArcGISRest* = ref object of JsRoot
+proc newImageArcGISRest*(options: JsObject = jsUndefined): ImageArcGISRest {.importjs: "(new olNs_source_ImageArcGISRest.default(#))".}
+proc getParams*(self: ImageArcGISRest): JsObject {.importjs: "#.getParams()".}
+proc getImageLoadFunction*(self: ImageArcGISRest): JsObject {.importjs: "#.getImageLoadFunction()".}
+proc getUrl*(self: ImageArcGISRest): cstring {.importjs: "#.getUrl()".}
+proc setImageLoadFunction*(self: ImageArcGISRest, imageLoadFunction: JsObject) {.importjs: "#.setImageLoadFunction(#)".}
+proc setUrl*(self: ImageArcGISRest, url: cstring) {.importjs: "#.setUrl(#)".}
+proc setParams*(self: ImageArcGISRest, params: JsObject) {.importjs: "#.setParams(#)".}
+proc updateParams*(self: ImageArcGISRest, params: JsObject) {.importjs: "#.updateParams(#)".}

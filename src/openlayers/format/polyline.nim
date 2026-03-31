@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_Polyline)".}
 
 type
-  OlPolyline* = ref object of JsRoot
-proc newOlPolyline*(options: JsObject = jsUndefined): OlPolyline {.importjs: "(new olNs_format_Polyline.default(#))".}
+  Polyline* = ref object of JsRoot
+proc newPolyline*(options: JsObject = jsUndefined): Polyline {.importjs: "(new olNs_format_Polyline.default(#))".}
 
 proc encodeDeltas*(numbers: seq[float], stride: float, factor: JsObject = jsUndefined): cstring {.importjs: "olNs_format_Polyline.encodeDeltas(#, #, #)".}
 proc decodeDeltas*(encoded: cstring, stride: float, factor: JsObject = jsUndefined): seq[float] {.importjs: "olNs_format_Polyline.decodeDeltas(#, #, #)".}

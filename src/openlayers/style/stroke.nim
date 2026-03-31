@@ -9,64 +9,64 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_Stroke)".}
 
 type
-  OlStrokeOptions* = ref object of JsRoot
-  OlStroke* = ref object of JsRoot
+  StrokeOptions* = ref object of JsRoot
+  Stroke* = ref object of JsRoot
 
-proc newOlStrokeOptions*(): OlStrokeOptions {.importjs: "({})".}
-proc `color=`*(options: OlStrokeOptions, value: JsObject) {.importjs: "#.color = #".}
-proc `color=`*(options: OlStrokeOptions, value: cstring) {.importjs: "#.color = #".}
-proc `lineCap=`*(options: OlStrokeOptions, value: cstring) {.importjs: "#.lineCap = #".}
+proc newStrokeOptions*(): StrokeOptions {.importjs: "({})".}
+proc `color=`*(options: StrokeOptions, value: JsObject) {.importjs: "#.color = #".}
+proc `color=`*(options: StrokeOptions, value: cstring) {.importjs: "#.color = #".}
+proc `lineCap=`*(options: StrokeOptions, value: cstring) {.importjs: "#.lineCap = #".}
 proc `lineJoin=`*(
-  options: OlStrokeOptions, value: cstring
+  options: StrokeOptions, value: cstring
 ) {.importjs: "#.lineJoin = #".}
 
 proc `lineDash=`*(
-  options: OlStrokeOptions, value: seq[float]
+  options: StrokeOptions, value: seq[float]
 ) {.importjs: "#.lineDash = #".}
 
 proc `lineDash=`*(
-  options: OlStrokeOptions, value: JsObject
+  options: StrokeOptions, value: JsObject
 ) {.importjs: "#.lineDash = #".}
 
 proc `lineDashOffset=`*(
-  options: OlStrokeOptions, value: float
+  options: StrokeOptions, value: float
 ) {.importjs: "#.lineDashOffset = #".}
 
 proc `miterLimit=`*(
-  options: OlStrokeOptions, value: float
+  options: StrokeOptions, value: float
 ) {.importjs: "#.miterLimit = #".}
 
-proc `offset=`*(options: OlStrokeOptions, value: float) {.importjs: "#.offset = #".}
-proc `width=`*(options: OlStrokeOptions, value: float) {.importjs: "#.width = #".}
+proc `offset=`*(options: StrokeOptions, value: float) {.importjs: "#.offset = #".}
+proc `width=`*(options: StrokeOptions, value: float) {.importjs: "#.width = #".}
 
-proc newOlStroke*(
+proc newStroke*(
   options: JsObject = jsUndefined
-): OlStroke {.importjs: "(new olNs_style_Stroke.default(#))".}
+): Stroke {.importjs: "(new olNs_style_Stroke.default(#))".}
 
-proc newOlStroke*(
-  options: OlStrokeOptions
-): OlStroke {.importjs: "(new olNs_style_Stroke.default(#))".}
+proc newStroke*(
+  options: StrokeOptions
+): Stroke {.importjs: "(new olNs_style_Stroke.default(#))".}
 
-proc clone*(self: OlStroke): JsObject {.importjs: "#.clone()".}
-proc getColor*(self: OlStroke): JsObject {.importjs: "#.getColor()".}
-proc getLineCap*(self: OlStroke): JsObject {.importjs: "#.getLineCap()".}
-proc getLineDash*(self: OlStroke): JsObject {.importjs: "#.getLineDash()".}
-proc getLineDashOffset*(self: OlStroke): float {.importjs: "#.getLineDashOffset()".}
-proc getLineJoin*(self: OlStroke): JsObject {.importjs: "#.getLineJoin()".}
-proc getMiterLimit*(self: OlStroke): float {.importjs: "#.getMiterLimit()".}
-proc getOffset*(self: OlStroke): float {.importjs: "#.getOffset()".}
-proc getWidth*(self: OlStroke): float {.importjs: "#.getWidth()".}
-proc setColor*(self: OlStroke, color: JsObject) {.importjs: "#.setColor(#)".}
-proc setLineCap*(self: OlStroke, lineCap: JsObject) {.importjs: "#.setLineCap(#)".}
-proc setLineDash*(self: OlStroke, lineDash: JsObject) {.importjs: "#.setLineDash(#)".}
+proc clone*(self: Stroke): JsObject {.importjs: "#.clone()".}
+proc getColor*(self: Stroke): JsObject {.importjs: "#.getColor()".}
+proc getLineCap*(self: Stroke): JsObject {.importjs: "#.getLineCap()".}
+proc getLineDash*(self: Stroke): JsObject {.importjs: "#.getLineDash()".}
+proc getLineDashOffset*(self: Stroke): float {.importjs: "#.getLineDashOffset()".}
+proc getLineJoin*(self: Stroke): JsObject {.importjs: "#.getLineJoin()".}
+proc getMiterLimit*(self: Stroke): float {.importjs: "#.getMiterLimit()".}
+proc getOffset*(self: Stroke): float {.importjs: "#.getOffset()".}
+proc getWidth*(self: Stroke): float {.importjs: "#.getWidth()".}
+proc setColor*(self: Stroke, color: JsObject) {.importjs: "#.setColor(#)".}
+proc setLineCap*(self: Stroke, lineCap: JsObject) {.importjs: "#.setLineCap(#)".}
+proc setLineDash*(self: Stroke, lineDash: JsObject) {.importjs: "#.setLineDash(#)".}
 proc setLineDashOffset*(
-  self: OlStroke, lineDashOffset: float
+  self: Stroke, lineDashOffset: float
 ) {.importjs: "#.setLineDashOffset(#)".}
 
-proc setLineJoin*(self: OlStroke, lineJoin: JsObject) {.importjs: "#.setLineJoin(#)".}
+proc setLineJoin*(self: Stroke, lineJoin: JsObject) {.importjs: "#.setLineJoin(#)".}
 proc setMiterLimit*(
-  self: OlStroke, miterLimit: float
+  self: Stroke, miterLimit: float
 ) {.importjs: "#.setMiterLimit(#)".}
 
-proc setOffset*(self: OlStroke, offset: float) {.importjs: "#.setOffset(#)".}
-proc setWidth*(self: OlStroke, width: float) {.importjs: "#.setWidth(#)".}
+proc setOffset*(self: Stroke, offset: float) {.importjs: "#.setOffset(#)".}
+proc setWidth*(self: Stroke, width: float) {.importjs: "#.setWidth(#)".}

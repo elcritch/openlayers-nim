@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_IsBetween)".}
 
 type
-  OlIsBetween* = ref object of JsRoot
-proc newOlIsBetween*(propertyName: cstring, lowerBoundary: float, upperBoundary: float): OlIsBetween {.importjs: "(new olNs_format_filter_IsBetween.default(#, #, #))".}
+  IsBetween* = ref object of JsRoot
+proc newIsBetween*(propertyName: cstring, lowerBoundary: float, upperBoundary: float): IsBetween {.importjs: "(new olNs_format_filter_IsBetween.default(#, #, #))".}

@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_MouseWheelZoom)".}
 
 type
-  OlMouseWheelZoom* = ref object of JsRoot
-proc newOlMouseWheelZoom*(options: JsObject = jsUndefined): OlMouseWheelZoom {.importjs: "(new olNs_interaction_MouseWheelZoom.default(#))".}
-proc setMouseAnchor*(self: OlMouseWheelZoom, useAnchor: bool) {.importjs: "#.setMouseAnchor(#)".}
+  MouseWheelZoom* = ref object of JsRoot
+proc newMouseWheelZoom*(options: JsObject = jsUndefined): MouseWheelZoom {.importjs: "(new olNs_interaction_MouseWheelZoom.default(#))".}
+proc setMouseAnchor*(self: MouseWheelZoom, useAnchor: bool) {.importjs: "#.setMouseAnchor(#)".}

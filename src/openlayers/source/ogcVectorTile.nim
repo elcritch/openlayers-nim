@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_OGCVectorTile)".}
 
 type
-  OlOGCVectorTile* = ref object of JsRoot
-proc newOlOGCVectorTile*(options: JsObject): OlOGCVectorTile {.importjs: "(new olNs_source_OGCVectorTile.default(#))".}
+  OGCVectorTile* = ref object of JsRoot
+proc newOGCVectorTile*(options: JsObject): OGCVectorTile {.importjs: "(new olNs_source_OGCVectorTile.default(#))".}

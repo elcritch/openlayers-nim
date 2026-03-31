@@ -9,10 +9,10 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_TileWMS)".}
 
 type
-  OlTileWMS* = ref object of JsRoot
-proc newOlTileWMS*(options: JsObject = jsUndefined): OlTileWMS {.importjs: "(new olNs_source_TileWMS.default(#))".}
-proc getFeatureInfoUrl*(self: OlTileWMS, coordinate: JsObject, resolution: float, projection: JsObject, params: JsObject): cstring {.importjs: "#.getFeatureInfoUrl(#, #, #, #)".}
-proc getLegendUrl*(self: OlTileWMS, resolution: JsObject = jsUndefined, params: JsObject = jsUndefined): cstring {.importjs: "#.getLegendUrl(#, #)".}
-proc getParams*(self: OlTileWMS): JsObject {.importjs: "#.getParams()".}
-proc setParams*(self: OlTileWMS, params: JsObject) {.importjs: "#.setParams(#)".}
-proc updateParams*(self: OlTileWMS, params: JsObject) {.importjs: "#.updateParams(#)".}
+  TileWMS* = ref object of JsRoot
+proc newTileWMS*(options: JsObject = jsUndefined): TileWMS {.importjs: "(new olNs_source_TileWMS.default(#))".}
+proc getFeatureInfoUrl*(self: TileWMS, coordinate: JsObject, resolution: float, projection: JsObject, params: JsObject): cstring {.importjs: "#.getFeatureInfoUrl(#, #, #, #)".}
+proc getLegendUrl*(self: TileWMS, resolution: JsObject = jsUndefined, params: JsObject = jsUndefined): cstring {.importjs: "#.getLegendUrl(#, #)".}
+proc getParams*(self: TileWMS): JsObject {.importjs: "#.getParams()".}
+proc setParams*(self: TileWMS, params: JsObject) {.importjs: "#.setParams(#)".}
+proc updateParams*(self: TileWMS, params: JsObject) {.importjs: "#.updateParams(#)".}

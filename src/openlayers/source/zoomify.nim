@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_Zoomify)".}
 
 type
-  OlZoomify* = ref object of JsRoot
-proc newOlZoomify*(options: JsObject): OlZoomify {.importjs: "(new olNs_source_Zoomify.default(#))".}
+  Zoomify* = ref object of JsRoot
+proc newZoomify*(options: JsObject): Zoomify {.importjs: "(new olNs_source_Zoomify.default(#))".}

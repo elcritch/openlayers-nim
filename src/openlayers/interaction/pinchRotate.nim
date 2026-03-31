@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_PinchRotate)".}
 
 type
-  OlPinchRotate* = ref object of JsRoot
-proc newOlPinchRotate*(options: JsObject = jsUndefined): OlPinchRotate {.importjs: "(new olNs_interaction_PinchRotate.default(#))".}
+  PinchRotate* = ref object of JsRoot
+proc newPinchRotate*(options: JsObject = jsUndefined): PinchRotate {.importjs: "(new olNs_interaction_PinchRotate.default(#))".}

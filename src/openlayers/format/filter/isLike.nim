@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_IsLike)".}
 
 type
-  OlIsLike* = ref object of JsRoot
-proc newOlIsLike*(propertyName: cstring, pattern: cstring, wildCard: JsObject = jsUndefined, singleChar: JsObject = jsUndefined, escapeChar: JsObject = jsUndefined, matchCase: JsObject = jsUndefined): OlIsLike {.importjs: "(new olNs_format_filter_IsLike.default(#, #, #, #, #, #))".}
+  IsLike* = ref object of JsRoot
+proc newIsLike*(propertyName: cstring, pattern: cstring, wildCard: JsObject = jsUndefined, singleChar: JsObject = jsUndefined, escapeChar: JsObject = jsUndefined, matchCase: JsObject = jsUndefined): IsLike {.importjs: "(new olNs_format_filter_IsLike.default(#, #, #, #, #, #))".}

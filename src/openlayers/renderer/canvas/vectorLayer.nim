@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_renderer_canvas_VectorLayer)".}
 
 type
-  OlCanvasVectorLayerRenderer* = ref object of JsRoot
-proc newOlCanvasVectorLayerRenderer*(vectorLayer: JsObject): OlCanvasVectorLayerRenderer {.importjs: "(new olNs_renderer_canvas_VectorLayer.default(#))".}
-proc renderWorlds*(self: OlCanvasVectorLayerRenderer, executorGroup: JsObject, frameState: JsObject, declutterable: JsObject = jsUndefined) {.importjs: "#.renderWorlds(#, #, #)".}
-proc renderDeclutter*(self: OlCanvasVectorLayerRenderer, frameState: JsObject) {.importjs: "#.renderDeclutter(#)".}
-proc renderFeature*(self: OlCanvasVectorLayerRenderer, feature: JsObject, squaredTolerance: float, styles: JsObject, builderGroup: JsObject, transform: JsObject = jsUndefined, declutter: JsObject = jsUndefined, index: JsObject = jsUndefined): bool {.importjs: "#.renderFeature(#, #, #, #, #, #, #)".}
+  CanvasVectorLayerRenderer* = ref object of JsRoot
+proc newCanvasVectorLayerRenderer*(vectorLayer: JsObject): CanvasVectorLayerRenderer {.importjs: "(new olNs_renderer_canvas_VectorLayer.default(#))".}
+proc renderWorlds*(self: CanvasVectorLayerRenderer, executorGroup: JsObject, frameState: JsObject, declutterable: JsObject = jsUndefined) {.importjs: "#.renderWorlds(#, #, #)".}
+proc renderDeclutter*(self: CanvasVectorLayerRenderer, frameState: JsObject) {.importjs: "#.renderDeclutter(#)".}
+proc renderFeature*(self: CanvasVectorLayerRenderer, feature: JsObject, squaredTolerance: float, styles: JsObject, builderGroup: JsObject, transform: JsObject = jsUndefined, declutter: JsObject = jsUndefined, index: JsObject = jsUndefined): bool {.importjs: "#.renderFeature(#, #, #, #, #, #, #)".}

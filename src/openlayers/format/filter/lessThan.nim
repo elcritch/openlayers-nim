@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_LessThan)".}
 
 type
-  OlLessThan* = ref object of JsRoot
-proc newOlLessThan*(propertyName: cstring, expression: float): OlLessThan {.importjs: "(new olNs_format_filter_LessThan.default(#, #))".}
+  LessThan* = ref object of JsRoot
+proc newLessThan*(propertyName: cstring, expression: float): LessThan {.importjs: "(new olNs_format_filter_LessThan.default(#, #))".}

@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_WMSGetFeatureInfo)".}
 
 type
-  OlWMSGetFeatureInfo* = ref object of JsRoot
-proc newOlWMSGetFeatureInfo*(options: JsObject = jsUndefined): OlWMSGetFeatureInfo {.importjs: "(new olNs_format_WMSGetFeatureInfo.default(#))".}
-proc getLayers*(self: OlWMSGetFeatureInfo): JsObject {.importjs: "#.getLayers()".}
-proc setLayers*(self: OlWMSGetFeatureInfo, layers: JsObject) {.importjs: "#.setLayers(#)".}
+  WMSGetFeatureInfo* = ref object of JsRoot
+proc newWMSGetFeatureInfo*(options: JsObject = jsUndefined): WMSGetFeatureInfo {.importjs: "(new olNs_format_WMSGetFeatureInfo.default(#))".}
+proc getLayers*(self: WMSGetFeatureInfo): JsObject {.importjs: "#.getLayers()".}
+proc setLayers*(self: WMSGetFeatureInfo, layers: JsObject) {.importjs: "#.setLayers(#)".}

@@ -9,26 +9,26 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_tilegrid_TileGrid)".}
 
 type
-  OlTileGrid* = ref object of JsRoot
-proc newOlTileGrid*(options: JsObject): OlTileGrid {.importjs: "(new olNs_tilegrid_TileGrid.default(#))".}
-proc forEachTileCoord*(self: OlTileGrid, extent: JsObject, zoom: float, callback: JsObject) {.importjs: "#.forEachTileCoord(#, #, #)".}
-proc forEachTileCoordParentTileRange*(self: OlTileGrid, tileCoord: JsObject, callback: JsObject, tempTileRange: JsObject = jsUndefined, tempExtent: JsObject = jsUndefined): bool {.importjs: "#.forEachTileCoordParentTileRange(#, #, #, #)".}
-proc getExtent*(self: OlTileGrid): JsObject {.importjs: "#.getExtent()".}
-proc getMaxZoom*(self: OlTileGrid): float {.importjs: "#.getMaxZoom()".}
-proc getMinZoom*(self: OlTileGrid): float {.importjs: "#.getMinZoom()".}
-proc getOrigin*(self: OlTileGrid, z: float): JsObject {.importjs: "#.getOrigin(#)".}
-proc getOrigins*(self: OlTileGrid): JsObject {.importjs: "#.getOrigins()".}
-proc getResolution*(self: OlTileGrid, z: float): float {.importjs: "#.getResolution(#)".}
-proc getResolutions*(self: OlTileGrid): seq[float] {.importjs: "#.getResolutions()".}
-proc getTileCoordChildTileRange*(self: OlTileGrid, tileCoord: JsObject, tempTileRange: JsObject = jsUndefined, tempExtent: JsObject = jsUndefined): JsObject {.importjs: "#.getTileCoordChildTileRange(#, #, #)".}
-proc getTileRangeForTileCoordAndZ*(self: OlTileGrid, tileCoord: JsObject, z: float, tempTileRange: JsObject = jsUndefined): JsObject {.importjs: "#.getTileRangeForTileCoordAndZ(#, #, #)".}
-proc getTileRangeForExtentAndZ*(self: OlTileGrid, extent: JsObject, z: float, tempTileRange: JsObject = jsUndefined): JsObject {.importjs: "#.getTileRangeForExtentAndZ(#, #, #)".}
-proc getTileCoordCenter*(self: OlTileGrid, tileCoord: JsObject): JsObject {.importjs: "#.getTileCoordCenter(#)".}
-proc getTileCoordExtent*(self: OlTileGrid, tileCoord: JsObject, tempExtent: JsObject = jsUndefined): JsObject {.importjs: "#.getTileCoordExtent(#, #)".}
-proc getTileCoordForCoordAndResolution*(self: OlTileGrid, coordinate: JsObject, resolution: float, opt_tileCoord: JsObject = jsUndefined): JsObject {.importjs: "#.getTileCoordForCoordAndResolution(#, #, #)".}
-proc getTileCoordForCoordAndZ*(self: OlTileGrid, coordinate: JsObject, z: float, opt_tileCoord: JsObject = jsUndefined): JsObject {.importjs: "#.getTileCoordForCoordAndZ(#, #, #)".}
-proc getTileCoordResolution*(self: OlTileGrid, tileCoord: JsObject): float {.importjs: "#.getTileCoordResolution(#)".}
-proc getTileSize*(self: OlTileGrid, z: float): JsObject {.importjs: "#.getTileSize(#)".}
-proc getFullTileRange*(self: OlTileGrid, z: float): JsObject {.importjs: "#.getFullTileRange(#)".}
-proc getZForResolution*(self: OlTileGrid, resolution: float, opt_direction: JsObject = jsUndefined): float {.importjs: "#.getZForResolution(#, #)".}
-proc tileCoordIntersectsViewport*(self: OlTileGrid, tileCoord: JsObject, viewport: seq[float]): bool {.importjs: "#.tileCoordIntersectsViewport(#, #)".}
+  TileGrid* = ref object of JsRoot
+proc newTileGrid*(options: JsObject): TileGrid {.importjs: "(new olNs_tilegrid_TileGrid.default(#))".}
+proc forEachTileCoord*(self: TileGrid, extent: JsObject, zoom: float, callback: JsObject) {.importjs: "#.forEachTileCoord(#, #, #)".}
+proc forEachTileCoordParentTileRange*(self: TileGrid, tileCoord: JsObject, callback: JsObject, tempTileRange: JsObject = jsUndefined, tempExtent: JsObject = jsUndefined): bool {.importjs: "#.forEachTileCoordParentTileRange(#, #, #, #)".}
+proc getExtent*(self: TileGrid): JsObject {.importjs: "#.getExtent()".}
+proc getMaxZoom*(self: TileGrid): float {.importjs: "#.getMaxZoom()".}
+proc getMinZoom*(self: TileGrid): float {.importjs: "#.getMinZoom()".}
+proc getOrigin*(self: TileGrid, z: float): JsObject {.importjs: "#.getOrigin(#)".}
+proc getOrigins*(self: TileGrid): JsObject {.importjs: "#.getOrigins()".}
+proc getResolution*(self: TileGrid, z: float): float {.importjs: "#.getResolution(#)".}
+proc getResolutions*(self: TileGrid): seq[float] {.importjs: "#.getResolutions()".}
+proc getTileCoordChildTileRange*(self: TileGrid, tileCoord: JsObject, tempTileRange: JsObject = jsUndefined, tempExtent: JsObject = jsUndefined): JsObject {.importjs: "#.getTileCoordChildTileRange(#, #, #)".}
+proc getTileRangeForTileCoordAndZ*(self: TileGrid, tileCoord: JsObject, z: float, tempTileRange: JsObject = jsUndefined): JsObject {.importjs: "#.getTileRangeForTileCoordAndZ(#, #, #)".}
+proc getTileRangeForExtentAndZ*(self: TileGrid, extent: JsObject, z: float, tempTileRange: JsObject = jsUndefined): JsObject {.importjs: "#.getTileRangeForExtentAndZ(#, #, #)".}
+proc getTileCoordCenter*(self: TileGrid, tileCoord: JsObject): JsObject {.importjs: "#.getTileCoordCenter(#)".}
+proc getTileCoordExtent*(self: TileGrid, tileCoord: JsObject, tempExtent: JsObject = jsUndefined): JsObject {.importjs: "#.getTileCoordExtent(#, #)".}
+proc getTileCoordForCoordAndResolution*(self: TileGrid, coordinate: JsObject, resolution: float, opt_tileCoord: JsObject = jsUndefined): JsObject {.importjs: "#.getTileCoordForCoordAndResolution(#, #, #)".}
+proc getTileCoordForCoordAndZ*(self: TileGrid, coordinate: JsObject, z: float, opt_tileCoord: JsObject = jsUndefined): JsObject {.importjs: "#.getTileCoordForCoordAndZ(#, #, #)".}
+proc getTileCoordResolution*(self: TileGrid, tileCoord: JsObject): float {.importjs: "#.getTileCoordResolution(#)".}
+proc getTileSize*(self: TileGrid, z: float): JsObject {.importjs: "#.getTileSize(#)".}
+proc getFullTileRange*(self: TileGrid, z: float): JsObject {.importjs: "#.getFullTileRange(#)".}
+proc getZForResolution*(self: TileGrid, resolution: float, opt_direction: JsObject = jsUndefined): float {.importjs: "#.getZForResolution(#, #)".}
+proc tileCoordIntersectsViewport*(self: TileGrid, tileCoord: JsObject, viewport: seq[float]): bool {.importjs: "#.tileCoordIntersectsViewport(#, #)".}

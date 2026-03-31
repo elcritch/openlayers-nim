@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_Cluster)".}
 
 type
-  OlCluster* = ref object of JsRoot
-proc newOlCluster*(): OlCluster {.importjs: "(new olNs_source_Cluster.default())".}
+  Cluster* = ref object of JsRoot
+proc newCluster*(): Cluster {.importjs: "(new olNs_source_Cluster.default())".}

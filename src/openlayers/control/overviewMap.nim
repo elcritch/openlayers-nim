@@ -9,12 +9,12 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_OverviewMap)".}
 
 type
-  OlOverviewMap* = ref object of JsRoot
-proc newOlOverviewMap*(options: JsObject = jsUndefined): OlOverviewMap {.importjs: "(new olNs_control_OverviewMap.default(#))".}
-proc getCollapsible*(self: OlOverviewMap): bool {.importjs: "#.getCollapsible()".}
-proc setCollapsible*(self: OlOverviewMap, collapsible: bool) {.importjs: "#.setCollapsible(#)".}
-proc setCollapsed*(self: OlOverviewMap, collapsed: bool) {.importjs: "#.setCollapsed(#)".}
-proc getCollapsed*(self: OlOverviewMap): bool {.importjs: "#.getCollapsed()".}
-proc getRotateWithView*(self: OlOverviewMap): bool {.importjs: "#.getRotateWithView()".}
-proc setRotateWithView*(self: OlOverviewMap, rotateWithView: bool) {.importjs: "#.setRotateWithView(#)".}
-proc getOverviewMap*(self: OlOverviewMap): JsObject {.importjs: "#.getOverviewMap()".}
+  OverviewMap* = ref object of JsRoot
+proc newOverviewMap*(options: JsObject = jsUndefined): OverviewMap {.importjs: "(new olNs_control_OverviewMap.default(#))".}
+proc getCollapsible*(self: OverviewMap): bool {.importjs: "#.getCollapsible()".}
+proc setCollapsible*(self: OverviewMap, collapsible: bool) {.importjs: "#.setCollapsible(#)".}
+proc setCollapsed*(self: OverviewMap, collapsed: bool) {.importjs: "#.setCollapsed(#)".}
+proc getCollapsed*(self: OverviewMap): bool {.importjs: "#.getCollapsed()".}
+proc getRotateWithView*(self: OverviewMap): bool {.importjs: "#.getRotateWithView()".}
+proc setRotateWithView*(self: OverviewMap, rotateWithView: bool) {.importjs: "#.setRotateWithView(#)".}
+proc getOverviewMap*(self: OverviewMap): JsObject {.importjs: "#.getOverviewMap()".}

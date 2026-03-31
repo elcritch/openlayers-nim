@@ -9,12 +9,12 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_VectorTile)".}
 
 type
-  OlVectorTile* = ref object of JsRoot
-proc newOlVectorTile*(tileCoord: JsObject, state: JsObject, src: cstring, format: JsObject, tileLoadFunction: JsObject, options: JsObject = jsUndefined): OlVectorTile {.importjs: "(new olNs_VectorTile.default(#, #, #, #, #, #))".}
-proc getTileUrl*(self: OlVectorTile): cstring {.importjs: "#.getTileUrl()".}
-proc getFormat*(self: OlVectorTile): JsObject {.importjs: "#.getFormat()".}
-proc getFeatures*(self: OlVectorTile): JsObject {.importjs: "#.getFeatures()".}
-proc onLoad*(self: OlVectorTile, features: JsObject, dataProjection: JsObject) {.importjs: "#.onLoad(#, #)".}
-proc onError*(self: OlVectorTile) {.importjs: "#.onError()".}
-proc setFeatures*(self: OlVectorTile, features: JsObject) {.importjs: "#.setFeatures(#)".}
-proc setLoader*(self: OlVectorTile, loader: JsObject) {.importjs: "#.setLoader(#)".}
+  VectorTile* = ref object of JsRoot
+proc newVectorTile*(tileCoord: JsObject, state: JsObject, src: cstring, format: JsObject, tileLoadFunction: JsObject, options: JsObject = jsUndefined): VectorTile {.importjs: "(new olNs_VectorTile.default(#, #, #, #, #, #))".}
+proc getTileUrl*(self: VectorTile): cstring {.importjs: "#.getTileUrl()".}
+proc getFormat*(self: VectorTile): JsObject {.importjs: "#.getFormat()".}
+proc getFeatures*(self: VectorTile): JsObject {.importjs: "#.getFeatures()".}
+proc onLoad*(self: VectorTile, features: JsObject, dataProjection: JsObject) {.importjs: "#.onLoad(#, #)".}
+proc onError*(self: VectorTile) {.importjs: "#.onError()".}
+proc setFeatures*(self: VectorTile, features: JsObject) {.importjs: "#.setFeatures(#)".}
+proc setLoader*(self: VectorTile, loader: JsObject) {.importjs: "#.setLoader(#)".}

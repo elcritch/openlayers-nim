@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_TileDebug)".}
 
 type
-  OlTileDebug* = ref object of JsRoot
-proc newOlTileDebug*(options: JsObject = jsUndefined): OlTileDebug {.importjs: "(new olNs_source_TileDebug.default(#))".}
+  TileDebug* = ref object of JsRoot
+proc newTileDebug*(options: JsObject = jsUndefined): TileDebug {.importjs: "(new olNs_source_TileDebug.default(#))".}

@@ -8,8 +8,8 @@ suite "openlayers/view bindings":
     discard getNamespace()
 
   test "constructor and core methods compile":
-    check compiles(newOlView(jsUndefined))
-    let view = newOlView(jsUndefined)
+    check compiles(newView(jsUndefined))
+    let view = newView(jsUndefined)
     check compiles(view.getZoom())
     check compiles(view.setZoom(4.5))
     check compiles(view.getCenter())

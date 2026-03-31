@@ -9,10 +9,10 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_Kinetic)".}
 
 type
-  OlKinetic* = ref object of JsRoot
-proc newOlKinetic*(decay: float, minVelocity: float, delay: float): OlKinetic {.importjs: "(new olNs_Kinetic.default(#, #, #))".}
-proc begin*(self: OlKinetic) {.importjs: "#.begin()".}
-proc update*(self: OlKinetic, x: float, y: float) {.importjs: "#.update(#, #)".}
-proc endVal*(self: OlKinetic): bool {.importjs: "#.end()".}
-proc getDistance*(self: OlKinetic): float {.importjs: "#.getDistance()".}
-proc getAngle*(self: OlKinetic): float {.importjs: "#.getAngle()".}
+  Kinetic* = ref object of JsRoot
+proc newKinetic*(decay: float, minVelocity: float, delay: float): Kinetic {.importjs: "(new olNs_Kinetic.default(#, #, #))".}
+proc begin*(self: Kinetic) {.importjs: "#.begin()".}
+proc update*(self: Kinetic, x: float, y: float) {.importjs: "#.update(#, #)".}
+proc endVal*(self: Kinetic): bool {.importjs: "#.end()".}
+proc getDistance*(self: Kinetic): float {.importjs: "#.getDistance()".}
+proc getAngle*(self: Kinetic): float {.importjs: "#.getAngle()".}

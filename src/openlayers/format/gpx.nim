@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_GPX)".}
 
 type
-  OlGPX* = ref object of JsRoot
-proc newOlGPX*(options: JsObject = jsUndefined): OlGPX {.importjs: "(new olNs_format_GPX.default(#))".}
-proc readMetadata*(self: OlGPX, source: JsObject): JsObject {.importjs: "#.readMetadata(#)".}
-proc readMetadataFromDocument*(self: OlGPX, doc: JsObject): JsObject {.importjs: "#.readMetadataFromDocument(#)".}
-proc readMetadataFromNode*(self: OlGPX, node: JsObject): JsObject {.importjs: "#.readMetadataFromNode(#)".}
+  GPX* = ref object of JsRoot
+proc newGPX*(options: JsObject = jsUndefined): GPX {.importjs: "(new olNs_format_GPX.default(#))".}
+proc readMetadata*(self: GPX, source: JsObject): JsObject {.importjs: "#.readMetadata(#)".}
+proc readMetadataFromDocument*(self: GPX, doc: JsObject): JsObject {.importjs: "#.readMetadataFromDocument(#)".}
+proc readMetadataFromNode*(self: GPX, node: JsObject): JsObject {.importjs: "#.readMetadataFromNode(#)".}

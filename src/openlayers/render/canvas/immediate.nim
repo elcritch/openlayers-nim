@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_render_canvas_Immediate)".}
 
 type
-  OlCanvasImmediateRenderer* = ref object of JsRoot
-proc newOlCanvasImmediateRenderer*(context: JsObject, pixelRatio: float, extent: JsObject, transform: JsObject, viewRotation: float, squaredTolerance: JsObject = jsUndefined, userTransform: JsObject = jsUndefined): OlCanvasImmediateRenderer {.importjs: "(new olNs_render_canvas_Immediate.default(#, #, #, #, #, #, #))".}
-proc setTransform*(self: OlCanvasImmediateRenderer, transform: JsObject) {.importjs: "#.setTransform(#)".}
+  CanvasImmediateRenderer* = ref object of JsRoot
+proc newCanvasImmediateRenderer*(context: JsObject, pixelRatio: float, extent: JsObject, transform: JsObject, viewRotation: float, squaredTolerance: JsObject = jsUndefined, userTransform: JsObject = jsUndefined): CanvasImmediateRenderer {.importjs: "(new olNs_render_canvas_Immediate.default(#, #, #, #, #, #, #))".}
+proc setTransform*(self: CanvasImmediateRenderer, transform: JsObject) {.importjs: "#.setTransform(#)".}

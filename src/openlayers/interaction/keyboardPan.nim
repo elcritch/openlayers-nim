@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_KeyboardPan)".}
 
 type
-  OlKeyboardPan* = ref object of JsRoot
-proc newOlKeyboardPan*(options: JsObject = jsUndefined): OlKeyboardPan {.importjs: "(new olNs_interaction_KeyboardPan.default(#))".}
+  KeyboardPan* = ref object of JsRoot
+proc newKeyboardPan*(options: JsObject = jsUndefined): KeyboardPan {.importjs: "(new olNs_interaction_KeyboardPan.default(#))".}

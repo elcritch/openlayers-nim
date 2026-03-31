@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_PinchZoom)".}
 
 type
-  OlPinchZoom* = ref object of JsRoot
-proc newOlPinchZoom*(options: JsObject = jsUndefined): OlPinchZoom {.importjs: "(new olNs_interaction_PinchZoom.default(#))".}
+  PinchZoom* = ref object of JsRoot
+proc newPinchZoom*(options: JsObject = jsUndefined): PinchZoom {.importjs: "(new olNs_interaction_PinchZoom.default(#))".}

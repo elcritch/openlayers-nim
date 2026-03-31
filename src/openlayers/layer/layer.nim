@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_Layer)".}
 
 type
-  OlLayer* = ref object of JsRoot
-proc newOlLayer*(): OlLayer {.importjs: "(new olNs_layer_Layer.default())".}
+  Layer* = ref object of JsRoot
+proc newLayer*(): Layer {.importjs: "(new olNs_layer_Layer.default())".}
 
 proc inView*(layerState: JsObject, viewState: JsObject): bool {.importjs: "olNs_layer_Layer.inView(#, #)".}

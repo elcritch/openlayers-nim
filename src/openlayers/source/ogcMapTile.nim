@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_OGCMapTile)".}
 
 type
-  OlOGCMapTile* = ref object of JsRoot
-proc newOlOGCMapTile*(options: JsObject): OlOGCMapTile {.importjs: "(new olNs_source_OGCMapTile.default(#))".}
+  OGCMapTile* = ref object of JsRoot
+proc newOGCMapTile*(options: JsObject): OGCMapTile {.importjs: "(new olNs_source_OGCMapTile.default(#))".}

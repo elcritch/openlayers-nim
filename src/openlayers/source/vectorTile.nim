@@ -9,11 +9,11 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_VectorTile)".}
 
 type
-  OlVectorTile* = ref object of JsRoot
-proc newOlVectorTile*(options: JsObject): OlVectorTile {.importjs: "(new olNs_source_VectorTile.default(#))".}
-proc getOverlaps*(self: OlVectorTile): bool {.importjs: "#.getOverlaps()".}
-proc getSourceTiles*(self: OlVectorTile, pixelRatio: float, projection: JsObject, tile: JsObject): JsObject {.importjs: "#.getSourceTiles(#, #, #)".}
-proc removeSourceTiles*(self: OlVectorTile, tile: JsObject) {.importjs: "#.removeSourceTiles(#)".}
-proc setOverlaps*(self: OlVectorTile, overlaps: bool) {.importjs: "#.setOverlaps(#)".}
+  VectorTile* = ref object of JsRoot
+proc newVectorTile*(options: JsObject): VectorTile {.importjs: "(new olNs_source_VectorTile.default(#))".}
+proc getOverlaps*(self: VectorTile): bool {.importjs: "#.getOverlaps()".}
+proc getSourceTiles*(self: VectorTile, pixelRatio: float, projection: JsObject, tile: JsObject): JsObject {.importjs: "#.getSourceTiles(#, #, #)".}
+proc removeSourceTiles*(self: VectorTile, tile: JsObject) {.importjs: "#.removeSourceTiles(#)".}
+proc setOverlaps*(self: VectorTile, overlaps: bool) {.importjs: "#.setOverlaps(#)".}
 
 proc defaultLoadFunction*(tile: JsObject, url: cstring) {.importjs: "olNs_source_VectorTile.defaultLoadFunction(#, #)".}

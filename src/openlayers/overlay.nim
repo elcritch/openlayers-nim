@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_Overlay)".}
 
 type
-  OlOverlay* = ref object of JsRoot
-proc newOlOverlay*(): OlOverlay {.importjs: "(new olNs_Overlay.default())".}
+  Overlay* = ref object of JsRoot
+proc newOverlay*(): Overlay {.importjs: "(new olNs_Overlay.default())".}

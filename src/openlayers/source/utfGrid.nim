@@ -9,9 +9,9 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_UTFGrid)".}
 
 type
-  OlUTFGrid* = ref object of JsRoot
-proc newOlUTFGrid*(options: JsObject): OlUTFGrid {.importjs: "(new olNs_source_UTFGrid.default(#))".}
-proc getTemplate*(self: OlUTFGrid): cstring {.importjs: "#.getTemplate()".}
-proc forDataAtCoordinateAndResolution*(self: OlUTFGrid, coordinate: JsObject, resolution: float, callback: JsObject, request: JsObject = jsUndefined) {.importjs: "#.forDataAtCoordinateAndResolution(#, #, #, #)".}
-proc handleTileJSONError*(self: OlUTFGrid) {.importjs: "#.handleTileJSONError()".}
-proc handleTileJSONResponse*(self: OlUTFGrid, tileJSON: JsObject) {.importjs: "#.handleTileJSONResponse(#)".}
+  UTFGrid* = ref object of JsRoot
+proc newUTFGrid*(options: JsObject): UTFGrid {.importjs: "(new olNs_source_UTFGrid.default(#))".}
+proc getTemplate*(self: UTFGrid): cstring {.importjs: "#.getTemplate()".}
+proc forDataAtCoordinateAndResolution*(self: UTFGrid, coordinate: JsObject, resolution: float, callback: JsObject, request: JsObject = jsUndefined) {.importjs: "#.forDataAtCoordinateAndResolution(#, #, #, #)".}
+proc handleTileJSONError*(self: UTFGrid) {.importjs: "#.handleTileJSONError()".}
+proc handleTileJSONResponse*(self: UTFGrid, tileJSON: JsObject) {.importjs: "#.handleTileJSONResponse(#)".}

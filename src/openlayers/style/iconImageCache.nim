@@ -9,15 +9,15 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_IconImageCache)".}
 
 type
-  OlIconImageCache* = ref object of JsRoot
-proc newOlIconImageCache*(): OlIconImageCache {.importjs: "(new olNs_style_IconImageCache.default())".}
-proc clear*(self: OlIconImageCache) {.importjs: "#.clear()".}
-proc canExpireCache*(self: OlIconImageCache): bool {.importjs: "#.canExpireCache()".}
-proc expire*(self: OlIconImageCache) {.importjs: "#.expire()".}
-proc get*(self: OlIconImageCache, src: cstring, color: JsObject): JsObject {.importjs: "#.get(#, #)".}
-proc getPattern*(self: OlIconImageCache, src: cstring, color: JsObject): JsObject {.importjs: "#.getPattern(#, #)".}
-proc set*(self: OlIconImageCache, src: cstring, color: JsObject, iconImage: JsObject, pattern: JsObject = jsUndefined) {.importjs: "#.set(#, #, #, #)".}
-proc setSize*(self: OlIconImageCache, maxCacheSize: float) {.importjs: "#.setSize(#)".}
+  IconImageCache* = ref object of JsRoot
+proc newIconImageCache*(): IconImageCache {.importjs: "(new olNs_style_IconImageCache.default())".}
+proc clear*(self: IconImageCache) {.importjs: "#.clear()".}
+proc canExpireCache*(self: IconImageCache): bool {.importjs: "#.canExpireCache()".}
+proc expire*(self: IconImageCache) {.importjs: "#.expire()".}
+proc get*(self: IconImageCache, src: cstring, color: JsObject): JsObject {.importjs: "#.get(#, #)".}
+proc getPattern*(self: IconImageCache, src: cstring, color: JsObject): JsObject {.importjs: "#.getPattern(#, #)".}
+proc set*(self: IconImageCache, src: cstring, color: JsObject, iconImage: JsObject, pattern: JsObject = jsUndefined) {.importjs: "#.set(#, #, #, #)".}
+proc setSize*(self: IconImageCache, maxCacheSize: float) {.importjs: "#.setSize(#)".}
 
 proc getCacheKey*(src: cstring, color: JsObject): cstring {.importjs: "olNs_style_IconImageCache.getCacheKey(#, #)".}
 

@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_DragZoom)".}
 
 type
-  OlDragZoom* = ref object of JsRoot
-proc newOlDragZoom*(options: JsObject = jsUndefined): OlDragZoom {.importjs: "(new olNs_interaction_DragZoom.default(#))".}
+  DragZoom* = ref object of JsRoot
+proc newDragZoom*(options: JsObject = jsUndefined): DragZoom {.importjs: "(new olNs_interaction_DragZoom.default(#))".}

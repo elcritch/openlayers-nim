@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_Within)".}
 
 type
-  OlWithin* = ref object of JsRoot
-proc newOlWithin*(geometryName: cstring, geometry: JsObject, srsName: JsObject = jsUndefined): OlWithin {.importjs: "(new olNs_format_filter_Within.default(#, #, #))".}
+  Within* = ref object of JsRoot
+proc newWithin*(geometryName: cstring, geometry: JsObject, srsName: JsObject = jsUndefined): Within {.importjs: "(new olNs_format_filter_Within.default(#, #, #))".}

@@ -9,20 +9,20 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_KML)".}
 
 type
-  OlKML* = ref object of JsRoot
-proc newOlKML*(options: JsObject = jsUndefined): OlKML {.importjs: "(new olNs_format_KML.default(#))".}
-proc readName*(self: OlKML, source: JsObject): cstring {.importjs: "#.readName(#)".}
-proc readNameFromDocument*(self: OlKML, doc: JsObject): cstring {.importjs: "#.readNameFromDocument(#)".}
-proc readNameFromNode*(self: OlKML, node: JsObject): cstring {.importjs: "#.readNameFromNode(#)".}
-proc readNetworkLinks*(self: OlKML, source: JsObject): JsObject {.importjs: "#.readNetworkLinks(#)".}
-proc readNetworkLinksFromDocument*(self: OlKML, doc: JsObject): JsObject {.importjs: "#.readNetworkLinksFromDocument(#)".}
-proc readNetworkLinksFromNode*(self: OlKML, node: JsObject): JsObject {.importjs: "#.readNetworkLinksFromNode(#)".}
-proc readRegion*(self: OlKML, source: JsObject): JsObject {.importjs: "#.readRegion(#)".}
-proc readRegionFromDocument*(self: OlKML, doc: JsObject): JsObject {.importjs: "#.readRegionFromDocument(#)".}
-proc readRegionFromNode*(self: OlKML, node: JsObject): JsObject {.importjs: "#.readRegionFromNode(#)".}
-proc readCamera*(self: OlKML, source: JsObject): JsObject {.importjs: "#.readCamera(#)".}
-proc readCameraFromDocument*(self: OlKML, doc: JsObject): JsObject {.importjs: "#.readCameraFromDocument(#)".}
-proc readCameraFromNode*(self: OlKML, node: JsObject): JsObject {.importjs: "#.readCameraFromNode(#)".}
+  KML* = ref object of JsRoot
+proc newKML*(options: JsObject = jsUndefined): KML {.importjs: "(new olNs_format_KML.default(#))".}
+proc readName*(self: KML, source: JsObject): cstring {.importjs: "#.readName(#)".}
+proc readNameFromDocument*(self: KML, doc: JsObject): cstring {.importjs: "#.readNameFromDocument(#)".}
+proc readNameFromNode*(self: KML, node: JsObject): cstring {.importjs: "#.readNameFromNode(#)".}
+proc readNetworkLinks*(self: KML, source: JsObject): JsObject {.importjs: "#.readNetworkLinks(#)".}
+proc readNetworkLinksFromDocument*(self: KML, doc: JsObject): JsObject {.importjs: "#.readNetworkLinksFromDocument(#)".}
+proc readNetworkLinksFromNode*(self: KML, node: JsObject): JsObject {.importjs: "#.readNetworkLinksFromNode(#)".}
+proc readRegion*(self: KML, source: JsObject): JsObject {.importjs: "#.readRegion(#)".}
+proc readRegionFromDocument*(self: KML, doc: JsObject): JsObject {.importjs: "#.readRegionFromDocument(#)".}
+proc readRegionFromNode*(self: KML, node: JsObject): JsObject {.importjs: "#.readRegionFromNode(#)".}
+proc readCamera*(self: KML, source: JsObject): JsObject {.importjs: "#.readCamera(#)".}
+proc readCameraFromDocument*(self: KML, doc: JsObject): JsObject {.importjs: "#.readCameraFromDocument(#)".}
+proc readCameraFromNode*(self: KML, node: JsObject): JsObject {.importjs: "#.readCameraFromNode(#)".}
 
 proc getDefaultFillStyle*(): JsObject {.importjs: "olNs_format_KML.getDefaultFillStyle()".}
 proc getDefaultImageStyle*(): JsObject {.importjs: "olNs_format_KML.getDefaultImageStyle()".}

@@ -9,11 +9,11 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_ScaleLine)".}
 
 type
-  OlScaleLine* = ref object of JsRoot
-proc newOlScaleLine*(options: JsObject = jsUndefined): OlScaleLine {.importjs: "(new olNs_control_ScaleLine.default(#))".}
-proc getUnits*(self: OlScaleLine): JsObject {.importjs: "#.getUnits()".}
-proc setUnits*(self: OlScaleLine, units: JsObject) {.importjs: "#.setUnits(#)".}
-proc setDpi*(self: OlScaleLine, dpi: float) {.importjs: "#.setDpi(#)".}
-proc createMarker*(self: OlScaleLine, position: JsObject): cstring {.importjs: "#.createMarker(#)".}
-proc createStepText*(self: OlScaleLine, i: float, width: float, isLast: bool, scale: float, suffix: cstring): cstring {.importjs: "#.createStepText(#, #, #, #, #)".}
-proc getScaleForResolution*(self: OlScaleLine): float {.importjs: "#.getScaleForResolution()".}
+  ScaleLine* = ref object of JsRoot
+proc newScaleLine*(options: JsObject = jsUndefined): ScaleLine {.importjs: "(new olNs_control_ScaleLine.default(#))".}
+proc getUnits*(self: ScaleLine): JsObject {.importjs: "#.getUnits()".}
+proc setUnits*(self: ScaleLine, units: JsObject) {.importjs: "#.setUnits(#)".}
+proc setDpi*(self: ScaleLine, dpi: float) {.importjs: "#.setDpi(#)".}
+proc createMarker*(self: ScaleLine, position: JsObject): cstring {.importjs: "#.createMarker(#)".}
+proc createStepText*(self: ScaleLine, i: float, width: float, isLast: bool, scale: float, suffix: cstring): cstring {.importjs: "#.createStepText(#, #, #, #, #)".}
+proc getScaleForResolution*(self: ScaleLine): float {.importjs: "#.getScaleForResolution()".}

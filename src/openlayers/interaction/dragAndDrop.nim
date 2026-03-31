@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_DragAndDrop)".}
 
 type
-  OlDragAndDrop* = ref object of JsRoot
-proc newOlDragAndDrop*(options: JsObject = jsUndefined): OlDragAndDrop {.importjs: "(new olNs_interaction_DragAndDrop.default(#))".}
-proc handleDrop*(self: OlDragAndDrop, event: JsObject) {.importjs: "#.handleDrop(#)".}
-proc handleStop*(self: OlDragAndDrop, event: JsObject) {.importjs: "#.handleStop(#)".}
+  DragAndDrop* = ref object of JsRoot
+proc newDragAndDrop*(options: JsObject = jsUndefined): DragAndDrop {.importjs: "(new olNs_interaction_DragAndDrop.default(#))".}
+proc handleDrop*(self: DragAndDrop, event: JsObject) {.importjs: "#.handleDrop(#)".}
+proc handleStop*(self: DragAndDrop, event: JsObject) {.importjs: "#.handleStop(#)".}

@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_Extent)".}
 
 type
-  OlExtent* = ref object of JsRoot
-proc newOlExtent*(options: JsObject = jsUndefined): OlExtent {.importjs: "(new olNs_interaction_Extent.default(#))".}
-proc getExtent*(self: OlExtent): JsObject {.importjs: "#.getExtent()".}
-proc getExtentInternal*(self: OlExtent): JsObject {.importjs: "#.getExtentInternal()".}
-proc setExtent*(self: OlExtent, extent: JsObject) {.importjs: "#.setExtent(#)".}
+  Extent* = ref object of JsRoot
+proc newExtent*(options: JsObject = jsUndefined): Extent {.importjs: "(new olNs_interaction_Extent.default(#))".}
+proc getExtent*(self: Extent): JsObject {.importjs: "#.getExtent()".}
+proc getExtentInternal*(self: Extent): JsObject {.importjs: "#.getExtentInternal()".}
+proc setExtent*(self: Extent, extent: JsObject) {.importjs: "#.setExtent(#)".}

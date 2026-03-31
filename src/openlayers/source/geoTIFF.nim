@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_GeoTIFF)".}
 
 type
-  OlGeoTIFFSource* = ref object of JsRoot
-proc newOlGeoTIFFSource*(options: JsObject): OlGeoTIFFSource {.importjs: "(new olNs_source_GeoTIFF.default(#))".}
-proc getError*(self: OlGeoTIFFSource): JsObject {.importjs: "#.getError()".}
-proc determineProjection*(self: OlGeoTIFFSource, sources: JsObject) {.importjs: "#.determineProjection(#)".}
-proc determineTransformMatrix*(self: OlGeoTIFFSource, sources: JsObject) {.importjs: "#.determineTransformMatrix(#)".}
+  GeoTIFFSource* = ref object of JsRoot
+proc newGeoTIFFSource*(options: JsObject): GeoTIFFSource {.importjs: "(new olNs_source_GeoTIFF.default(#))".}
+proc getError*(self: GeoTIFFSource): JsObject {.importjs: "#.getError()".}
+proc determineProjection*(self: GeoTIFFSource, sources: JsObject) {.importjs: "#.determineProjection(#)".}
+proc determineTransformMatrix*(self: GeoTIFFSource, sources: JsObject) {.importjs: "#.determineTransformMatrix(#)".}

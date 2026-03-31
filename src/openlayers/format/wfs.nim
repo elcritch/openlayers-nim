@@ -9,18 +9,18 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_WFS)".}
 
 type
-  OlWFS* = ref object of JsRoot
-proc newOlWFS*(options: JsObject = jsUndefined): OlWFS {.importjs: "(new olNs_format_WFS.default(#))".}
-proc getFeatureType*(self: OlWFS): JsObject {.importjs: "#.getFeatureType()".}
-proc setFeatureType*(self: OlWFS, featureType: JsObject) {.importjs: "#.setFeatureType(#)".}
-proc readTransactionResponse*(self: OlWFS, source: JsObject): JsObject {.importjs: "#.readTransactionResponse(#)".}
-proc readFeatureCollectionMetadata*(self: OlWFS, source: JsObject): JsObject {.importjs: "#.readFeatureCollectionMetadata(#)".}
-proc readFeatureCollectionMetadataFromDocument*(self: OlWFS, doc: JsObject): JsObject {.importjs: "#.readFeatureCollectionMetadataFromDocument(#)".}
-proc readFeatureCollectionMetadataFromNode*(self: OlWFS, node: JsObject): JsObject {.importjs: "#.readFeatureCollectionMetadataFromNode(#)".}
-proc readTransactionResponseFromDocument*(self: OlWFS, doc: JsObject): JsObject {.importjs: "#.readTransactionResponseFromDocument(#)".}
-proc readTransactionResponseFromNode*(self: OlWFS, node: JsObject): JsObject {.importjs: "#.readTransactionResponseFromNode(#)".}
-proc writeGetFeature*(self: OlWFS, options: JsObject): JsObject {.importjs: "#.writeGetFeature(#)".}
-proc combineBboxAndFilter*(self: OlWFS, geometryName: cstring, extent: JsObject, srsName: JsObject = jsUndefined, filter: JsObject = jsUndefined): JsObject {.importjs: "#.combineBboxAndFilter(#, #, #, #)".}
-proc writeTransaction*(self: OlWFS, inserts: JsObject, updates: JsObject, deletes: JsObject, options: JsObject): JsObject {.importjs: "#.writeTransaction(#, #, #, #)".}
+  WFS* = ref object of JsRoot
+proc newWFS*(options: JsObject = jsUndefined): WFS {.importjs: "(new olNs_format_WFS.default(#))".}
+proc getFeatureType*(self: WFS): JsObject {.importjs: "#.getFeatureType()".}
+proc setFeatureType*(self: WFS, featureType: JsObject) {.importjs: "#.setFeatureType(#)".}
+proc readTransactionResponse*(self: WFS, source: JsObject): JsObject {.importjs: "#.readTransactionResponse(#)".}
+proc readFeatureCollectionMetadata*(self: WFS, source: JsObject): JsObject {.importjs: "#.readFeatureCollectionMetadata(#)".}
+proc readFeatureCollectionMetadataFromDocument*(self: WFS, doc: JsObject): JsObject {.importjs: "#.readFeatureCollectionMetadataFromDocument(#)".}
+proc readFeatureCollectionMetadataFromNode*(self: WFS, node: JsObject): JsObject {.importjs: "#.readFeatureCollectionMetadataFromNode(#)".}
+proc readTransactionResponseFromDocument*(self: WFS, doc: JsObject): JsObject {.importjs: "#.readTransactionResponseFromDocument(#)".}
+proc readTransactionResponseFromNode*(self: WFS, node: JsObject): JsObject {.importjs: "#.readTransactionResponseFromNode(#)".}
+proc writeGetFeature*(self: WFS, options: JsObject): JsObject {.importjs: "#.writeGetFeature(#)".}
+proc combineBboxAndFilter*(self: WFS, geometryName: cstring, extent: JsObject, srsName: JsObject = jsUndefined, filter: JsObject = jsUndefined): JsObject {.importjs: "#.combineBboxAndFilter(#, #, #, #)".}
+proc writeTransaction*(self: WFS, inserts: JsObject, updates: JsObject, deletes: JsObject, options: JsObject): JsObject {.importjs: "#.writeTransaction(#, #, #, #)".}
 
 proc writeFilter*(filter: JsObject, version: cstring): JsObject {.importjs: "olNs_format_WFS.writeFilter(#, #)".}

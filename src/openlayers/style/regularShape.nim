@@ -9,17 +9,17 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_RegularShape)".}
 
 type
-  OlRegularShape* = ref object of JsRoot
-proc newOlRegularShape*(options: JsObject): OlRegularShape {.importjs: "(new olNs_style_RegularShape.default(#))".}
-proc getAngle*(self: OlRegularShape): float {.importjs: "#.getAngle()".}
-proc getFill*(self: OlRegularShape): JsObject {.importjs: "#.getFill()".}
-proc setFill*(self: OlRegularShape, fill: JsObject) {.importjs: "#.setFill(#)".}
-proc getPoints*(self: OlRegularShape): float {.importjs: "#.getPoints()".}
-proc getRadius*(self: OlRegularShape): float {.importjs: "#.getRadius()".}
-proc setRadius*(self: OlRegularShape, radius: float) {.importjs: "#.setRadius(#)".}
-proc getRadius2*(self: OlRegularShape): float {.importjs: "#.getRadius2()".}
-proc setRadius2*(self: OlRegularShape, radius2: float) {.importjs: "#.setRadius2(#)".}
-proc getStroke*(self: OlRegularShape): JsObject {.importjs: "#.getStroke()".}
-proc setStroke*(self: OlRegularShape, stroke: JsObject) {.importjs: "#.setStroke(#)".}
-proc createRenderOptions*(self: OlRegularShape): JsObject {.importjs: "#.createRenderOptions()".}
-proc render*(self: OlRegularShape) {.importjs: "#.render()".}
+  RegularShape* = ref object of JsRoot
+proc newRegularShape*(options: JsObject): RegularShape {.importjs: "(new olNs_style_RegularShape.default(#))".}
+proc getAngle*(self: RegularShape): float {.importjs: "#.getAngle()".}
+proc getFill*(self: RegularShape): JsObject {.importjs: "#.getFill()".}
+proc setFill*(self: RegularShape, fill: JsObject) {.importjs: "#.setFill(#)".}
+proc getPoints*(self: RegularShape): float {.importjs: "#.getPoints()".}
+proc getRadius*(self: RegularShape): float {.importjs: "#.getRadius()".}
+proc setRadius*(self: RegularShape, radius: float) {.importjs: "#.setRadius(#)".}
+proc getRadius2*(self: RegularShape): float {.importjs: "#.getRadius2()".}
+proc setRadius2*(self: RegularShape, radius2: float) {.importjs: "#.setRadius2(#)".}
+proc getStroke*(self: RegularShape): JsObject {.importjs: "#.getStroke()".}
+proc setStroke*(self: RegularShape, stroke: JsObject) {.importjs: "#.setStroke(#)".}
+proc createRenderOptions*(self: RegularShape): JsObject {.importjs: "#.createRenderOptions()".}
+proc render*(self: RegularShape) {.importjs: "#.render()".}

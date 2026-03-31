@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_ZoomToExtent)".}
 
 type
-  OlZoomToExtent* = ref object of JsRoot
-proc newOlZoomToExtent*(options: JsObject = jsUndefined): OlZoomToExtent {.importjs: "(new olNs_control_ZoomToExtent.default(#))".}
-proc handleZoomToExtent*(self: OlZoomToExtent) {.importjs: "#.handleZoomToExtent()".}
+  ZoomToExtent* = ref object of JsRoot
+proc newZoomToExtent*(options: JsObject = jsUndefined): ZoomToExtent {.importjs: "(new olNs_control_ZoomToExtent.default(#))".}
+proc handleZoomToExtent*(self: ZoomToExtent) {.importjs: "#.handleZoomToExtent()".}

@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_Google)".}
 
 type
-  OlGoogle* = ref object of JsRoot
-proc newOlGoogle*(options: JsObject): OlGoogle {.importjs: "(new olNs_source_Google.default(#))".}
-proc getError*(self: OlGoogle): JsObject {.importjs: "#.getError()".}
-proc fetchSessionToken*(self: OlGoogle, url: cstring, config: JsObject): JsObject {.importjs: "#.fetchSessionToken(#, #)".}
+  Google* = ref object of JsRoot
+proc newGoogle*(options: JsObject): Google {.importjs: "(new olNs_source_Google.default(#))".}
+proc getError*(self: Google): JsObject {.importjs: "#.getError()".}
+proc fetchSessionToken*(self: Google, url: cstring, config: JsObject): JsObject {.importjs: "#.fetchSessionToken(#, #)".}

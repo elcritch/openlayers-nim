@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_MVT)".}
 
 type
-  OlMVT* = ref object of JsRoot
-proc newOlMVT*(options: JsObject = jsUndefined): OlMVT {.importjs: "(new olNs_format_MVT.default(#))".}
-proc setLayers*(self: OlMVT, layers: seq[cstring]) {.importjs: "#.setLayers(#)".}
+  MVT* = ref object of JsRoot
+proc newMVT*(options: JsObject = jsUndefined): MVT {.importjs: "(new olNs_format_MVT.default(#))".}
+proc setLayers*(self: MVT, layers: seq[cstring]) {.importjs: "#.setLayers(#)".}

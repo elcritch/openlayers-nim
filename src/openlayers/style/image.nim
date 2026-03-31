@@ -9,30 +9,30 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_Image)".}
 
 type
-  OlImageStyle* = ref object of JsRoot
-proc newOlImageStyle*(options: JsObject): OlImageStyle {.importjs: "(new olNs_style_Image.default(#))".}
-proc clone*(self: OlImageStyle): JsObject {.importjs: "#.clone()".}
-proc getOpacity*(self: OlImageStyle): float {.importjs: "#.getOpacity()".}
-proc getRotateWithView*(self: OlImageStyle): bool {.importjs: "#.getRotateWithView()".}
-proc getRotation*(self: OlImageStyle): float {.importjs: "#.getRotation()".}
-proc getScale*(self: OlImageStyle): JsObject {.importjs: "#.getScale()".}
-proc getScaleArray*(self: OlImageStyle): JsObject {.importjs: "#.getScaleArray()".}
-proc getDisplacement*(self: OlImageStyle): seq[float] {.importjs: "#.getDisplacement()".}
-proc getDeclutterMode*(self: OlImageStyle): JsObject {.importjs: "#.getDeclutterMode()".}
-proc getAnchor*(self: OlImageStyle): seq[float] {.importjs: "#.getAnchor()".}
-proc getImage*(self: OlImageStyle, pixelRatio: float): JsObject {.importjs: "#.getImage(#)".}
-proc getHitDetectionImage*(self: OlImageStyle): JsObject {.importjs: "#.getHitDetectionImage()".}
-proc getPixelRatio*(self: OlImageStyle, pixelRatio: float): float {.importjs: "#.getPixelRatio(#)".}
-proc getImageState*(self: OlImageStyle): JsObject {.importjs: "#.getImageState()".}
-proc getImageSize*(self: OlImageStyle): JsObject {.importjs: "#.getImageSize()".}
-proc getOrigin*(self: OlImageStyle): seq[float] {.importjs: "#.getOrigin()".}
-proc getSize*(self: OlImageStyle): JsObject {.importjs: "#.getSize()".}
-proc setDisplacement*(self: OlImageStyle, displacement: seq[float]) {.importjs: "#.setDisplacement(#)".}
-proc setOpacity*(self: OlImageStyle, opacity: float) {.importjs: "#.setOpacity(#)".}
-proc setRotateWithView*(self: OlImageStyle, rotateWithView: bool) {.importjs: "#.setRotateWithView(#)".}
-proc setRotation*(self: OlImageStyle, rotation: float) {.importjs: "#.setRotation(#)".}
-proc setScale*(self: OlImageStyle, scale: JsObject) {.importjs: "#.setScale(#)".}
-proc listenImageChange*(self: OlImageStyle, listener: JsObject) {.importjs: "#.listenImageChange(#)".}
-proc load*(self: OlImageStyle) {.importjs: "#.load()".}
-proc unlistenImageChange*(self: OlImageStyle, listener: JsObject) {.importjs: "#.unlistenImageChange(#)".}
-proc ready*(self: OlImageStyle): JsObject {.importjs: "#.ready()".}
+  ImageStyle* = ref object of JsRoot
+proc newImageStyle*(options: JsObject): ImageStyle {.importjs: "(new olNs_style_Image.default(#))".}
+proc clone*(self: ImageStyle): JsObject {.importjs: "#.clone()".}
+proc getOpacity*(self: ImageStyle): float {.importjs: "#.getOpacity()".}
+proc getRotateWithView*(self: ImageStyle): bool {.importjs: "#.getRotateWithView()".}
+proc getRotation*(self: ImageStyle): float {.importjs: "#.getRotation()".}
+proc getScale*(self: ImageStyle): JsObject {.importjs: "#.getScale()".}
+proc getScaleArray*(self: ImageStyle): JsObject {.importjs: "#.getScaleArray()".}
+proc getDisplacement*(self: ImageStyle): seq[float] {.importjs: "#.getDisplacement()".}
+proc getDeclutterMode*(self: ImageStyle): JsObject {.importjs: "#.getDeclutterMode()".}
+proc getAnchor*(self: ImageStyle): seq[float] {.importjs: "#.getAnchor()".}
+proc getImage*(self: ImageStyle, pixelRatio: float): JsObject {.importjs: "#.getImage(#)".}
+proc getHitDetectionImage*(self: ImageStyle): JsObject {.importjs: "#.getHitDetectionImage()".}
+proc getPixelRatio*(self: ImageStyle, pixelRatio: float): float {.importjs: "#.getPixelRatio(#)".}
+proc getImageState*(self: ImageStyle): JsObject {.importjs: "#.getImageState()".}
+proc getImageSize*(self: ImageStyle): JsObject {.importjs: "#.getImageSize()".}
+proc getOrigin*(self: ImageStyle): seq[float] {.importjs: "#.getOrigin()".}
+proc getSize*(self: ImageStyle): JsObject {.importjs: "#.getSize()".}
+proc setDisplacement*(self: ImageStyle, displacement: seq[float]) {.importjs: "#.setDisplacement(#)".}
+proc setOpacity*(self: ImageStyle, opacity: float) {.importjs: "#.setOpacity(#)".}
+proc setRotateWithView*(self: ImageStyle, rotateWithView: bool) {.importjs: "#.setRotateWithView(#)".}
+proc setRotation*(self: ImageStyle, rotation: float) {.importjs: "#.setRotation(#)".}
+proc setScale*(self: ImageStyle, scale: JsObject) {.importjs: "#.setScale(#)".}
+proc listenImageChange*(self: ImageStyle, listener: JsObject) {.importjs: "#.listenImageChange(#)".}
+proc load*(self: ImageStyle) {.importjs: "#.load()".}
+proc unlistenImageChange*(self: ImageStyle, listener: JsObject) {.importjs: "#.unlistenImageChange(#)".}
+proc ready*(self: ImageStyle): JsObject {.importjs: "#.ready()".}

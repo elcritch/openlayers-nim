@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_VectorImage)".}
 
 type
-  OlVectorImageLayer* = ref object of JsRoot
-proc newOlVectorImageLayer*(options: JsObject = jsUndefined): OlVectorImageLayer {.importjs: "(new olNs_layer_VectorImage.default(#))".}
-proc getImageRatio*(self: OlVectorImageLayer): float {.importjs: "#.getImageRatio()".}
+  VectorImageLayer* = ref object of JsRoot
+proc newVectorImageLayer*(options: JsObject = jsUndefined): VectorImageLayer {.importjs: "(new olNs_layer_VectorImage.default(#))".}
+proc getImageRatio*(self: VectorImageLayer): float {.importjs: "#.getImageRatio()".}

@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_renderer_webgl_TileLayer)".}
 
 type
-  OlWebGLTileLayerRenderer* = ref object of JsRoot
-proc newOlWebGLTileLayerRenderer*(tileLayer: JsObject, options: JsObject): OlWebGLTileLayerRenderer {.importjs: "(new olNs_renderer_webgl_TileLayer.default(#, #))".}
+  WebGLTileLayerRenderer* = ref object of JsRoot
+proc newWebGLTileLayerRenderer*(tileLayer: JsObject, options: JsObject): WebGLTileLayerRenderer {.importjs: "(new olNs_renderer_webgl_TileLayer.default(#, #))".}
 
 proc getUniforms*(): JsObject {.importjs: "(olNs_renderer_webgl_TileLayer.Uniforms)".}

@@ -9,16 +9,16 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_Modify)".}
 
 type
-  OlModify* = ref object of JsRoot
-proc newOlModify*(options: JsObject): OlModify {.importjs: "(new olNs_interaction_Modify.default(#))".}
-proc setTrace*(self: OlModify, trace: JsObject) {.importjs: "#.setTrace(#)".}
-proc getOverlay*(self: OlModify): JsObject {.importjs: "#.getOverlay()".}
-proc externalAddFeatureHandler*(self: OlModify, feature: JsObject) {.importjs: "#.externalAddFeatureHandler_(#)".}
-proc externalRemoveFeatureHandler*(self: OlModify, feature: JsObject) {.importjs: "#.externalRemoveFeatureHandler_(#)".}
-proc getTraceCandidates*(self: OlModify, event: JsObject): JsObject {.importjs: "#.getTraceCandidates_(#)".}
-proc updateGeometry*(self: OlModify, vertex: JsObject, dragSegment: JsObject) {.importjs: "#.updateGeometry_(#, #)".}
-proc getPoint*(self: OlModify): JsObject {.importjs: "#.getPoint()".}
-proc canRemovePoint*(self: OlModify): bool {.importjs: "#.canRemovePoint()".}
-proc removePoint*(self: OlModify, coordinate: JsObject = jsUndefined): bool {.importjs: "#.removePoint(#)".}
-proc canInsertPoint*(self: OlModify): bool {.importjs: "#.canInsertPoint()".}
-proc insertPoint*(self: OlModify, coordinate: JsObject = jsUndefined): bool {.importjs: "#.insertPoint(#)".}
+  Modify* = ref object of JsRoot
+proc newModify*(options: JsObject): Modify {.importjs: "(new olNs_interaction_Modify.default(#))".}
+proc setTrace*(self: Modify, trace: JsObject) {.importjs: "#.setTrace(#)".}
+proc getOverlay*(self: Modify): JsObject {.importjs: "#.getOverlay()".}
+proc externalAddFeatureHandler*(self: Modify, feature: JsObject) {.importjs: "#.externalAddFeatureHandler_(#)".}
+proc externalRemoveFeatureHandler*(self: Modify, feature: JsObject) {.importjs: "#.externalRemoveFeatureHandler_(#)".}
+proc getTraceCandidates*(self: Modify, event: JsObject): JsObject {.importjs: "#.getTraceCandidates_(#)".}
+proc updateGeometry*(self: Modify, vertex: JsObject, dragSegment: JsObject) {.importjs: "#.updateGeometry_(#, #)".}
+proc getPoint*(self: Modify): JsObject {.importjs: "#.getPoint()".}
+proc canRemovePoint*(self: Modify): bool {.importjs: "#.canRemovePoint()".}
+proc removePoint*(self: Modify, coordinate: JsObject = jsUndefined): bool {.importjs: "#.removePoint(#)".}
+proc canInsertPoint*(self: Modify): bool {.importjs: "#.canInsertPoint()".}
+proc insertPoint*(self: Modify, coordinate: JsObject = jsUndefined): bool {.importjs: "#.insertPoint(#)".}

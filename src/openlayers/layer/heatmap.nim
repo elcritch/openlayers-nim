@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_Heatmap)".}
 
 type
-  OlHeatmap* = ref object of JsRoot
-proc newOlHeatmap*(): OlHeatmap {.importjs: "(new olNs_layer_Heatmap.default())".}
+  Heatmap* = ref object of JsRoot
+proc newHeatmap*(): Heatmap {.importjs: "(new olNs_layer_Heatmap.default())".}

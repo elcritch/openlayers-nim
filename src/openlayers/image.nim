@@ -9,17 +9,17 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_Image)".}
 
 type
-  OlImageWrapper* = ref object of JsRoot
-proc newOlImageWrapper*(extent: JsObject, resolution: JsObject, pixelRatio: float, stateOrLoader: JsObject): OlImageWrapper {.importjs: "(new olNs_Image.default(#, #, #, #))".}
-proc changed*(self: OlImageWrapper) {.importjs: "#.changed()".}
-proc getExtent*(self: OlImageWrapper): JsObject {.importjs: "#.getExtent()".}
-proc getImage*(self: OlImageWrapper): JsObject {.importjs: "#.getImage()".}
-proc getPixelRatio*(self: OlImageWrapper): float {.importjs: "#.getPixelRatio()".}
-proc getResolution*(self: OlImageWrapper): JsObject {.importjs: "#.getResolution()".}
-proc getState*(self: OlImageWrapper): JsObject {.importjs: "#.getState()".}
-proc load*(self: OlImageWrapper) {.importjs: "#.load()".}
-proc setImage*(self: OlImageWrapper, image: JsObject) {.importjs: "#.setImage(#)".}
-proc setResolution*(self: OlImageWrapper, resolution: JsObject) {.importjs: "#.setResolution(#)".}
+  ImageWrapper* = ref object of JsRoot
+proc newImageWrapper*(extent: JsObject, resolution: JsObject, pixelRatio: float, stateOrLoader: JsObject): ImageWrapper {.importjs: "(new olNs_Image.default(#, #, #, #))".}
+proc changed*(self: ImageWrapper) {.importjs: "#.changed()".}
+proc getExtent*(self: ImageWrapper): JsObject {.importjs: "#.getExtent()".}
+proc getImage*(self: ImageWrapper): JsObject {.importjs: "#.getImage()".}
+proc getPixelRatio*(self: ImageWrapper): float {.importjs: "#.getPixelRatio()".}
+proc getResolution*(self: ImageWrapper): JsObject {.importjs: "#.getResolution()".}
+proc getState*(self: ImageWrapper): JsObject {.importjs: "#.getState()".}
+proc load*(self: ImageWrapper) {.importjs: "#.load()".}
+proc setImage*(self: ImageWrapper, image: JsObject) {.importjs: "#.setImage(#)".}
+proc setResolution*(self: ImageWrapper, resolution: JsObject) {.importjs: "#.setResolution(#)".}
 
 proc listenImage*(image: JsObject, loadHandler: JsObject, errorHandler: JsObject): JsObject {.importjs: "olNs_Image.listenImage(#, #, #)".}
 proc load2*(image: JsObject, src: JsObject = jsUndefined): JsObject {.importjs: "olNs_Image.load(#, #)".}

@@ -9,18 +9,18 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_geom_SimpleGeometry)".}
 
 type
-  OlSimpleGeometry* = ref object of JsRoot
-proc newOlSimpleGeometry*(): OlSimpleGeometry {.importjs: "(new olNs_geom_SimpleGeometry.default())".}
-proc getCoordinates*(self: OlSimpleGeometry): JsObject {.importjs: "#.getCoordinates()".}
-proc getFirstCoordinate*(self: OlSimpleGeometry): JsObject {.importjs: "#.getFirstCoordinate()".}
-proc getFlatCoordinates*(self: OlSimpleGeometry): seq[float] {.importjs: "#.getFlatCoordinates()".}
-proc getLastCoordinate*(self: OlSimpleGeometry): JsObject {.importjs: "#.getLastCoordinate()".}
-proc getLayout*(self: OlSimpleGeometry): JsObject {.importjs: "#.getLayout()".}
-proc getSimplifiedGeometryInternal*(self: OlSimpleGeometry, squaredTolerance: float): JsObject {.importjs: "#.getSimplifiedGeometryInternal(#)".}
-proc getStride*(self: OlSimpleGeometry): float {.importjs: "#.getStride()".}
-proc setFlatCoordinates*(self: OlSimpleGeometry, layout: JsObject, flatCoordinates: seq[float]) {.importjs: "#.setFlatCoordinates(#, #)".}
-proc setCoordinates*(self: OlSimpleGeometry, coordinates: JsObject, layout: JsObject = jsUndefined) {.importjs: "#.setCoordinates(#, #)".}
-proc setLayout*(self: OlSimpleGeometry, layout: JsObject, coordinates: JsObject, nesting: float) {.importjs: "#.setLayout(#, #, #)".}
+  SimpleGeometry* = ref object of JsRoot
+proc newSimpleGeometry*(): SimpleGeometry {.importjs: "(new olNs_geom_SimpleGeometry.default())".}
+proc getCoordinates*(self: SimpleGeometry): JsObject {.importjs: "#.getCoordinates()".}
+proc getFirstCoordinate*(self: SimpleGeometry): JsObject {.importjs: "#.getFirstCoordinate()".}
+proc getFlatCoordinates*(self: SimpleGeometry): seq[float] {.importjs: "#.getFlatCoordinates()".}
+proc getLastCoordinate*(self: SimpleGeometry): JsObject {.importjs: "#.getLastCoordinate()".}
+proc getLayout*(self: SimpleGeometry): JsObject {.importjs: "#.getLayout()".}
+proc getSimplifiedGeometryInternal*(self: SimpleGeometry, squaredTolerance: float): JsObject {.importjs: "#.getSimplifiedGeometryInternal(#)".}
+proc getStride*(self: SimpleGeometry): float {.importjs: "#.getStride()".}
+proc setFlatCoordinates*(self: SimpleGeometry, layout: JsObject, flatCoordinates: seq[float]) {.importjs: "#.setFlatCoordinates(#, #)".}
+proc setCoordinates*(self: SimpleGeometry, coordinates: JsObject, layout: JsObject = jsUndefined) {.importjs: "#.setCoordinates(#, #)".}
+proc setLayout*(self: SimpleGeometry, layout: JsObject, coordinates: JsObject, nesting: float) {.importjs: "#.setLayout(#, #, #)".}
 
 proc getLayoutForStride*(stride: float): JsObject {.importjs: "olNs_geom_SimpleGeometry.getLayoutForStride(#)".}
 proc getStrideForLayout*(layout: JsObject): float {.importjs: "olNs_geom_SimpleGeometry.getStrideForLayout(#)".}

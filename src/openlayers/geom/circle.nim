@@ -9,10 +9,10 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_geom_Circle)".}
 
 type
-  OlCircle* = ref object of JsRoot
-proc newOlCircle*(center: JsObject, radius: JsObject = jsUndefined, layout: JsObject = jsUndefined): OlCircle {.importjs: "(new olNs_geom_Circle.default(#, #, #))".}
-proc getCenter*(self: OlCircle): JsObject {.importjs: "#.getCenter()".}
-proc getRadius*(self: OlCircle): float {.importjs: "#.getRadius()".}
-proc setCenter*(self: OlCircle, center: JsObject) {.importjs: "#.setCenter(#)".}
-proc setCenterAndRadius*(self: OlCircle, center: JsObject, radius: float, layout: JsObject = jsUndefined) {.importjs: "#.setCenterAndRadius(#, #, #)".}
-proc setRadius*(self: OlCircle, radius: float) {.importjs: "#.setRadius(#)".}
+  Circle* = ref object of JsRoot
+proc newCircle*(center: JsObject, radius: JsObject = jsUndefined, layout: JsObject = jsUndefined): Circle {.importjs: "(new olNs_geom_Circle.default(#, #, #))".}
+proc getCenter*(self: Circle): JsObject {.importjs: "#.getCenter()".}
+proc getRadius*(self: Circle): float {.importjs: "#.getRadius()".}
+proc setCenter*(self: Circle, center: JsObject) {.importjs: "#.setCenter(#)".}
+proc setCenterAndRadius*(self: Circle, center: JsObject, radius: float, layout: JsObject = jsUndefined) {.importjs: "#.setCenterAndRadius(#, #, #)".}
+proc setRadius*(self: Circle, radius: float) {.importjs: "#.setRadius(#)".}

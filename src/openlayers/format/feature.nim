@@ -9,8 +9,8 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_Feature)".}
 
 type
-  OlFeatureFormat* = ref object of JsRoot
-proc newOlFeatureFormat*(): OlFeatureFormat {.importjs: "(new olNs_format_Feature.default())".}
+  FeatureFormat* = ref object of JsRoot
+proc newFeatureFormat*(): FeatureFormat {.importjs: "(new olNs_format_Feature.default())".}
 
 proc transformGeometryWithOptions*(geometry: JsObject, write: bool, options: JsObject = jsUndefined): JsObject {.importjs: "olNs_format_Feature.transformGeometryWithOptions(#, #, #)".}
 proc transformExtentWithOptions*(extent: JsObject, options: JsObject = jsUndefined): JsObject {.importjs: "olNs_format_Feature.transformExtentWithOptions(#, #)".}

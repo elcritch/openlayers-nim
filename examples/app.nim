@@ -64,13 +64,13 @@ proc linkClass(route: ExampleRoute, active: ExampleRoute): cstring =
 
 proc initSimple(): JsObject =
   let layerOptions = newJsObject()
-  layerOptions["source"] = newOlOSM()
-  let baseLayer = newOlTileLayer(layerOptions)
+  layerOptions["source"] = newOSM()
+  let baseLayer = newTileLayer(layerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 2.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[baseLayer]
@@ -82,8 +82,8 @@ proc initSimple(): JsObject =
 proc initSemiTransparentLayer(): JsObject =
   let bwLayerOptions = newJsObject()
   bwLayerOptions["className"] = "bw".cstring
-  bwLayerOptions["source"] = newOlOSM()
-  let bwLayer = newOlTileLayer(bwLayerOptions)
+  bwLayerOptions["source"] = newOSM()
+  let bwLayer = newTileLayer(bwLayerOptions)
 
   let tileJsonOptions = newJsObject()
   tileJsonOptions["url"] = cstring(
@@ -92,16 +92,16 @@ proc initSemiTransparentLayer(): JsObject =
   )
   tileJsonOptions["crossOrigin"] = "anonymous".cstring
   tileJsonOptions["transition"] = 0.0
-  let quakeSource = newOlTileJSON(tileJsonOptions)
+  let quakeSource = newTileJSON(tileJsonOptions)
 
   let quakeLayerOptions = newJsObject()
   quakeLayerOptions["source"] = quakeSource
-  let quakeLayer = newOlTileLayer(quakeLayerOptions)
+  let quakeLayer = newTileLayer(quakeLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = fromLonLat(jsArray2(-77.93255, 37.9555))
   viewOptions["zoom"] = 7.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[bwLayer, quakeLayer]
@@ -113,16 +113,16 @@ proc initSemiTransparentLayer(): JsObject =
 proc initSelectFeatures(): JsObject =
   let baseFillOptions = newJsObject()
   baseFillOptions["color"] = "#eeeeee".cstring
-  let baseFill = newOlFill(baseFillOptions)
+  let baseFill = newFill(baseFillOptions)
 
   let baseStyleOptions = newJsObject()
   baseStyleOptions["fill"] = baseFill
-  let baseStyle = newOlStyle(baseStyleOptions)
+  let baseStyle = newStyle(baseStyleOptions)
 
   let vectorSourceOptions = newJsObject()
   vectorSourceOptions["url"] =
     "https://openlayers.org/data/vector/ecoregions.json".cstring
-  vectorSourceOptions["format"] = newOlGeoJSON()
+  vectorSourceOptions["format"] = newGeoJSON()
   let vectorSource = newVectorSourceWithOptions(vectorSourceOptions)
 
   let vectorLayerOptions = newJsObject()
@@ -130,12 +130,12 @@ proc initSelectFeatures(): JsObject =
   vectorLayerOptions["background"] = "white".cstring
   vectorLayerOptions["style"] =
     makeColorStyleFn(cast[JsObject](baseStyle), cast[JsObject](baseStyle))
-  let vectorLayer = newOlVectorLayer(vectorLayerOptions)
+  let vectorLayer = newVectorLayer(vectorLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 2.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[vectorLayer]
@@ -145,40 +145,40 @@ proc initSelectFeatures(): JsObject =
 
   let selectedFillOptions = newJsObject()
   selectedFillOptions["color"] = "#eeeeee".cstring
-  let selectedFill = newOlFill(selectedFillOptions)
+  let selectedFill = newFill(selectedFillOptions)
 
   let selectedStrokeOptions = newJsObject()
   selectedStrokeOptions["color"] = "rgba(255, 255, 255, 0.7)".cstring
   selectedStrokeOptions["width"] = 2.0
-  let selectedStroke = newOlStroke(selectedStrokeOptions)
+  let selectedStroke = newStroke(selectedStrokeOptions)
 
   let selectedStyleOptions = newJsObject()
   selectedStyleOptions["fill"] = selectedFill
   selectedStyleOptions["stroke"] = selectedStroke
-  let selectedStyle = newOlStyle(selectedStyleOptions)
+  let selectedStyle = newStyle(selectedStyleOptions)
   let selectStyleFn =
     makeColorStyleFn(cast[JsObject](selectedStyle), cast[JsObject](selectedStyle))
 
   let selectSingleClickOptions = newJsObject()
   selectSingleClickOptions["style"] = selectStyleFn
-  let selectSingleClick = newOlSelect(selectSingleClickOptions)
+  let selectSingleClick = newSelect(selectSingleClickOptions)
 
   let selectClickOptions = newJsObject()
   selectClickOptions["condition"] = getClickConditionFn()
   selectClickOptions["style"] = selectStyleFn
-  let selectClick = newOlSelect(selectClickOptions)
+  let selectClick = newSelect(selectClickOptions)
 
   let selectPointerMoveOptions = newJsObject()
   selectPointerMoveOptions["condition"] = getPointerMoveConditionFn()
   selectPointerMoveOptions["toggleCondition"] = getNeverConditionFn()
   selectPointerMoveOptions["style"] = selectStyleFn
-  let selectPointerMove = newOlSelect(selectPointerMoveOptions)
+  let selectPointerMove = newSelect(selectPointerMoveOptions)
 
   let selectAltClickOptions = newJsObject()
   selectAltClickOptions["style"] = selectStyleFn
   selectAltClickOptions["condition"] =
     makeAltClickConditionFn(getClickConditionFn(), getAltKeyOnlyConditionFn())
-  let selectAltClick = newOlSelect(selectAltClickOptions)
+  let selectAltClick = newSelect(selectAltClickOptions)
 
   installSelectTypeController(
     mapObj,
@@ -193,16 +193,16 @@ proc initSelectFeatures(): JsObject =
 proc initSelectHoverFeatures(): JsObject =
   let baseFillOptions = newJsObject()
   baseFillOptions["color"] = "#eeeeee".cstring
-  let baseFill = newOlFill(baseFillOptions)
+  let baseFill = newFill(baseFillOptions)
 
   let baseStyleOptions = newJsObject()
   baseStyleOptions["fill"] = baseFill
-  let baseStyle = newOlStyle(baseStyleOptions)
+  let baseStyle = newStyle(baseStyleOptions)
 
   let vectorSourceOptions = newJsObject()
   vectorSourceOptions["url"] =
     "https://openlayers.org/data/vector/ecoregions.json".cstring
-  vectorSourceOptions["format"] = newOlGeoJSON()
+  vectorSourceOptions["format"] = newGeoJSON()
   let vectorSource = newVectorSourceWithOptions(vectorSourceOptions)
 
   let vectorLayerOptions = newJsObject()
@@ -210,12 +210,12 @@ proc initSelectHoverFeatures(): JsObject =
   vectorLayerOptions["background"] = "white".cstring
   vectorLayerOptions["style"] =
     makeColorStyleFn(cast[JsObject](baseStyle), cast[JsObject](baseStyle))
-  let vectorLayer = newOlVectorLayer(vectorLayerOptions)
+  let vectorLayer = newVectorLayer(vectorLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 2.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[vectorLayer]
@@ -225,23 +225,23 @@ proc initSelectHoverFeatures(): JsObject =
 
   let selectedFillOptions = newJsObject()
   selectedFillOptions["color"] = "#eeeeee".cstring
-  let selectedFill = newOlFill(selectedFillOptions)
+  let selectedFill = newFill(selectedFillOptions)
 
   let selectedStrokeOptions = newJsObject()
   selectedStrokeOptions["color"] = "rgba(255, 255, 255, 0.7)".cstring
   selectedStrokeOptions["width"] = 2.0
-  let selectedStroke = newOlStroke(selectedStrokeOptions)
+  let selectedStroke = newStroke(selectedStrokeOptions)
 
   let selectedStyleOptions = newJsObject()
   selectedStyleOptions["fill"] = selectedFill
   selectedStyleOptions["stroke"] = selectedStroke
-  let selectedStyle = newOlStyle(selectedStyleOptions)
+  let selectedStyle = newStyle(selectedStyleOptions)
 
   let selectOptions = newJsObject()
   selectOptions["condition"] = getPointerMoveConditionFn()
   selectOptions["style"] =
     makeColorStyleFn(cast[JsObject](selectedStyle), cast[JsObject](selectedStyle))
-  let selectInteraction = newOlSelect(selectOptions)
+  let selectInteraction = newSelect(selectOptions)
 
   addInteraction(mapObj, cast[JsObject](selectInteraction))
   installSelectHoverStatus(cast[JsObject](selectInteraction))
@@ -257,21 +257,21 @@ proc initLayerOpacity(): JsObject =
   )
   imagerySourceOptions["tileSize"] = 512.0
   imagerySourceOptions["maxZoom"] = 20.0
-  let imagerySource = newOlImageTileSource(imagerySourceOptions)
+  let imagerySource = newImageTileSource(imagerySourceOptions)
 
   let imageryLayerOptions = newJsObject()
   imageryLayerOptions["className"] = "ol-layer-imagery".cstring
   imageryLayerOptions["source"] = imagerySource
-  let imageryLayer = newOlWebGLTileLayer(imageryLayerOptions)
+  let imageryLayer = newWebGLTileLayer(imageryLayerOptions)
 
   let osmLayerOptions = newJsObject()
-  osmLayerOptions["source"] = newOlOSM()
-  let osmLayer = newOlWebGLTileLayer(osmLayerOptions)
+  osmLayerOptions["source"] = newOSM()
+  let osmLayer = newWebGLTileLayer(osmLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 2.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[imageryLayer, osmLayer]
@@ -285,7 +285,7 @@ proc initLayerOpacity(): JsObject =
 proc initAttributions(): JsObject =
   let attributionOptions = newJsObject()
   attributionOptions["collapsible"] = false
-  let attributionControl = newOlAttribution(attributionOptions)
+  let attributionControl = newAttribution(attributionOptions)
 
   let controlsOptions = newJsObject()
   controlsOptions["attribution"] = false
@@ -294,13 +294,13 @@ proc initAttributions(): JsObject =
   )
 
   let layerOptions = newJsObject()
-  layerOptions["source"] = newOlOSM()
-  let baseLayer = newOlTileLayer(layerOptions)
+  layerOptions["source"] = newOSM()
+  let baseLayer = newTileLayer(layerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 2.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[baseLayer]
@@ -322,7 +322,7 @@ proc initCenter(): JsObject =
   let sourceOptions = newJsObject()
   sourceOptions["url"] =
     "/deps/openlayers/examples/data/geojson/switzerland.geojson".cstring
-  sourceOptions["format"] = newOlGeoJSON()
+  sourceOptions["format"] = newGeoJSON()
   let vectorSource = newVectorSourceWithOptions(sourceOptions)
 
   let styleOptions = newJsObject()
@@ -337,16 +337,16 @@ proc initCenter(): JsObject =
   let vectorLayerOptions = newJsObject()
   vectorLayerOptions["source"] = vectorSource
   vectorLayerOptions["style"] = styleOptions
-  let vectorLayer = newOlVectorLayer(vectorLayerOptions)
+  let vectorLayer = newVectorLayer(vectorLayerOptions)
 
   let baseLayerOptions = newJsObject()
-  baseLayerOptions["source"] = newOlOSM()
-  let baseLayer = newOlTileLayer(baseLayerOptions)
+  baseLayerOptions["source"] = newOSM()
+  let baseLayer = newTileLayer(baseLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 1.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[baseLayer, vectorLayer]

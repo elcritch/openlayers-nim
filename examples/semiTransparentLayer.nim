@@ -26,8 +26,8 @@ proc initExample() =
 
   let bwLayerOptions = newJsObject()
   bwLayerOptions["className"] = "bw".cstring
-  bwLayerOptions["source"] = newOlOSM()
-  let bwLayer = newOlTileLayer(bwLayerOptions)
+  bwLayerOptions["source"] = newOSM()
+  let bwLayer = newTileLayer(bwLayerOptions)
 
   let tileJsonOptions = newJsObject()
   tileJsonOptions["url"] = cstring(
@@ -35,16 +35,16 @@ proc initExample() =
   )
   tileJsonOptions["crossOrigin"] = "anonymous".cstring
   tileJsonOptions["transition"] = 0.0
-  let quakeSource = newOlTileJSON(tileJsonOptions)
+  let quakeSource = newTileJSON(tileJsonOptions)
 
   let quakeLayerOptions = newJsObject()
   quakeLayerOptions["source"] = quakeSource
-  let quakeLayer = newOlTileLayer(quakeLayerOptions)
+  let quakeLayer = newTileLayer(quakeLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = fromLonLat(jsArray2(-77.93255, 37.9555))
   viewOptions["zoom"] = 7.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[bwLayer, quakeLayer]

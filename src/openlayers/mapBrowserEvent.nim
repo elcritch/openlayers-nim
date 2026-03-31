@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_MapBrowserEvent)".}
 
 type
-  OlMapBrowserEvent* = ref object of JsRoot
-proc newOlMapBrowserEvent*(typeVal: cstring, map: JsObject, originalEvent: JsObject, dragging: JsObject = jsUndefined, frameState: JsObject = jsUndefined, activePointers: JsObject = jsUndefined): OlMapBrowserEvent {.importjs: "(new olNs_MapBrowserEvent.default(#, #, #, #, #, #))".}
+  MapBrowserEvent* = ref object of JsRoot
+proc newMapBrowserEvent*(typeVal: cstring, map: JsObject, originalEvent: JsObject, dragging: JsObject = jsUndefined, frameState: JsObject = jsUndefined, activePointers: JsObject = jsUndefined): MapBrowserEvent {.importjs: "(new olNs_MapBrowserEvent.default(#, #, #, #, #, #))".}

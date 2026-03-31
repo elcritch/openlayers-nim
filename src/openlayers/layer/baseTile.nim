@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_BaseTile)".}
 
 type
-  OlBaseTileLayer* = ref object of JsRoot
-proc newOlBaseTileLayer*(): OlBaseTileLayer {.importjs: "(new olNs_layer_BaseTile.default())".}
+  BaseTileLayer* = ref object of JsRoot
+proc newBaseTileLayer*(): BaseTileLayer {.importjs: "(new olNs_layer_BaseTile.default())".}

@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_Graticule)".}
 
 type
-  OlGraticule* = ref object of JsRoot
-proc newOlGraticule*(): OlGraticule {.importjs: "(new olNs_layer_Graticule.default())".}
+  Graticule* = ref object of JsRoot
+proc newGraticule*(): Graticule {.importjs: "(new olNs_layer_Graticule.default())".}

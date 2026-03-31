@@ -9,9 +9,9 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_tilegrid_WMTS)".}
 
 type
-  OlWMTSTileGrid* = ref object of JsRoot
-proc newOlWMTSTileGrid*(options: JsObject): OlWMTSTileGrid {.importjs: "(new olNs_tilegrid_WMTS.default(#))".}
-proc getMatrixId*(self: OlWMTSTileGrid, z: float): cstring {.importjs: "#.getMatrixId(#)".}
-proc getMatrixIds*(self: OlWMTSTileGrid): seq[cstring] {.importjs: "#.getMatrixIds()".}
+  WMTSTileGrid* = ref object of JsRoot
+proc newWMTSTileGrid*(options: JsObject): WMTSTileGrid {.importjs: "(new olNs_tilegrid_WMTS.default(#))".}
+proc getMatrixId*(self: WMTSTileGrid, z: float): cstring {.importjs: "#.getMatrixId(#)".}
+proc getMatrixIds*(self: WMTSTileGrid): seq[cstring] {.importjs: "#.getMatrixIds()".}
 
 proc createFromCapabilitiesMatrixSet*(matrixSet: JsObject, extent: JsObject = jsUndefined, matrixLimits: JsObject = jsUndefined): JsObject {.importjs: "olNs_tilegrid_WMTS.createFromCapabilitiesMatrixSet(#, #, #)".}

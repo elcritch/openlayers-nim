@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_NotEqualTo)".}
 
 type
-  OlNotEqualTo* = ref object of JsRoot
-proc newOlNotEqualTo*(propertyName: cstring, expression: JsObject, matchCase: JsObject = jsUndefined): OlNotEqualTo {.importjs: "(new olNs_format_filter_NotEqualTo.default(#, #, #))".}
+  NotEqualTo* = ref object of JsRoot
+proc newNotEqualTo*(propertyName: cstring, expression: JsObject, matchCase: JsObject = jsUndefined): NotEqualTo {.importjs: "(new olNs_format_filter_NotEqualTo.default(#, #, #))".}

@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_GeoJSON)".}
 
 type
-  OlGeoJSON* = ref object of JsRoot
-proc newOlGeoJSON*(): OlGeoJSON {.importjs: "(new olNs_format_GeoJSON.default())".}
+  GeoJSON* = ref object of JsRoot
+proc newGeoJSON*(): GeoJSON {.importjs: "(new olNs_format_GeoJSON.default())".}

@@ -9,12 +9,12 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_Observable)".}
 
 type
-  OlObservable* = ref object of JsRoot
-proc newOlObservable*(): OlObservable {.importjs: "(new olNs_Observable.default())".}
-proc changed*(self: OlObservable) {.importjs: "#.changed()".}
-proc getRevision*(self: OlObservable): float {.importjs: "#.getRevision()".}
-proc onInternal*(self: OlObservable, typeVal: JsObject, listener: JsObject): JsObject {.importjs: "#.onInternal(#, #)".}
-proc onceInternal*(self: OlObservable, typeVal: JsObject, listener: JsObject): JsObject {.importjs: "#.onceInternal(#, #)".}
-proc unInternal*(self: OlObservable, typeVal: JsObject, listener: JsObject) {.importjs: "#.unInternal(#, #)".}
+  Observable* = ref object of JsRoot
+proc newObservable*(): Observable {.importjs: "(new olNs_Observable.default())".}
+proc changed*(self: Observable) {.importjs: "#.changed()".}
+proc getRevision*(self: Observable): float {.importjs: "#.getRevision()".}
+proc onInternal*(self: Observable, typeVal: JsObject, listener: JsObject): JsObject {.importjs: "#.onInternal(#, #)".}
+proc onceInternal*(self: Observable, typeVal: JsObject, listener: JsObject): JsObject {.importjs: "#.onceInternal(#, #)".}
+proc unInternal*(self: Observable, typeVal: JsObject, listener: JsObject) {.importjs: "#.unInternal(#, #)".}
 
 proc unByKey*(key: JsObject) {.importjs: "olNs_Observable.unByKey(#)".}

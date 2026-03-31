@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_ZoomSlider)".}
 
 type
-  OlZoomSlider* = ref object of JsRoot
-proc newOlZoomSlider*(options: JsObject = jsUndefined): OlZoomSlider {.importjs: "(new olNs_control_ZoomSlider.default(#))".}
+  ZoomSlider* = ref object of JsRoot
+proc newZoomSlider*(options: JsObject = jsUndefined): ZoomSlider {.importjs: "(new olNs_control_ZoomSlider.default(#))".}

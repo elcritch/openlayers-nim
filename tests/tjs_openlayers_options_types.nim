@@ -21,20 +21,20 @@ suite "typed options wrappers":
     check compiles(
       (
         block:
-          let viewOpts = newOlViewOptions()
+          let viewOpts = newViewOptions()
           viewOpts.center = jsUndefined
           viewOpts.constrainRotation = true
           viewOpts.constrainRotation = 4.0
           viewOpts.zoom = 3.0
           viewOpts.padding = @[10.0, 10.0, 10.0, 10.0]
-          let viewObj = newOlView(viewOpts)
+          let viewObj = newView(viewOpts)
 
-          let mapOpts = newOlMapOptions()
+          let mapOpts = newMapOptions()
           mapOpts.target = "map".cstring
           mapOpts.view = viewObj
           mapOpts.layers = jsUndefined
           mapOpts.pixelRatio = 2.0
-          discard newOlMap(mapOpts)
+          discard newMap(mapOpts)
       )
     )
 
@@ -42,42 +42,42 @@ suite "typed options wrappers":
     check compiles(
       (
         block:
-          let osmOpts = newOlOSMOptions()
+          let osmOpts = newOSMOptions()
           osmOpts.url = "https://tile.openstreetmap.org/{z}/{x}/{y}.png".cstring
           osmOpts.maxZoom = 19.0
-          let osmSource = newOlOSM(osmOpts)
+          let osmSource = newOSM(osmOpts)
 
-          let tileLayerOpts = newOlTileLayerOptions()
+          let tileLayerOpts = newTileLayerOptions()
           tileLayerOpts.source = osmSource
           tileLayerOpts.className = "base".cstring
-          let tileLayer = newOlTileLayer(tileLayerOpts)
+          let tileLayer = newTileLayer(tileLayerOpts)
           discard tileLayer
 
-          let xyzOpts = newOlXYZOptions()
+          let xyzOpts = newXYZOptions()
           xyzOpts.url = "https://example.com/{z}/{x}/{y}.png".cstring
           xyzOpts.tileSize = 512.0
           xyzOpts.urls = @["https://a.example.com/{z}/{x}/{y}.png".cstring]
-          discard newOlXYZ(xyzOpts)
+          discard newXYZ(xyzOpts)
 
-          let vectorSourceOpts = newOlVectorSourceOptions()
+          let vectorSourceOpts = newVectorSourceOptions()
           vectorSourceOpts.url = "https://example.com/data.geojson".cstring
           vectorSourceOpts.wrapX = false
-          let vectorSource = newOlVectorSource(vectorSourceOpts)
+          let vectorSource = newVectorSource(vectorSourceOpts)
 
-          let vectorLayerOpts = newOlVectorLayerOptions()
+          let vectorLayerOpts = newVectorLayerOptions()
           vectorLayerOpts.source = vectorSource
           vectorLayerOpts.declutter = true
           vectorLayerOpts.background = "white".cstring
-          discard newOlVectorLayer(vectorLayerOpts)
+          discard newVectorLayer(vectorLayerOpts)
 
-          let tileJsonConfig = newOlTileJSONConfig()
+          let tileJsonConfig = newTileJSONConfig()
           tileJsonConfig.tiles = @["https://example.com/tiles/{z}/{x}/{y}.png".cstring]
           tileJsonConfig.maxzoom = 14.0
 
-          let tileJsonOpts = newOlTileJSONOptions()
+          let tileJsonOpts = newTileJSONOptions()
           tileJsonOpts.tileJSON = tileJsonConfig
           tileJsonOpts.tileSize = 256.0
-          discard newOlTileJSON(tileJsonOpts)
+          discard newTileJSON(tileJsonOpts)
       )
     )
 
@@ -85,32 +85,32 @@ suite "typed options wrappers":
     check compiles(
       (
         block:
-          let fillOpts = newOlFillOptions()
+          let fillOpts = newFillOptions()
           fillOpts.color = "rgba(255, 255, 255, 0.6)".cstring
-          let fillObj = newOlFill(fillOpts)
+          let fillObj = newFill(fillOpts)
 
-          let strokeOpts = newOlStrokeOptions()
+          let strokeOpts = newStrokeOptions()
           strokeOpts.color = "#3399CC".cstring
           strokeOpts.width = 1.25
-          let strokeObj = newOlStroke(strokeOpts)
+          let strokeObj = newStroke(strokeOpts)
 
-          let styleOpts = newOlStyleOptions()
+          let styleOpts = newStyleOptions()
           styleOpts.fill = fillObj
           styleOpts.stroke = strokeObj
-          let styleObj = newOlStyle(styleOpts)
+          let styleObj = newStyle(styleOpts)
 
-          let selectOpts = newOlSelectOptions()
+          let selectOpts = newSelectOptions()
           selectOpts.style = styleObj
           selectOpts.multi = true
           selectOpts.hitTolerance = 5.0
-          discard newOlSelect(selectOpts)
+          discard newSelect(selectOpts)
 
-          let attributionOpts = newOlAttributionOptions()
+          let attributionOpts = newAttributionOptions()
           attributionOpts.collapsible = false
           attributionOpts.attributions = @["example attribution".cstring]
-          let attribution = newOlAttribution(attributionOpts)
+          let attribution = newAttribution(attributionOpts)
 
-          let defaultsOpts = newOlControlDefaultsOptions()
+          let defaultsOpts = newControlDefaultsOptions()
           defaultsOpts.attribution = true
           defaultsOpts.attributionOptions = attributionOpts
           discard defaults(defaultsOpts)

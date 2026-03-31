@@ -41,21 +41,21 @@ proc initExample() =
     cstring("https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=" & key)
   imagerySourceOptions["tileSize"] = 512.0
   imagerySourceOptions["maxZoom"] = 20.0
-  let imagerySource = newOlImageTileSource(imagerySourceOptions)
+  let imagerySource = newImageTileSource(imagerySourceOptions)
 
   let imageryLayerOptions = newJsObject()
   imageryLayerOptions["className"] = "ol-layer-imagery".cstring
   imageryLayerOptions["source"] = imagerySource
-  let imageryLayer = newOlWebGLTileLayer(imageryLayerOptions)
+  let imageryLayer = newWebGLTileLayer(imageryLayerOptions)
 
   let osmLayerOptions = newJsObject()
-  osmLayerOptions["source"] = newOlOSM()
-  let osmLayer = newOlWebGLTileLayer(osmLayerOptions)
+  osmLayerOptions["source"] = newOSM()
+  let osmLayer = newWebGLTileLayer(osmLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 2.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[imageryLayer, osmLayer]

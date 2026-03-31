@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_WMTSCapabilities)".}
 
 type
-  OlWMTSCapabilities* = ref object of JsRoot
-proc newOlWMTSCapabilities*(): OlWMTSCapabilities {.importjs: "(new olNs_format_WMTSCapabilities.default())".}
+  WMTSCapabilities* = ref object of JsRoot
+proc newWMTSCapabilities*(): WMTSCapabilities {.importjs: "(new olNs_format_WMTSCapabilities.default())".}

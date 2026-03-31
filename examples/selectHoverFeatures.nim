@@ -27,16 +27,16 @@ proc initExample() =
 
   let baseFillOptions = newJsObject()
   baseFillOptions["color"] = "#eeeeee".cstring
-  let baseFill = newOlFill(baseFillOptions)
+  let baseFill = newFill(baseFillOptions)
 
   let baseStyleOptions = newJsObject()
   baseStyleOptions["fill"] = baseFill
-  let baseStyle = newOlStyle(baseStyleOptions)
+  let baseStyle = newStyle(baseStyleOptions)
 
   let vectorSourceOptions = newJsObject()
   vectorSourceOptions["url"] =
     "https://openlayers.org/data/vector/ecoregions.json".cstring
-  vectorSourceOptions["format"] = newOlGeoJSON()
+  vectorSourceOptions["format"] = newGeoJSON()
   let vectorSource = newVectorSourceWithOptions(vectorSourceOptions)
 
   let vectorLayerOptions = newJsObject()
@@ -44,12 +44,12 @@ proc initExample() =
   vectorLayerOptions["background"] = "white".cstring
   vectorLayerOptions["style"] =
     makeColorStyleFn(cast[JsObject](baseStyle), cast[JsObject](baseStyle))
-  let vectorLayer = newOlVectorLayer(vectorLayerOptions)
+  let vectorLayer = newVectorLayer(vectorLayerOptions)
 
   let viewOptions = newJsObject()
   viewOptions["center"] = @[0.0, 0.0]
   viewOptions["zoom"] = 2.0
-  let mapView = newOlView(viewOptions)
+  let mapView = newView(viewOptions)
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[vectorLayer]
@@ -59,23 +59,23 @@ proc initExample() =
 
   let selectedFillOptions = newJsObject()
   selectedFillOptions["color"] = "#eeeeee".cstring
-  let selectedFill = newOlFill(selectedFillOptions)
+  let selectedFill = newFill(selectedFillOptions)
 
   let selectedStrokeOptions = newJsObject()
   selectedStrokeOptions["color"] = "rgba(255, 255, 255, 0.7)".cstring
   selectedStrokeOptions["width"] = 2.0
-  let selectedStroke = newOlStroke(selectedStrokeOptions)
+  let selectedStroke = newStroke(selectedStrokeOptions)
 
   let selectedStyleOptions = newJsObject()
   selectedStyleOptions["fill"] = selectedFill
   selectedStyleOptions["stroke"] = selectedStroke
-  let selectedStyle = newOlStyle(selectedStyleOptions)
+  let selectedStyle = newStyle(selectedStyleOptions)
 
   let selectOptions = newJsObject()
   selectOptions["condition"] = getPointerMoveConditionFn()
   selectOptions["style"] =
     makeColorStyleFn(cast[JsObject](selectedStyle), cast[JsObject](selectedStyle))
-  let selectInteraction = newOlSelect(selectOptions)
+  let selectInteraction = newSelect(selectOptions)
 
   addInteraction(mapObj, cast[JsObject](selectInteraction))
   installSelectHoverStatus(cast[JsObject](selectInteraction))

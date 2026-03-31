@@ -6,8 +6,8 @@ import openlayers/source/osm
 
 suite "openlayers/layer/tile bindings":
   test "tile layer constructor is usable":
-    let source = newOlOSM(jsUndefined)
+    let source = newOSM(jsUndefined)
     let layerOpts = newJsObject()
     layerOpts["source"] = source
-    let layer = newOlTileLayer(layerOpts)
+    let layer = newTileLayer(layerOpts)
     check layer != nil

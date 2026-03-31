@@ -9,6 +9,6 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_ImageTile)".}
 
 type
-  OlImageTileSource* = ref object of JsRoot
-proc newOlImageTileSource*(options: JsObject = jsUndefined): OlImageTileSource {.importjs: "(new olNs_source_ImageTile.default(#))".}
-proc setUrl*(self: OlImageTileSource, url: JsObject) {.importjs: "#.setUrl(#)".}
+  ImageTileSource* = ref object of JsRoot
+proc newImageTileSource*(options: JsObject = jsUndefined): ImageTileSource {.importjs: "(new olNs_source_ImageTile.default(#))".}
+proc setUrl*(self: ImageTileSource, url: JsObject) {.importjs: "#.setUrl(#)".}

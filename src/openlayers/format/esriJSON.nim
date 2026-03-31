@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_EsriJSON)".}
 
 type
-  OlEsriJSON* = ref object of JsRoot
-proc newOlEsriJSON*(): OlEsriJSON {.importjs: "(new olNs_format_EsriJSON.default())".}
+  EsriJSON* = ref object of JsRoot
+proc newEsriJSON*(): EsriJSON {.importjs: "(new olNs_format_EsriJSON.default())".}

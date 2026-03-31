@@ -9,89 +9,89 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_Attribution)".}
 
 type
-  OlAttributionOptions* = ref object of JsRoot
-  OlAttribution* = ref object of JsRoot
+  AttributionOptions* = ref object of JsRoot
+  Attribution* = ref object of JsRoot
 
-proc newOlAttributionOptions*(): OlAttributionOptions {.importjs: "({})".}
+proc newAttributionOptions*(): AttributionOptions {.importjs: "({})".}
 proc `className=`*(
-  options: OlAttributionOptions, value: cstring
+  options: AttributionOptions, value: cstring
 ) {.importjs: "#.className = #".}
 
 proc `target=`*(
-  options: OlAttributionOptions, value: cstring
+  options: AttributionOptions, value: cstring
 ) {.importjs: "#.target = #".}
 
 proc `target=`*(
-  options: OlAttributionOptions, value: JsObject
+  options: AttributionOptions, value: JsObject
 ) {.importjs: "#.target = #".}
 
 proc `collapsible=`*(
-  options: OlAttributionOptions, value: bool
+  options: AttributionOptions, value: bool
 ) {.importjs: "#.collapsible = #".}
 
 proc `collapsed=`*(
-  options: OlAttributionOptions, value: bool
+  options: AttributionOptions, value: bool
 ) {.importjs: "#.collapsed = #".}
 
 proc `tipLabel=`*(
-  options: OlAttributionOptions, value: cstring
+  options: AttributionOptions, value: cstring
 ) {.importjs: "#.tipLabel = #".}
 
 proc `label=`*(
-  options: OlAttributionOptions, value: cstring
+  options: AttributionOptions, value: cstring
 ) {.importjs: "#.label = #".}
 
 proc `label=`*(
-  options: OlAttributionOptions, value: JsObject
+  options: AttributionOptions, value: JsObject
 ) {.importjs: "#.label = #".}
 
 proc `expandClassName=`*(
-  options: OlAttributionOptions, value: cstring
+  options: AttributionOptions, value: cstring
 ) {.importjs: "#.expandClassName = #".}
 
 proc `collapseLabel=`*(
-  options: OlAttributionOptions, value: cstring
+  options: AttributionOptions, value: cstring
 ) {.importjs: "#.collapseLabel = #".}
 
 proc `collapseLabel=`*(
-  options: OlAttributionOptions, value: JsObject
+  options: AttributionOptions, value: JsObject
 ) {.importjs: "#.collapseLabel = #".}
 
 proc `collapseClassName=`*(
-  options: OlAttributionOptions, value: cstring
+  options: AttributionOptions, value: cstring
 ) {.importjs: "#.collapseClassName = #".}
 
 proc `render=`*(
-  options: OlAttributionOptions, value: JsObject
+  options: AttributionOptions, value: JsObject
 ) {.importjs: "#.render = #".}
 
 proc `attributions=`*(
-  options: OlAttributionOptions, value: cstring
+  options: AttributionOptions, value: cstring
 ) {.importjs: "#.attributions = #".}
 
 proc `attributions=`*(
-  options: OlAttributionOptions, value: seq[cstring]
+  options: AttributionOptions, value: seq[cstring]
 ) {.importjs: "#.attributions = #".}
 
 proc `attributions=`*(
-  options: OlAttributionOptions, value: JsObject
+  options: AttributionOptions, value: JsObject
 ) {.importjs: "#.attributions = #".}
 
-proc newOlAttribution*(
+proc newAttribution*(
   options: JsObject = jsUndefined
-): OlAttribution {.importjs: "(new olNs_control_Attribution.default(#))".}
+): Attribution {.importjs: "(new olNs_control_Attribution.default(#))".}
 
-proc newOlAttribution*(
-  options: OlAttributionOptions
-): OlAttribution {.importjs: "(new olNs_control_Attribution.default(#))".}
+proc newAttribution*(
+  options: AttributionOptions
+): Attribution {.importjs: "(new olNs_control_Attribution.default(#))".}
 
-proc getCollapsible*(self: OlAttribution): bool {.importjs: "#.getCollapsible()".}
+proc getCollapsible*(self: Attribution): bool {.importjs: "#.getCollapsible()".}
 proc setCollapsible*(
-  self: OlAttribution, collapsible: bool
+  self: Attribution, collapsible: bool
 ) {.importjs: "#.setCollapsible(#)".}
 
 proc setCollapsed*(
-  self: OlAttribution, collapsed: bool
+  self: Attribution, collapsed: bool
 ) {.importjs: "#.setCollapsed(#)".}
 
-proc getCollapsed*(self: OlAttribution): bool {.importjs: "#.getCollapsed()".}
+proc getCollapsed*(self: Attribution): bool {.importjs: "#.getCollapsed()".}

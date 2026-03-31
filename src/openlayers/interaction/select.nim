@@ -9,68 +9,68 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_Select)".}
 
 type
-  OlSelectOptions* = ref object of JsRoot
-  OlSelect* = ref object of JsRoot
+  SelectOptions* = ref object of JsRoot
+  Select* = ref object of JsRoot
 
-proc newOlSelectOptions*(): OlSelectOptions {.importjs: "({})".}
+proc newSelectOptions*(): SelectOptions {.importjs: "({})".}
 proc `addCondition=`*(
-  options: OlSelectOptions, value: JsObject
+  options: SelectOptions, value: JsObject
 ) {.importjs: "#.addCondition = #".}
 
 proc `condition=`*(
-  options: OlSelectOptions, value: JsObject
+  options: SelectOptions, value: JsObject
 ) {.importjs: "#.condition = #".}
 
-proc `layers=`*(options: OlSelectOptions, value: JsObject) {.importjs: "#.layers = #".}
-proc `style=`*(options: OlSelectOptions, value: JsObject) {.importjs: "#.style = #".}
-proc `style=`*(options: OlSelectOptions, value: RootRef) {.importjs: "#.style = #".}
+proc `layers=`*(options: SelectOptions, value: JsObject) {.importjs: "#.layers = #".}
+proc `style=`*(options: SelectOptions, value: JsObject) {.importjs: "#.style = #".}
+proc `style=`*(options: SelectOptions, value: RootRef) {.importjs: "#.style = #".}
 proc `removeCondition=`*(
-  options: OlSelectOptions, value: JsObject
+  options: SelectOptions, value: JsObject
 ) {.importjs: "#.removeCondition = #".}
 
 proc `toggleCondition=`*(
-  options: OlSelectOptions, value: JsObject
+  options: SelectOptions, value: JsObject
 ) {.importjs: "#.toggleCondition = #".}
 
-proc `multi=`*(options: OlSelectOptions, value: bool) {.importjs: "#.multi = #".}
+proc `multi=`*(options: SelectOptions, value: bool) {.importjs: "#.multi = #".}
 proc `features=`*(
-  options: OlSelectOptions, value: JsObject
+  options: SelectOptions, value: JsObject
 ) {.importjs: "#.features = #".}
 
-proc `filter=`*(options: OlSelectOptions, value: JsObject) {.importjs: "#.filter = #".}
+proc `filter=`*(options: SelectOptions, value: JsObject) {.importjs: "#.filter = #".}
 proc `hitTolerance=`*(
-  options: OlSelectOptions, value: float
+  options: SelectOptions, value: float
 ) {.importjs: "#.hitTolerance = #".}
 
-proc newOlSelect*(
+proc newSelect*(
   options: JsObject = jsUndefined
-): OlSelect {.importjs: "(new olNs_interaction_Select.default(#))".}
+): Select {.importjs: "(new olNs_interaction_Select.default(#))".}
 
-proc newOlSelect*(
-  options: OlSelectOptions
-): OlSelect {.importjs: "(new olNs_interaction_Select.default(#))".}
+proc newSelect*(
+  options: SelectOptions
+): Select {.importjs: "(new olNs_interaction_Select.default(#))".}
 
-proc getFeatures*(self: OlSelect): JsObject {.importjs: "#.getFeatures()".}
-proc getHitTolerance*(self: OlSelect): float {.importjs: "#.getHitTolerance()".}
+proc getFeatures*(self: Select): JsObject {.importjs: "#.getFeatures()".}
+proc getHitTolerance*(self: Select): float {.importjs: "#.getHitTolerance()".}
 proc getLayer*(
-  self: OlSelect, feature: JsObject
+  self: Select, feature: JsObject
 ): JsObject {.importjs: "#.getLayer(#)".}
 
 proc setHitTolerance*(
-  self: OlSelect, hitTolerance: float
+  self: Select, hitTolerance: float
 ) {.importjs: "#.setHitTolerance(#)".}
 
-proc getStyle*(self: OlSelect): JsObject {.importjs: "#.getStyle()".}
+proc getStyle*(self: Select): JsObject {.importjs: "#.getStyle()".}
 proc selectFeature*(
-  self: OlSelect, feature: JsObject
+  self: Select, feature: JsObject
 ): bool {.importjs: "#.selectFeature(#)".}
 
 proc deselectFeature*(
-  self: OlSelect, feature: JsObject
+  self: Select, feature: JsObject
 ): bool {.importjs: "#.deselectFeature(#)".}
 
 proc toggleFeature*(
-  self: OlSelect, feature: JsObject
+  self: Select, feature: JsObject
 ) {.importjs: "#.toggleFeature(#)".}
 
-proc clearSelection*(self: OlSelect) {.importjs: "#.clearSelection()".}
+proc clearSelection*(self: Select) {.importjs: "#.clearSelection()".}

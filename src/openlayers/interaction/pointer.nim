@@ -9,13 +9,13 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_Pointer)".}
 
 type
-  OlPointerInteraction* = ref object of JsRoot
-proc newOlPointerInteraction*(options: JsObject = jsUndefined): OlPointerInteraction {.importjs: "(new olNs_interaction_Pointer.default(#))".}
-proc handleDownEvent*(self: OlPointerInteraction, mapBrowserEvent: JsObject): bool {.importjs: "#.handleDownEvent(#)".}
-proc handleDragEvent*(self: OlPointerInteraction, mapBrowserEvent: JsObject) {.importjs: "#.handleDragEvent(#)".}
-proc handleMoveEvent*(self: OlPointerInteraction, mapBrowserEvent: JsObject) {.importjs: "#.handleMoveEvent(#)".}
-proc handleUpEvent*(self: OlPointerInteraction, mapBrowserEvent: JsObject): bool {.importjs: "#.handleUpEvent(#)".}
-proc stopDown*(self: OlPointerInteraction, handled: bool): bool {.importjs: "#.stopDown(#)".}
-proc getPointerCount*(self: OlPointerInteraction): float {.importjs: "#.getPointerCount()".}
+  PointerInteraction* = ref object of JsRoot
+proc newPointerInteraction*(options: JsObject = jsUndefined): PointerInteraction {.importjs: "(new olNs_interaction_Pointer.default(#))".}
+proc handleDownEvent*(self: PointerInteraction, mapBrowserEvent: JsObject): bool {.importjs: "#.handleDownEvent(#)".}
+proc handleDragEvent*(self: PointerInteraction, mapBrowserEvent: JsObject) {.importjs: "#.handleDragEvent(#)".}
+proc handleMoveEvent*(self: PointerInteraction, mapBrowserEvent: JsObject) {.importjs: "#.handleMoveEvent(#)".}
+proc handleUpEvent*(self: PointerInteraction, mapBrowserEvent: JsObject): bool {.importjs: "#.handleUpEvent(#)".}
+proc stopDown*(self: PointerInteraction, handled: bool): bool {.importjs: "#.stopDown(#)".}
+proc getPointerCount*(self: PointerInteraction): float {.importjs: "#.getPointerCount()".}
 
 proc centroid*(pointerEvents: JsObject): JsObject {.importjs: "olNs_interaction_Pointer.centroid(#)".}

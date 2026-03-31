@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_WKT)".}
 
 type
-  OlWKT* = ref object of JsRoot
-proc newOlWKT*(options: JsObject = jsUndefined): OlWKT {.importjs: "(new olNs_format_WKT.default(#))".}
+  WKT* = ref object of JsRoot
+proc newWKT*(options: JsObject = jsUndefined): WKT {.importjs: "(new olNs_format_WKT.default(#))".}

@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_ImageStatic)".}
 
 type
-  OlStatic* = ref object of JsRoot
-proc newOlStatic*(options: JsObject): OlStatic {.importjs: "(new olNs_source_ImageStatic.default(#))".}
-proc getImageExtent*(self: OlStatic): JsObject {.importjs: "#.getImageExtent()".}
-proc getUrl*(self: OlStatic): cstring {.importjs: "#.getUrl()".}
+  Static* = ref object of JsRoot
+proc newStatic*(options: JsObject): Static {.importjs: "(new olNs_source_ImageStatic.default(#))".}
+proc getImageExtent*(self: Static): JsObject {.importjs: "#.getImageExtent()".}
+proc getUrl*(self: Static): cstring {.importjs: "#.getUrl()".}

@@ -8,32 +8,32 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_defaults)".}
 
-type OlControlDefaultsOptions* = ref object of JsRoot
+type ControlDefaultsOptions* = ref object of JsRoot
 
-proc newOlControlDefaultsOptions*(): OlControlDefaultsOptions {.importjs: "({})".}
+proc newControlDefaultsOptions*(): ControlDefaultsOptions {.importjs: "({})".}
 proc `attribution=`*(
-  options: OlControlDefaultsOptions, value: bool
+  options: ControlDefaultsOptions, value: bool
 ) {.importjs: "#.attribution = #".}
 
 proc `attributionOptions=`*(
-  options: OlControlDefaultsOptions, value: JsObject
+  options: ControlDefaultsOptions, value: JsObject
 ) {.importjs: "#.attributionOptions = #".}
 
 proc `attributionOptions=`*(
-  options: OlControlDefaultsOptions, value: RootRef
+  options: ControlDefaultsOptions, value: RootRef
 ) {.importjs: "#.attributionOptions = #".}
 
 proc `rotate=`*(
-  options: OlControlDefaultsOptions, value: bool
+  options: ControlDefaultsOptions, value: bool
 ) {.importjs: "#.rotate = #".}
 
 proc `rotateOptions=`*(
-  options: OlControlDefaultsOptions, value: JsObject
+  options: ControlDefaultsOptions, value: JsObject
 ) {.importjs: "#.rotateOptions = #".}
 
-proc `zoom=`*(options: OlControlDefaultsOptions, value: bool) {.importjs: "#.zoom = #".}
+proc `zoom=`*(options: ControlDefaultsOptions, value: bool) {.importjs: "#.zoom = #".}
 proc `zoomOptions=`*(
-  options: OlControlDefaultsOptions, value: JsObject
+  options: ControlDefaultsOptions, value: JsObject
 ) {.importjs: "#.zoomOptions = #".}
 
 proc defaults*(
@@ -41,5 +41,5 @@ proc defaults*(
 ): JsObject {.importjs: "olNs_control_defaults.defaults(#)".}
 
 proc defaults*(
-  options: OlControlDefaultsOptions
+  options: ControlDefaultsOptions
 ): JsObject {.importjs: "olNs_control_defaults.defaults(#)".}

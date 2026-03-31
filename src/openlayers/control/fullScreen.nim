@@ -9,5 +9,5 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_FullScreen)".}
 
 type
-  OlFullScreen* = ref object of JsRoot
-proc newOlFullScreen*(options: JsObject = jsUndefined): OlFullScreen {.importjs: "(new olNs_control_FullScreen.default(#))".}
+  FullScreen* = ref object of JsRoot
+proc newFullScreen*(options: JsObject = jsUndefined): FullScreen {.importjs: "(new olNs_control_FullScreen.default(#))".}

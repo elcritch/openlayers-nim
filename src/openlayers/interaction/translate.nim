@@ -9,7 +9,7 @@ when defined(esmModules):
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_Translate)".}
 
 type
-  OlTranslate* = ref object of JsRoot
-proc newOlTranslate*(options: JsObject = jsUndefined): OlTranslate {.importjs: "(new olNs_interaction_Translate.default(#))".}
-proc getHitTolerance*(self: OlTranslate): float {.importjs: "#.getHitTolerance()".}
-proc setHitTolerance*(self: OlTranslate, hitTolerance: float) {.importjs: "#.setHitTolerance(#)".}
+  Translate* = ref object of JsRoot
+proc newTranslate*(options: JsObject = jsUndefined): Translate {.importjs: "(new olNs_interaction_Translate.default(#))".}
+proc getHitTolerance*(self: Translate): float {.importjs: "#.getHitTolerance()".}
+proc setHitTolerance*(self: Translate, hitTolerance: float) {.importjs: "#.setHitTolerance(#)".}
