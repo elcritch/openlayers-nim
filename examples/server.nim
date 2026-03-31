@@ -37,6 +37,10 @@ proc resolveRequestedFile(requestPath: string): string =
     result = result / "index.html"
 
 proc handleRequest(req: Request) {.async.} =
+  if req.url.path.endsWith("favicon.ico"):
+    await req.respond(Http204, "")
+    return
+
   let filePath = resolveRequestedFile(req.url.path)
   if filePath.len == 0 or not fileExists(filePath):
     await req.respond(Http404, "Not found")

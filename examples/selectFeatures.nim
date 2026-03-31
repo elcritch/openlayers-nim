@@ -41,7 +41,7 @@ proc initExample() =
   initialized = true
 
   let baseFillOptions = newJsObject()
-  baseFillOptions["color"] = "#eeeeee"
+  baseFillOptions["color"] = "#eeeeee".cstring
   let baseFill = newOlFill(baseFillOptions)
 
   let baseStyleOptions = newJsObject()
@@ -49,13 +49,14 @@ proc initExample() =
   let baseStyle = newOlStyle(baseStyleOptions)
 
   let vectorSourceOptions = newJsObject()
-  vectorSourceOptions["url"] = "https://openlayers.org/data/vector/ecoregions.json"
+  vectorSourceOptions["url"] =
+    "https://openlayers.org/data/vector/ecoregions.json".cstring
   vectorSourceOptions["format"] = newOlGeoJSON()
   let vectorSource = newVectorSourceWithOptions(vectorSourceOptions)
 
   let vectorLayerOptions = newJsObject()
   vectorLayerOptions["source"] = vectorSource
-  vectorLayerOptions["background"] = "white"
+  vectorLayerOptions["background"] = "white".cstring
   vectorLayerOptions["style"] =
     makeColorStyleFn(cast[JsObject](baseStyle), cast[JsObject](baseStyle))
   let vectorLayer = newOlVectorLayer(vectorLayerOptions)
@@ -67,16 +68,16 @@ proc initExample() =
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[vectorLayer]
-  mapOptions["target"] = "map"
+  mapOptions["target"] = getElementById("map".cstring)
   mapOptions["view"] = mapView
   let mapObj = newMapWithOptions(mapOptions)
 
   let selectedFillOptions = newJsObject()
-  selectedFillOptions["color"] = "#eeeeee"
+  selectedFillOptions["color"] = "#eeeeee".cstring
   let selectedFill = newOlFill(selectedFillOptions)
 
   let selectedStrokeOptions = newJsObject()
-  selectedStrokeOptions["color"] = "rgba(255, 255, 255, 0.7)"
+  selectedStrokeOptions["color"] = "rgba(255, 255, 255, 0.7)".cstring
   selectedStrokeOptions["width"] = 2.0
   let selectedStroke = newOlStroke(selectedStrokeOptions)
 

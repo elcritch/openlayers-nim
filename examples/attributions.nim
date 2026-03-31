@@ -43,7 +43,7 @@ proc initExample() =
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[baseLayer]
   mapOptions["controls"] = controlsWithAttribution
-  mapOptions["target"] = "map"
+  mapOptions["target"] = getElementById("map".cstring)
   mapOptions["view"] = mapView
   let mapObj = newMapWithOptions(mapOptions)
 

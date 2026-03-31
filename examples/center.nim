@@ -38,18 +38,19 @@ proc initExample() =
   initialized = true
 
   let sourceOptions = newJsObject()
-  sourceOptions["url"] = "/deps/openlayers/examples/data/geojson/switzerland.geojson"
+  sourceOptions["url"] =
+    "/deps/openlayers/examples/data/geojson/switzerland.geojson".cstring
   sourceOptions["format"] = newOlGeoJSON()
   let vectorSource = newVectorSourceWithOptions(sourceOptions)
 
   let styleOptions = newJsObject()
-  styleOptions["fill-color"] = "rgba(255, 255, 255, 0.6)"
+  styleOptions["fill-color"] = "rgba(255, 255, 255, 0.6)".cstring
   styleOptions["stroke-width"] = 1.0
-  styleOptions["stroke-color"] = "#319FD3"
+  styleOptions["stroke-color"] = "#319FD3".cstring
   styleOptions["circle-radius"] = 5.0
-  styleOptions["circle-fill-color"] = "rgba(255, 255, 255, 0.6)"
+  styleOptions["circle-fill-color"] = "rgba(255, 255, 255, 0.6)".cstring
   styleOptions["circle-stroke-width"] = 1.0
-  styleOptions["circle-stroke-color"] = "#319FD3"
+  styleOptions["circle-stroke-color"] = "#319FD3".cstring
 
   let vectorLayerOptions = newJsObject()
   vectorLayerOptions["source"] = vectorSource
@@ -67,7 +68,7 @@ proc initExample() =
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[baseLayer, vectorLayer]
-  mapOptions["target"] = "map"
+  mapOptions["target"] = getElementById("map".cstring)
   mapOptions["view"] = mapView
   let mapObj = newMapWithOptions(mapOptions)
 

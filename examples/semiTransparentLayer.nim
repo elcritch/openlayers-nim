@@ -25,14 +25,15 @@ proc initExample() =
   initialized = true
 
   let bwLayerOptions = newJsObject()
-  bwLayerOptions["className"] = "bw"
+  bwLayerOptions["className"] = "bw".cstring
   bwLayerOptions["source"] = newOlOSM()
   let bwLayer = newOlTileLayer(bwLayerOptions)
 
   let tileJsonOptions = newJsObject()
-  tileJsonOptions["url"] =
+  tileJsonOptions["url"] = cstring(
     "https://api.tiles.mapbox.com/v4/mapbox.va-quake-aug.json?secure&access_token=" & key
-  tileJsonOptions["crossOrigin"] = "anonymous"
+  )
+  tileJsonOptions["crossOrigin"] = "anonymous".cstring
   tileJsonOptions["transition"] = 0.0
   let quakeSource = newOlTileJSON(tileJsonOptions)
 
@@ -47,7 +48,7 @@ proc initExample() =
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[bwLayer, quakeLayer]
-  mapOptions["target"] = "map"
+  mapOptions["target"] = getElementById("map".cstring)
   mapOptions["view"] = mapView
 
   discard newMapWithOptions(mapOptions)

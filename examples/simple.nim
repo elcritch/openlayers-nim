@@ -30,7 +30,7 @@ proc initExample() =
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[baseLayer]
-  mapOptions["target"] = "map"
+  mapOptions["target"] = getElementById("map".cstring)
   mapOptions["view"] = mapView
 
   discard newMapWithOptions(mapOptions)

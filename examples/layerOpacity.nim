@@ -36,15 +36,15 @@ proc initExample() =
 
   let imagerySourceOptions = newJsObject()
   imagerySourceOptions["attributions"] =
-    "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> "
+    "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> ".cstring
   imagerySourceOptions["url"] =
-    "https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=" & key
+    cstring("https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=" & key)
   imagerySourceOptions["tileSize"] = 512.0
   imagerySourceOptions["maxZoom"] = 20.0
   let imagerySource = newOlImageTileSource(imagerySourceOptions)
 
   let imageryLayerOptions = newJsObject()
-  imageryLayerOptions["className"] = "ol-layer-imagery"
+  imageryLayerOptions["className"] = "ol-layer-imagery".cstring
   imageryLayerOptions["source"] = imagerySource
   let imageryLayer = newOlWebGLTileLayer(imageryLayerOptions)
 
@@ -59,7 +59,7 @@ proc initExample() =
 
   let mapOptions = newJsObject()
   mapOptions["layers"] = @[imageryLayer, osmLayer]
-  mapOptions["target"] = "map"
+  mapOptions["target"] = getElementById("map".cstring)
   mapOptions["view"] = mapView
 
   discard newMapWithOptions(mapOptions)
