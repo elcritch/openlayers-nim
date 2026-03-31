@@ -4,6 +4,8 @@ description   = "openlayer javascript bindings"
 license       = "BSD-2-Clause"
 srcDir        = "src"
 
+requires "https://github.com/elcritch/bunnery"
+
 feature "dev":
   requires "karax"
 

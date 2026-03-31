@@ -1,4 +1,5 @@
 import jsffi
+import karax/[karax, karaxdsl, vdom]
 import openlayers/format/geoJSON
 import openlayers/layer/tile
 import openlayers/layer/vector
@@ -7,37 +8,69 @@ import openlayers/view
 
 import olExampleHelpers
 
-let sourceOptions = newJsObject()
-sourceOptions["url"] = "data/geojson/switzerland.geojson"
-sourceOptions["format"] = newOlGeoJSON()
-let vectorSource = newVectorSourceWithOptions(sourceOptions)
+var initialized = false
 
-let styleOptions = newJsObject()
-styleOptions["fill-color"] = "rgba(255, 255, 255, 0.6)"
-styleOptions["stroke-width"] = 1.0
-styleOptions["stroke-color"] = "#319FD3"
-styleOptions["circle-radius"] = 5.0
-styleOptions["circle-fill-color"] = "rgba(255, 255, 255, 0.6)"
-styleOptions["circle-stroke-width"] = 1.0
-styleOptions["circle-stroke-color"] = "#319FD3"
+proc createDom(): VNode =
+  result = buildHtml(tdiv(class = "example-shell")):
+    h2:
+      text "Advanced View Positioning"
+    tdiv(class = "mapcontainer"):
+      tdiv(id = "map", class = "map")
+      tdiv(class = "padding-top")
+      tdiv(class = "padding-left")
+      tdiv(class = "padding-right")
+      tdiv(class = "padding-bottom")
+      tdiv(class = "center")
+    button(id = "zoomtoswitzerland"):
+      text "Zoom to Switzerland"
+    text " (best fit)."
+    br()
+    button(id = "zoomtolausanne"):
+      text "Zoom to Lausanne"
+    text " (with min resolution),"
+    br()
+    button(id = "centerlausanne"):
+      text "Center on Lausanne"
 
-let vectorLayerOptions = newJsObject()
-vectorLayerOptions["source"] = vectorSource
-vectorLayerOptions["style"] = styleOptions
-let vectorLayer = newOlVectorLayer(vectorLayerOptions)
+proc initExample() =
+  if initialized:
+    return
+  initialized = true
 
-let baseLayerOptions = newJsObject()
-baseLayerOptions["source"] = newOlOSM()
-let baseLayer = newOlTileLayer(baseLayerOptions)
+  let sourceOptions = newJsObject()
+  sourceOptions["url"] = "/deps/openlayers/examples/data/geojson/switzerland.geojson"
+  sourceOptions["format"] = newOlGeoJSON()
+  let vectorSource = newVectorSourceWithOptions(sourceOptions)
 
-let viewOptions = newJsObject()
-viewOptions["center"] = @[0.0, 0.0]
-viewOptions["zoom"] = 1.0
-let mapView = newOlView(viewOptions)
+  let styleOptions = newJsObject()
+  styleOptions["fill-color"] = "rgba(255, 255, 255, 0.6)"
+  styleOptions["stroke-width"] = 1.0
+  styleOptions["stroke-color"] = "#319FD3"
+  styleOptions["circle-radius"] = 5.0
+  styleOptions["circle-fill-color"] = "rgba(255, 255, 255, 0.6)"
+  styleOptions["circle-stroke-width"] = 1.0
+  styleOptions["circle-stroke-color"] = "#319FD3"
 
-let mapOptions = newJsObject()
-mapOptions["layers"] = @[baseLayer, vectorLayer]
-mapOptions["target"] = "map"
-mapOptions["view"] = mapView
+  let vectorLayerOptions = newJsObject()
+  vectorLayerOptions["source"] = vectorSource
+  vectorLayerOptions["style"] = styleOptions
+  let vectorLayer = newOlVectorLayer(vectorLayerOptions)
 
-discard newMapWithOptions(mapOptions)
+  let baseLayerOptions = newJsObject()
+  baseLayerOptions["source"] = newOlOSM()
+  let baseLayer = newOlTileLayer(baseLayerOptions)
+
+  let viewOptions = newJsObject()
+  viewOptions["center"] = @[0.0, 0.0]
+  viewOptions["zoom"] = 1.0
+  let mapView = newOlView(viewOptions)
+
+  let mapOptions = newJsObject()
+  mapOptions["layers"] = @[baseLayer, vectorLayer]
+  mapOptions["target"] = "map"
+  mapOptions["view"] = mapView
+  let mapObj = newMapWithOptions(mapOptions)
+
+  installCenterControls(mapObj, cast[JsObject](mapView), vectorSource)
+
+discard setRenderer(createDom, "ROOT", initExample)

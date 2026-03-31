@@ -15,8 +15,8 @@ proc newVectorSourceWithOptions*(
   options: JsObject
 ): JsObject {.importjs: "(new olNs_source_Vector.default(#))".}
 
-proc jsArray2*(a: float, b: float): JsObject {.importjs: "[#, #]".}
 proc jsArray1*(a: JsObject): JsObject {.importjs: "[#]".}
+proc jsArray2*(a: float, b: float): JsObject {.importjs: "[#, #]".}
 
 proc addInteraction*(
   mapObj: JsObject, interaction: JsObject
@@ -59,6 +59,17 @@ proc installSelectHoverStatus*(
     "(function(){ const status = document.getElementById('status'); #.on('select', function(e){ if (e.selected.length > 0) { status.innerHTML = e.selected[0].get('ECO_NAME'); } else { status.innerHTML = '&nbsp;'; } }); })()"
 .}
 
+proc installSelectTypeController*(
+  mapObj: JsObject,
+  selectSingleClick: JsObject,
+  selectClick: JsObject,
+  selectPointerMove: JsObject,
+  selectAltClick: JsObject,
+) {.
+  importjs:
+    "(function(){ const map = #; const singleClick = #; const click = #; const pointerMove = #; const altClick = #; const selectElement = document.getElementById('type'); const status = document.getElementById('status'); let activeSelect = null; const changeInteraction = function(){ if (activeSelect !== null) { map.removeInteraction(activeSelect); } const value = selectElement.value; if (value === 'singleclick') { activeSelect = singleClick; } else if (value === 'click') { activeSelect = click; } else if (value === 'pointermove') { activeSelect = pointerMove; } else if (value === 'altclick') { activeSelect = altClick; } else { activeSelect = null; } if (activeSelect !== null) { map.addInteraction(activeSelect); activeSelect.on('select', function(e){ status.innerHTML = '&nbsp;' + e.target.getFeatures().getLength() + ' selected features (last operation selected ' + e.selected.length + ' and deselected ' + e.deselected.length + ' features)'; }); } else { status.innerHTML = '&nbsp;0 selected features'; } }; selectElement.onchange = changeInteraction; changeInteraction(); })()"
+.}
+
 proc installOpacitySlider*(
   layerForOpacity: JsObject
 ) {.
@@ -78,4 +89,11 @@ proc installAttributionResizeBehavior*(
 ) {.
   importjs:
     "(function(){ const checkSize = function(){ const small = #.getSize()[0] < 600; #.setCollapsible(small); #.setCollapsed(small); }; #.on('change:size', checkSize); checkSize(); })()"
+.}
+
+proc installCenterControls*(
+  mapObj: JsObject, viewObj: JsObject, sourceObj: JsObject
+) {.
+  importjs:
+    "(function(){ const map = #; const view = #; const source = #; const zoomToSwitzerland = document.getElementById('zoomtoswitzerland'); const zoomToLausanne = document.getElementById('zoomtolausanne'); const centerLausanne = document.getElementById('centerlausanne'); zoomToSwitzerland.addEventListener('click', function(){ const feature = source.getFeatures()[0]; const polygon = feature.getGeometry(); view.fit(polygon, {padding: [170, 50, 30, 150]}); }, false); zoomToLausanne.addEventListener('click', function(){ const feature = source.getFeatures()[1]; const point = feature.getGeometry(); view.fit(point, {padding: [170, 50, 30, 150], minResolution: 50}); }, false); centerLausanne.addEventListener('click', function(){ const feature = source.getFeatures()[1]; const point = feature.getGeometry(); const size = map.getSize(); view.centerOn(point.getCoordinates(), size, [570, 500]); }, false); })()"
 .}

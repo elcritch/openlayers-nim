@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenLayers Nim Examples</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f7fafc;
+      color: #111827;
+    }
+    h1 { margin: 0 0 14px 0; font-size: 28px; }
+    p { margin: 0 0 16px 0; }
+    .example-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .example-card {
+      background: #fff;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    }
+    .example-title {
+      margin: 0;
+      padding: 10px 12px;
+      font-size: 16px;
+      font-weight: 600;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      border: 0;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>OpenLayers Nim Examples</h1>
+  <p>Karax-based examples served from one page.</p>
+
+  <div class="example-grid">
+    <section class="example-card">
+      <h2 class="example-title">Simple Map</h2>
+      <iframe src="./simple.html" height="460" title="Simple Map"></iframe>
+    </section>
+    <section class="example-card">
+      <h2 class="example-title">Semi-Transparent Layer</h2>
+      <iframe src="./semiTransparentLayer.html" height="460" title="Semi-Transparent Layer"></iframe>
+    </section>
+    <section class="example-card">
+      <h2 class="example-title">Select Features</h2>
+      <iframe src="./selectFeatures.html" height="520" title="Select Features"></iframe>
+    </section>
+    <section class="example-card">
+      <h2 class="example-title">Select Features by Hover</h2>
+      <iframe src="./selectHoverFeatures.html" height="490" title="Select Features by Hover"></iframe>
+    </section>
+    <section class="example-card">
+      <h2 class="example-title">Layer Opacity</h2>
+      <iframe src="./layerOpacity.html" height="500" title="Layer Opacity"></iframe>
+    </section>
+    <section class="example-card">
+      <h2 class="example-title">Attributions</h2>
+      <iframe src="./attributions.html" height="460" title="Attributions"></iframe>
+    </section>
+    <section class="example-card">
+      <h2 class="example-title">Advanced View Positioning</h2>
+      <iframe src="./center.html" height="760" title="Advanced View Positioning"></iframe>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,4 +1,5 @@
 import jsffi
+import karax/[karax, karaxdsl, vdom]
 import openlayers/control/attribution
 import openlayers/control/defaults
 import openlayers/layer/tile
@@ -7,32 +8,50 @@ import openlayers/view
 
 import olExampleHelpers
 
-let attributionOptions = newJsObject()
-attributionOptions["collapsible"] = false
-let attributionControl = newOlAttribution(attributionOptions)
+var initialized = false
 
-let controlsOptions = newJsObject()
-controlsOptions["attribution"] = false
-let controlsWithAttribution = extendCollection(
-  defaults(controlsOptions), jsArray1(cast[JsObject](attributionControl))
-)
+proc createDom(): VNode =
+  result = buildHtml(tdiv(class = "example-shell")):
+    h2:
+      text "Attributions"
+    tdiv(id = "map", class = "map")
 
-let layerOptions = newJsObject()
-layerOptions["source"] = newOlOSM()
-let baseLayer = newOlTileLayer(layerOptions)
+proc initExample() =
+  if initialized:
+    return
+  initialized = true
 
-let viewOptions = newJsObject()
-viewOptions["center"] = @[0.0, 0.0]
-viewOptions["zoom"] = 2.0
-let mapView = newOlView(viewOptions)
+  let attributionOptions = newJsObject()
+  attributionOptions["collapsible"] = false
+  let attributionControl = newOlAttribution(attributionOptions)
 
-let mapOptions = newJsObject()
-mapOptions["layers"] = @[baseLayer]
-mapOptions["controls"] = controlsWithAttribution
-mapOptions["target"] = "map"
-mapOptions["view"] = mapView
-let mapObj = newMapWithOptions(mapOptions)
+  let controlsOptions = newJsObject()
+  controlsOptions["attribution"] = false
+  let controlsWithAttribution = extendCollection(
+    defaults(controlsOptions), jsArray1(cast[JsObject](attributionControl))
+  )
 
-installAttributionResizeBehavior(
-  mapObj, cast[JsObject](attributionControl), cast[JsObject](attributionControl), mapObj
-)
+  let layerOptions = newJsObject()
+  layerOptions["source"] = newOlOSM()
+  let baseLayer = newOlTileLayer(layerOptions)
+
+  let viewOptions = newJsObject()
+  viewOptions["center"] = @[0.0, 0.0]
+  viewOptions["zoom"] = 2.0
+  let mapView = newOlView(viewOptions)
+
+  let mapOptions = newJsObject()
+  mapOptions["layers"] = @[baseLayer]
+  mapOptions["controls"] = controlsWithAttribution
+  mapOptions["target"] = "map"
+  mapOptions["view"] = mapView
+  let mapObj = newMapWithOptions(mapOptions)
+
+  installAttributionResizeBehavior(
+    mapObj,
+    cast[JsObject](attributionControl),
+    cast[JsObject](attributionControl),
+    mapObj,
+  )
+
+discard setRenderer(createDom, "ROOT", initExample)
