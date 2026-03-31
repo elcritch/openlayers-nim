@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "gen:ol-api": "node scripts/generate_ol_api_wrappers.mjs"
+  },
   "dependencies": {
     "ol": "^10.8.0"
   }

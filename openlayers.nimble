@@ -1,6 +1,6 @@
 version       = "0.1.0"
 author        = "Jaremy Creechley"
-description   = "metal bindings"
+description   = "openlayer javascript bindings"
 license       = "BSD-2-Clause"
 srcDir        = "src"
 

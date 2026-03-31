@@ -1,0 +1,13 @@
+import jsffi
+
+when not defined(js):
+  {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
+
+when defined(esmModules):
+  {.emit: "import * as olNs_interaction_PinchRotate from 'ol/interaction/PinchRotate.js';".}
+
+proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_PinchRotate)".}
+
+type
+  OlPinchRotate* = ref object of JsRoot
+proc newOlPinchRotate*(options: JsObject = jsUndefined): OlPinchRotate {.importjs: "(new olNs_interaction_PinchRotate.default(#))".}
