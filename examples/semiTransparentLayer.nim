@@ -1,5 +1,6 @@
 import jsffi
 import karax/[karax, karaxdsl, vdom]
+import openlayers/map
 import openlayers/layer/tile
 import openlayers/proj
 import openlayers/source/osm
@@ -24,33 +25,33 @@ proc initExample() =
     return
   initialized = true
 
-  let bwLayerOptions = newJsObject()
-  bwLayerOptions["className"] = "bw".cstring
-  bwLayerOptions["source"] = newOSM()
+  let bwLayerOptions = newTileLayerOptions()
+  bwLayerOptions.className = "bw".cstring
+  bwLayerOptions.source = newOSM()
   let bwLayer = newTileLayer(bwLayerOptions)
 
-  let tileJsonOptions = newJsObject()
-  tileJsonOptions["url"] = cstring(
+  let tileJsonOptions = newTileJSONOptions()
+  tileJsonOptions.url = cstring(
     "https://api.tiles.mapbox.com/v4/mapbox.va-quake-aug.json?secure&access_token=" & key
   )
-  tileJsonOptions["crossOrigin"] = "anonymous".cstring
-  tileJsonOptions["transition"] = 0.0
+  tileJsonOptions.crossOrigin = "anonymous".cstring
+  tileJsonOptions.transition = 0.0
   let quakeSource = newTileJSON(tileJsonOptions)
 
-  let quakeLayerOptions = newJsObject()
-  quakeLayerOptions["source"] = quakeSource
+  let quakeLayerOptions = newTileLayerOptions()
+  quakeLayerOptions.source = quakeSource
   let quakeLayer = newTileLayer(quakeLayerOptions)
 
-  let viewOptions = newJsObject()
-  viewOptions["center"] = fromLonLat(jsArray2(-77.93255, 37.9555))
-  viewOptions["zoom"] = 7.0
+  let viewOptions = newViewOptions()
+  viewOptions.center = fromLonLat(jsArray2(-77.93255, 37.9555))
+  viewOptions.zoom = 7.0
   let mapView = newView(viewOptions)
 
-  let mapOptions = newJsObject()
-  mapOptions["layers"] = @[bwLayer, quakeLayer]
-  mapOptions["target"] = getElementById("map".cstring)
-  mapOptions["view"] = mapView
+  let mapOptions = newMapOptions()
+  mapOptions.layers = @[bwLayer, quakeLayer]
+  mapOptions.target = getElementById("map".cstring)
+  mapOptions.view = mapView
 
-  discard newMapWithOptions(mapOptions)
+  discard newMap(mapOptions)
 
 discard setRenderer(createDom, "ROOT", initExample)

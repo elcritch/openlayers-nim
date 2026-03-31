@@ -1,5 +1,6 @@
 import jsffi
 import karax/[karax, karaxdsl, vdom]
+import openlayers/map
 import openlayers/layer/webGLTile
 import openlayers/source/imageTile
 import openlayers/source/osm
@@ -34,35 +35,35 @@ proc initExample() =
     return
   initialized = true
 
-  let imagerySourceOptions = newJsObject()
-  imagerySourceOptions["attributions"] =
+  let imagerySourceOptions = newImageTileSourceOptions()
+  imagerySourceOptions.attributions =
     "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> ".cstring
-  imagerySourceOptions["url"] =
+  imagerySourceOptions.url =
     cstring("https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=" & key)
-  imagerySourceOptions["tileSize"] = 512.0
-  imagerySourceOptions["maxZoom"] = 20.0
+  imagerySourceOptions.tileSize = 512.0
+  imagerySourceOptions.maxZoom = 20.0
   let imagerySource = newImageTileSource(imagerySourceOptions)
 
-  let imageryLayerOptions = newJsObject()
-  imageryLayerOptions["className"] = "ol-layer-imagery".cstring
-  imageryLayerOptions["source"] = imagerySource
+  let imageryLayerOptions = newWebGLTileLayerOptions()
+  imageryLayerOptions.className = "ol-layer-imagery".cstring
+  imageryLayerOptions.source = imagerySource
   let imageryLayer = newWebGLTileLayer(imageryLayerOptions)
 
-  let osmLayerOptions = newJsObject()
-  osmLayerOptions["source"] = newOSM()
+  let osmLayerOptions = newWebGLTileLayerOptions()
+  osmLayerOptions.source = newOSM()
   let osmLayer = newWebGLTileLayer(osmLayerOptions)
 
-  let viewOptions = newJsObject()
-  viewOptions["center"] = @[0.0, 0.0]
-  viewOptions["zoom"] = 2.0
+  let viewOptions = newViewOptions()
+  viewOptions.center = @[0.0, 0.0]
+  viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 
-  let mapOptions = newJsObject()
-  mapOptions["layers"] = @[imageryLayer, osmLayer]
-  mapOptions["target"] = getElementById("map".cstring)
-  mapOptions["view"] = mapView
+  let mapOptions = newMapOptions()
+  mapOptions.layers = @[imageryLayer, osmLayer]
+  mapOptions.target = getElementById("map".cstring)
+  mapOptions.view = mapView
 
-  discard newMapWithOptions(mapOptions)
+  discard newMap(mapOptions)
   installOpacitySlider(cast[JsObject](osmLayer))
 
 discard setRenderer(createDom, "ROOT", initExample)

@@ -14,9 +14,7 @@ type
 
 proc newMapOptions*(): MapOptions {.importjs: "({})".}
 proc `controls=`*(options: MapOptions, value: JsObject) {.importjs: "#.controls = #".}
-proc `pixelRatio=`*(
-  options: MapOptions, value: float
-) {.importjs: "#.pixelRatio = #".}
+proc `pixelRatio=`*(options: MapOptions, value: float) {.importjs: "#.pixelRatio = #".}
 
 proc `interactions=`*(
   options: MapOptions, value: JsObject
@@ -31,6 +29,7 @@ proc `keyboardEventTarget=`*(
 ) {.importjs: "#.keyboardEventTarget = #".}
 
 proc `layers=`*(options: MapOptions, value: JsObject) {.importjs: "#.layers = #".}
+proc `layers=`*[T](options: MapOptions, value: seq[T]) {.importjs: "#.layers = #".}
 proc `maxTilesLoading=`*(
   options: MapOptions, value: float
 ) {.importjs: "#.maxTilesLoading = #".}

@@ -2,6 +2,7 @@ import jsffi
 import karax/[karax, karaxdsl, vdom]
 import openlayers/control/attribution
 import openlayers/control/defaults
+import openlayers/map
 import openlayers/layer/tile
 import openlayers/source/osm
 import openlayers/view
@@ -21,31 +22,31 @@ proc initExample() =
     return
   initialized = true
 
-  let attributionOptions = newJsObject()
-  attributionOptions["collapsible"] = false
+  let attributionOptions = newAttributionOptions()
+  attributionOptions.collapsible = false
   let attributionControl = newAttribution(attributionOptions)
 
-  let controlsOptions = newJsObject()
-  controlsOptions["attribution"] = false
+  let controlsOptions = newControlDefaultsOptions()
+  controlsOptions.attribution = false
   let controlsWithAttribution = extendCollection(
     defaults(controlsOptions), jsArray1(cast[JsObject](attributionControl))
   )
 
-  let layerOptions = newJsObject()
-  layerOptions["source"] = newOSM()
+  let layerOptions = newTileLayerOptions()
+  layerOptions.source = newOSM()
   let baseLayer = newTileLayer(layerOptions)
 
-  let viewOptions = newJsObject()
-  viewOptions["center"] = @[0.0, 0.0]
-  viewOptions["zoom"] = 2.0
+  let viewOptions = newViewOptions()
+  viewOptions.center = @[0.0, 0.0]
+  viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 
-  let mapOptions = newJsObject()
-  mapOptions["layers"] = @[baseLayer]
-  mapOptions["controls"] = controlsWithAttribution
-  mapOptions["target"] = getElementById("map".cstring)
-  mapOptions["view"] = mapView
-  let mapObj = newMapWithOptions(mapOptions)
+  let mapOptions = newMapOptions()
+  mapOptions.layers = @[baseLayer]
+  mapOptions.controls = controlsWithAttribution
+  mapOptions.target = getElementById("map".cstring)
+  mapOptions.view = mapView
+  let mapObj = cast[JsObject](newMap(mapOptions))
 
   installAttributionResizeBehavior(
     mapObj,

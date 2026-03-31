@@ -25,6 +25,10 @@ proc `format=`*(
   options: VectorSourceOptions, value: JsObject
 ) {.importjs: "#.format = #".}
 
+proc `format=`*(
+  options: VectorSourceOptions, value: RootRef
+) {.importjs: "#.format = #".}
+
 proc `loader=`*(
   options: VectorSourceOptions, value: JsObject
 ) {.importjs: "#.loader = #".}
@@ -45,9 +49,7 @@ proc `useSpatialIndex=`*(
 
 proc `wrapX=`*(options: VectorSourceOptions, value: bool) {.importjs: "#.wrapX = #".}
 
-proc newVectorSource*(): VectorSource {.
-  importjs: "(new olNs_source_Vector.default())"
-.}
+proc newVectorSource*(): VectorSource {.importjs: "(new olNs_source_Vector.default())".}
 
 proc newVectorSource*(
   options: JsObject

@@ -14,6 +14,7 @@ type
 
 proc newViewOptions*(): ViewOptions {.importjs: "({})".}
 proc `center=`*(options: ViewOptions, value: JsObject) {.importjs: "#.center = #".}
+proc `center=`*(options: ViewOptions, value: seq[float]) {.importjs: "#.center = #".}
 proc `constrainRotation=`*(
   options: ViewOptions, value: float
 ) {.importjs: "#.constrainRotation = #".}
@@ -45,9 +46,7 @@ proc `minResolution=`*(
 
 proc `maxZoom=`*(options: ViewOptions, value: float) {.importjs: "#.maxZoom = #".}
 proc `minZoom=`*(options: ViewOptions, value: float) {.importjs: "#.minZoom = #".}
-proc `multiWorld=`*(
-  options: ViewOptions, value: bool
-) {.importjs: "#.multiWorld = #".}
+proc `multiWorld=`*(options: ViewOptions, value: bool) {.importjs: "#.multiWorld = #".}
 
 proc `constrainResolution=`*(
   options: ViewOptions, value: bool
@@ -65,9 +64,7 @@ proc `projection=`*(
   options: ViewOptions, value: JsObject
 ) {.importjs: "#.projection = #".}
 
-proc `resolution=`*(
-  options: ViewOptions, value: float
-) {.importjs: "#.resolution = #".}
+proc `resolution=`*(options: ViewOptions, value: float) {.importjs: "#.resolution = #".}
 
 proc `resolutions=`*(
   options: ViewOptions, value: seq[float]
@@ -75,21 +72,15 @@ proc `resolutions=`*(
 
 proc `rotation=`*(options: ViewOptions, value: float) {.importjs: "#.rotation = #".}
 proc `zoom=`*(options: ViewOptions, value: float) {.importjs: "#.zoom = #".}
-proc `zoomFactor=`*(
-  options: ViewOptions, value: float
-) {.importjs: "#.zoomFactor = #".}
+proc `zoomFactor=`*(options: ViewOptions, value: float) {.importjs: "#.zoomFactor = #".}
 
-proc `padding=`*(
-  options: ViewOptions, value: seq[float]
-) {.importjs: "#.padding = #".}
+proc `padding=`*(options: ViewOptions, value: seq[float]) {.importjs: "#.padding = #".}
 
 proc newView*(
   options: JsObject = jsUndefined
 ): View {.importjs: "(new olNs_View.default(#))".}
 
-proc newView*(
-  options: ViewOptions
-): View {.importjs: "(new olNs_View.default(#))".}
+proc newView*(options: ViewOptions): View {.importjs: "(new olNs_View.default(#))".}
 
 proc applyOptions*(self: View, options: JsObject) {.importjs: "#.applyOptions_(#)".}
 proc getUpdatedOptions*(

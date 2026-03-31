@@ -1,9 +1,11 @@
 import jsffi
 import karax/[karax, karaxdsl, vdom]
 import openlayers/format/geoJSON
+import openlayers/map
 import openlayers/layer/tile
 import openlayers/layer/vector
 import openlayers/source/osm
+import openlayers/source/vector
 import openlayers/view
 
 import olExampleHelpers
@@ -37,11 +39,11 @@ proc initExample() =
     return
   initialized = true
 
-  let sourceOptions = newJsObject()
-  sourceOptions["url"] =
+  let sourceOptions = newVectorSourceOptions()
+  sourceOptions.url =
     "/deps/openlayers/examples/data/geojson/switzerland.geojson".cstring
-  sourceOptions["format"] = newGeoJSON()
-  let vectorSource = newVectorSourceWithOptions(sourceOptions)
+  sourceOptions.format = newGeoJSON()
+  let vectorSource = newVectorSource(sourceOptions)
 
   let styleOptions = newJsObject()
   styleOptions["fill-color"] = "rgba(255, 255, 255, 0.6)".cstring
@@ -52,26 +54,26 @@ proc initExample() =
   styleOptions["circle-stroke-width"] = 1.0
   styleOptions["circle-stroke-color"] = "#319FD3".cstring
 
-  let vectorLayerOptions = newJsObject()
-  vectorLayerOptions["source"] = vectorSource
-  vectorLayerOptions["style"] = styleOptions
+  let vectorLayerOptions = newVectorLayerOptions()
+  vectorLayerOptions.source = vectorSource
+  vectorLayerOptions.style = styleOptions
   let vectorLayer = newVectorLayer(vectorLayerOptions)
 
-  let baseLayerOptions = newJsObject()
-  baseLayerOptions["source"] = newOSM()
+  let baseLayerOptions = newTileLayerOptions()
+  baseLayerOptions.source = newOSM()
   let baseLayer = newTileLayer(baseLayerOptions)
 
-  let viewOptions = newJsObject()
-  viewOptions["center"] = @[0.0, 0.0]
-  viewOptions["zoom"] = 1.0
+  let viewOptions = newViewOptions()
+  viewOptions.center = @[0.0, 0.0]
+  viewOptions.zoom = 1.0
   let mapView = newView(viewOptions)
 
-  let mapOptions = newJsObject()
-  mapOptions["layers"] = @[baseLayer, vectorLayer]
-  mapOptions["target"] = getElementById("map".cstring)
-  mapOptions["view"] = mapView
-  let mapObj = newMapWithOptions(mapOptions)
+  let mapOptions = newMapOptions()
+  mapOptions.layers = @[baseLayer, vectorLayer]
+  mapOptions.target = getElementById("map".cstring)
+  mapOptions.view = mapView
+  let mapObj = cast[JsObject](newMap(mapOptions))
 
-  installCenterControls(mapObj, cast[JsObject](mapView), vectorSource)
+  installCenterControls(mapObj, cast[JsObject](mapView), cast[JsObject](vectorSource))
 
 discard setRenderer(createDom, "ROOT", initExample)

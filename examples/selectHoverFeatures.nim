@@ -2,7 +2,9 @@ import jsffi
 import karax/[karax, karaxdsl, vdom]
 import openlayers/format/geoJSON
 import openlayers/interaction/select
+import openlayers/map
 import openlayers/layer/vector
+import openlayers/source/vector
 import openlayers/style/fill
 import openlayers/style/stroke
 import openlayers/style/style
@@ -25,55 +27,54 @@ proc initExample() =
     return
   initialized = true
 
-  let baseFillOptions = newJsObject()
-  baseFillOptions["color"] = "#eeeeee".cstring
+  let baseFillOptions = newFillOptions()
+  baseFillOptions.color = "#eeeeee".cstring
   let baseFill = newFill(baseFillOptions)
 
-  let baseStyleOptions = newJsObject()
-  baseStyleOptions["fill"] = baseFill
+  let baseStyleOptions = newStyleOptions()
+  baseStyleOptions.fill = baseFill
   let baseStyle = newStyle(baseStyleOptions)
 
-  let vectorSourceOptions = newJsObject()
-  vectorSourceOptions["url"] =
-    "https://openlayers.org/data/vector/ecoregions.json".cstring
-  vectorSourceOptions["format"] = newGeoJSON()
-  let vectorSource = newVectorSourceWithOptions(vectorSourceOptions)
+  let vectorSourceOptions = newVectorSourceOptions()
+  vectorSourceOptions.url = "https://openlayers.org/data/vector/ecoregions.json".cstring
+  vectorSourceOptions.format = newGeoJSON()
+  let vectorSource = newVectorSource(vectorSourceOptions)
 
-  let vectorLayerOptions = newJsObject()
-  vectorLayerOptions["source"] = vectorSource
-  vectorLayerOptions["background"] = "white".cstring
-  vectorLayerOptions["style"] =
+  let vectorLayerOptions = newVectorLayerOptions()
+  vectorLayerOptions.source = vectorSource
+  vectorLayerOptions.background = "white".cstring
+  vectorLayerOptions.style =
     makeColorStyleFn(cast[JsObject](baseStyle), cast[JsObject](baseStyle))
   let vectorLayer = newVectorLayer(vectorLayerOptions)
 
-  let viewOptions = newJsObject()
-  viewOptions["center"] = @[0.0, 0.0]
-  viewOptions["zoom"] = 2.0
+  let viewOptions = newViewOptions()
+  viewOptions.center = @[0.0, 0.0]
+  viewOptions.zoom = 2.0
   let mapView = newView(viewOptions)
 
-  let mapOptions = newJsObject()
-  mapOptions["layers"] = @[vectorLayer]
-  mapOptions["target"] = getElementById("map".cstring)
-  mapOptions["view"] = mapView
-  let mapObj = newMapWithOptions(mapOptions)
+  let mapOptions = newMapOptions()
+  mapOptions.layers = @[vectorLayer]
+  mapOptions.target = getElementById("map".cstring)
+  mapOptions.view = mapView
+  let mapObj = cast[JsObject](newMap(mapOptions))
 
-  let selectedFillOptions = newJsObject()
-  selectedFillOptions["color"] = "#eeeeee".cstring
+  let selectedFillOptions = newFillOptions()
+  selectedFillOptions.color = "#eeeeee".cstring
   let selectedFill = newFill(selectedFillOptions)
 
-  let selectedStrokeOptions = newJsObject()
-  selectedStrokeOptions["color"] = "rgba(255, 255, 255, 0.7)".cstring
-  selectedStrokeOptions["width"] = 2.0
+  let selectedStrokeOptions = newStrokeOptions()
+  selectedStrokeOptions.color = "rgba(255, 255, 255, 0.7)".cstring
+  selectedStrokeOptions.width = 2.0
   let selectedStroke = newStroke(selectedStrokeOptions)
 
-  let selectedStyleOptions = newJsObject()
-  selectedStyleOptions["fill"] = selectedFill
-  selectedStyleOptions["stroke"] = selectedStroke
+  let selectedStyleOptions = newStyleOptions()
+  selectedStyleOptions.fill = selectedFill
+  selectedStyleOptions.stroke = selectedStroke
   let selectedStyle = newStyle(selectedStyleOptions)
 
-  let selectOptions = newJsObject()
-  selectOptions["condition"] = getPointerMoveConditionFn()
-  selectOptions["style"] =
+  let selectOptions = newSelectOptions()
+  selectOptions.condition = getPointerMoveConditionFn()
+  selectOptions.style =
     makeColorStyleFn(cast[JsObject](selectedStyle), cast[JsObject](selectedStyle))
   let selectInteraction = newSelect(selectOptions)
 
