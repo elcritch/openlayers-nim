@@ -1,8 +1,7 @@
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when defined(esmModules):
-  {.emit: "import * as proj from 'ol/proj.js';".}
+{.emit: "import * as proj from 'ol/proj.js';".}
 
 proc fromLonLat*(coordinate: seq[float]): seq[float] {.importjs: "proj.fromLonLat(#)".}
 

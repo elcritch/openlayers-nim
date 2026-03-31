@@ -6,8 +6,7 @@ import ./layer/tile
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when defined(esmModules):
-  {.emit: "import Map from 'ol/Map.js';".}
+{.emit: "import Map from 'ol/Map.js';".}
 
 proc hasMapConstructor*(): bool {.importjs: "(typeof Map === 'function')".}
 

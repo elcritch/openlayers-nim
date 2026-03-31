@@ -3,8 +3,7 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when defined(esmModules):
-  {.emit: "import View from 'ol/View.js';".}
+{.emit: "import View from 'ol/View.js';".}
 
 proc openLayersLoaded*(): bool {.importjs: "(typeof View === 'function')".}
 
