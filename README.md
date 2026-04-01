@@ -1,11 +1,12 @@
 # openlayers-nim
 
-Nim JS bindings for OpenLayers. It follows typescript bidings mostly. Mostly generated with Codex, but guided to provide mostly sane API choices.
+Nim JS bindings for OpenLayers. It follows typescript bidings mostly. Mostly generated with Codex, but guided to provide mostly sane API choices. PRs for more bindings / typed APIs accepted.
 
+The best "docs" are to follow the OpenLayers docs and the ported examples below.
 
 ## Examples
 
-The interactive example app and individual example modules are in `examples/`.
+The interactive example app and individual example modules are in `examples/`. It uses Karax to switch between the examples.
 
 - Main router app: `examples/app.nim`
 - Per-example modules:
