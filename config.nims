@@ -5,7 +5,6 @@ include bunnery/tasks
 
 --nimcache:".nimcache"
 --path:"src"
---define:esmModules
 
 let karaxExampleEntries = @[
   "examples/app.nim",

@@ -3,7 +3,7 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when defined(esmModules):
+when not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_renderer_Composite from 'ol/renderer/Composite.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_renderer_Composite)".}

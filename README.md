@@ -1,12 +1,7 @@
 # openlayers-nim
 
-> Important: compile with `-d:esmModules`.
->
-> These bindings emit ESM imports for OpenLayers modules, so builds must define
-> `esmModules` (for example: `nim js -d:esmModules ...`). The project `nim.cfg`
-> already sets this for normal project builds.
+Nim JS bindings for OpenLayers. It follows typescript bidings mostly. Mostly generated with Codex, but guided to provide mostly sane API choices.
 
-Nim bindings for OpenLayers.
 
 ## Examples
 
@@ -42,7 +37,6 @@ You can also build any individual example module directly, for example:
 
 - `nim js -d:nodejs examples/drawFeatures.nim`
 
-Regenerate wrappers and API/options reports:
+## Options
 
-- `nim regenOl`
-- `npm run gen:ol-all`
+This module assumes ESM style modules, which can be opted out of by passing `-d:openlayers.noEsmModules`.

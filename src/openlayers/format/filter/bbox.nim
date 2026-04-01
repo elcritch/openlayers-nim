@@ -3,7 +3,7 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when defined(esmModules):
+when not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_format_filter_Bbox from 'ol/format/filter/Bbox.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_format_filter_Bbox)".}

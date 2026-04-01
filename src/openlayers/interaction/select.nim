@@ -3,7 +3,7 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when defined(esmModules):
+when not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_interaction_Select from 'ol/interaction/Select.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_interaction_Select)".}

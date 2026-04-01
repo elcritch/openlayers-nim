@@ -3,7 +3,7 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when defined(esmModules):
+when not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_control_ZoomToExtent from 'ol/control/ZoomToExtent.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_control_ZoomToExtent)".}
