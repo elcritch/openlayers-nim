@@ -24,6 +24,10 @@ The interactive example app and individual example modules are in `examples/`.
   - `examples/layerOpacity.nim`
   - `examples/attributions.nim`
   - `examples/center.nim`
+  - `examples/iconSymbolizer.nim`
+  - `examples/markerAnimation.nim`
+  - `examples/geoJSON.nim`
+  - `examples/layerGroups.nim`
 
 Build the app:
 

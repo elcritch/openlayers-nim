@@ -7,7 +7,11 @@ import center as centerExample
 import drawFeatures as drawFeaturesExample
 import drawModifyTraceSnap as drawModifyTraceSnapExample
 import earthquakesHeatmap as earthquakesHeatmapExample
+import geoJSON as geoJSONExample
+import iconSymbolizer as iconSymbolizerExample
 import layerOpacity as layerOpacityExample
+import layerGroups as layerGroupsExample
+import markerAnimation as markerAnimationExample
 import selectFeatures as selectFeaturesExample
 import selectHoverFeatures as selectHoverFeaturesExample
 import semiTransparentLayer as semiTransparentLayerExample
@@ -26,6 +30,10 @@ type ExampleRoute = enum
   routeLayerOpacity
   routeAttributions
   routeCenter
+  routeIconSymbolizer
+  routeMarkerAnimation
+  routeGeoJSON
+  routeLayerGroups
 
 var
   currentRoute = routeSimple
@@ -54,6 +62,10 @@ proc parseRoute(hashPart: cstring): ExampleRoute =
   of "layerOpacity": routeLayerOpacity
   of "attributions": routeAttributions
   of "center": routeCenter
+  of "iconSymbolizer": routeIconSymbolizer
+  of "markerAnimation": routeMarkerAnimation
+  of "geoJSON", "geojson": routeGeoJSON
+  of "layerGroups": routeLayerGroups
   else: routeSimple
 
 proc linkClass(route: ExampleRoute, active: ExampleRoute): cstring =
@@ -81,6 +93,14 @@ proc renderRoute(route: ExampleRoute): VNode =
     attributionsExample.createDom()
   of routeCenter:
     centerExample.createDom()
+  of routeIconSymbolizer:
+    iconSymbolizerExample.createDom()
+  of routeMarkerAnimation:
+    markerAnimationExample.createDom()
+  of routeGeoJSON:
+    geoJSONExample.createDom()
+  of routeLayerGroups:
+    layerGroupsExample.createDom()
 
 proc initRoute(route: ExampleRoute): JsObject =
   case route
@@ -104,6 +124,14 @@ proc initRoute(route: ExampleRoute): JsObject =
     attributionsExample.initExample()
   of routeCenter:
     centerExample.initExample()
+  of routeIconSymbolizer:
+    iconSymbolizerExample.initExample()
+  of routeMarkerAnimation:
+    markerAnimationExample.initExample()
+  of routeGeoJSON:
+    geoJSONExample.initExample()
+  of routeLayerGroups:
+    layerGroupsExample.initExample()
 
 proc cleanupRoute(route: ExampleRoute) =
   case route
@@ -127,6 +155,14 @@ proc cleanupRoute(route: ExampleRoute) =
     attributionsExample.cleanupExample()
   of routeCenter:
     centerExample.cleanupExample()
+  of routeIconSymbolizer:
+    iconSymbolizerExample.cleanupExample()
+  of routeMarkerAnimation:
+    markerAnimationExample.cleanupExample()
+  of routeGeoJSON:
+    geoJSONExample.cleanupExample()
+  of routeLayerGroups:
+    layerGroupsExample.cleanupExample()
 
 proc createDom(data: RouterData): VNode =
   let route = parseRoute(data.hashPart)
@@ -170,6 +206,14 @@ proc createDom(data: RouterData): VNode =
         text "Attributions"
       a(href = "#/center", class = linkClass(routeCenter, route)):
         text "Center"
+      a(href = "#/iconSymbolizer", class = linkClass(routeIconSymbolizer, route)):
+        text "Icon Symbolizer"
+      a(href = "#/markerAnimation", class = linkClass(routeMarkerAnimation, route)):
+        text "Marker Animation"
+      a(href = "#/geoJSON", class = linkClass(routeGeoJSON, route)):
+        text "GeoJSON"
+      a(href = "#/layerGroups", class = linkClass(routeLayerGroups, route)):
+        text "Layer Groups"
 
     routeNode
 

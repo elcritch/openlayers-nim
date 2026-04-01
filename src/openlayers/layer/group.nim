@@ -11,6 +11,11 @@ proc getNamespace*(): JsObject {.importjs: "(olNs_layer_Group)".}
 type
   LayerGroup* = ref object of JsRoot
 proc newLayerGroup*(): LayerGroup {.importjs: "(new olNs_layer_Group.default())".}
+proc getOpacity*(self: LayerGroup): float {.importjs: "#.getOpacity()".}
+proc setOpacity*(self: LayerGroup, opacity: float) {.importjs: "#.setOpacity(#)".}
+proc getVisible*(self: LayerGroup): bool {.importjs: "#.getVisible()".}
+proc setVisible*(self: LayerGroup, visible: bool) {.importjs: "#.setVisible(#)".}
+proc getLayers*(self: LayerGroup): JsObject {.importjs: "#.getLayers()".}
 
 type
   LayerGroupOptions* = ref object of JsRoot

@@ -16,6 +16,13 @@
 - Nim style: Types in `PascalCase`, procs/vars in `camelCase`, modules in `lowercase` or concise `lowerCamel` (e.g., `threadAsyncs.nim`).
 - Formatting: run `nph src/*.nim` and format any touched test files.
 
+## Binding & Example Conventions
+- Avoid map-style/dynamic property access in examples (for example `obj["field"]` or similar string-key lookups on `JsObject`).
+- Prefer typed OpenLayers bindings in `src/openlayers/*` and typed options/builders in examples.
+- If an example needs a field/method/constructor that is not currently exposed, add a typed accessor/creator wrapper in bindings first, then use that wrapper in the example.
+- Prefer typed `newXOptions` + property setters and typed method wrappers over ad-hoc JavaScript object bags.
+- Keep examples as Nim-first ports: inline JavaScript snippets should be translated to Nim logic using typed bindings where possible.
+
 ## Testing Guidelines
 - Framework: `unittest` with descriptive `suite` and `test` names.
 - Location: add new tests under `tests/`, mirroring module names (e.g., `tslots.nim` for `slots.nim`).
@@ -24,4 +31,3 @@
 - Commits: short, imperative mood (e.g., "add isRunning"), optionally reference PR/issue like `(#21)`.
 - PRs: include a clear description, linked issues, summary of changes, any threading or GC considerations, and test coverage notes. Attach logs or minimal repros if fixing concurrency.
 - Requirements: CI (`nim test`) must pass; include tests for new behavior and update `README.md`/`CHANGES.md` as needed.
-

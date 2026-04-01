@@ -11,6 +11,10 @@ proc getNamespace*(): JsObject {.importjs: "(olNs_layer_Base)".}
 type
   BaseLayer* = ref object of JsRoot
 proc newBaseLayer*(): BaseLayer {.importjs: "(new olNs_layer_Base.default())".}
+proc getOpacity*(self: BaseLayer): float {.importjs: "#.getOpacity()".}
+proc setOpacity*(self: BaseLayer, opacity: float) {.importjs: "#.setOpacity(#)".}
+proc getVisible*(self: BaseLayer): bool {.importjs: "#.getVisible()".}
+proc setVisible*(self: BaseLayer, visible: bool) {.importjs: "#.setVisible(#)".}
 
 type
   BaseLayerOptions* = ref object of JsRoot
