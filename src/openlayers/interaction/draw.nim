@@ -31,6 +31,7 @@ type
 proc newDrawOptions*(): DrawOptions {.importjs: "({})".}
 proc `typeVal=`*(options: DrawOptions, value: JsObject) {.importjs: "#.type = #".}
 proc `typeVal=`*(options: DrawOptions, value: RootRef) {.importjs: "#.type = #".}
+proc `typeVal=`*(options: DrawOptions, value: cstring) {.importjs: "#.type = #".}
 proc `clickTolerance=`*(options: DrawOptions, value: float) {.importjs: "#.clickTolerance = #".}
 proc `features=`*(options: DrawOptions, value: JsObject) {.importjs: "#.features = #".}
 proc `features=`*(options: DrawOptions, value: RootRef) {.importjs: "#.features = #".}

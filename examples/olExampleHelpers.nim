@@ -103,3 +103,31 @@ proc installCenterControls*(
   importjs:
     "(function(){ const map = #; const view = #; const source = #; const zoomToSwitzerland = document.getElementById('zoomtoswitzerland'); const zoomToLausanne = document.getElementById('zoomtolausanne'); const centerLausanne = document.getElementById('centerlausanne'); zoomToSwitzerland.addEventListener('click', function(){ const feature = source.getFeatures()[0]; const polygon = feature.getGeometry(); view.fit(polygon, {padding: [170, 50, 30, 150]}); }, false); zoomToLausanne.addEventListener('click', function(){ const feature = source.getFeatures()[1]; const point = feature.getGeometry(); view.fit(point, {padding: [170, 50, 30, 150], minResolution: 50}); }, false); centerLausanne.addEventListener('click', function(){ const feature = source.getFeatures()[1]; const point = feature.getGeometry(); const size = map.getSize(); view.centerOn(point.getCoordinates(), size, [570, 500]); }, false); })()"
 .}
+
+proc makeEarthquakesHeatWeightFn*(): JsObject {.
+  importjs:
+    """(function(feature){
+      const name = feature.get('name') || '';
+      const magnitude = parseFloat(String(name).slice(2));
+      return Number.isFinite(magnitude) ? magnitude - 5 : 0;
+    })"""
+.}
+
+proc installHeatmapControls*(heatmapLayerObj: JsObject) {.
+  importjs:
+    """(function(){
+      const heatmapLayer = #;
+      const blur = document.getElementById('blur');
+      const radius = document.getElementById('radius');
+      const updateBlur = function() {
+        heatmapLayer.setBlur(parseInt(blur.value, 10));
+      };
+      const updateRadius = function() {
+        heatmapLayer.setRadius(parseInt(radius.value, 10));
+      };
+      blur.addEventListener('input', updateBlur);
+      radius.addEventListener('input', updateRadius);
+      updateBlur();
+      updateRadius();
+    })()"""
+.}

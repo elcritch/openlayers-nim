@@ -25,3 +25,5 @@ proc `pinchRotate=`*(options: DefaultsOptions, value: bool) {.importjs: "#.pinch
 proc `pinchZoom=`*(options: DefaultsOptions, value: bool) {.importjs: "#.pinchZoom = #".}
 proc `zoomDelta=`*(options: DefaultsOptions, value: float) {.importjs: "#.zoomDelta = #".}
 proc `zoomDuration=`*(options: DefaultsOptions, value: float) {.importjs: "#.zoomDuration = #".}
+
+proc defaults*(options: DefaultsOptions): JsObject {.importjs: "olNs_interaction_defaults.defaults(#)".}

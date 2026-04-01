@@ -47,9 +47,9 @@ suite "typed options wrappers":
           osmOpts.maxZoom = 19.0
           let osmSource = newOSM(osmOpts)
 
-          let tileLayerOpts = newJsObject()
-          tileLayerOpts["source"] = osmSource
-          tileLayerOpts["className"] = "base".cstring
+          let tileLayerOpts = newTileLayerOptions()
+          tileLayerOpts.source = osmSource
+          tileLayerOpts.className = "base".cstring
           let tileLayer = newTileLayer(tileLayerOpts)
           discard tileLayer
 
@@ -109,5 +109,6 @@ suite "typed options wrappers":
           let defaultsOpts = newDefaultsOptions()
           defaultsOpts.attribution = true
           defaultsOpts.attributionOptions = attributionOpts
+          discard defaults(defaultsOpts)
       )
     )

@@ -6,6 +6,10 @@ import openlayers/layer/tile
 import openlayers/layer/vector
 import openlayers/source/osm
 import openlayers/source/vector
+import openlayers/style/circle
+import openlayers/style/fill
+import openlayers/style/stroke
+import openlayers/style/style
 import openlayers/view
 
 import olExampleHelpers
@@ -45,22 +49,34 @@ proc initExample() =
   sourceOptions.format = newGeoJSON()
   let vectorSource = newVectorSource(sourceOptions)
 
-  let styleOptions = newJsObject()
-  styleOptions["fill-color"] = "rgba(255, 255, 255, 0.6)".cstring
-  styleOptions["stroke-width"] = 1.0
-  styleOptions["stroke-color"] = "#319FD3".cstring
-  styleOptions["circle-radius"] = 5.0
-  styleOptions["circle-fill-color"] = "rgba(255, 255, 255, 0.6)".cstring
-  styleOptions["circle-stroke-width"] = 1.0
-  styleOptions["circle-stroke-color"] = "#319FD3".cstring
+  let centerFillOptions = newFillOptions()
+  centerFillOptions.color = "rgba(255, 255, 255, 0.6)".cstring
+  let centerFill = newFill(centerFillOptions)
+
+  let centerStrokeOptions = newStrokeOptions()
+  centerStrokeOptions.color = "#319FD3".cstring
+  centerStrokeOptions.width = 1.0
+  let centerStroke = newStroke(centerStrokeOptions)
+
+  let centerCircleOptions = newCircleStyleOptions()
+  centerCircleOptions.radius = 5.0
+  centerCircleOptions.fill = centerFill
+  centerCircleOptions.stroke = centerStroke
+  let centerCircle = newCircleStyle(centerCircleOptions)
+
+  let styleOptions = newStyleOptions()
+  styleOptions.fill = centerFill
+  styleOptions.stroke = centerStroke
+  styleOptions.image = centerCircle
+  let centerStyle = newStyle(styleOptions)
 
   let vectorLayerOptions = newVectorLayerOptions()
   vectorLayerOptions.source = vectorSource
-  vectorLayerOptions.style = styleOptions
+  vectorLayerOptions.style = centerStyle
   let vectorLayer = newVectorLayer(vectorLayerOptions)
 
-  let baseLayerOptions = newJsObject()
-  baseLayerOptions["source"] = newOSM()
+  let baseLayerOptions = newTileLayerOptions()
+  baseLayerOptions.source = newOSM()
   let baseLayer = newTileLayer(baseLayerOptions)
 
   let viewOptions = newViewOptions()

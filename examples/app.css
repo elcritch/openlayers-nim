@@ -40,6 +40,22 @@ h1 { margin: 0 0 10px 0; font-size: 28px; }
 .example-shell h2 { margin: 0 0 10px 0; font-size: 20px; }
 .map { height: 360px; width: 100%; border: 1px solid #d1d5db; }
 .map-with-controls { margin-bottom: 10px; }
+.example-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.example-controls label {
+  font-weight: 600;
+}
+.example-controls input[type="button"] {
+  border: 1px solid #9ca3af;
+  background: #f9fafb;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
 .bw { filter: grayscale(100%); }
 
 .mapcontainer { position: relative; margin-bottom: 14px; width: 1000px; max-width: 100%; }

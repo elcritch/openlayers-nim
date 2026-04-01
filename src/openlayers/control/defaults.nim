@@ -23,3 +23,5 @@ proc `rotateOptions=`*(options: DefaultsOptions, value: RootRef) {.importjs: "#.
 proc `zoom=`*(options: DefaultsOptions, value: bool) {.importjs: "#.zoom = #".}
 proc `zoomOptions=`*(options: DefaultsOptions, value: JsObject) {.importjs: "#.zoomOptions = #".}
 proc `zoomOptions=`*(options: DefaultsOptions, value: RootRef) {.importjs: "#.zoomOptions = #".}
+
+proc defaults*(options: DefaultsOptions): JsObject {.importjs: "olNs_control_defaults.defaults(#)".}

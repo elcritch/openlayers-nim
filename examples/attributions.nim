@@ -26,14 +26,14 @@ proc initExample() =
   attributionOptions.collapsible = false
   let attributionControl = newAttribution(attributionOptions)
 
-  let controlsOptions = newJsObject()
-  controlsOptions["attribution"] = false
+  let controlsOptions = newDefaultsOptions()
+  controlsOptions.attribution = false
   let controlsWithAttribution = extendCollection(
     defaults(controlsOptions), jsArray1(cast[JsObject](attributionControl))
   )
 
-  let layerOptions = newJsObject()
-  layerOptions["source"] = newOSM()
+  let layerOptions = newTileLayerOptions()
+  layerOptions.source = newOSM()
   let baseLayer = newTileLayer(layerOptions)
 
   let viewOptions = newViewOptions()

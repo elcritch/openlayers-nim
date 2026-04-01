@@ -20,8 +20,8 @@ proc initExample() =
     return
   initialized = true
 
-  let layerOptions = newJsObject()
-  layerOptions["source"] = newOSM()
+  let layerOptions = newTileLayerOptions()
+  layerOptions.source = newOSM()
   let baseLayer = newTileLayer(layerOptions)
 
   let viewOptions = newViewOptions()
