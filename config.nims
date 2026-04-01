@@ -27,11 +27,11 @@ proc buildKaraxExamples() =
       run = true
     )
 
-task install, "install npm / bun":
+task installNpm, "install npm / bun":
   exec "bun install"
 
 task test, "Run tests":
-  setupTask()
+  installNpmTask()
   for testFile in listFiles("tests"):
     if testFile.endsWith(".nim"):
       if testFile.extractFilename().startsWith("tjs_"):
@@ -42,12 +42,12 @@ task test, "Run tests":
     exec "nim js -d:nodejs " & nimEntry
 
 task serveExamples, "Compile example JS and run the async example server":
-  setupTask()
+  installNpmTask()
   buildKaraxExamples()
   exec "nim c -r examples/server.nim"
 
 task buildWeb, "Build Karax example bundles with bunnery":
-  setupTask()
+  installNpmTask()
   buildKaraxExamples()
 
 task regenOl, "Regenerate OpenLayers wrappers and API/options reports":
