@@ -13,10 +13,16 @@ let karaxExampleEntries = @[
 proc buildKaraxExamples() =
   for nimEntry in karaxExampleEntries:
     let bundleOut = nimEntry.changeFileExt("bundle.js")
+    let bundleDir = parentDir(bundleOut)
+    let bundleStem = splitFile(bundleOut).name
+    let bunFlags =
+      "--outdir=" & quoteShellArg(bundleDir) & " --entry-naming=" &
+      quoteShellArg(bundleStem & ".[ext]")
     discard buildNimAndBundleJs(
       nimEntry = nimEntry,
       bundleOut = bundleOut,
       cssEntries = @["node_modules/ol/ol.css", "examples/app.css"],
+      bunFlags = bunFlags,
       run = true
     )
 
