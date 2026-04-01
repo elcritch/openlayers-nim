@@ -1,5 +1,5 @@
 import jsffi
-import karax/[karax, karaxdsl, vdom]
+import karax/[karaxdsl, vdom]
 import openlayers/format/geoJSON
 import openlayers/interaction/select
 import openlayers/map
@@ -12,9 +12,13 @@ import openlayers/view
 
 import olExampleHelpers
 
-var initialized = false
+when isMainModule:
+  import karax/karax
 
-proc createDom(): VNode =
+var initialized = false
+var mapObj: JsObject = jsUndefined
+
+proc createDom*(): VNode =
   result = buildHtml(tdiv(class = "example-shell")):
     h2:
       text "Select Features"
@@ -37,9 +41,9 @@ proc createDom(): VNode =
       span(id = "status"):
         text "\u00A00 selected features"
 
-proc initExample() =
+proc initExample*(): JsObject =
   if initialized:
-    return
+    return mapObj
   initialized = true
 
   let baseFillOptions = newFillOptions()
@@ -71,7 +75,7 @@ proc initExample() =
   mapOptions.layers = @[vectorLayer]
   mapOptions.target = getElementById("map".cstring)
   mapOptions.view = mapView
-  let mapObj = cast[JsObject](newMap(mapOptions))
+  mapObj = cast[JsObject](newMap(mapOptions))
 
   let selectedFillOptions = newFillOptions()
   selectedFillOptions.color = "#eeeeee".cstring
@@ -118,4 +122,14 @@ proc initExample() =
     cast[JsObject](selectAltClick),
   )
 
-discard setRenderer(createDom, "ROOT", initExample)
+  result = mapObj
+
+proc cleanupExample*() =
+  initialized = false
+  mapObj = jsUndefined
+
+when isMainModule:
+  proc initStandalone() =
+    discard initExample()
+
+  discard setRenderer(createDom, "ROOT", initStandalone)

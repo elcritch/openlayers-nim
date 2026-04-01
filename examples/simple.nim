@@ -1,4 +1,5 @@
-import karax/[karax, karaxdsl, vdom]
+import jsffi
+import karax/[karaxdsl, vdom]
 import openlayers/map
 import openlayers/layer/tile
 import openlayers/source/osm
@@ -6,17 +7,22 @@ import openlayers/view
 
 import olExampleHelpers
 
-var initialized = false
+when isMainModule:
+  import karax/karax
 
-proc createDom(): VNode =
+var
+  initialized = false
+  mapObj: JsObject = jsUndefined
+
+proc createDom*(): VNode =
   result = buildHtml(tdiv(class = "example-shell")):
     h2:
       text "Simple Map"
     tdiv(id = "map", class = "map")
 
-proc initExample() =
+proc initExample*(): JsObject =
   if initialized:
-    return
+    return mapObj
   initialized = true
 
   let layerOptions = newTileLayerOptions()
@@ -33,6 +39,15 @@ proc initExample() =
   mapOptions.target = getElementById("map".cstring)
   mapOptions.view = mapView
 
-  discard newMap(mapOptions)
+  mapObj = cast[JsObject](newMap(mapOptions))
+  result = mapObj
 
-discard setRenderer(createDom, "ROOT", initExample)
+proc cleanupExample*() =
+  initialized = false
+  mapObj = jsUndefined
+
+when isMainModule:
+  proc initStandalone() =
+    discard initExample()
+
+  discard setRenderer(createDom, "ROOT", initStandalone)

@@ -1,5 +1,5 @@
 import jsffi
-import karax/[karax, karaxdsl, vdom]
+import karax/[karaxdsl, vdom]
 import openlayers/format/geoJSON
 import openlayers/map
 import openlayers/layer/tile
@@ -14,9 +14,13 @@ import openlayers/view
 
 import olExampleHelpers
 
-var initialized = false
+when isMainModule:
+  import karax/karax
 
-proc createDom(): VNode =
+var initialized = false
+var mapObj: JsObject = jsUndefined
+
+proc createDom*(): VNode =
   result = buildHtml(tdiv(class = "example-shell")):
     h2:
       text "Advanced View Positioning"
@@ -38,9 +42,9 @@ proc createDom(): VNode =
     button(id = "centerlausanne"):
       text "Center on Lausanne"
 
-proc initExample() =
+proc initExample*(): JsObject =
   if initialized:
-    return
+    return mapObj
   initialized = true
 
   let sourceOptions = newVectorSourceOptions()
@@ -88,8 +92,17 @@ proc initExample() =
   mapOptions.layers = @[baseLayer, vectorLayer]
   mapOptions.target = getElementById("map".cstring)
   mapOptions.view = mapView
-  let mapObj = cast[JsObject](newMap(mapOptions))
+  mapObj = cast[JsObject](newMap(mapOptions))
 
   installCenterControls(mapObj, cast[JsObject](mapView), cast[JsObject](vectorSource))
+  result = mapObj
 
-discard setRenderer(createDom, "ROOT", initExample)
+proc cleanupExample*() =
+  initialized = false
+  mapObj = jsUndefined
+
+when isMainModule:
+  proc initStandalone() =
+    discard initExample()
+
+  discard setRenderer(createDom, "ROOT", initStandalone)
