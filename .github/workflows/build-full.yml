@@ -52,7 +52,7 @@ jobs:
 
     - name: Install Bun
       run: |
-        nim bunInstall
+        bun install
 
     - name: Build Tests
       run: |
