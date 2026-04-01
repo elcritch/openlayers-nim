@@ -1,4 +1,3 @@
-import jsffi
 import karax/[karax, karaxdsl, vdom]
 import openlayers/map
 import openlayers/layer/tile

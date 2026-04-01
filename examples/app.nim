@@ -61,11 +61,18 @@ var
   drawTraceSnapModifyInteraction: Modify = nil
   drawTraceSnapSnapInteraction: Snap = nil
 
-proc readElementValue(el: Element): cstring {.importjs: "#.value".}
-proc writeElementValue(el: Element, value: cstring) {.importjs: "#.value = #".}
-proc onceDrawEnd(drawInteraction: Draw, cb: proc()) {.
-  importjs: "#.once('drawend', #)"
-.}
+proc readElementValue(el: Element): cstring =
+  cast[InputElement](el).value
+
+proc writeElementValue(el: Element, value: cstring) =
+  cast[InputElement](el).value = value
+
+proc onceDrawEnd(drawInteraction: Draw, cb: proc()) =
+  discard drawInteraction.once(
+    "drawend".cstring,
+    proc(event: JsObject) =
+      cb(),
+  )
 
 proc clearDrawFeaturesInteraction() =
   if drawFeaturesInteraction != nil and isTruthy(drawFeaturesMapObj):
@@ -112,11 +119,17 @@ proc installDrawFeaturesControlsNim(mapObj: JsObject, drawSourceObj: JsObject) =
 proc removeDrawModifyTraceSnapInteractions() =
   if isTruthy(drawTraceSnapMapObj):
     if drawTraceSnapDrawInteraction != nil:
-      removeInteraction(drawTraceSnapMapObj, cast[JsObject](drawTraceSnapDrawInteraction))
+      removeInteraction(
+        drawTraceSnapMapObj, cast[JsObject](drawTraceSnapDrawInteraction)
+      )
     if drawTraceSnapModifyInteraction != nil:
-      removeInteraction(drawTraceSnapMapObj, cast[JsObject](drawTraceSnapModifyInteraction))
+      removeInteraction(
+        drawTraceSnapMapObj, cast[JsObject](drawTraceSnapModifyInteraction)
+      )
     if drawTraceSnapSnapInteraction != nil:
-      removeInteraction(drawTraceSnapMapObj, cast[JsObject](drawTraceSnapSnapInteraction))
+      removeInteraction(
+        drawTraceSnapMapObj, cast[JsObject](drawTraceSnapSnapInteraction)
+      )
   drawTraceSnapDrawInteraction = nil
   drawTraceSnapModifyInteraction = nil
   drawTraceSnapSnapInteraction = nil
@@ -150,7 +163,7 @@ proc installDrawModifyTraceSnapInteractions() =
         let selectEl = dom.getElementById("trace-type".cstring)
         if not selectEl.isNil:
           writeElementValue(selectEl, "None".cstring)
-        discard setTimeout(changeDrawModifyTraceSnapMode, 0)
+        discard setTimeout(changeDrawModifyTraceSnapMode, 0),
     )
     addInteraction(drawTraceSnapMapObj, cast[JsObject](drawTraceSnapDrawInteraction))
 
@@ -167,10 +180,10 @@ proc onDrawModifyTraceSnapTypeChange(event: Event) =
   changeDrawModifyTraceSnapMode()
 
 proc installDrawModifyTraceSnapControlsNim(
-  mapObj: JsObject,
-  baseSourceObj: JsObject,
-  drawSourceObj: JsObject,
-  drawStyleObj: JsObject,
+    mapObj: JsObject,
+    baseSourceObj: JsObject,
+    drawSourceObj: JsObject,
+    drawStyleObj: JsObject,
 ) =
   drawTraceSnapMapObj = mapObj
   drawTraceSnapBaseSourceObj = baseSourceObj
@@ -426,7 +439,8 @@ proc initEarthquakesHeatmap(): JsObject =
   kmlOptions.extractStyles = false
 
   let sourceOptions = newVectorSourceOptions()
-  sourceOptions.url = "/deps/openlayers/examples/data/kml/2012_Earthquakes_Mag5.kml".cstring
+  sourceOptions.url =
+    "/deps/openlayers/examples/data/kml/2012_Earthquakes_Mag5.kml".cstring
   sourceOptions.format = newKML(kmlOptions)
   let heatSource = newVectorSource(sourceOptions)
 
@@ -459,8 +473,9 @@ proc initEarthquakesHeatmap(): JsObject =
 
 proc initDrawModifyTraceSnap(): JsObject =
   let rasterSourceOptions = newImageTileSourceOptions()
-  rasterSourceOptions.url =
-    cstring("https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=" & mapTilerKey)
+  rasterSourceOptions.url = cstring(
+    "https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=" & mapTilerKey
+  )
   rasterSourceOptions.maxZoom = 20.0
   let rasterSource = newImageTileSource(rasterSourceOptions)
 
@@ -738,8 +753,7 @@ proc createDom(data: RouterData): VNode =
       a(href = "#/drawFeatures", class = linkClass(routeDrawFeatures, route)):
         text "Draw Features"
       a(
-        href = "#/earthquakesHeatmap",
-        class = linkClass(routeEarthquakesHeatmap, route),
+        href = "#/earthquakesHeatmap", class = linkClass(routeEarthquakesHeatmap, route)
       ):
         text "Earthquakes Heatmap"
       a(

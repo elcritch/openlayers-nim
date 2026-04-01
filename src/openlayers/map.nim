@@ -8,38 +8,121 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_Map)".}
 
-type
-  Map* = ref object of JsRoot
+type Map* = ref object of JsRoot
 proc newMap*(): Map {.importjs: "(new olNs_Map.default())".}
+proc addInteraction*(
+  self: Map, interaction: JsObject
+) {.importjs: "#.addInteraction(#)".}
 
-type
-  AtPixelOptions* = ref object of JsRoot
+proc addInteraction*(
+  self: Map, interaction: RootRef
+) {.importjs: "#.addInteraction(#)".}
+
+proc removeInteraction*(
+  self: Map, interaction: JsObject
+) {.importjs: "#.removeInteraction(#)".}
+
+proc removeInteraction*(
+  self: Map, interaction: RootRef
+) {.importjs: "#.removeInteraction(#)".}
+
+proc setTarget*(self: Map, target: JsObject) {.importjs: "#.setTarget(#)".}
+proc setTarget*(self: Map, target: RootRef) {.importjs: "#.setTarget(#)".}
+proc setTarget*(self: Map, target: cstring) {.importjs: "#.setTarget(#)".}
+proc getSize*(self: Map): seq[float] {.importjs: "#.getSize()".}
+proc on*(
+  self: Map, typeVal: cstring, listener: JsObject
+): JsObject {.importjs: "#.on(#, #)".}
+
+proc on*(
+  self: Map, typeVal: cstring, listener: RootRef
+): JsObject {.importjs: "#.on(#, #)".}
+
+proc on*(
+  self: Map, typeVal: cstring, listener: proc(event: JsObject)
+): JsObject {.importjs: "#.on(#, #)".}
+
+proc on*(
+  self: Map, typeVal: cstring, listener: proc()
+): JsObject {.importjs: "#.on(#, #)".}
+
+proc once*(
+  self: Map, typeVal: cstring, listener: JsObject
+): JsObject {.importjs: "#.once(#, #)".}
+
+proc once*(
+  self: Map, typeVal: cstring, listener: RootRef
+): JsObject {.importjs: "#.once(#, #)".}
+
+proc once*(
+  self: Map, typeVal: cstring, listener: proc(event: JsObject)
+): JsObject {.importjs: "#.once(#, #)".}
+
+proc once*(
+  self: Map, typeVal: cstring, listener: proc()
+): JsObject {.importjs: "#.once(#, #)".}
+
+type AtPixelOptions* = ref object of JsRoot
 
 proc newAtPixelOptions*(): AtPixelOptions {.importjs: "({})".}
-proc `layerFilter=`*(options: AtPixelOptions, value: JsObject) {.importjs: "#.layerFilter = #".}
-proc `layerFilter=`*(options: AtPixelOptions, value: RootRef) {.importjs: "#.layerFilter = #".}
-proc `hitTolerance=`*(options: AtPixelOptions, value: float) {.importjs: "#.hitTolerance = #".}
-proc `checkWrapped=`*(options: AtPixelOptions, value: bool) {.importjs: "#.checkWrapped = #".}
+proc `layerFilter=`*(
+  options: AtPixelOptions, value: JsObject
+) {.importjs: "#.layerFilter = #".}
 
-type
-  MapOptions* = ref object of JsRoot
+proc `layerFilter=`*(
+  options: AtPixelOptions, value: RootRef
+) {.importjs: "#.layerFilter = #".}
+
+proc `hitTolerance=`*(
+  options: AtPixelOptions, value: float
+) {.importjs: "#.hitTolerance = #".}
+
+proc `checkWrapped=`*(
+  options: AtPixelOptions, value: bool
+) {.importjs: "#.checkWrapped = #".}
+
+type MapOptions* = ref object of JsRoot
 
 proc newMapOptions*(): MapOptions {.importjs: "({})".}
 proc `controls=`*(options: MapOptions, value: JsObject) {.importjs: "#.controls = #".}
 proc `controls=`*(options: MapOptions, value: RootRef) {.importjs: "#.controls = #".}
 proc `controls=`*[T](options: MapOptions, value: seq[T]) {.importjs: "#.controls = #".}
 proc `pixelRatio=`*(options: MapOptions, value: float) {.importjs: "#.pixelRatio = #".}
-proc `interactions=`*(options: MapOptions, value: JsObject) {.importjs: "#.interactions = #".}
-proc `interactions=`*(options: MapOptions, value: RootRef) {.importjs: "#.interactions = #".}
-proc `interactions=`*[T](options: MapOptions, value: seq[T]) {.importjs: "#.interactions = #".}
-proc `keyboardEventTarget=`*(options: MapOptions, value: cstring) {.importjs: "#.keyboardEventTarget = #".}
-proc `keyboardEventTarget=`*(options: MapOptions, value: JsObject) {.importjs: "#.keyboardEventTarget = #".}
-proc `keyboardEventTarget=`*(options: MapOptions, value: RootRef) {.importjs: "#.keyboardEventTarget = #".}
+proc `interactions=`*(
+  options: MapOptions, value: JsObject
+) {.importjs: "#.interactions = #".}
+
+proc `interactions=`*(
+  options: MapOptions, value: RootRef
+) {.importjs: "#.interactions = #".}
+
+proc `interactions=`*[T](
+  options: MapOptions, value: seq[T]
+) {.importjs: "#.interactions = #".}
+
+proc `keyboardEventTarget=`*(
+  options: MapOptions, value: cstring
+) {.importjs: "#.keyboardEventTarget = #".}
+
+proc `keyboardEventTarget=`*(
+  options: MapOptions, value: JsObject
+) {.importjs: "#.keyboardEventTarget = #".}
+
+proc `keyboardEventTarget=`*(
+  options: MapOptions, value: RootRef
+) {.importjs: "#.keyboardEventTarget = #".}
+
 proc `layers=`*(options: MapOptions, value: JsObject) {.importjs: "#.layers = #".}
 proc `layers=`*(options: MapOptions, value: RootRef) {.importjs: "#.layers = #".}
 proc `layers=`*[T](options: MapOptions, value: seq[T]) {.importjs: "#.layers = #".}
-proc `maxTilesLoading=`*(options: MapOptions, value: float) {.importjs: "#.maxTilesLoading = #".}
-proc `moveTolerance=`*(options: MapOptions, value: float) {.importjs: "#.moveTolerance = #".}
+proc `maxTilesLoading=`*(
+  options: MapOptions, value: float
+) {.importjs: "#.maxTilesLoading = #".}
+
+proc `moveTolerance=`*(
+  options: MapOptions, value: float
+) {.importjs: "#.moveTolerance = #".}
+
 proc `overlays=`*(options: MapOptions, value: JsObject) {.importjs: "#.overlays = #".}
 proc `overlays=`*(options: MapOptions, value: RootRef) {.importjs: "#.overlays = #".}
 proc `overlays=`*[T](options: MapOptions, value: seq[T]) {.importjs: "#.overlays = #".}

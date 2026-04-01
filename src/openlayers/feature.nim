@@ -8,8 +8,11 @@ when defined(esmModules):
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_Feature)".}
 
-type
-  Feature* = ref object of JsRoot
+type Feature* = ref object of JsRoot
 proc newFeature*(): Feature {.importjs: "(new olNs_Feature.default())".}
+proc get*(self: Feature, key: cstring): JsObject {.importjs: "#.get(#)".}
+proc getGeometry*(self: Feature): JsObject {.importjs: "#.getGeometry()".}
 
-proc createStyleFunction*(obj: JsObject): JsObject {.importjs: "olNs_Feature.createStyleFunction(#)".}
+proc createStyleFunction*(
+  obj: JsObject
+): JsObject {.importjs: "olNs_Feature.createStyleFunction(#)".}
