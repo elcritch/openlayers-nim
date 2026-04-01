@@ -207,8 +207,13 @@ proc installAttributionResizeBehavior*(
   let mapOn = cast[Map](mapForOn)
 
   proc checkSize() =
-    let mapSizeValue = mapSize.getSize()
-    let small = mapSizeValue.len > 0 and mapSizeValue[0] < 600.0
+    let mapSizeObj = cast[JsObject](mapSize.getSize())
+    if not isTruthy(mapSizeObj):
+      return
+    let mapSizeValue = cast[seq[float]](mapSizeObj)
+    if mapSizeValue.len == 0:
+      return
+    let small = mapSizeValue[0] < 600.0
     collapsible.setCollapsible(small)
     collapsed.setCollapsed(small)
 
@@ -259,7 +264,13 @@ proc installCenterControls*(mapObj: JsObject, viewObj: JsObject, sourceObj: JsOb
       1,
       proc(feature: Feature) =
         let point = cast[SimpleGeometry](feature.getGeometry())
-        viewVal.centerOn(point.getCoordinates(), mapVal.getSize(), @[570.0, 500.0]),
+        let mapSizeObj = cast[JsObject](mapVal.getSize())
+        if not isTruthy(mapSizeObj):
+          return
+        let mapSizeValue = cast[seq[float]](mapSizeObj)
+        if mapSizeValue.len == 0:
+          return
+        viewVal.centerOn(point.getCoordinates(), mapSizeValue, @[570.0, 500.0]),
     )
 
   zoomToSwitzerland.addEventListener("click".cstring, onZoomSwitzerland, false)
