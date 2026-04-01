@@ -46,6 +46,10 @@ jobs:
         # sync deps
         atlas install --feature:test
 
+    - name: Install Bun
+      run: |
+        nim bunInstall
+
     - name: Build Tests
       run: |
         nim test

@@ -1,6 +1,7 @@
 import os
 import strutils
 import bunnery/build
+include bunnery/tasks
 
 --nimcache:".nimcache"
 --path:"src"
@@ -26,7 +27,11 @@ proc buildKaraxExamples() =
       run = true
     )
 
+task setup, "setup npm / bun":
+  exec "bun add ol"
+
 task test, "Run tests":
+  setupTask()
   for testFile in listFiles("tests"):
     if testFile.endsWith(".nim"):
       if testFile.extractFilename().startsWith("tjs_"):
@@ -37,10 +42,12 @@ task test, "Run tests":
     exec "nim js -d:nodejs " & nimEntry
 
 task serveExamples, "Compile example JS and run the async example server":
+  setupTask()
   buildKaraxExamples()
   exec "nim c -r examples/server.nim"
 
 task buildWeb, "Build Karax example bundles with bunnery":
+  setupTask()
   buildKaraxExamples()
 
 task regenOl, "Regenerate OpenLayers wrappers and API/options reports":
