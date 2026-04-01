@@ -27,8 +27,8 @@ proc buildKaraxExamples() =
       run = true
     )
 
-task setup, "setup npm / bun":
-  exec "deps/bin/bun add ol"
+task install, "install npm / bun":
+  exec "bun install"
 
 task test, "Run tests":
   setupTask()

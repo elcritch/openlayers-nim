@@ -4,7 +4,7 @@ description   = "openlayer javascript bindings"
 license       = "BSD-2-Clause"
 srcDir        = "src"
 
-requires "https://github.com/elcritch/bunnery >= 0.2.2"
+requires "https://github.com/elcritch/bunnery >= 0.3"
 
 
 feature "dev":
