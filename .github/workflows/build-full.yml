@@ -8,7 +8,7 @@ on:
 
 jobs:
   tests:
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         nimversion:
