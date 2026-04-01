@@ -21,7 +21,8 @@ suite "openlayers top class modules":
   test "constructors are available via wrappers":
     check newCollection() != nil
     check newFeature() != nil
-    check newGeolocation() != nil
+    # OpenLayers Geolocation expects browser `navigator` at runtime.
+    check compiles(newGeolocation())
     check newObservable() != nil
     check newKinetic(1.0, 1.0, 1.0) != nil
     check compiles(newMap())
