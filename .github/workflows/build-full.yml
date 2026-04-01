@@ -48,7 +48,7 @@ jobs:
     - name: Install Deps
       run: |
         # sync deps
-        atlas install --feature:test
+        atlas install --feature:test --feature:dev
 
     - name: Install Bun
       run: |
