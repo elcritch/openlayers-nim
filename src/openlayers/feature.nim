@@ -46,3 +46,7 @@ proc getId*(self: Feature): JsObject {.importjs: "#.getId()".}
 proc setId*(self: Feature, id: cstring) {.importjs: "#.setId(#)".}
 proc geometry*(self: Feature): Geometry {.importjs: "#.getGeometry()".}
 proc setStyle*(self: Feature, styles: seq[Style]) {.importjs: "#.setStyle(#)".}
+
+proc setProperties*(self: Feature, values: JsObject, silent = false) {.
+  importjs: "#.setProperties(#, #)"
+.}

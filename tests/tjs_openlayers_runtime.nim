@@ -15,6 +15,13 @@ suite "typed map runtime bindings":
     check feature.getId().to(cstring) == "reading-1"
     feature.setGeometry(newPoint(@[12.0, 34.0]))
     feature.setProperty("selected", true)
+    var propertyChanges = 0
+    cast[JsObject](feature).on(cstring"propertychange", proc() = propertyChanges.inc())
+    feature.setProperties(js{popupHtml: cstring"details"}, silent = true)
+    check propertyChanges == 0
+    check property(feature, "popupHtml", cstring) == "details"
+    feature.setProperties(js{popupHtml: cstring"updated"})
+    check propertyChanges == 1
     let options = newStyleOptions()
     options.zIndex = 12
     let marker = newStyle(options)
