@@ -1,6 +1,6 @@
-import openlayers/[feature, properties]
+import openlayers/[feature, properties, proj]
 import openlayers/geom/[point, multiPolygon, geometry]
-import openlayers/source/vector
+import openlayers/source/[vector, image]
 import openlayers/layer/[image, operations]
 import openlayers/style/[style, circle, text]
 import openlayers/render/event
@@ -8,6 +8,27 @@ import openlayers/render/event
 import std/[jsffi, unittest]
 
 suite "typed map runtime bindings":
+  test "static bitmap loaders retain source images across view changes":
+    let bitmap = cast[RootRef](newJsObject())
+    let frame = newImageObject(bitmap, @[0.0, 0.0, 10.0, 10.0], @[1.0, 1.0])
+    let options = newImageSourceOptions()
+    options.projection = "EPSG:4326"
+    options.interpolate = false
+    options.loader = proc(): ImageObject =
+      frame
+    let source = newImageSource(options)
+    source.setProperty("rasterSize", @[10, 10])
+    check property(source, "rasterSize", seq[int]) == @[10, 10]
+    let projection = proj.get(cstring"EPSG:4326".toJs)
+    let first = source.getImage(@[0.0, 0.0, 5.0, 5.0].toJs, 1, 1, projection)
+    let second = source.getImage(@[2.0, 2.0, 8.0, 8.0].toJs, 2, 2, projection)
+    check first == second
+    let loaded = cast[JsObject](options).loader()
+    check loaded.image == cast[JsObject](bitmap)
+    check loaded.extent.to(seq[float]) == @[0.0, 0.0, 10.0, 10.0]
+    check loaded.resolution.to(seq[float]) == @[1.0, 1.0]
+    check loaded.pixelRatio.to(float) == 1.0
+
   test "features retain identity, geometry, custom properties and styles":
     let source = newVectorSource()
     let feature = newFeature()
@@ -16,7 +37,11 @@ suite "typed map runtime bindings":
     feature.setGeometry(newPoint(@[12.0, 34.0]))
     feature.setProperty("selected", true)
     var propertyChanges = 0
-    cast[JsObject](feature).on(cstring"propertychange", proc() = propertyChanges.inc())
+    cast[JsObject](feature).on(
+      cstring"propertychange",
+      proc() =
+        propertyChanges.inc(),
+    )
     feature.setProperties(js{popupHtml: cstring"details"}, silent = true)
     check propertyChanges == 0
     check property(feature, "popupHtml", cstring) == "details"

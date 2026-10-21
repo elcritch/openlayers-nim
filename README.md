@@ -64,5 +64,9 @@ access to custom observable properties without converting the entire object to
 `JsObject`. Geometry, feature lookup, style arrays, animation and image-source
 options also have typed overloads for map applications.
 
+For an existing canvas bitmap, use `source/image.newImageObject` and a
+`StaticImageLoader` on `ImageSourceOptions`. Its zero-argument callback lets
+OpenLayers reuse the bitmap across view changes without encoding an image URL.
+
 `nim test` runs runtime assertions against both the installed ESM package and its
 actual browser bundle, as well as the existing binding checks and Karax build.
