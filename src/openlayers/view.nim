@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_View = {default: globalThis.ol?.View};".}
+  {.emit: """
+var olNs_View = Object.assign(
+  {default: globalThis.ol?.View}, globalThis.ol?.View);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_View from 'ol/View.js';".}
 

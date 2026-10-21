@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_geom_Geometry = {default: globalThis.ol?.geom?.Geometry};".}
+  {.emit: """
+var olNs_geom_Geometry = Object.assign(
+  {default: globalThis.ol?.geom?.Geometry}, globalThis.ol?.geom?.Geometry);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_geom_Geometry from 'ol/geom/Geometry.js';".}
 

@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_render_Event = {default: globalThis.ol?.render?.Event};".}
+  {.emit: """
+var olNs_render_Event = Object.assign(
+  {default: globalThis.ol?.render?.Event}, globalThis.ol?.render?.Event);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_render_Event from 'ol/render/Event.js';".}
 

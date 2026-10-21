@@ -7,7 +7,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_Feature = {default: globalThis.ol?.Feature};".}
+  {.emit: """
+var olNs_Feature = Object.assign(
+  {default: globalThis.ol?.Feature}, globalThis.ol?.Feature);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_Feature from 'ol/Feature.js';".}
 

@@ -6,7 +6,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_Map = {default: globalThis.ol?.Map};".}
+  {.emit: """
+var olNs_Map = Object.assign(
+  {default: globalThis.ol?.Map}, globalThis.ol?.Map);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_Map from 'ol/Map.js';".}
 

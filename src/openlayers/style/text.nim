@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_style_Text = {default: globalThis.ol?.style?.Text};".}
+  {.emit: """
+var olNs_style_Text = Object.assign(
+  {default: globalThis.ol?.style?.Text}, globalThis.ol?.style?.Text);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_style_Text from 'ol/style/Text.js';".}
 

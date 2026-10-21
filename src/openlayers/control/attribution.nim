@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_control_Attribution = {default: globalThis.ol?.control?.Attribution};".}
+  {.emit: """
+var olNs_control_Attribution = Object.assign(
+  {default: globalThis.ol?.control?.Attribution}, globalThis.ol?.control?.Attribution);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_control_Attribution from 'ol/control/Attribution.js';".}
 

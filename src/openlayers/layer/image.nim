@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_layer_Image = {default: globalThis.ol?.layer?.Image};".}
+  {.emit: """
+var olNs_layer_Image = Object.assign(
+  {default: globalThis.ol?.layer?.Image}, globalThis.ol?.layer?.Image);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_layer_Image from 'ol/layer/Image.js';".}
 

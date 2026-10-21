@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_Overlay = {default: globalThis.ol?.Overlay};".}
+  {.emit: """
+var olNs_Overlay = Object.assign(
+  {default: globalThis.ol?.Overlay}, globalThis.ol?.Overlay);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_Overlay from 'ol/Overlay.js';".}
 

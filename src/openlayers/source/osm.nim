@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_source_OSM = {default: globalThis.ol?.source?.OSM};".}
+  {.emit: """
+var olNs_source_OSM = Object.assign(
+  {default: globalThis.ol?.source?.OSM}, globalThis.ol?.source?.OSM);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_source_OSM from 'ol/source/OSM.js';".}
 

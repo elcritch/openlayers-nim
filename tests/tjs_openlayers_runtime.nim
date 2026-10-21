@@ -86,3 +86,10 @@ suite "typed map runtime bindings":
     check marker.getImage().getDeclutterMode().to(cstring) == "none"
     check marker.getText().getText().to(cstring) == "42 ppm"
     check marker.getText().getTextAlign().to(cstring) == "left"
+
+  test "class namespaces preserve named exports in both loading modes":
+    let editing = createEditingStyle()
+    check editing.hasOwnProperty(cstring"Polygon")
+    let marker = newStyle()
+    let styleFunction = createStyleFunction(cast[JsObject](marker))
+    check styleFunction.call(jsUndefined).to(seq[Style]) == @[marker]

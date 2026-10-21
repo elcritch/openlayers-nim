@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_geom_Point = {default: globalThis.ol?.geom?.Point};".}
+  {.emit: """
+var olNs_geom_Point = Object.assign(
+  {default: globalThis.ol?.geom?.Point}, globalThis.ol?.geom?.Point);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_geom_Point from 'ol/geom/Point.js';".}
 

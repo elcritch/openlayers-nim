@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_MapBrowserEvent = {default: globalThis.ol?.MapBrowserEvent};".}
+  {.emit: """
+var olNs_MapBrowserEvent = Object.assign(
+  {default: globalThis.ol?.MapBrowserEvent}, globalThis.ol?.MapBrowserEvent);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_MapBrowserEvent from 'ol/MapBrowserEvent.js';".}
 

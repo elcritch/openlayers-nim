@@ -4,7 +4,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_layer_Tile = {default: globalThis.ol?.layer?.Tile};".}
+  {.emit: """
+var olNs_layer_Tile = Object.assign(
+  {default: globalThis.ol?.layer?.Tile}, globalThis.ol?.layer?.Tile);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_layer_Tile from 'ol/layer/Tile.js';".}
 

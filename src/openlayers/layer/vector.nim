@@ -7,7 +7,10 @@ when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
 when defined(openlayers.globalBundle):
-  {.emit: "var olNs_layer_Vector = {default: globalThis.ol?.layer?.Vector};".}
+  {.emit: """
+var olNs_layer_Vector = Object.assign(
+  {default: globalThis.ol?.layer?.Vector}, globalThis.ol?.layer?.Vector);
+""".}
 elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_layer_Vector from 'ol/layer/Vector.js';".}
 
