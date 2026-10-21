@@ -3,14 +3,21 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when not defined(openlayers.noEsmModules):
+when defined(openlayers.globalBundle):
+  {.emit: """
+var olNs_style_Text = Object.assign(
+  {default: globalThis.ol?.style?.Text}, globalThis.ol?.style?.Text);
+""".}
+elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_style_Text from 'ol/style/Text.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_Text)".}
 
-type
-  Text* = ref object of JsRoot
-proc newText*(options: JsObject = jsUndefined): Text {.importjs: "(new olNs_style_Text.default(#))".}
+type Text* = ref object of JsRoot
+proc newText*(
+  options: JsObject = jsUndefined
+): Text {.importjs: "(new olNs_style_Text.default(#))".}
+
 proc clone*(self: Text): JsObject {.importjs: "#.clone()".}
 proc getOverflow*(self: Text): bool {.importjs: "#.getOverflow()".}
 proc getFont*(self: Text): cstring {.importjs: "#.getFont()".}
@@ -40,8 +47,14 @@ proc setMaxAngle*(self: Text, maxAngle: float) {.importjs: "#.setMaxAngle(#)".}
 proc setOffsetX*(self: Text, offsetX: float) {.importjs: "#.setOffsetX(#)".}
 proc setOffsetY*(self: Text, offsetY: float) {.importjs: "#.setOffsetY(#)".}
 proc setPlacement*(self: Text, placement: JsObject) {.importjs: "#.setPlacement(#)".}
-proc setRepeat*(self: Text, repeat: JsObject = jsUndefined) {.importjs: "#.setRepeat(#)".}
-proc setRotateWithView*(self: Text, rotateWithView: bool) {.importjs: "#.setRotateWithView(#)".}
+proc setRepeat*(
+  self: Text, repeat: JsObject = jsUndefined
+) {.importjs: "#.setRepeat(#)".}
+
+proc setRotateWithView*(
+  self: Text, rotateWithView: bool
+) {.importjs: "#.setRotateWithView(#)".}
+
 proc setKeepUpright*(self: Text, keepUpright: bool) {.importjs: "#.setKeepUpright(#)".}
 proc setFill*(self: Text, fill: JsObject) {.importjs: "#.setFill(#)".}
 proc setRotation*(self: Text, rotation: float) {.importjs: "#.setRotation(#)".}
@@ -50,13 +63,21 @@ proc setStroke*(self: Text, stroke: JsObject) {.importjs: "#.setStroke(#)".}
 proc setText*(self: Text, text: JsObject) {.importjs: "#.setText(#)".}
 proc setTextAlign*(self: Text, textAlign: JsObject) {.importjs: "#.setTextAlign(#)".}
 proc setJustify*(self: Text, justify: JsObject) {.importjs: "#.setJustify(#)".}
-proc setTextBaseline*(self: Text, textBaseline: JsObject) {.importjs: "#.setTextBaseline(#)".}
-proc setBackgroundFill*(self: Text, fill: JsObject) {.importjs: "#.setBackgroundFill(#)".}
-proc setBackgroundStroke*(self: Text, stroke: JsObject) {.importjs: "#.setBackgroundStroke(#)".}
+proc setTextBaseline*(
+  self: Text, textBaseline: JsObject
+) {.importjs: "#.setTextBaseline(#)".}
+
+proc setBackgroundFill*(
+  self: Text, fill: JsObject
+) {.importjs: "#.setBackgroundFill(#)".}
+
+proc setBackgroundStroke*(
+  self: Text, stroke: JsObject
+) {.importjs: "#.setBackgroundStroke(#)".}
+
 proc setPadding*(self: Text, padding: JsObject) {.importjs: "#.setPadding(#)".}
 
-type
-  TextOptions* = ref object of JsRoot
+type TextOptions* = ref object of JsRoot
 
 proc newTextOptions*(): TextOptions {.importjs: "({})".}
 proc `font=`*(options: TextOptions, value: cstring) {.importjs: "#.font = #".}
@@ -64,33 +85,72 @@ proc `maxAngle=`*(options: TextOptions, value: float) {.importjs: "#.maxAngle = 
 proc `offsetX=`*(options: TextOptions, value: float) {.importjs: "#.offsetX = #".}
 proc `offsetY=`*(options: TextOptions, value: float) {.importjs: "#.offsetY = #".}
 proc `overflow=`*(options: TextOptions, value: bool) {.importjs: "#.overflow = #".}
-proc `placement=`*(options: TextOptions, value: JsObject) {.importjs: "#.placement = #".}
+proc `placement=`*(
+  options: TextOptions, value: JsObject
+) {.importjs: "#.placement = #".}
+
 proc `placement=`*(options: TextOptions, value: RootRef) {.importjs: "#.placement = #".}
 proc `repeat=`*(options: TextOptions, value: float) {.importjs: "#.repeat = #".}
 proc `scale=`*(options: TextOptions, value: float) {.importjs: "#.scale = #".}
 proc `scale=`*(options: TextOptions, value: JsObject) {.importjs: "#.scale = #".}
 proc `scale=`*(options: TextOptions, value: RootRef) {.importjs: "#.scale = #".}
-proc `rotateWithView=`*(options: TextOptions, value: bool) {.importjs: "#.rotateWithView = #".}
-proc `keepUpright=`*(options: TextOptions, value: bool) {.importjs: "#.keepUpright = #".}
+proc `rotateWithView=`*(
+  options: TextOptions, value: bool
+) {.importjs: "#.rotateWithView = #".}
+
+proc `keepUpright=`*(
+  options: TextOptions, value: bool
+) {.importjs: "#.keepUpright = #".}
+
 proc `rotation=`*(options: TextOptions, value: float) {.importjs: "#.rotation = #".}
 proc `text=`*(options: TextOptions, value: cstring) {.importjs: "#.text = #".}
 proc `text=`*(options: TextOptions, value: seq[cstring]) {.importjs: "#.text = #".}
-proc `textAlign=`*(options: TextOptions, value: JsObject) {.importjs: "#.textAlign = #".}
+proc `textAlign=`*(
+  options: TextOptions, value: JsObject
+) {.importjs: "#.textAlign = #".}
+
 proc `textAlign=`*(options: TextOptions, value: RootRef) {.importjs: "#.textAlign = #".}
 proc `justify=`*(options: TextOptions, value: JsObject) {.importjs: "#.justify = #".}
 proc `justify=`*(options: TextOptions, value: RootRef) {.importjs: "#.justify = #".}
-proc `textBaseline=`*(options: TextOptions, value: JsObject) {.importjs: "#.textBaseline = #".}
-proc `textBaseline=`*(options: TextOptions, value: RootRef) {.importjs: "#.textBaseline = #".}
+proc `textBaseline=`*(
+  options: TextOptions, value: JsObject
+) {.importjs: "#.textBaseline = #".}
+
+proc `textBaseline=`*(
+  options: TextOptions, value: RootRef
+) {.importjs: "#.textBaseline = #".}
+
 proc `fill=`*(options: TextOptions, value: JsObject) {.importjs: "#.fill = #".}
 proc `fill=`*(options: TextOptions, value: RootRef) {.importjs: "#.fill = #".}
 proc `stroke=`*(options: TextOptions, value: JsObject) {.importjs: "#.stroke = #".}
 proc `stroke=`*(options: TextOptions, value: RootRef) {.importjs: "#.stroke = #".}
-proc `backgroundFill=`*(options: TextOptions, value: JsObject) {.importjs: "#.backgroundFill = #".}
-proc `backgroundFill=`*(options: TextOptions, value: RootRef) {.importjs: "#.backgroundFill = #".}
-proc `backgroundStroke=`*(options: TextOptions, value: JsObject) {.importjs: "#.backgroundStroke = #".}
-proc `backgroundStroke=`*(options: TextOptions, value: RootRef) {.importjs: "#.backgroundStroke = #".}
-proc `padding=`*(options: TextOptions, value: seq[float]) {.importjs: "#.padding = #".}
-proc `declutterMode=`*(options: TextOptions, value: JsObject) {.importjs: "#.declutterMode = #".}
-proc `declutterMode=`*(options: TextOptions, value: RootRef) {.importjs: "#.declutterMode = #".}
+proc `backgroundFill=`*(
+  options: TextOptions, value: JsObject
+) {.importjs: "#.backgroundFill = #".}
 
-proc newText*(options: TextOptions): Text {.importjs: "(new olNs_style_Text.default(#))".}
+proc `backgroundFill=`*(
+  options: TextOptions, value: RootRef
+) {.importjs: "#.backgroundFill = #".}
+
+proc `backgroundStroke=`*(
+  options: TextOptions, value: JsObject
+) {.importjs: "#.backgroundStroke = #".}
+
+proc `backgroundStroke=`*(
+  options: TextOptions, value: RootRef
+) {.importjs: "#.backgroundStroke = #".}
+
+proc `padding=`*(options: TextOptions, value: seq[float]) {.importjs: "#.padding = #".}
+proc `declutterMode=`*(
+  options: TextOptions, value: JsObject
+) {.importjs: "#.declutterMode = #".}
+
+proc `declutterMode=`*(
+  options: TextOptions, value: RootRef
+) {.importjs: "#.declutterMode = #".}
+
+proc newText*(
+  options: TextOptions
+): Text {.importjs: "(new olNs_style_Text.default(#))".}
+
+proc `textAlign=`*(options: TextOptions, value: cstring) {.importjs: "#.textAlign = #".}

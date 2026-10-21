@@ -1,4 +1,4 @@
-version       = "0.3.0"
+version       = "0.4.0"
 author        = "Jaremy Creechley"
 description   = "openlayer javascript bindings"
 license       = "BSD-2-Clause"

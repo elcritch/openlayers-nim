@@ -3,7 +3,12 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when not defined(openlayers.noEsmModules):
+when defined(openlayers.globalBundle):
+  {.emit: """
+var olNs_style_Stroke = Object.assign(
+  {default: globalThis.ol?.style?.Stroke}, globalThis.ol?.style?.Stroke);
+""".}
+elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_style_Stroke from 'ol/style/Stroke.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_style_Stroke)".}

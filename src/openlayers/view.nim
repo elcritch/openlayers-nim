@@ -3,7 +3,12 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when not defined(openlayers.noEsmModules):
+when defined(openlayers.globalBundle):
+  {.emit: """
+var olNs_View = Object.assign(
+  {default: globalThis.ol?.View}, globalThis.ol?.View);
+""".}
+elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_View from 'ol/View.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_View)".}
@@ -349,3 +354,12 @@ proc `zoomFactor=`*(options: ViewOptions, value: float) {.importjs: "#.zoomFacto
 proc `padding=`*(options: ViewOptions, value: seq[float]) {.importjs: "#.padding = #".}
 
 proc newView*(options: ViewOptions): View {.importjs: "(new olNs_View.default(#))".}
+
+proc animate*(self: View, options: AnimationOptions) {.importjs: "#.animate(#)".}
+proc `center=`*(
+  options: AnimationOptions, value: seq[float]
+) {.importjs: "#.center = #".}
+
+proc fit*(
+  self: View, bounds: seq[float], options: FitOptions
+) {.importjs: "#.fit(#, #)".}

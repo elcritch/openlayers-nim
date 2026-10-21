@@ -1,9 +1,16 @@
+import ../feature
+
 import jsffi
 
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when not defined(openlayers.noEsmModules):
+when defined(openlayers.globalBundle):
+  {.emit: """
+var olNs_source_Vector = Object.assign(
+  {default: globalThis.ol?.source?.Vector}, globalThis.ol?.source?.Vector);
+""".}
+elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_source_Vector from 'ol/source/Vector.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_source_Vector)".}
@@ -13,8 +20,14 @@ proc newVectorSource*(): VectorSource {.importjs: "(new olNs_source_Vector.defau
 proc getFeatures*(self: VectorSource): seq[JsObject] {.importjs: "#.getFeatures()".}
 proc addFeature*(self: VectorSource, feature: JsObject) {.importjs: "#.addFeature(#)".}
 proc addFeature*(self: VectorSource, feature: RootRef) {.importjs: "#.addFeature(#)".}
-proc addFeatures*(self: VectorSource, features: JsObject) {.importjs: "#.addFeatures(#)".}
-proc addFeatures*(self: VectorSource, features: RootRef) {.importjs: "#.addFeatures(#)".}
+proc addFeatures*(
+  self: VectorSource, features: JsObject
+) {.importjs: "#.addFeatures(#)".}
+
+proc addFeatures*(
+  self: VectorSource, features: RootRef
+) {.importjs: "#.addFeatures(#)".}
+
 proc clear*(self: VectorSource, fast: bool = false) {.importjs: "#.clear(#)".}
 
 type VectorSourceOptions* = ref object of JsRoot
@@ -88,3 +101,14 @@ proc `wrapX=`*(options: VectorSourceOptions, value: bool) {.importjs: "#.wrapX =
 proc newVectorSource*(
   options: VectorSourceOptions
 ): VectorSource {.importjs: "(new olNs_source_Vector.default(#))".}
+
+proc features*(self: VectorSource): seq[Feature] {.importjs: "#.getFeatures()".}
+proc getFeatureById*(
+  self: VectorSource, id: cstring
+): Feature {.importjs: "#.getFeatureById(#)".}
+
+proc removeFeature*(
+  self: VectorSource, feature: Feature
+) {.importjs: "#.removeFeature(#)".}
+
+proc getExtent*(self: VectorSource): seq[float] {.importjs: "#.getExtent()".}

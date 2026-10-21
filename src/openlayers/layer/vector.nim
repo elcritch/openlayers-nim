@@ -1,9 +1,17 @@
+import ../style/style
+import ../feature
+
 import jsffi
 
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when not defined(openlayers.noEsmModules):
+when defined(openlayers.globalBundle):
+  {.emit: """
+var olNs_layer_Vector = Object.assign(
+  {default: globalThis.ol?.layer?.Vector}, globalThis.ol?.layer?.Vector);
+""".}
+elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_layer_Vector from 'ol/layer/Vector.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_layer_Vector)".}
@@ -130,3 +138,11 @@ proc `properties=`*(
 proc newVectorLayer*(
   options: VectorLayerOptions
 ): VectorLayer {.importjs: "(new olNs_layer_Vector.default(#))".}
+
+proc `renderOrder=`*(
+  options: VectorLayerOptions, value: proc(a, b: Feature): int
+) {.importjs: "#.renderOrder = #".}
+
+proc `style=`*(
+  options: VectorLayerOptions, value: seq[Style]
+) {.importjs: "#.style = #".}
