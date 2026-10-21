@@ -41,3 +41,28 @@ You can also build any individual example module directly, for example:
 ## Options
 
 This module assumes ESM style modules, which can be opted out of by passing `-d:openlayers.noEsmModules`.
+
+### Browser script bundles
+
+Version 0.4.0 adds `-d:openlayers.globalBundle` for applications that load the
+OpenLayers browser `ol.js` script before their compiled Nim JavaScript. ESM remains
+the default. `-d:openlayers.noEsmModules` still only suppresses imports for callers
+that provide their own namespace aliases.
+
+Use direct imports of the supported map modules: `map`, `view`, `feature`, `overlay`,
+`mapBrowserEvent`, `proj`, `extent`; `geom/geometry`, `geom/point`, `geom/multiPolygon`;
+`layer/tile`, `layer/vector`, `layer/image`; `source/osm`, `source/xyz`, `source/vector`,
+`source/image`, `source/imageStatic`; `style/style`, `style/fill`, `style/stroke`, `style/circle`,
+`style/text`; `control/attribution` and `render/event`. The umbrella `openlayers`
+module also imports APIs outside this browser subset and should be used with ESM.
+Missing browser globals are left undefined, allowing the application to display
+its own loading or unavailable state before constructing a map.
+
+`layer/operations` exposes common visibility, opacity, extent and render-event
+methods on concrete tile, vector and image layers. `properties` provides typed
+access to custom observable properties without converting the entire object to
+`JsObject`. Geometry, feature lookup, style arrays, animation and image-source
+options also have typed overloads for map applications.
+
+`nim test` runs runtime assertions against both the installed ESM package and its
+actual browser bundle, as well as the existing binding checks and Karax build.

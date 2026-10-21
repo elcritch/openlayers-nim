@@ -3,11 +3,25 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when not defined(openlayers.noEsmModules):
+when defined(openlayers.globalBundle):
+  {.emit: "var olNs_render_Event = {default: globalThis.ol?.render?.Event};".}
+elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_render_Event from 'ol/render/Event.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_render_Event)".}
 
-type
-  RenderEvent* = ref object of JsRoot
-proc newRenderEvent*(typeVal: JsObject, inversePixelTransform: JsObject = jsUndefined, frameState: JsObject = jsUndefined, context: JsObject = jsUndefined): RenderEvent {.importjs: "(new olNs_render_Event.default(#, #, #, #))".}
+type RenderEvent* = ref object of JsRoot
+proc newRenderEvent*(
+  typeVal: JsObject,
+  inversePixelTransform: JsObject = jsUndefined,
+  frameState: JsObject = jsUndefined,
+  context: JsObject = jsUndefined,
+): RenderEvent {.importjs: "(new olNs_render_Event.default(#, #, #, #))".}
+
+proc context*[T](
+  event: RenderEvent, contextType: typedesc[T]
+): T {.importjs: "#.context".}
+
+proc inversePixelTransform*(
+  event: RenderEvent
+): seq[float] {.importjs: "#.inversePixelTransform".}

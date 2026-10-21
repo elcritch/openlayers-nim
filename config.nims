@@ -37,6 +37,11 @@ task test, "Run tests":
         exec "nim js -d:nodejs -r " & testFile
       else:
         exec "nim c -r " & testFile
+  exec "nim js -d:nodejs -d:openlayers.globalBundle " &
+    "-o:tests/tglobal_openlayers_runtime.js tests/tjs_openlayers_runtime.nim"
+  exec "node --import ./tests/load_global_bundle.mjs tests/tglobal_openlayers_runtime.js"
+  exec "nim js -d:nodejs -d:openlayers.globalBundle -r " &
+    "tests/tjs_openlayers_missing_bundle.nim"
   for nimEntry in karaxExampleEntries:
     exec "nim js -d:nodejs " & nimEntry
 

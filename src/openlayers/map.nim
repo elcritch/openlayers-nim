@@ -1,9 +1,13 @@
-import jsffi
+import ./[view, feature, mapBrowserEvent]
+
+import std/[dom, jsffi]
 
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when not defined(openlayers.noEsmModules):
+when defined(openlayers.globalBundle):
+  {.emit: "var olNs_Map = {default: globalThis.ol?.Map};".}
+elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_Map from 'ol/Map.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_Map)".}
@@ -133,3 +137,27 @@ proc `view=`*(options: MapOptions, value: JsObject) {.importjs: "#.view = #".}
 proc `view=`*(options: MapOptions, value: RootRef) {.importjs: "#.view = #".}
 
 proc newMap*(options: MapOptions): Map {.importjs: "(new olNs_Map.default(#))".}
+
+proc getView*(self: Map): View {.importjs: "#.getView()".}
+proc getTargetElement*(self: Map): Element {.importjs: "#.getTargetElement()".}
+proc updateSize*(self: Map) {.importjs: "#.updateSize()".}
+proc addControl*(self: Map, control: RootRef) {.importjs: "#.addControl(#)".}
+proc addOverlay*(self: Map, overlay: RootRef) {.importjs: "#.addOverlay(#)".}
+proc getPixelFromCoordinate*(
+  self: Map, coordinate: seq[float]
+): seq[float] {.importjs: "#.getPixelFromCoordinate(#)".}
+
+proc on*(
+  self: Map, event: cstring, listener: proc(event: MapBrowserEvent)
+): JsObject {.importjs: "#.on(#, #)".}
+
+proc `layerFilter=`*(
+  options: AtPixelOptions, value: proc(layer: JsObject): bool
+) {.importjs: "#.layerFilter = #".}
+
+proc forEachFeatureAtPixel*(
+  self: Map,
+  pixel: seq[float],
+  callback: proc(feature: Feature): Feature,
+  options: AtPixelOptions,
+): Feature {.importjs: "#.forEachFeatureAtPixel(#, #, #)".}

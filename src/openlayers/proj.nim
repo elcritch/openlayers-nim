@@ -3,7 +3,9 @@ import jsffi
 when not defined(js):
   {.fatal: "openlayers bindings require Nim's JavaScript backend.".}
 
-when not defined(openlayers.noEsmModules):
+when defined(openlayers.globalBundle):
+  {.emit: "var olNs_proj = globalThis.ol?.proj;".}
+elif not defined(openlayers.noEsmModules):
   {.emit: "import * as olNs_proj from 'ol/proj.js';".}
 
 proc getNamespace*(): JsObject {.importjs: "(olNs_proj)".}
